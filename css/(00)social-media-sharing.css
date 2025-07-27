@@ -3,11 +3,6 @@
    Notes: Use semantic markup, readable contrast, and screen-reader utilities
 ---------------------------------------------------------- */
 
-/* ✨ Global Media Query Flag (for future JS Toggling */
-body.mobile-view {
-  /* Apply tweaks if JS toggles mobile state manually */
-}
-
 /* 📢 Social Sharing Section
    Used in: All pages
    Purpose: Encourages sharing the mission across platforms
