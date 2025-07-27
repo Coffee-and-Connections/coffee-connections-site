@@ -3,28 +3,15 @@
     padding: 1.5rem 1rem;
   }
 
-  .title-cell h1 {
-    font-size: 2rem;
-  }
-
   .title-cell .tagline {
     font-size: 1rem;
   }
 
-  .logo-cell img {
-    max-width: 5rem;
-  }
 }
 
   /* === (01) Index Page ===
      Sections: Header, Tagline, Navigation
   ---------------------------------------------------------- */
-  .header-grid {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
   .logo-cell img {
     max-width: 5rem; /* 80px */
   }
