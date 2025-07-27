@@ -8,6 +8,8 @@
   background-size: cover;
   background-position: center;
   color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .site-header::before {
@@ -22,22 +24,21 @@
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;                        /* 24px gap between logo and text */
-  padding: 0 1rem;
+  gap: 1rem;
 }
 
 /* 📸 Logo Cell */
 .logo-cell {
-  padding-left: 1.875rem;            /* 30px */
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .logo-cell img {
-  max-width: 7.5rem;                 /* 120px */
+  max-width: 7.5rem; /* 120px */
   height: auto;
   display: block;
 }
@@ -46,36 +47,24 @@
 .title-cell {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  text-align: left;
+  text-align: center;
 }
 
 .title-cell h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
-  color: #4B0082;                    /* Indigo */
+  color: #4B0082; /* Indigo */
   line-height: 1.3;
 }
 
 .title-cell .tagline {
   font-size: 1.25rem;
   font-style: italic;
-  color: #5A3E5F;                    /* Muted plum */
+  color: #5A3E5F; /* Muted plum */
   margin-top: 0.5rem;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 /* 🤝 Site Footer Styles
