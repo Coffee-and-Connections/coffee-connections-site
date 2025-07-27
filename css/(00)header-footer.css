@@ -72,15 +72,29 @@
   margin-top: 0.5rem;
 }
 
-/* 🤝 Site Footer Styles
-   Used in: All pages
-   Purpose: End-of-page statement of values
----------------------------------------------------------- */
 footer {
   background-color: var(--eggshell);
   color: var(--text-dark);
-  padding: 1.5rem 1.25rem;             /* 24px 20px */
+  padding: 1.5rem 1.25rem;
   text-align: center;
-  font-size: 1rem;                     /* 16px */
+  font-size: 1rem;
   border-top: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 🔗 Social Links Inline Below Footer Text */
+footer .social-links {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer .social-links a img {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
+}
+
+footer .social-links a:hover img {
+  opacity: 0.7;
 }
