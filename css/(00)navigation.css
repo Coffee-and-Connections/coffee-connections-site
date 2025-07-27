@@ -48,6 +48,12 @@
   background-color: var(--mint-healing);
 }
 
+/* 🧭 Keyboard Focus Outline */
+.nav-menu > li > a:focus-visible {
+  outline: 2px dashed var(--resilience-teal);
+  outline-offset: 4px;
+}
+
 /* 🔘 Active Page Highlight */
 .nav-menu > li > a.active {
   background-color: var(--resilience-teal);
