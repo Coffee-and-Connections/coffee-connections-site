@@ -73,7 +73,7 @@
   transform: translateY(4px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
-  z-index: 999;
+  z-index: 1100;
 }
 
 /* 🔹 Submenu Items */
@@ -128,7 +128,7 @@
     opacity: 0;
     transform: translateY(4px);
     pointer-events: none;
-    z-index: 999;
+    z-index: 1100;
   }
 
   .nav-menu > li:hover .submenu,
