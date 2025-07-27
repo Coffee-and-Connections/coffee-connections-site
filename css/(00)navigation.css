@@ -1,9 +1,9 @@
 /* 🧭 Navigation Container
-   Purpose: Layout wrapper for top navigation bar across all pages
+   Purpose: Horizontal top-level nav bar with dropdowns
 ---------------------------------------------------------- */
 .nav-container {
   background-color: var(--eggshell);
-  padding: 1rem 1.875rem;               /* 16px 30px */
+  padding: 1rem 2rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
   font-family: 'Segoe UI', sans-serif;
@@ -11,32 +11,27 @@
   z-index: 1000;
 }
 
-/* 🌐 Navigation List Wrapper
-   Purpose: Horizontal layout with wrapping and spacing
----------------------------------------------------------- */
+/* 🌐 Top-Level Navigation List */
 .nav-menu {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  gap: 2.5rem;                          /* 40px */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* 📂 Top-Level Navigation Links
-   Purpose: Primary section anchors
----------------------------------------------------------- */
+/* 📂 Top-Level Navigation Items */
 .nav-menu > li {
   position: relative;
 }
 
 .nav-menu > li > a {
-  font-size: 1.125rem;                 /* 18px */
+  font-size: 1.125rem; /* 18px */
   font-weight: 600;
   color: var(--deep-plum);
   text-decoration: none;
-  padding: 0.5rem 0.75rem;             /* 8px 12px */
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -55,25 +50,24 @@
 }
 
 /* 🔘 Active Page Highlight */
-.nav-menu > li > a.active {
+.nav-menu > li > a.active,
+.nav-menu > li > a.current-page {
   background-color: var(--resilience-teal);
   color: var(--dignity-cream);
   font-weight: 700;
 }
 
-/* 📎 Dropdown Menu Container
-   Purpose: Reveals submenu on hover or focus
----------------------------------------------------------- */
+/* 📎 Dropdown Menu Container */
 .submenu {
   display: none;
   position: absolute;
-  top: calc(100% + 0.375rem);          /* Offset: 6px */
+  top: calc(100% + 0.375rem); /* 6px offset */
   left: 0;
   background-color: var(--dignity-cream);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  padding: 0.75rem 0;                  /* 12px top/bottom */
-  min-width: 13.75rem;                 /* 220px */
+  padding: 0.75rem 0;
+  min-width: 220px;
   opacity: 0;
   transform: translateY(4px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -81,15 +75,15 @@
   z-index: 999;
 }
 
-/* 🔹 Submenu Links */
+/* 🔹 Submenu Items */
 .submenu li {
   padding: 0;
 }
 
 .submenu li a {
   display: block;
-  padding: 0.625rem 1.125rem;          /* 10px 18px */
-  font-size: 1rem;                     /* 16px */
+  padding: 0.625rem 1.125rem;
+  font-size: 1rem;
   color: var(--text-dark);
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -109,3 +103,4 @@
   transform: translateY(0);
   pointer-events: auto;
 }
+
