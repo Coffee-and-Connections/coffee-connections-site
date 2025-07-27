@@ -67,6 +67,17 @@
   margin-top: 0.5rem;
 }
 
+.submenu {
+  position: static;
+  display: block;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
 /* 🤝 Site Footer Styles
    Used in: All pages
    Purpose: End-of-page statement of values
