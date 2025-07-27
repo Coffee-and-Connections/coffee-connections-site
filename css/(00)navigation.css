@@ -1,26 +1,18 @@
-:root {
-  --eggshell: #fefef9;
-  --deep-plum: #3e2a4d;
-  --resilience-teal: #2a9d8f;
-  --mint-healing: #e0f7f4;
-  --dignity-cream: #fffaf0;
-  --text-dark: #333;
-}
+/* 🌐 Navigation Styles — Coffee & Connections */
+/* Last updated: 2025-07-27 by Anthony & Copilot */
 
-/* 🧭 Navigation Container
-   Purpose: Horizontal top-level nav bar with dropdowns
----------------------------------------------------------- */
+/* 🧭 Container */
 .nav-container {
   background-color: var(--eggshell);
   padding: 1rem 2rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-main);
   position: relative;
   z-index: 1000;
 }
 
-/* 🌐 Top-Level Navigation List */
+/* 📁 Top-Level Menu */
 .nav-menu {
   display: flex;
   justify-content: flex-start;
@@ -31,7 +23,7 @@
   padding: 0;
 }
 
-/* 📂 Top-Level Navigation Items */
+/* 📂 Top-Level Items */
 .nav-menu > li {
   position: relative;
 }
@@ -46,20 +38,20 @@
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* 🌱 Hover & Focus Effects */
+/* 🌱 Hover & Focus */
 .nav-menu > li > a:hover,
 .nav-menu > li > a:focus {
   color: var(--resilience-teal);
   background-color: var(--mint-healing);
 }
 
-/* 🧭 Keyboard Focus Outline */
+/* 🧭 Focus Outline */
 .nav-menu > li > a:focus-visible {
   outline: 2px dashed var(--resilience-teal);
   outline-offset: 4px;
 }
 
-/* 🔘 Active Page Highlight */
+/* 🔘 Active Page */
 .nav-menu > li > a.active,
 .nav-menu > li > a.current-page {
   background-color: var(--resilience-teal);
@@ -67,7 +59,7 @@
   font-weight: 700;
 }
 
-/* 📎 Dropdown Menu Container */
+/* 📎 Dropdown Container */
 .submenu {
   display: none;
   position: absolute;
@@ -85,7 +77,7 @@
   z-index: 1100;
 }
 
-/* 🔹 Submenu Items */
+/* 🔹 Dropdown Items */
 .submenu li {
   padding: 0;
 }
@@ -105,7 +97,7 @@
   font-weight: 500;
 }
 
-/* ✨ Reveal Dropdown on Hover or Focus */
+/* ✨ Reveal Dropdown */
 .nav-menu > li:hover .submenu,
 .nav-menu > li:focus-within .submenu {
   display: block;
@@ -114,37 +106,18 @@
   pointer-events: auto;
 }
 
-/* 📱 Responsive Protection */
+/* 📱 Responsive Adjustments */
 @media (max-width: 768px) {
   .nav-menu {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
     gap: 1rem;
   }
 
   .submenu {
-    display: none;
-    position: absolute;
     top: calc(100% + 0.375rem);
     left: 0;
-    background-color: var(--dignity-cream);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    padding: 0.75rem 0;
-    min-width: 220px;
-    opacity: 0;
-    transform: translateY(4px);
-    pointer-events: none;
-    z-index: 1100;
-  }
-
-  .nav-menu > li:hover .submenu,
-  .nav-menu > li:focus-within .submenu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    min-width: 100%;
   }
 }
+
