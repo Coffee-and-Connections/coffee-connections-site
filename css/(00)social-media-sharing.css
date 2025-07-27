@@ -1,3 +1,8 @@
+/* ♿ Accessibility Philosophy
+   Purpose: Support inclusive, trauma-informed digital spaces
+   Notes: Use semantic markup, readable contrast, and screen-reader utilities
+---------------------------------------------------------- */
+
 /* ✨ Global Media Query Flag (for future JS Toggling */
 body.mobile-view {
   /* Apply tweaks if JS toggles mobile state manually */
