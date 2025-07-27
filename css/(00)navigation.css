@@ -1,3 +1,12 @@
+:root {
+  --eggshell: #fefef9;
+  --deep-plum: #3e2a4d;
+  --resilience-teal: #2a9d8f;
+  --mint-healing: #e0f7f4;
+  --dignity-cream: #fffaf0;
+  --text-dark: #333;
+}
+
 /* 🧭 Navigation Container
    Purpose: Horizontal top-level nav bar with dropdowns
 ---------------------------------------------------------- */
