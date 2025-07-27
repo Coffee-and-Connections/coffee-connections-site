@@ -65,6 +65,41 @@ body.mobile-view {
   /* Apply tweaks if JS toggles mobile state manually */
 }
 
+/* 🔗 Optional Responsive Enhancements */
+html {
+  font-size: 100%; /* Defaults to user/browser preference */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 95%; /* Slight downscale for compact readability */
+  }
+}
+
+button,
+.cta {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+section {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (hover: none) {
+  .submenu {
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    pointer-events: auto !important;
+  }
+}
+
+body {
+  padding-top: 4rem; /* match header height if fixed */
+}
+
 /* 🧠 Accessibility Utility: Visually Hidden Text
    Purpose: Provide screen-reader-only labels for emoji links
 ---------------------------------------------------------- */
