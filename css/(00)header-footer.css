@@ -1,7 +1,6 @@
-/* ☕ Banner Header Styles */
 .banner-header {
   position: relative;
-  background-image: url('../asset/New-Banner.png');
+  background-image: url('../asset/New-Banner.png'); /* Latte art background */
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -11,7 +10,7 @@
   align-items: center;
 }
 
-.banner-header::before {
+.banner-overlay {
   content: "";
   position: absolute;
   inset: 0;
