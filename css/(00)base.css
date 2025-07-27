@@ -58,6 +58,13 @@ p, li, a, span, input, textarea, button {
   font-family: var(--font-main);          /* Uniform clarity across elements */
 }
 
+/* 📱 Global Utility: Mobile View Toggle
+   Purpose: JS-driven layout adjustments for mobile state
+---------------------------------------------------------- */
+body.mobile-view {
+  /* Apply tweaks if JS toggles mobile state manually */
+}
+
 /* 🧠 Accessibility Utility: Visually Hidden Text
    Purpose: Provide screen-reader-only labels for emoji links
 ---------------------------------------------------------- */
