@@ -23,16 +23,7 @@
   .title-cell .tagline {
     font-size: 1rem; /* 16px */
   }
-
-  .nav-menu {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .nav-menu > li > a {
-    font-size: 1rem;
-  }
+/* remmoved reference to nav code */
 
   .submenu {
     position: static;
