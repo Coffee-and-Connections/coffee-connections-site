@@ -14,8 +14,9 @@
 /* 🌐 Top-Level Navigation List */
 .nav-menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -104,3 +105,10 @@
   pointer-events: auto;
 }
 
+.nav-menu > li:hover .submenu,
+.nav-menu > li:focus-within .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
