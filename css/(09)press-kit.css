@@ -193,6 +193,119 @@
   margin-bottom: 1.5rem;
 }
 
+/* 🧱 Section Container */
+.founder-stories {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: #fdf5f2;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 🧠 Header */
+.story-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.story-header h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  color: #3E2A1E;
+}
+
+.story-header .tagline {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #6B4C3B;
+}
+
+/* 🧾 Story Layout */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.story-left {
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.story-left.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🎯 Typography */
+.story-left h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  color: #6B4C3B;
+  margin-bottom: 1rem;
+}
+
+.story-stinger {
+  font-style: italic;
+  font-weight: 600;
+  color: #3E2A1E;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #B33A3A;
+  font-weight: bold;
+}
+
+/* 📌 Sticky CTA */
+.sticky-cta {
+  position: sticky;
+  bottom: 0;
+  background-color: #3E2A1E;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  z-index: 10;
+}
+
+.sticky-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta-button {
+  background-color: #F4C095;
+  color: #3E2A1E;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e8b07f;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .story-left {
+    padding: 1.5rem;
+  }
+
+  .sticky-cta {
+    padding: 1rem;
+  }
+}
+
 /* 📱 Responsive */
 @media (max-width: 768px) {
   .story-grid {
