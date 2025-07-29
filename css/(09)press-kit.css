@@ -244,6 +244,28 @@
   transform: translateY(0);
 }
 
+.story-right {
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.story-right.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.highlight {
+  color: #B33A3A;
+  font-weight: bold;
+}
+
 /* 🎯 Typography */
 .story-left h3 {
   font-family: 'Merriweather', serif;
