@@ -1,0 +1,123 @@
+/* ─────────────────────────────────────────────
+   Coffee & Connections — Press Kit Page Styles
+   Scoped to /press-kit.html only
+────────────────────────────────────────────── */
+
+/* 🧱 Section Layouts */
+.press-intro,
+.press-kit-assets,
+.press-kit-contact {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+
+/* 💬 Intro Headings & Tagline */
+.press-intro h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  color: #3E2A1E;
+  margin-bottom: 1rem;
+}
+
+.press-intro .tagline {
+  font-weight: 700;
+  color: #6B4C3B;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* 🧠 Blockquotes */
+.press-intro blockquote {
+  font-style: italic;
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #6B4C3B;
+  color: #444;
+}
+
+/* 🎥 Video Link */
+.press-intro a[href*="drive.google.com"] {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #6B4C3B;
+  text-decoration: none;
+}
+
+.press-intro a[href*="drive.google.com"]:hover {
+  text-decoration: underline;
+}
+
+/* 📦 Asset List */
+.press-kit-assets h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3E2A1E;
+}
+
+.press-kit-assets ul {
+  list-style: none;
+  padding: 0;
+}
+
+.press-kit-assets li {
+  margin-bottom: 0.75rem;
+}
+
+.press-kit-assets a {
+  text-decoration: none;
+  color: #6B4C3B;
+  font-weight: 600;
+}
+
+.press-kit-assets a:hover {
+  text-decoration: underline;
+}
+
+/* 📬 Contact Section */
+.press-kit-contact h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3E2A1E;
+}
+
+.press-kit-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.press-kit-contact li {
+  margin-bottom: 1rem;
+}
+
+.press-kit-contact a {
+  color: #333;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.press-kit-contact a:hover {
+  color: #6B4C3B;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 600px) {
+  .press-intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .press-intro blockquote {
+    font-size: 0.95rem;
+  }
+
+  .press-kit-assets h3,
+  .press-kit-contact h3 {
+    font-size: 1.25rem;
+  }
+}
+
