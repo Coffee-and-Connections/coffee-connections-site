@@ -202,32 +202,33 @@ body {
 }
 
 /* ─────────────────────────────────────────────
-   📌 Sticky CTA
+   📌 Call to Action
 ────────────────────────────────────────────── */
 
-.sticky-cta {
-  position: sticky;
-  bottom: 0;
-  background-color: #3E2A1E;
-  color: #fff;
+.call-to-action {
+  background-color: #f9f9f9; /* Soft neutral tone */
+  padding: 2.5rem;
   text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem;
-  z-index: 10;
+  border-top: 1px solid #ddd;
 }
 
-.sticky-cta p {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.call-to-action p {
+  font-size: 1.4rem; /* Increased from 1.2rem */
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.cta-button {
-  background-color: #F4C095;
-  color: #3E2A1E;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
+.call-to-action .cta-button {
+  background-color: #4a2f2f;
+  color: white;
+  padding: 0.85rem 1.75rem;
   text-decoration: none;
+  border-radius: 4px;
   font-weight: bold;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
