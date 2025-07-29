@@ -7,18 +7,20 @@
    🧱 Base Layout & Typography
 ────────────────────────────────────────────── */
 
-/* Full-width sections with internal padding */
-.press-intro,
-.press-kit-assets,
-.press-kit-contact {
-  width: 100%;
-  padding: 2rem;
+body {
   font-family: 'DM Sans', sans-serif;
   line-height: 1.6;
   box-sizing: border-box;
 }
 
-/* 🧭 Spacing below nav */
+.press-intro,
+.press-kit-assets,
+.press-kit-contact,
+.founder-stories {
+  width: 100%;
+  padding: 2rem;
+}
+
 .press-intro {
   margin-top: 2.5rem;
 }
@@ -27,42 +29,44 @@
    🧠 Header Styling (Centered, Constrained)
 ────────────────────────────────────────────── */
 
-.press-header {
+.press-header,
+.story-header {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-.press-header h2 {
+.press-header h2,
+.story-header h2 {
   font-family: 'Merriweather', serif;
   font-size: 2rem;
   color: #3E2A1E;
 }
 
-.press-header .tagline {
+.press-header .tagline,
+.story-header .tagline {
   font-weight: 700;
-  color: #6B4C3B;
   font-size: 1.2rem;
+  color: #6B4C3B;
 }
 
 /* ─────────────────────────────────────────────
-   🧱 Two-Column Grid Layout
+   🧱 Grid Layouts
 ────────────────────────────────────────────── */
 
-.press-grid {
+.press-grid,
+.story-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   width: 100%;
   padding: 0 2rem;
-  box-sizing: border-box;
 }
 
-.press-left,
-.press-right {
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.6;
+.founder-stories {
+  background-color: #fdf5f2;
+  position: relative;
+  padding: 3rem 2rem;
 }
 
 /* ─────────────────────────────────────────────
@@ -128,51 +132,20 @@
   outline-offset: 2px;
 }
 
-/* 🧱 Section Container */
-.founder-stories {
-  width: 100%;
-  padding: 3rem 2rem;
-  background-color: #fdf5f2;
-  box-sizing: border-box;
-}
+/* ─────────────────────────────────────────────
+   🧾 Founder Stories — Columns & Content
+────────────────────────────────────────────── */
 
-/* 🧠 Header */
-.story-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.story-header h2 {
-  font-family: 'Merriweather', serif;
-  font-size: 2rem;
-  color: #3E2A1E;
-}
-
-.story-header .tagline {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #6B4C3B;
-}
-
-/* 🧱 Grid Layout */
-.story-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-/* 🧾 Story Columns */
 .story-left,
 .story-right {
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.7;
   background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
 }
 
-/* 🎯 Headline & Stinger */
 .story-left h3,
 .story-right h3 {
   font-family: 'Merriweather', serif;
@@ -188,105 +161,34 @@
   margin-bottom: 1rem;
 }
 
-/* 🧠 Emotional Sections */
 .story-section {
   margin-bottom: 1.5rem;
 }
 
-/* 🧱 Section Container */
-.founder-stories {
-  width: 100%;
-  padding: 3rem 2rem;
-  background-color: #fdf5f2;
-  box-sizing: border-box;
-  position: relative;
-}
-
-/* 🧠 Header */
-.story-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.story-header h2 {
-  font-family: 'Merriweather', serif;
-  font-size: 2rem;
-  color: #3E2A1E;
-}
-
-.story-header .tagline {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #6B4C3B;
-}
-
-/* 🧾 Story Layout */
-.story-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
-
-.story-left {
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.7;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.story-left.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.story-right {
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.7;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.story-right.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .highlight {
   color: #B33A3A;
   font-weight: bold;
 }
 
-/* 🎯 Typography */
-.story-left h3 {
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
-  color: #6B4C3B;
-  margin-bottom: 1rem;
+/* ─────────────────────────────────────────────
+   🎬 Reveal Animation
+────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.story-stinger {
-  font-style: italic;
-  font-weight: 600;
-  color: #3E2A1E;
-  margin-bottom: 1rem;
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.highlight {
-  color: #B33A3A;
-  font-weight: bold;
-}
+/* ─────────────────────────────────────────────
+   📌 Sticky CTA
+────────────────────────────────────────────── */
 
-/* 📌 Sticky CTA */
 .sticky-cta {
   position: sticky;
   bottom: 0;
@@ -317,10 +219,32 @@
   background-color: #e8b07f;
 }
 
-/* 📱 Responsive */
+/* ─────────────────────────────────────────────
+   📱 Responsive Layout
+────────────────────────────────────────────── */
+
 @media (max-width: 768px) {
-  .story-left {
+  .press-grid,
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .press-left,
+  .press-right,
+  .story-left,
+  .story-right {
     padding: 1.5rem;
+    border-right: none;
+  }
+
+  .press-header h2,
+  .story-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .press-header .tagline,
+  .story-header .tagline {
+    font-size: 1rem;
   }
 
   .sticky-cta {
@@ -328,40 +252,6 @@
   }
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  .story-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .story-left,
-  .story-right {
-    padding: 1.5rem;
-  }
-}
-
-/* 📱 Responsive Layout */
-@media (max-width: 768px) {
-  .press-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .press-header h2 {
-    font-size: 1.5rem;
-  }
-
-  .press-header .tagline {
-    font-size: 1rem;
-  }
-
-  .press-left,
-  .press-right {
-    padding: 0 0.5rem;
-    border-right: none;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
 
 
 
