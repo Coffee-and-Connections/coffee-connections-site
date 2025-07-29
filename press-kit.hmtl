@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the Coffee & Connections press kit—featuring a short video by co-founder Marylou Culpepper and the story behind a café built to hold people, not fix them." />  
+  <title>Press Kit | Coffee & Connections El Paso</title>
+
+<!-- ✅ Canonical Tag -->
+  <link rel="canonical" href="https://connectionsep.coffee/press-kit.html" />
+
+<!-- 📊 Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0BKM8ZWW8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K0BKM8ZWW8');
+  </script>
+
+<!-- 🧭 Google Tag Manager (GTM) -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W6LDGTQC');
+   </script>
+
+<!-- 🌐 Open Graph Meta Tags -->
+  <meta property="og:title" content="Coffee & Connections — Where Coffee Meets Compassion & Connections Change Lives" />
+  <meta property="og:description" content="Trauma-informed café & digital platform in El Paso offering radical welcome and healing-centered support." />
+  <meta property="og:url" content="https://connectionsep.coffee/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://connectionsep.coffee/assets/banner.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="theme-color" content="#6B4C3B" />
+  <meta property="og:image:alt" content="Coffee & Connections banner showing community and compassion" />
+
+<!-- 🧠 Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Coffee & Connections",
+  "url": "https://connectionsep.coffee/",
+  "description": "Trauma-informed café and digital platform in El Paso focused on healing, advocacy, and radical welcome.",
+  "sameAs": [
+    "https://www.instagram.com/coffeeconnectionshub",
+    "https://www.threads.net/@coffeeconnectionshub",
+    "https://www.linkedin.com/in/anthony-sorensen-a4b77a36a",
+    "https://www.facebook.com/profile.php?id=61576892447799"
+  ]
+}
+</script>
+
+<!-- 🔗 Preconnect for Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- ✍️ Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  
+<!-- 🧱 Foundation Styles -->
+  <link rel="stylesheet" href="css/(00)base.css">
+  <link rel="stylesheet" href="css/(00)header-footer.css">
+  <link rel="stylesheet" href="css/(00)navigation.css">
+  <link rel="stylesheet" href="css/(00)social-media-sharing.css">
+
+<!-- 🎨 Page-Specific Styles -->
+  <link rel="stylesheet" href="css/(01)index.css">
+
+<!-- 📱 Responsive Styles (Last) -->
+  <link rel="stylesheet" href="css/(00)responsive.css">
+
+</head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6LDGTQC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ☕ Banner Header -->
+<header class="banner-header" role="banner" aria-label="Site branding and logo">
+  <div class="banner-overlay"></div>
+  <div class="banner-container">
+    <div class="logo-block">
+      <img src="asset/CCEP_SVG.svg" alt="Coffee & Connections logo" />
+      <p class="logo-caption">COFFEE & CONNECTIONS</p>
+    </div>
+    <div class="text-block">
+      <h1>Coffee & Connections</h1>
+      <p class="tagline">Where Coffee Meets Compassion & Connections Change Lives</p>
+      <p class="visually-hidden">
+        Coffee & Connections is a trauma-informed café and digital platform in El Paso, offering radical welcome, healing-centered design, and community-rooted support for mental health and advocacy.
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- 🧭 Navigation -->
+<nav class="nav-container" role="navigation" aria-label="Main site navigation">
+  <ul class="nav-menu">
+    <li><a href="index.html">🏠 Home</a></li>
+
+    <li>
+      <a href="menu.html">☕ Coffee</a>
+      <ul class="submenu">
+        <li><a href="menu.html">Menu</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="our-mission.html">💬 Mission</a>
+      <ul class="submenu">
+        <li><a href="our-mission.html">Our Mission</a></li>
+        <li><a href="healing-in-motion.html">Healing in Motion</a></li>
+        <li><a href="how-you-can-help.html">How You Can Help</a></li>
+        <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="resilience-market.html">🛍️ Shop</a>
+      <ul class="submenu">
+        <li><a href="resilience-market.html">Resilience Market</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<section class="press-intro">
+  <div class="text-block">
+    <h2>What if a cup of coffee could save someone's life?</h2>
+    <p class="tagline">A Cup of Coffee <strong>CAN</strong> Save a Life.</p>
+    <p>“Some of life’s most healing moments happen… when someone simply says, ‘Stay awhile.’”</p>
+    <p>This short video was created by our co-founder, <strong>Marylou Culpepper</strong>, a survivor whose story is woven into every frame. Using humble art and honest narration, it introduces the vision behind Coffee & Connections—a space where strangers become family, and recovery begins with one open seat.</p>
+    <p>It’s not just about coffee. It’s about <strong>connection that doesn’t come with conditions</strong>. And <strong>belonging that doesn’t ask for explanation</strong>.</p>
+    <blockquote>“We didn’t build this café to fix people. We built it to hold them. Because we’ve been there too.”<br>— <strong>Anthony Sorensen</strong>, Founder</blockquote>
+    <blockquote>“No one has to heal alone or feel shamed asking for help. This café will make sure of that.”<br>— <strong>Marylou Culpepper</strong>, Co-Founder</blockquote>
+    <blockquote>“Moving forward doesn’t erase the weight—it reshapes it.”<br>— <strong>Don Markland</strong></blockquote>
+    <a href="https://drive.google.com/file/d/1KcrclHJNfFTYyhK7eq2EOEsMFoJ1EWdN/view?usp=drive_link" target="_blank" rel="noopener" aria-label="Watch Coffee & Connections video on Google Drive">🎥 Watch the video on Google Drive</a>
+  </div>
+</section>
+     
+<section class="press-assets">
+  <h3>Downloadable Assets</h3>
+    <ul>
+      <li><a href="assets/logo-pack.zip" download>📁 Logo Pack</a></li>
+      <li><a href="assets/founder-bios.pdf" download>📝 Founder Bios</a></li>
+      <li><a href="assets/brand-colors.pdf" download>🎨 Brand Colors</a></li>
+    </ul>
+</section>
+
+<section class="press-contact" aria-label="Press contact information">
+  <h3>Press Inquiries</h3>
+  <ul>
+    <li>
+      <strong>CEO Tony Sorensen</strong><br>
+      <a href="mailto:anthony.e.sorensen@operationresiliencecorp.com" aria-label="Email CEO Tony Sorensen">
+        anthony.e.sorensen@operationresiliencecorp.com
+      </a>
+    </li>
+    <li>
+      <strong>CMO Marylou Culpepper</strong><br>
+      <a href="mailto:marylou.culpepper@operationresiliencecorp.com" aria-label="Email CMO Marylou Culpepper">
+        marylou.culpepper@operationresiliencecorp.com
+      </a>
+    </li>
+  </ul>
+</section>
+
