@@ -262,6 +262,30 @@
   <a href="https://facebook.com/profile.php?id=61576892447799"
      aria-label="Facebook"
      title="Like us on Facebook">💙 <span class="visually-hidden">Facebook</span></a>
-</div>
-  
+</div>  
 </footer>
+
+<!-- 📌 Sticky Call to Action -->
+<div class="sticky-cta">
+  <p>If this story moved you, help us move others.</p>
+  <a href="/donate" class="cta-button">Donate. Share. Show Up.</a>
+</div>
+
+<!-- 🧠 Progressive Reveal Script -->
+<script>
+  document.addEventListener("scroll", function () {
+    const reveals = document.querySelectorAll(".reveal");
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach(function (el) {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+ 
