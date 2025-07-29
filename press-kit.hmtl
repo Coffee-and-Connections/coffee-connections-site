@@ -152,7 +152,7 @@
   </div>
 </section>
      
-<section class="press-assets">
+<section class="press-assets" aria-label="Press assets and downloads">
   <h3>Downloadable Assets</h3>
     <ul>
       <li><a href="assets/logo-pack.zip" download>📁 Logo Pack</a></li>
