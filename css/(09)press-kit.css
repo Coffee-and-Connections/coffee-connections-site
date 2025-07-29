@@ -3,7 +3,7 @@
    Scoped to /press-kit.html only
 ────────────────────────────────────────────── */
 
-/* 🧱 Section Layouts */
+/* 🧱 Base Layout & Typography */
 .press-intro,
 .press-kit-assets,
 .press-kit-contact {
@@ -14,115 +14,121 @@
   line-height: 1.6;
 }
 
-/* 🧭 Add space between nav and intro */
+/* 🧭 Spacing */
 .press-intro {
-  margin-top: 2.5rem; /* Adjust as needed */
+  margin-top: 2.5rem;
 }
 
-/* 💬 Intro Headings & Tagline */
-.press-intro h2 {
+/* 🧠 Header Styling */
+.press-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.press-header h2 {
   font-family: 'Merriweather', serif;
   font-size: 2rem;
   color: #3E2A1E;
-  margin-bottom: 1rem;
 }
 
-.press-intro .tagline {
+.press-header .tagline {
   font-weight: 700;
   color: #6B4C3B;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
 }
 
-/* 🧠 Blockquotes */
-.press-intro blockquote {
-  font-style: italic;
+/* 🧱 Two-Column Grid */
+.press-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.press-left,
+.press-right {
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+
+/* 🧾 Left Column — Storytelling & Quotes */
+.press-left {
+  border-right: 1px solid #eee;
+  padding-right: 1.5rem;
+}
+
+.press-left blockquote {
   margin: 1.5rem 0;
   padding-left: 1rem;
   border-left: 3px solid #6B4C3B;
-  color: #444;
-}
-
-/* 🎥 Video Link */
-.press-intro a[href*="drive.google.com"] {
-  display: inline-block;
-  margin-top: 1rem;
-  font-weight: 600;
-  color: #6B4C3B;
-  text-decoration: none;
-}
-
-.press-intro a[href*="drive.google.com"]:hover {
-  text-decoration: underline;
-}
-
-/* 📦 Asset List */
-.press-kit-assets h3 {
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-style: italic;
   color: #3E2A1E;
 }
 
-.press-kit-assets ul {
+.press-left cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #6B4C3B;
+}
+
+/* 🎥 Right Column — Assets & Contact */
+.press-right {
+  padding-left: 1.5rem;
+}
+
+.press-right h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  color: #3E2A1E;
+}
+
+.press-right ul {
   list-style: none;
   padding: 0;
 }
 
-.press-kit-assets li {
+.press-right li {
   margin-bottom: 0.75rem;
 }
 
-.press-kit-assets a {
-  text-decoration: none;
+.press-right a {
   color: #6B4C3B;
   font-weight: 600;
+  text-decoration: none;
 }
 
-.press-kit-assets a:hover {
+.press-right a:hover {
   text-decoration: underline;
 }
 
-/* 📬 Contact Section */
-.press-kit-contact h3 {
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #3E2A1E;
+.press-right a:focus {
+  outline: 2px dashed #6B4C3B;
+  outline-offset: 2px;
 }
 
-.press-kit-contact ul {
-  list-style: none;
-  padding: 0;
-}
+/* 📱 Responsive Layout */
+@media (max-width: 768px) {
+  .press-grid {
+    grid-template-columns: 1fr;
+  }
 
-.press-kit-contact li {
-  margin-bottom: 1rem;
-}
-
-.press-kit-contact a {
-  color: #333;
-  text-decoration: underline;
-  font-weight: 500;
-}
-
-.press-kit-contact a:hover {
-  color: #6B4C3B;
-}
-
-/* 📱 Responsive Adjustments */
-@media (max-width: 600px) {
-  .press-intro h2 {
+  .press-header h2 {
     font-size: 1.5rem;
   }
 
-  .press-intro blockquote {
-    font-size: 0.95rem;
+  .press-header .tagline {
+    font-size: 1rem;
   }
 
-  .press-kit-assets h3,
-  .press-kit-contact h3 {
-    font-size: 1.25rem;
+  .press-left,
+  .press-right {
+    padding: 0 0.5rem;
+    border-right: none;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
+
+
 
