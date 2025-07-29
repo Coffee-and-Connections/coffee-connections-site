@@ -54,11 +54,18 @@ body {
    🧱 Grid Layouts
 ────────────────────────────────────────────── */
 
-.press-grid,
-.story-grid {
+.press-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   width: 100%;
   padding: 0 2rem;
 }
@@ -224,10 +231,10 @@ body {
 ────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  .press-grid,
   .story-grid {
     grid-template-columns: 1fr;
   }
+}
 
   .press-left,
   .press-right,
