@@ -14,6 +14,11 @@
   line-height: 1.6;
 }
 
+/* 🧭 Add space between nav and intro */
+.press-intro {
+  margin-top: 2.5rem; /* Adjust as needed */
+}
+
 /* 💬 Intro Headings & Tagline */
 .press-intro h2 {
   font-family: 'Merriweather', serif;
