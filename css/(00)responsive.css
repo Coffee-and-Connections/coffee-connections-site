@@ -7,8 +7,6 @@
     font-size: 1rem;
   }
 
-}
-
   /* === (01) Index Page ===
      Sections: Header, Tagline, Navigation
   ---------------------------------------------------------- */
@@ -23,7 +21,7 @@
   .title-cell .tagline {
     font-size: 1rem; /* 16px */
   }
-/* remmoved reference to nav code */
+/* removed reference to nav code */
 
 /*removed .submenu references to the navitgttion menu */
 
@@ -71,9 +69,9 @@
   }
 
   .responsive-img {
-  max-width: 100%;
-  height: auto;
-}
+    max-width: 100%;
+    height: auto;
+  }
 
 
   /* === (04) Founding Circle ===
