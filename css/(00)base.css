@@ -88,11 +88,11 @@ section {
 }
 
 @media (hover: none) {
-  .submenu {
-    opacity: 1 !important;
-    transform: none !important;
-    display: block !important;
-    pointer-events: auto !important;
+  .nav-container .submenu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }
 
