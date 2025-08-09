@@ -76,9 +76,26 @@
 
 <!-- 📱 Responsive Styles (Last) -->
   <link rel="stylesheet" href="css/(00)responsive.css">
-
+  <script>
+  (() => {
+    const isMobile = () => matchMedia('(max-width:768px)').matches;
+    document.querySelectorAll('.nav-container .nav-menu > li > a + .submenu')
+      .forEach((sm) => {
+        const a = sm.previousElementSibling, li = a.parentElement;
+        a.setAttribute('aria-haspopup','true'); a.setAttribute('aria-expanded','false');
+        a.addEventListener('click', (e) => {
+          if (!isMobile()) return;
+          const open = li.classList.contains('open');
+          if (!open) { e.preventDefault();
+            document.querySelectorAll('.nav-container .nav-menu > li.open')
+              .forEach(n => n.classList.remove('open'));
+            li.classList.add('open'); a.setAttribute('aria-expanded','true');
+          } else { li.classList.remove('open'); a.setAttribute('aria-expanded','false'); }
+        });
+      });
+  })();
+  </script>
 </head>
-
 <body>
 
 <!-- Google Tag Manager (noscript) -->

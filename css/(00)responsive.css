@@ -203,3 +203,21 @@
   }
 
 }
+
+/* hide submenus by default */
+.nav-container .submenu { display:none; visibility:hidden; opacity:0; }
+
+/* desktop only: show on hover/focus */
+@media (hover: hover) and (pointer: fine) {
+  .nav-container li:hover > .submenu,
+  .nav-container li:focus-within > .submenu {
+    display:block; visibility:visible; opacity:1;
+  }
+}
+
+/* mobile: show only when parent li is .open */
+@media (max-width:768px){
+  .nav-container li.open > .submenu {
+    display:block; visibility:visible; opacity:1;
+  }
+}
