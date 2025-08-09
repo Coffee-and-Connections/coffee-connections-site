@@ -4,6 +4,7 @@
 .mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas: "video mission";
   gap: 2rem;
   align-items: start;
   max-width: 1600px;
@@ -16,15 +17,25 @@
   text-align: center;
 }
 
-.video-wrapper {
-  margin-bottom: 1rem;
-}
+/* Assign each section to a grid area */
+.mission-left.video { grid-area: video; }
+.mission-left.statement { grid-area: statement; }
 
 .video-caption {
   font-size: 1.25rem;
   line-height: 1.4;
   color: var(--text-dark);
   font-family: var(--font-heading); /* 🎨 Mission-aligned font system */
+}
+
+/* Mobile layout: stack video on top */
+@media (max-width: 768px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "video"
+      "caption";
+  }
 }
 
 /* Mission Right (Statement) */
