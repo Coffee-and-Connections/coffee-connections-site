@@ -1,2 +1,2 @@
-# coffee-connections-site
-Coffee &amp; Connections Main site build
+## Coffee & Connections
+The source code for the Coffee & Connections web site. 

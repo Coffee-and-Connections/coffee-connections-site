@@ -76,9 +76,26 @@
 
 <!-- 📱 Responsive Styles (Last) -->
   <link rel="stylesheet" href="css/(00)responsive.css">
-
+  <script>
+  (() => {
+    const isMobile = () => matchMedia('(max-width:768px)').matches;
+    document.querySelectorAll('.nav-container .nav-menu > li > a + .submenu')
+      .forEach((sm) => {
+        const a = sm.previousElementSibling, li = a.parentElement;
+        a.setAttribute('aria-haspopup','true'); a.setAttribute('aria-expanded','false');
+        a.addEventListener('click', (e) => {
+          if (!isMobile()) return;
+          const open = li.classList.contains('open');
+          if (!open) { e.preventDefault();
+            document.querySelectorAll('.nav-container .nav-menu > li.open')
+              .forEach(n => n.classList.remove('open'));
+            li.classList.add('open'); a.setAttribute('aria-expanded','true');
+          } else { li.classList.remove('open'); a.setAttribute('aria-expanded','false'); }
+        });
+      });
+  })();
+  </script>
 </head>
-
 <body>
 
 <!-- Google Tag Manager (noscript) -->
@@ -140,13 +157,13 @@
 
 <!-- 🌱 Main Content -->
 <main class="main-layout">
-
+  
   <!-- 💬 Mission Message -->
   <section class="mission-grid">
 
     <!-- 🎥 Cell A1: Video & Caption -->
-    <section class="mission-left" aria-labelledby="welcome-video-heading">
-      <div class="video-wrapper">
+    <section class="mission-left video-section" aria-labelledby="welcome-video-heading">
+      <div class="video">
         <iframe
           src="https://drive.google.com/file/d/1KcrclHJNfFTYyhK7eq2EOEsMFoJ1EWdN/preview"
           title="Welcome to Coffee & Connections"
@@ -158,87 +175,89 @@
         </iframe>
       </div>
 
-      <h3 id="welcome-video-heading" class="video-caption">
-        Welcome to Coffee & Connections<br>
-        <a href="https://drive.google.com/file/d/1KcrclHJNfFTYyhK7eq2EOEsMFoJ1EWdN/view" target="_blank" rel="noopener" class="soft-link">
-          Your seat is waiting. (Click here if video doesn’t load)
-        </a>
-      </h3>
+      <div class="caption">
+        <h3>Welcome to Coffee & Connections</h3>
+        <br>
+        <a href="https://drive.google.com/file/d/1KcrclHJNfFTYyhK7eq2EOEsMFoJ1EWdN/view" target="_blank" rel="noopener" class="soft-link"></a>
+      </div>
     </section>
 
-<!-- 💜 RIGHT SIDE: Mission Statement (Cell B1) -->
-<div class="mission-right">
-  <h2>Coffee & Connections Mission</h2>
-   <p>
-     Through my own journey with PTSD and mental health struggles, I found a purpose rooted in presence, connection, and care.<br><br>
-     <strong>Coffee & Connections</strong> exists to remind you: <strong>It’s okay NOT to be okay.</strong><br>
-     Here, you’ll find a warm cup of coffee, some comfort food, a bunch of kind people to connect with, a game to play, or simply a quiet corner to reflect with a good book.<br>
-     We don’t let people slip through the cracks—we extend hands, offer ears, and lend voices. Because at Coffee & Connections, radical welcome isn’t just a phrase…<br>
-     <strong>It’s a promise!</strong><br><br>
-   <p>
-     Nestled in the heart of El Paso, Coffee & Connections is more than a café—it’s a gentle refuge for weary souls. Here, healing begins not with answers, but with presence. Whether you carry grief, anxiety, or quiet questions, you’ll find a space that listens. We believe in the power of shared silence, warm light, and radical welcome to remind you: you are never alone.
-   </p>
-    <em class="founder-name">—Tony Sorensen</em><br>
-    <em>Founder, Coffee & Connections</em>
-   </p>
- </div>
+    <!-- 💜 Cell B1: Mission Statement -->
+    <section class="mission-left mission-section" aria-labelledby="welcome-video-heading">
+      <div class="mission-right">
+        <h2>Coffee & Connections Mission</h2>
+        <p>
+          Through my own journey with PTSD and mental health struggles, I found a purpose rooted in presence, connection, and care.<br><br>
+          <strong>Coffee & Connections</strong> exists to remind you: <strong>It’s okay NOT to be okay.</strong><br>
+          Here, you’ll find a warm cup of coffee, some comfort food, a bunch of kind people to connect with, a game to play, or simply a quiet corner to reflect with a good book.<br>
+          We don’t let people slip through the cracks—we extend hands, offer ears, and lend voices. Because at Coffee & Connections, radical welcome isn’t just a phrase…<br>
+          <strong>It’s a promise!</strong><br><br>
+        <p>
+          Nestled in the heart of El Paso, Coffee & Connections is more than a café—it’s a gentle refuge for weary souls. Here, healing begins not with answers, but with presence. Whether you carry grief, anxiety, or quiet questions, you’ll find a space that listens. We believe in the power of shared silence, warm light, and radical welcome to remind you: you are never alone.
+        </p>
+          <em class="founder-name">—Tony Sorensen</em><br>
+          <em>Founder, Coffee & Connections</em>
+        </p>
+      </div>
+    </section>
+  </section>
+  <!-- End of Mission Message -->
+    
+    <!-- 📢 Social Sharing -->
+    <section class="social-share" aria-label="Social sharing options to amplify Coffee & Connections" itemscope itemtype="https://schema.org/ShareAction">
+      <h3 class="share-title" id="share-title">Share a Sip of Compassion</h3>
 
-</section>
+      <p class="share-text">
+        Every voice helps build a space rooted in healing, dignity, and radical welcome.
+        If this mission speaks to your heart, pass it on to someone who needs it today.
+      </p>
 
-<!-- 📢 Social Sharing -->
-<section class="social-share" aria-label="Social sharing options to amplify Coffee & Connections" itemscope itemtype="https://schema.org/ShareAction">
-  <h3 class="share-title" id="share-title">Share a Sip of Compassion</h3>
+      <p class="share-note">
+        <em>
+          Some links help others follow the journey, others let you share the invitation.
+          Either way, thank you for amplifying compassion.
+        </em>
+      </p>
 
-  <p class="share-text">
-    Every voice helps build a space rooted in healing, dignity, and radical welcome.
-    If this mission speaks to your heart, pass it on to someone who needs it today.
-  </p>
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://connectionsep.coffee"
+          target="_blank" rel="noopener noreferrer nofollow"
+          role="button" aria-label="Share on Facebook" title="Share Coffee & Connections on Facebook">💙 Facebook</a>
 
-  <p class="share-note">
-    <em>
-      Some links help others follow the journey, others let you share the invitation.
-      Either way, thank you for amplifying compassion.
-    </em>
-  </p>
+        <a href="https://www.linkedin.com/shareArticle?url=https://connectionsep.coffee"
+          target="_blank" rel="noopener noreferrer nofollow"
+          role="button" aria-label="Share on LinkedIn" title="Share Coffee & Connections on LinkedIn">🤝 LinkedIn</a>
 
-  <div class="share-buttons">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer nofollow"
-       role="button" aria-label="Share on Facebook" title="Share Coffee & Connections on Facebook">💙 Facebook</a>
+        <a href="https://www.threads.net/intent/post?text=Discover%20Coffee%20%26%20Connections%20in%20El%20Paso.%20https://connectionsep.coffee"
+          target="_blank" rel="noopener noreferrer nofollow"
+          role="button" aria-label="Share on Threads" title="Share Coffee & Connections on Threads">🧵 Threads</a>
 
-    <a href="https://www.linkedin.com/shareArticle?url=https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer nofollow"
-       role="button" aria-label="Share on LinkedIn" title="Share Coffee & Connections on LinkedIn">🤝 LinkedIn</a>
+        <a href="https://www.instagram.com/coffeeconnectionshub"
+          target="_blank" rel="noopener noreferrer nofollow"
+          role="button" aria-label="Visit Coffee & Connections on Instagram" title="Visit Coffee & Connections on Instagram">📸 Instagram</a>
 
-    <a href="https://www.threads.net/intent/post?text=Discover%20Coffee%20%26%20Connections%20in%20El%20Paso.%20https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer nofollow"
-       role="button" aria-label="Share on Threads" title="Share Coffee & Connections on Threads">🧵 Threads</a>
+        <a href="mailto:?subject=Coffee & Connections El Paso&body=Explore a trauma-informed café: https://connectionsep.coffee"
+          target="_blank" rel="noopener noreferrer nofollow"
+          role="button" aria-label="Share via Email" title="Share Coffee & Connections via Email">✉️ Email</a>
 
-    <a href="https://www.instagram.com/coffeeconnectionshub"
-       target="_blank" rel="noopener noreferrer nofollow"
-       role="button" aria-label="Visit Coffee & Connections on Instagram" title="Visit Coffee & Connections on Instagram">📸 Instagram</a>
+        <button onclick="navigator.clipboard.writeText('https://connectionsep.coffee')"
+                role="button" aria-label="Copy link to clipboard" title="Copy link to share manually">
+          🔗 Copy Link
+        </button>
+      </div>
+    </section>
 
-    <a href="mailto:?subject=Coffee & Connections El Paso&body=Explore a trauma-informed café: https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer nofollow"
-       role="button" aria-label="Share via Email" title="Share Coffee & Connections via Email">✉️ Email</a>
-
-    <button onclick="navigator.clipboard.writeText('https://connectionsep.coffee')"
-            role="button" aria-label="Copy link to clipboard" title="Copy link to share manually">
-      🔗 Copy Link
-    </button>
-  </div>
-</section>
-
-<!-- 🌟 Founding Circle -->
-<section id="founding-circle" itemscope itemtype="https://schema.org/Organization">
-  <header>
-    <h2>
-      <a href="founding-circle.html" class="founding-circle-link" aria-label="Learn more about the Founding Circle">
-        The Founding Circle
-      </a>
-    </h2>
-    <p>Where lived experience, ethical leadership, and shared healing come to the table.</p>
-  </header>
+  <!-- 🌟 Founding Circle -->
+  <section id="founding-circle" itemscope itemtype="https://schema.org/Organization">
+    <header>
+      <h2>
+        <a href="founding-circle.html" class="founding-circle-link" aria-label="Learn more about the Founding Circle">
+          The Founding Circle
+        </a>
+      </h2>
+      <p>Where lived experience, ethical leadership, and shared healing come to the table.</p>
+    </header>
+  </section>
 
   <section class="founding-section">
     <p>This initiative is built by those who don’t just understand trauma, resilience, and radical reinvention<span class="highlight">—they’ve lived it.</span></p>
@@ -257,15 +276,13 @@
 
     <p>As each seat is confirmed, this page will reflect those joining us in building this sanctuary space.</p>
   </section>
-</section>
 
-<!-- ⏳ Countdown -->
-      <section id="countdown" role="region" aria-label="Grand Opening Countdown">
-      <h2>Coming Soon: A Healing Café in El Paso Where Trauma Meets Compassion and Connection Finds a Home</h2>
-      <p id="timer" aria-live="polite">Loading...</p>
-    </section>
-
-  </main>
+  <!-- ⏳ Countdown -->
+  <section id="countdown" role="region" aria-label="Grand Opening Countdown">
+    <h2>Coming Soon: A Healing Café in El Paso Where Trauma Meets Compassion and Connection Finds a Home</h2>
+    <p id="timer" aria-live="polite">Loading...</p>
+  </section>
+</main>
 
 <!-- 🤝 Footer -->
 <footer>
@@ -273,23 +290,23 @@
     Built with purpose. Created with care. © 2025 Coffee & Connections El Paso
   </p>
   <div class="social-links">
-  <a href="https://instagram.com/coffeeconnectionshub"
-     aria-label="Instagram"
-     title="Visit us on Instagram">📸 <span class="visually-hidden">Instagram</span></a>
-
-  <a href="https://threads.net/@coffeeconnectionshub"
-     aria-label="Threads"
-     title="Follow us on Threads">🧵 <span class="visually-hidden">Threads</span></a>
-
-  <a href="https://linkedin.com/in/anthony-sorensen-a4b77a36a"
-     aria-label="LinkedIn"
-     title="Connect on LinkedIn">🤝 <span class="visually-hidden">LinkedIn</span></a>
-
-  <a href="https://facebook.com/profile.php?id=61576892447799"
-     aria-label="Facebook"
-     title="Like us on Facebook">💙 <span class="visually-hidden">Facebook</span></a>
-</div>
-  
+    <a href="https://instagram.com/coffeeconnectionshub"
+      aria-label="Instagram"
+      title="Visit us on Instagram">📸 <span class="visually-hidden">Instagram</span>
+    </a>
+    <a href="https://threads.net/@coffeeconnectionshub"
+      aria-label="Threads"
+      title="Follow us on Threads">🧵 <span class="visually-hidden">Threads</span>
+    </a>
+    <a href="https://linkedin.com/in/anthony-sorensen-a4b77a36a"
+      aria-label="LinkedIn"
+      title="Connect on LinkedIn">🤝 <span class="visually-hidden">LinkedIn</span>
+    </a>
+    <a href="https://facebook.com/profile.php?id=61576892447799"
+      aria-label="Facebook"
+      title="Like us on Facebook">💙 <span class="visually-hidden">Facebook</span>
+    </a>
+  </div>
 </footer>
 
 <!-- ⌛ Countdown Script -->
@@ -331,6 +348,5 @@
     faders.forEach(fader => appearOnScroll.observe(fader));
   });
 </script>
-
 </body>
 </html>
