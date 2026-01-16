@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The story of Coffee & Connections. Born from pain, built for healing." />
+  <meta name="description" content="The story of Coffee & Connections. Built by veterans and survivors to catch people before the crisis." />
   <title>Our Mission | Coffee & Connections</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
-  <link rel="stylesheet" href="css/(03)out-mission.css"> 
+  <link rel="stylesheet" href="css/(04)mission.css"> 
 </head>
 
 <body>
@@ -21,7 +21,12 @@
   <nav class="nav-container" role="navigation">
     <ul class="nav-menu">
       <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="menu.html">☕ Coffee</a></li>
+      <li>
+        <a href="menu.html">☕ Coffee</a>
+        <ul class="submenu">
+          <li><a href="menu.html">Full Menu</a></li>
+        </ul>
+      </li>
       <li>
         <a href="our-mission.html" class="active">💬 Mission</a>
         <ul class="submenu">
@@ -34,130 +39,113 @@
     </ul>
   </nav>
 
-  <main class="main-layout">
-
+  <main>
+    
     <section class="mission-hero">
-      <h1>Coffee & Connections is a Sanctuary</h1>
-      <h2 class="hero-subtitle">Where safety lives before healing begins.</h2>
-      
-      <div class="hero-text">
-        <p>We didn't build this to serve coffee. We built it because too many of us found pain before we ever found safety.</p>
-        <p>
-          Marylou survived trauma inside a system that tried to silence her.<br>
-          Tony almost died at his own hand to show how deeply it was broken.
-        </p>
-        <p><strong>This space was born from that fire—from stories no one wanted to hear, and lives no one cared to try to save.</strong></p>
-      </div>
+      <h1 class="mission-title">A Sanctuary Before the Crisis</h1>
+      <p class="mission-subtitle">
+        We didn't build this to serve coffee. We built it because too many of us found pain before we ever found safety.
+      </p>
     </section>
 
-    <section class="origin-story">
-      <h3>Where It Started</h3>
-      <p>
-        It started in a car. Tony had been thinking about what life might look like after the Army. His love of coffee sparked an idea: <em>“I should open a coffee shop.”</em>
+    <article class="story-container">
+      <h2 class="story-heading">Where It Started</h2>
+      
+      <p class="story-text">
+        It started in a car. Tony had been thinking about what life might look like after the Army. His love of coffee sparked an idea: <span class="highlight-text">“I should open a coffee shop.”</span>
       </p>
-      <p>
-        One day, on the way to or from an intensive group trauma therapy appointment, Marylou said: 
-        <strong>“What if you tied your coffee shop to mental health?”</strong> 
-        A simple sentence. And an idea was born.
+
+      <p class="story-text">
+        One day, on the way to or from an intensive group trauma therapy appointment, Marylou said: <span class="highlight-text">“What if you tied your coffee shop to mental health?”</span> A simple sentence. And an idea was born.
       </p>
-      <p>
-        What if we took all the pain—all the missed opportunities where someone could've helped us—and turned that original idea into a bridge? 
-        A space that caught people <strong>before the crisis</strong>. A space where saying “I'm not okay” wasn’t a liability... but an opening.
+
+      <p class="story-text">
+        What if we took all the pain—all the missed opportunities where someone could've helped us—and turned that original idea into a bridge? A space that caught people <strong>before the crisis</strong>. A space where saying “I'm not okay” wasn’t a liability... but an opening.
       </p>
-      <div class="highlight-box">
-        <p>
-          A place where someone who's walked through the fire says: 
-          <strong>“You're not alone. We got you.”</strong> 
-          Even if that means just sitting with them. Listening. Or helping them find the help they need right now.
-        </p>
-      </div>
-      <p>
+
+      <p class="story-text">
         We're not building a coffee shop. We're building the space we wished we had when we needed it most.
       </p>
-    </section>
 
-    <section class="the-solution">
-      <p>
-        In the military and mental health systems, we saw things we couldn't unsee—people discarded, support delayed, and stigma so heavy it made saying “I'm not okay” feel almost criminal.
+      <p class="story-text">
+        In the military and mental health systems, we saw things we couldn't unsee—people discarded, support delayed, and stigma so heavy it made asking for help feel criminal. So we decided to act. We’re filling those cracks with cement made from community, understanding, and love.
       </p>
-      <p>
-        So we decided to act. We’re filling those cracks with cement made from community, understanding, and love. The kind built with open hands, not intake forms. 
-        The kind that says: <strong>“Your story—no matter what it is, or where you are in it—is safe here.”</strong>
-      </p>
-      
-      <div class="founders-signoff">
-        <p>Tony & Marylou — Founders of Coffee & Connections</p>
-        <small>On the way to healing, they imagined a space for others to find theirs.</small>
+
+      <div class="founders-voice">
+        <div class="quote-block">
+          <p class="quote-text">"I tried to die to make someone care. Now I live to make sure no one feels alone again."</p>
+          <span class="quote-author">— Anthony</span>
+        </div>
+        <div class="quote-block">
+          <p class="quote-text">"I survived what never should’ve happened. So now I build what never existed."</p>
+          <span class="quote-author">— Marylou</span>
+        </div>
       </div>
-    </section>
+    </article>
 
     <section class="principles-section">
-      <h3>Our Guiding Principles</h3>
+      <h2 class="section-header">Our Guiding Principles</h2>
+      
       <div class="principles-grid">
         
         <div class="principle-card">
-          <h4>☕ Comfort First</h4>
-          <p>Coffee is a ritual—a warmth offered, not sold. Every cup is a gesture of care.</p>
+          <span class="principle-icon">☕</span>
+          <h3 class="principle-title">Comfort First</h3>
+          <p class="principle-desc">Coffee is a ritual—a warmth offered, not sold. Every cup is a gesture of care.</p>
         </div>
 
         <div class="principle-card">
-          <h4>👥 Belonging Before Bureaucracy</h4>
-          <p>We don't need paperwork or forms to welcome you. We see the person, their story, their lived truth.</p>
+          <span class="principle-icon">👥</span>
+          <h3 class="principle-title">Belonging Before Bureaucracy</h3>
+          <p class="principle-desc">We don't need paperwork or forms to welcome you. We see the person, their story, their lived truth.</p>
         </div>
 
         <div class="principle-card">
-          <h4>🧠 Trauma-Informed Always</h4>
-          <p>From how we greet you to how our chairs are arranged—we build with your nervous system in mind.</p>
+          <span class="principle-icon">🧠</span>
+          <h3 class="principle-title">Trauma-Informed Always</h3>
+          <p class="principle-desc">From how we greet you to how our chairs are arranged—we build with your nervous system in mind.</p>
         </div>
 
         <div class="principle-card">
-          <h4>🎯 Governance with Heart</h4>
-          <p>We reject hierarchy that harms. Every decision is shaped by shared voice, transparency, and dignity.</p>
+          <span class="principle-icon">🎯</span>
+          <h3 class="principle-title">Governance with Heart</h3>
+          <p class="principle-desc">We reject hierarchy that harms. Every decision is shaped by shared voice, transparency, and dignity.</p>
         </div>
 
         <div class="principle-card">
-          <h4>🎮 Joy Is Resistance</h4>
-          <p>Our gaming rooms are landing pads for laughter and self-expression. Joy isn’t a luxury here—it’s a healing force.</p>
+          <span class="principle-icon">🎮</span>
+          <h3 class="principle-title">Joy Is Resistance</h3>
+          <p class="principle-desc">Our gaming rooms are landing pads for laughter and self-expression. Joy isn’t a luxury here—it’s a healing force.</p>
         </div>
 
         <div class="principle-card">
-          <h4>🌍 Context Creates Clarity</h4>
-          <p>We honor the layers of lived truth—history, identity, and culture. Every story carries weight, and we make space for all of it.</p>
+          <span class="principle-icon">🌍</span>
+          <h3 class="principle-title">Context Creates Clarity</h3>
+          <p class="principle-desc">We honor the layers of lived truth—history, identity, and culture. Every story carries weight, and we make space for all of it.</p>
         </div>
 
       </div>
     </section>
 
-    <section class="personal-quotes">
-      <div class="quote-block">
-        <strong>From Anthony:</strong>
-        <p>"I tried to die to make someone care. Now I live to make sure no one feels alone again."</p>
-      </div>
-      <div class="quote-block">
-        <strong>From Marylou:</strong>
-        <p>"I survived what never should’ve happened. So now I build what never existed—a space that sees the whole person before the crisis."</p>
-      </div>
-    </section>
-
-    <section class="mission-closing">
-      <h3>This Is Just the Beginning</h3>
-      <p>
+    <section class="mission-cta">
+      <p class="cta-text">
         This mission was born in pain—but it’s rooted in people. We built this for you. Not for clicks. Not for praise. But for connection.
       </p>
-      <p>
-        We started with survivors and veterans. But we built this for anyone carrying unseen weight. <strong>This café is yours, too.</strong>
-      </p>
-      <br>
-      <p>If this moved you, you belong in the Founding Circle.</p>
-      <a href="founding-circle.html" class="cta-button">Join the Circle</a>
+      <a href="founding-circle.html" class="cta-button">Join the Founding Circle</a>
     </section>
 
   </main>
 
   <footer>
     <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
+    <div class="social-links">
+      <a href="#">📸</a> <a href="#">🧵</a> <a href="#">🤝</a> <a href="#">💙</a>
+    </div>
   </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
