@@ -3,331 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover the mission behind Coffee & Connections—a trauma-informed café built from lived experience, radical welcome, and community-rooted healing in El Paso." />
-  <title>Our Mission | Coffee & Connections El Paso</title>
+  <meta name="description" content="The story of Coffee & Connections. Born from pain, built for healing." />
+  <title>Our Mission | Coffee & Connections</title>
 
-<!-- ✅ Canonical Tag -->
-  <link rel="canonical" href="https://connectionsep.coffee/our-mission.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-<!-- 📊 Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0BKM8ZWW8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-K0BKM8ZWW8');
-  </script>
-
-<!-- 🧭 Google Tag Manager (GTM) -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W6LDGTQC');
-   </script>
-
-<!-- 🌐 Open Graph Meta Tags -->
-  <meta property="og:title" content="Coffee & Connections — Where Coffee Meets Compassion & Connections Change Lives" />
-  <meta property="og:description" content="Trauma-informed café & digital platform in El Paso offering radical welcome and healing-centered support." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://connectionsep.coffee/our-mission.html" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="theme-color" content="#6B4C3B" />
-  <meta property="og:image:alt" content="Coffee & Connections banner showing community and compassion" />
-
-<!-- 🧠 Structured Data (JSON-LD) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Coffee & Connections",
-  "url": "https://connectionsep.coffee/",
-  "description": "Trauma-informed café and digital platform in El Paso focused on healing, advocacy, and radical welcome.",
-  "sameAs": [
-    "https://www.instagram.com/coffeeconnectionshub",
-    "https://www.threads.net/@coffeeconnectionshub",
-    "https://www.linkedin.com/in/anthony-sorensen-a4b77a36a",
-    "https://www.facebook.com/profile.php?id=61576892447799"
-  ]
-}
-</script>
-
-<!-- 🔗 Preconnect for Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- ✍️ Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  
-<!-- 🧱 Foundation Styles -->
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
-  <link rel="stylesheet" href="css/(00)social-media-sharing.css">
-
-<!-- 🎨 Page-Specific Styles -->
-  <link rel="stylesheet" href="css/(03)our-mission.css">
-
-<!-- 📱 Responsive Styles (Last) -->
-  <link rel="stylesheet" href="css/(00)responsive.css">
-
+  <link rel="stylesheet" href="css/(03)out-mission.css"> 
 </head>
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6LDGTQC"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <nav class="nav-container" role="navigation">
+    <ul class="nav-menu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="menu.html">☕ Coffee</a></li>
+      <li>
+        <a href="our-mission.html" class="active">💬 Mission</a>
+        <ul class="submenu">
+          <li><a href="healing-in-motion.html">Healing in Motion</a></li>
+          <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
+          <li><a href="how-you-can-help.html">How You Can Help</a></li>
+        </ul>
+      </li>
+      <li><a href="resilience-market.html">🛍️ Shop</a></li>
+    </ul>
+  </nav>
 
-<!-- ☕ Banner Header -->
-<header class="banner-header" role="banner" aria-label="Site branding and logo">
-  <div class="banner-overlay"></div>
-  <div class="banner-container">
-    <div class="logo-block">
-      <img src="asset/CCEP_SVG.svg" alt="Coffee & Connections logo" />
-      <p class="logo-caption">COFFEE & CONNECTIONS</p>
-    </div>
-    <div class="text-block">
-      <h1>Coffee & Connections</h1>
-      <p class="tagline">Where Coffee Meets Compassion & Connections Change Lives</p>
-      <p class="visually-hidden">
-        Coffee & Connections is a trauma-informed café and digital platform in El Paso, offering radical welcome, healing-centered design, and community-rooted support for mental health and advocacy.
-      </p>
-    </div>
-  </div>
-</header>
+  <main class="main-layout">
 
-<!-- 🧭 Navigation -->
-<nav class="nav-container" role="navigation" aria-label="Main site navigation">
-  <ul class="nav-menu">
-    <li><a href="index.html">🏠 Home</a></li>
+    <section class="mission-hero">
+      <h1>Coffee & Connections is a Sanctuary</h1>
+      <h2 class="hero-subtitle">Where safety lives before healing begins.</h2>
+      
+      <div class="hero-text">
+        <p>We didn't build this to serve coffee. We built it because too many of us found pain before we ever found safety.</p>
+        <p>
+          Marylou survived trauma inside a system that tried to silence her.<br>
+          Tony almost died at his own hand to show how deeply it was broken.
+        </p>
+        <p><strong>This space was born from that fire—from stories no one wanted to hear, and lives no one cared to try to save.</strong></p>
+      </div>
+    </section>
 
-    <li>
-      <a href="menu.html">☕ Coffee</a>
-      <ul class="submenu">
-        <li><a href="menu.html">Menu</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="our-mission.html">💬 Mission</a>
-      <ul class="submenu">
-        <li><a href="our-mission.html"class="active" aria-current="page">Our Mission</a></li>
-        <li><a href="healing-in-motion.html">Healing in Motion</a></li>
-        <li><a href="how-you-can-help.html">How You Can Help</a></li>
-        <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="resilience-market.html">🛍️ Shop</a>
-      <ul class="submenu">
-        <li><a href="resilience-market.html">Resilience Market</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-<!-- 🧡 Foundational Words -->
-<section class="mission-hero" aria-label="Foundational Words">
-  <h2 class="mission-title">
-    “Coffee & Connections is a sanctuary—<br>where safety lives before healing begins.”
-  </h2>
-
-  <p class="mission-subtext">
-    We didn't build this to serve coffee.<br>
-    We built it because too many of us found pain before we ever found safety.
-  </p>
-
-  <p class="mission-story">
-    <strong>Marylou survived trauma</strong> inside a system that tried to silence her.<br>
-    <strong>Tony almost died</strong> at his own hand to show how deeply it was broken.
-  </p>
-
-  <p class="mission-story">
-    This space was born from that fire—from stories no one wanted to hear,<br>
-    and lives no one <strong>cared to try to save.</strong>
-  </p>
-</section>
-
-<!-- 🛤️ The Origin Journey -->
-<section class="mission-origin" aria-label="The Origin Journey">
-  <div class="origin-left">
-    <h2 class="origin-title">Where It Started</h2>
-
-    <div class="story-block">
+    <section class="origin-story">
+      <h3>Where It Started</h3>
       <p>
-        It started in a car. Tony had been thinking about what life might look like after the Army.
-        His love of coffee sparked an idea:
-        <span class="mission-emphasis">“I should open a coffee shop.”</span>
+        It started in a car. Tony had been thinking about what life might look like after the Army. His love of coffee sparked an idea: <em>“I should open a coffee shop.”</em>
       </p>
-    </div>
-
-    <div class="story-block">
       <p>
-        One day, on the way to or from an intensive group trauma therapy appointment, Marylou said:
-        <span class="mission-emphasis">“What if you tied your coffee shop to mental health?”</span>
+        One day, on the way to or from an intensive group trauma therapy appointment, Marylou said: 
+        <strong>“What if you tied your coffee shop to mental health?”</strong> 
         A simple sentence. And an idea was born.
       </p>
-    </div>
-
-    <div class="story-block">
       <p>
-        What if we took all the pain—all the missed opportunities where someone could've helped us—
-        and turned that original idea into a bridge?
-        <span class="mission-emphasis">A space that caught people before the crisis.</span>
-        A space where saying “I'm not okay” wasn’t a liability... but an opening.
+        What if we took all the pain—all the missed opportunities where someone could've helped us—and turned that original idea into a bridge? 
+        A space that caught people <strong>before the crisis</strong>. A space where saying “I'm not okay” wasn’t a liability... but an opening.
       </p>
-    </div>
-
-    <div class="story-block">
+      <div class="highlight-box">
+        <p>
+          A place where someone who's walked through the fire says: 
+          <strong>“You're not alone. We got you.”</strong> 
+          Even if that means just sitting with them. Listening. Or helping them find the help they need right now.
+        </p>
+      </div>
       <p>
-        A place where someone who's walked through the fire says:
-        <em>“You're not alone. We got you.”</em>
-        Even if that means just sitting with them. Listening. Or helping them find the help they need
-        <span class="truth-strike">right now</span>.
+        We're not building a coffee shop. We're building the space we wished we had when we needed it most.
       </p>
-    </div>
+    </section>
 
-    <div class="story-block">
+    <section class="the-solution">
       <p>
-        We're not building a coffee shop.
-        <span class="mission-emphasis">We're building the space we wished we had when we needed it most.</span>
+        In the military and mental health systems, we saw things we couldn't unsee—people discarded, support delayed, and stigma so heavy it made saying “I'm not okay” feel almost criminal.
       </p>
-    </div>
-
-    <div class="story-block">
       <p>
-        In the military and mental health systems, we saw things we couldn't unsee—
-        <span class="callout-emotion">people discarded</span>, <span class="callout-emotion">support delayed</span>,
-        and stigma so heavy it made saying “I'm not okay” feel almost criminal.
+        So we decided to act. We’re filling those cracks with cement made from community, understanding, and love. The kind built with open hands, not intake forms. 
+        The kind that says: <strong>“Your story—no matter what it is, or where you are in it—is safe here.”</strong>
       </p>
-    </div>
+      
+      <div class="founders-signoff">
+        <p>Tony & Marylou — Founders of Coffee & Connections</p>
+        <small>On the way to healing, they imagined a space for others to find theirs.</small>
+      </div>
+    </section>
 
-    <div class="story-block">
+    <section class="principles-section">
+      <h3>Our Guiding Principles</h3>
+      <div class="principles-grid">
+        
+        <div class="principle-card">
+          <h4>☕ Comfort First</h4>
+          <p>Coffee is a ritual—a warmth offered, not sold. Every cup is a gesture of care.</p>
+        </div>
+
+        <div class="principle-card">
+          <h4>👥 Belonging Before Bureaucracy</h4>
+          <p>We don't need paperwork or forms to welcome you. We see the person, their story, their lived truth.</p>
+        </div>
+
+        <div class="principle-card">
+          <h4>🧠 Trauma-Informed Always</h4>
+          <p>From how we greet you to how our chairs are arranged—we build with your nervous system in mind.</p>
+        </div>
+
+        <div class="principle-card">
+          <h4>🎯 Governance with Heart</h4>
+          <p>We reject hierarchy that harms. Every decision is shaped by shared voice, transparency, and dignity.</p>
+        </div>
+
+        <div class="principle-card">
+          <h4>🎮 Joy Is Resistance</h4>
+          <p>Our gaming rooms are landing pads for laughter and self-expression. Joy isn’t a luxury here—it’s a healing force.</p>
+        </div>
+
+        <div class="principle-card">
+          <h4>🌍 Context Creates Clarity</h4>
+          <p>We honor the layers of lived truth—history, identity, and culture. Every story carries weight, and we make space for all of it.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="personal-quotes">
+      <div class="quote-block">
+        <strong>From Anthony:</strong>
+        <p>"I tried to die to make someone care. Now I live to make sure no one feels alone again."</p>
+      </div>
+      <div class="quote-block">
+        <strong>From Marylou:</strong>
+        <p>"I survived what never should’ve happened. So now I build what never existed—a space that sees the whole person before the crisis."</p>
+      </div>
+    </section>
+
+    <section class="mission-closing">
+      <h3>This Is Just the Beginning</h3>
       <p>
-        So we decided to act. We’re filling those cracks with cement made from
-        <span class="mission-emphasis">community, understanding, and love</span>.
-        The kind built with open hands, not intake forms. The kind that says:
-        <em>“Your story—no matter what it is, or where you are in it—is safe here.”</em>
+        This mission was born in pain—but it’s rooted in people. We built this for you. Not for clicks. Not for praise. But for connection.
       </p>
-    </div>
-  </div>
+      <p>
+        We started with survivors and veterans. But we built this for anyone carrying unseen weight. <strong>This café is yours, too.</strong>
+      </p>
+      <br>
+      <p>If this moved you, you belong in the Founding Circle.</p>
+      <a href="founding-circle.html" class="cta-button">Join the Circle</a>
+    </section>
 
-<!-- 🛤️ Founder Photo -->
-<div class="origin-right">
-  <figure class="founder-photo">
-    <img src="asset/founders.png" alt="Tony and Marylou — Founders of Coffee & Connections" width="600" height="400" loading="lazy" decoding="async">
-    <figcaption>
-      Tony & Marylou — Founders of Coffee & Connections  
-      <br><span class="caption-context">On the way to healing, they imagined a space for others to find theirs.</span>
-    </figcaption>
-  </figure>
-</div>
-</section>
+  </main>
 
-<!-- 🎯 Mission Pillars -->
-<section class="mission-pillars" aria-label="Our Guiding Principles">
-  <h2 class="pillars-title">Our Guiding Principles</h2>
-  <ul class="pillars-list">
-    <li>
-      <span class="pillar-label">☕ Comfort First:</span><br>
-      Coffee is a ritual—a warmth offered, not sold. Every cup is a gesture of care.
-    </li>
-    <li>
-      <span class="pillar-label">👥 Belonging Before Bureaucracy:</span><br>
-      We don't need paperwork or forms to welcome you, listen to you, or lend a helping hand.<br>
-      At Coffee & Connections, we see the person, their story, their lived truth.
-    </li>
-    <li>
-      <span class="pillar-label">🧠 Trauma-Informed Always:</span><br>
-      From how we greet you to how our chairs are arranged—we build with your nervous system in mind.
-    </li>
-    <li>
-      <span class="pillar-label">🎯 Governance with Heart:</span><br>
-      We reject hierarchy that harms. Every decision is shaped by shared voice, transparency, and dignity.
-    </li>
-    <li>
-      <span class="pillar-label">🎮 Joy Is Resistance:</span><br>
-      Our gaming rooms aren’t just for Magic: The Gathering or Dungeons & Dragons—they’re landing pads for laughter, community, and self-expression.<br>
-      Joy isn’t a luxury here—it’s a healing force.
-    </li>
-    <li>
-      <span class="pillar-label">🌍 Context Creates Clarity:</span><br>
-      We honor the layers of lived truth—history, identity, and culture.  
-      Every story carries weight, and we make space for all of it.
-    </li>
-
-  </ul>
-</section>
-
-<!-- ✍️ Founders' Message -->
-<section class="mission-founders" aria-label="Founders' Message">
-  <p><span class="origin-voice">From Anthony:</span><br>
-    I tried to die to make someone care.<br>
-    Now I live to make sure no one feels alone again.
-  </p>
-
-  <p><span class="origin-voice">From Marylou:</span><br>
-    I survived what never should’ve happened.<br>
-    So now I build what never existed—a space that sees the whole person before the crisis.
-  </p>
-
-  <p><span class="origin-voice">Together:</span><br>
-    This mission was born in pain—but it’s rooted in people.<br>
-    We built this for you. Not for clicks. Not for praise. But for connection.<br>
-    <span class="collective-call">If this moved you, you belong in the Founding Circle</span> —
-    not just as a supporter, but as someone who helps hold this ground.
-  </p>
-</section>
-
-<!-- 🤝 Invitation -->
-<section class="mission-invitation" aria-label="Invitation to Join">
-  <h2 class="invitation-title">This Is Just the Beginning</h2>
-  <p class="invitation-text">
-    We started with survivors and veterans. But we built this for anyone carrying unseen weight.
-    This café is yours, too.
-  </p>
-  <a href="founding-circle.html" class="cta cta-join" role="button" aria-label="Join the Founding Circle">
-    Learn How You Can Join
-  </a>
-</section>
-
-<!-- 📢 SOCIAL SHARING: Amplify the Mission -->
-<section class="social-share" aria-label="Amplify the Mission">
-  <h3 class="share-title">Echo the Mission</h3>
-  
-  <p class="share-text">
-    You just read a story rooted in trauma, truth, and transformation.
-    Help someone else feel seen—<span class="truth-strike">share this sanctuary forward.</span>
-  </p>
-
-  <p class="share-note">
-    <em>Some links help others follow the journey, others let you share the invitation.
-    Either way, <span class="callout-emotion">thank you for amplifying compassion.</span></em>
-  </p>
-
-  <div class="share-buttons">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://connectionsep.coffee/03our-mission.html" target="_blank" rel="noopener noreferrer">💙 Facebook</a>
-    <a href="https://www.linkedin.com/shareArticle?url=https://connectionsep.coffee/03our-mission.html" target="_blank" rel="noopener noreferrer">🤝 LinkedIn</a>
-    <a href="https://www.threads.net/intent/post?text=The%20Coffee%20%26%20Connections%20mission%20was%20built%20on%20trauma,%20truth,%20and%20healing.%20https://connectionsep.coffee/03our-mission.html" target="_blank" rel="noopener noreferrer">🧵 Threads</a>
-    <a href="https://www.instagram.com/coffeeconnectionshub" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-    <a href="mailto:?subject=Coffee & Connections Mission&body=Discover a trauma-informed sanctuary built on lived truth: https://connectionsep.coffee/03our-mission.html" target="_blank" rel="noopener noreferrer">✉️ Email</a>
-  </div>
-</section>
-
-<!-- 🤝 Footer -->
-<footer role="contentinfo">
-  <p>Built with purpose. Created with care. &copy; 2025 Coffee & Connections El Paso</p>
-</footer>
+  <footer>
+    <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
