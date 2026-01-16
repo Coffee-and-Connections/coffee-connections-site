@@ -3,774 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore the Coffee & Connections menu—trauma-informed drinks named for resilience, healing, and advocacy. Every sip supports community-rooted change in El Paso." />
-  <title>Menu | Coffee & Connections El Paso</title>
+  <meta name="description" content="View the menu at Coffee & Connections. Ethically sourced coffee, teas, and comfort food in El Paso." />
+  <title>Menu | Coffee & Connections</title>
 
-<!-- ✅ Canonical Tag -->
-  <link rel="canonical" href="https://connectionsep.coffee/menu.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- 📊 Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0BKM8ZWW8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-K0BKM8ZWW8');
-  </script>
-
-<!-- 🧭 Google Tag Manager (GTM) -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W6LDGTQC');
-   </script>
-
-<!-- 🌐 Open Graph Meta Tags -->
-  <meta property="og:title" content="Coffee & Connections Menu — Every Sip Tells a Story" />  
-  <meta property="og:description" content="From 'The Advocate' to 'The Healer,' our drinks are named for resilience, healing, and advocacy. Explore our trauma-informed menu in El Paso." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://connectionsep.coffee/menu.html" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="theme-color" content="#6B4C3B" />
-  <meta property="og:image" content="https://connectionsep.coffee/assets/menu-banner.jpg" />
-
-<!-- 🧠 Structured Data (JSON-LD) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Coffee & Connections",
-  "url": "https://connectionsep.coffee/",
-  "description": "Trauma-informed café and digital platform in El Paso focused on healing, advocacy, and radical welcome.",
-  "sameAs": [
-    "https://www.instagram.com/coffeeconnectionshub",
-    "https://www.threads.net/@coffeeconnectionshub",
-    "https://www.linkedin.com/in/anthony-sorensen-a4b77a36a",
-    "https://www.facebook.com/profile.php?id=61576892447799"
-  ]
-}
-</script>
-
-<!-- 🔗 Preconnect for Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- ✍️ Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  
-<!-- 🧱 Foundation Styles -->
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
-  <link rel="stylesheet" href="css/(00)social-media-sharing.css">
-
-<!-- 🎨 Page-Specific Styles -->
-  <link rel="stylesheet" href="css/(02)menu.css">
-
-<!-- 📱 Responsive Styles (Last) -->
-  <link rel="stylesheet" href="css/(00)responsive.css">
-
+  <link rel="stylesheet" href="css/(02)menu.css"> 
 </head>
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6LDGTQC"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <nav class="nav-container" role="navigation">
+    <ul class="nav-menu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li>
+        <a href="menu.html" class="active">☕ Coffee</a>
+        <ul class="submenu">
+          <li><a href="menu.html">Menu</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="our-mission.html">💬 Mission</a>
+        <ul class="submenu">
+          <li><a href="healing-in-motion.html">Healing in Motion</a></li>
+          <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
+          <li><a href="how-you-can-help.html">How You Can Help</a></li>
+        </ul>
+      </li>
+      <li><a href="resilience-market.html">🛍️ Shop</a></li>
+    </ul>
+  </nav>
 
-<!-- ☕ Banner Header -->
-<header class="banner-header" role="banner" aria-label="Site branding and logo">
-  <div class="banner-overlay"></div>
-  <div class="banner-container">
-    <div class="logo-block">
-      <img src="asset/CCEP_SVG.svg" alt="Coffee & Connections logo" />
-      <p class="logo-caption">COFFEE & CONNECTIONS</p>
-    </div>
-    <div class="text-block">
-      <h1>Coffee & Connections</h1>
-      <p class="tagline">Where Coffee Meets Compassion & Connections Change Lives</p>
-      <p class="visually-hidden">
-        Coffee & Connections is a trauma-informed café and digital platform in El Paso, offering radical welcome, healing-centered design, and community-rooted support for mental health and advocacy.
+  <main class="main-layout">
+
+    <header class="menu-header">
+      <h1>Our Menu</h1>
+      <p class="menu-subtitle">Ethically Sourced. Crafted with Care. Served with Compassion.</p>
+      <p class="sourcing-note">
+        Proudly brewing beans from <strong>Ben “The Beanfather” Riley</strong>. 
+        Every cup supports veteran-owned business and ethical trade.
       </p>
+    </header>
+
+    <div class="menu-grid">
+
+      <section class="menu-category">
+        <h2>Espresso Bar</h2>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">The Connection Latte</span>
+              <span class="item-price">$5.50</span>
+            </div>
+            <p class="item-desc">Our signature latte with honey, lavender, and oat milk.</p>
+          </li>
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Americano</span>
+              <span class="item-price">$3.50</span>
+            </div>
+            <p class="item-desc">Espresso and hot water. Simple, bold, effective.</p>
+          </li>
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Cappuccino</span>
+              <span class="item-price">$4.50</span>
+            </div>
+            <p class="item-desc">Equal parts espresso, steamed milk, and foam.</p>
+          </li>
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Cortado</span>
+              <span class="item-price">$4.00</span>
+            </div>
+            <p class="item-desc">Equal parts espresso and warm milk to reduce acidity.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-category">
+        <h2>Brew & Tea</h2>
+        <ul class="menu-list">
+          
+          <li class="menu-item featured-item">
+            <div class="item-header">
+              <span class="item-name">Classic Roast (The Fuel)</span>
+            </div>
+            
+            <div class="pricing-options">
+              <div class="price-row">
+                <span class="p-name">To-Go (12oz / 16oz)</span>
+                <span class="p-dots"></span>
+                <span class="p-cost">$3.00 / $3.50</span>
+              </div>
+              
+              <div class="price-row sanctuary-row">
+                <span class="p-name">The "Sanctuary" Pour <small>(For Here)</small></span>
+                <span class="p-dots"></span>
+                <span class="p-cost">$5.25 / $6.15</span>
+              </div>
+            </div>
+
+            <p class="item-desc">
+              Unlimited Refills. Served in a ceramic mug. Stay as long as you need.
+            </p>
+          </li>
+
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Pour Over</span>
+              <span class="item-price">$5.00</span>
+            </div>
+            <p class="item-desc">Single-origin selection. Hand-poured for clarity.</p>
+          </li>
+          
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Loose Leaf Tea</span>
+              <span class="item-price">$3.50</span>
+            </div>
+            <p class="item-desc">Earl Grey, Green, Chamomile, or Peppermint.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-category full-width">
+        <h2>Comfort & Nourishment</h2>
+        <ul class="menu-list two-column">
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Avocado Toast</span>
+              <span class="item-price">$8.00</span>
+            </div>
+            <p class="item-desc">Sourdough, smashed avocado, chili flakes, sea salt.</p>
+          </li>
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Local Pastries</span>
+              <span class="item-price">Var.</span>
+            </div>
+            <p class="item-desc">Rotating selection from El Paso’s best bakers.</p>
+          </li>
+          <li class="menu-item">
+            <div class="item-header">
+              <span class="item-name">Oatmeal Bowl</span>
+              <span class="item-price">$6.00</span>
+            </div>
+            <p class="item-desc">Steel-cut oats, brown sugar, berries, and pecans.</p>
+          </li>
+        </ul>
+      </section>
+
     </div>
-  </div>
-</header>
-
-<!-- 🧭 Navigation -->
-<nav class="nav-container" role="navigation" aria-label="Main site navigation">
-  <ul class="nav-menu">
-    <li><a href="index.html">🏠 Home</a></li>
-
-    <li>
-      <a href="menu.html">☕ Coffee</a>
-      <ul class="submenu">
-        <li><a href="menu.html"class="active" aria-current="page">Menu</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="our-mission.html">💬 Mission</a>
-      <ul class="submenu">
-        <li><a href="our-mission.html">Our Mission</a></li>
-        <li><a href="healing-in-motion.html">Healing in Motion</a></li>
-        <li><a href="how-you-can-help.html">How You Can Help</a></li>
-        <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="resilience-market.html">🛍️ Shop</a>
-      <ul class="submenu">
-        <li><a href="resilience-market.html">Resilience Market</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-    <!-- 💬 Coffee & Connections Mission -->
-    <li>
-      <a href="#">Coffee & Connections Mission</a>
-      <ul class="submenu">
-        <li><a href="our-mission.html">Our Mission</a></li>
-        <li><a href="healing-in-motion.html">Healing in Motion</a></li>
-        <li><a href="how-you-can-help.html">How You Can Help</a></li>
-        <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
-      </ul>
-    </li>
-
-    <!-- 🛍️ Shop -->
-    <li>
-      <a href="#">Shop</a>
-      <ul class="submenu">
-        <li><a href="resilience-market.html">Resilience Market</a></li>
-      </ul>
-    </li>
-
-  </ul>
-</nav>
-
-  <!-- 📦 Main Content Layout -->
-  <div class="main-layout">
-    <section class="main-content">
-
-  <!-- ☕ Accordion Sections -->
-      <!-- Repeatable structure for each category -->    
-  <!-- ☕ The Daily Ground Accordion Block -->
-<section class="menu-section">
-  <header>
-    <button class="accordion">☕ The Daily Ground</button>
-  </header>
-  <div class="accordion-content">
-    <div class="accordion-description">
-      <p>Where morning meets meaning. Familiar comfort, fresh beginnings.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li>
-          Classic Brewed Coffee – Light, Medium, Dark Roast options<br>
-          💰 Pricing: 12 oz: $2.75 | 16 oz: $3.25 | 20 oz: $3.75 | 24 oz: $4.25
-        </li>
-        <li>
-          Cold Brew – "The Bold Stand" (Slow-steeped, rich, and customizable)<br>
-          💰 Pricing: 12 oz: $4.50 | 16 oz: $5.25 | 20 oz: $5.75 | 24 oz: $6.50<br>
-          ✨ Make it yours: Extra Espresso Shot (+$1.25), Sweet Cream or Vanilla Cold Foam (+$0.75), Extra Caramel or Mocha Drizzle (+$0.50)
-        </li>
-        <li>
-          Iced Lattes & Espresso Drinks – "The Steady Pulse" (Classic flavors & seasonal variations)<br>
-          💰 Pricing: 12 oz: $5.00 | 16 oz: $5.75 | 20 oz: $6.50 | 24 oz: $7.25<br>
-          ✨ Finishing Touch: Extra Espresso Shot (+$1.25), Alternative Milk (Oat, Almond, Soy) (+$0.75), Flavored Shot (+$0.75), Cold Foam Topping (+$0.75)
-        </li>
-        <li>
-          Flavor Drizzles: Caramel, Mocha (+$0.50)
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 🔥 Hot Specialty Drinks Accordion Block -->
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="daily-ground-content" id="daily-ground-button">
-      ☕ The Daily Ground
-    </button>
-  </header>
-  <div class="accordion-content" id="daily-ground-content" aria-labelledby="daily-ground-button" hidden>
-    <div class="accordion-description">
-      <p>Where morning meets meaning. Familiar comfort, fresh beginnings.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li>
-          Classic Brewed Coffee – Light, Medium, Dark Roast options<br>
-          💰 Pricing: 12 oz: $2.75 | 16 oz: $3.25 | 20 oz: $3.75 | 24 oz: $4.25
-        </li>
-        <li>
-          Cold Brew – "The Bold Stand" (Slow-steeped, rich, and customizable)<br>
-          💰 Pricing: 12 oz: $4.50 | 16 oz: $5.25 | 20 oz: $5.75 | 24 oz: $6.50<br>
-          ✨ Make it yours: Extra Espresso Shot (+$1.25), Sweet Cream or Vanilla Cold Foam (+$0.75), Extra Caramel or Mocha Drizzle (+$0.50)
-        </li>
-        <li>
-          Iced Lattes & Espresso Drinks – "The Steady Pulse" (Classic flavors & seasonal variations)<br>
-          💰 Pricing: 12 oz: $5.00 | 16 oz: $5.75 | 20 oz: $6.50 | 24 oz: $7.25<br>
-          ✨ Finishing Touch: Extra Espresso Shot (+$1.25), Alternative Milk (Oat, Almond, Soy) (+$0.75), Flavored Shot (+$0.75), Cold Foam Topping (+$0.75)
-        </li>
-        <li>
-          Flavor Drizzles: Caramel, Mocha (+$0.50)
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="cold-specialty-content" id="cold-specialty-button">
-      ❄️ Cold Specialty Drinks
-    </button>
-  </header>
-  <div class="accordion-content" id="cold-specialty-content" aria-labelledby="cold-specialty-button" hidden>
-    <div class="accordion-description">
-      <p>“The Still Pulse” – Chilled strength for quiet rebels and intentional pause-takers.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li>
-          Iced Mocha Latte – "The Storyteller Chill" Deep espresso & rich chocolate meet ice—cool, bold, and refreshingly engaging.<br>
-          💰 Pricing: 12 oz: $5.25 | 16 oz: $6.00 | 20 oz: $6.75 | 24 oz: $7.50<br>
-          ✨ Custom Chill: Extra Chocolate Drizzle (+$0.50), Sweet Cream or Vanilla Cold Foam (+$0.75), Extra Espresso Shot (+$1.25)
-        </li>
-        <li>
-          Iced Matcha & Chai – "The Revival" Refreshing tea blends with natural sweetness.<br>
-          💰 Pricing: 12 oz: $5.50 | 16 oz: $6.25 | 20 oz: $6.75 | 24 oz: $7.50<br>
-          ✨ Make it Yours: Extra Matcha or Chai Boost (+$1.00), Alternative Milk (+$0.75), Honey or Vanilla Sweetener (+$0.50)
-        </li>
-        <li>
-          Flavored Iced Teas – "The Refreshing Change" Peach, Lemon, Hibiscus, Raspberry.<br>
-          💰 Pricing: 12 oz: $5.25 | 16 oz: $6.00 | 20 oz: $6.75 | 24 oz: $7.50<br>
-          ✨ Infusion Add-ons: Fruit Puree (+$0.50), Fresh Lemon/Lime Wedge (+$0.50), Fresh Mint Infusion (+$0.50), Sweet Boost (Honey, Agave, Syrup) (+$0.50)
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 🍵 Tea Offerings Accordion Block -->
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="tea-offerings-content" id="tea-offerings-button">
-      🍵 Tea Offerings
-    </button>
-  </header>
-  <div class="accordion-content" id="tea-offerings-content" aria-labelledby="tea-offerings-button" hidden>
-    <div class="accordion-description">
-      <p>“The Gentle Voice” – Tradition steeped in intention—herbal, iced, and boba comfort for all.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li><strong>Herbal Hot Teas:</strong></li>
-        <li>
-          Earl Grey – "The Visionary" Bold, confident, and refined—a tea for those who see the world not just as it is, but as it could be.<br>
-          💰 Pricing: 12 oz: $3.75 | 16 oz: $4.50 | 20 oz: $5.00 | 24 oz: $5.50<br>
-          ✨ Add-On: Honey or Vanilla Boost (+$0.50), Alternative Milk (Oat, Almond, Soy) (+$0.75), Extra Tea Bag (+$0.50)
-        </li>
-        <li>
-          Jasmine Green Tea – "The Awakening" Refreshing, bright, and full of renewal—because every movement begins with awareness.<br>
-          💰 Pricing: 12 oz: $3.75 | 16 oz: $4.50 | 20 oz: $5.00 | 24 oz: $5.50<br>
-          ✨ Make it Yours: Honey or Lemon Boost (+$0.50), Alternative Milk (+$0.75), Extra Tea Bag (+$0.50)
-        </li>
-        <li>
-          Chamomile Tea – "The Peacekeeper" Calming and restorative—because resilience is just as much about rest as it is about action.<br>
-          💰 Pricing: 12 oz: $3.75 | 16 oz: $4.50 | 20 oz: $5.00<br>
-          ✨ Boost: Honey or Lavender Boost (+$0.50), Alternative Milk (+$0.75), Extra Tea Bag (+$0.50)
-        </li>
-        <li>
-          Peppermint Tea – "The Refresh" Cool, crisp, and energizing—a perfect reset for mind, body, and spirit.<br>
-          💰 Pricing: 12 oz: $3.75 | 16 oz: $4.50 | 20 oz: $5.00<br>
-          ✨ Boost: Honey or Lemon Boost (+$0.50), Extra Mint Infusion (+$0.50), Alternative Milk (+$0.75)
-        </li>
-        <li>
-          Flavored Iced Teas – "The Refreshing Change" Peach, Lemon, Hibiscus, Raspberry.<br>
-          💰 Pricing: 12 oz: $5.25 | 16 oz: $6.00 | 20 oz: $6.75 | 24 oz: $7.50<br>
-          ✨ Flavor Layer: Fruit Puree (+$0.50), Fresh Lemon/Lime Wedge (+$0.50), Fresh Mint Infusion (+$0.50), Sweet Boost (Honey, Agave, Syrup) (+$0.50)
-        </li>
-
-        <!-- 🧋 Boba Creations Header -->
-        <li class="section-label">🧋 <strong>Boba Creations</strong> — chewy joy, deep flavor, emotional fusion</li>
-
-        <li>
-          Classic Milk Tea – "The Foundation" Black or Jasmine Green Tea with chewy tapioca pearls – a timeless, strong base.<br>
-          💰 Pricing: 16 oz: $5.50 | 20 oz: $6.25 | 24 oz: $7.00<br>
-          ✨ Optional Additions: Extra Boba Pearls (+$0.75), Popping Boba (Lychee, Strawberry, Mango) (+$0.75), Honey or Vanilla Sweetener (+$0.50)
-        </li>
-        <li>
-          Thai Iced Tea with Boba – "The Legacy" Sweet, creamy spiced tea with signature boba – a rich, deep flavor standing strong like the stories that guide us forward.<br>
-          💰 Pricing: 16 oz: $5.75 | 20 oz: $6.50 | 24 oz: $7.25<br>
-          ✨ The Encore: Extra Thai Tea Concentrate (+$0.75), Coconut Jelly Add-On (+$0.75), Whipped Cream (+$0.50)
-        </li>
-        <li>
-          Honeydew & Mango Boba Tea – "The Momentum" Fruity flavors blended with milk or tea – a bold, refreshing fusion, symbolizing the push toward progress.<br>
-          💰 Pricing: 16 oz: $6.00 | 20 oz: $6.75 | 24 oz: $7.50<br>
-          ✨ Custom Twist: Extra Honeydew or Mango Syrup (+$0.50), Popping Boba Add-On (+$0.75), Extra Fruit Puree (+$0.75)
-        </li>
-        <li>
-          Taro & Coconut Boba Tea – "The Balance" Smooth, rich flavors with chewy boba – deeply rooted flavors representing stability in the face of change.<br>
-          💰 Pricing: 16 oz: $6.00 | 20 oz: $6.75 | 24 oz: $7.50<br>
-          ✨ Make it Yours: Extra Taro or Coconut Infusion (+$0.50), Coconut Jelly Add-On (+$0.75), Whipped Cream (+$0.50)
-        </li>
-        <li>
-          Brown Sugar Boba Latte – "The Courage" Caramel-like sweetness in a creamy milk tea – bold, unapologetic sweetness, because every act of courage deserves recognition.<br>
-          💰 Pricing: 16 oz: $6.25 | 20 oz: $7.00 | 24 oz: $7.75<br>
-          ✨ Flavor Layer: Extra Brown Sugar Syrup (+$0.50), Sweet Cream or Cold Foam (+$0.75), Popping Boba Add-On (+$0.75)
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 🌱 Cold-Pressed Wellness Accordion Block -->
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="cold-wellness-content" id="cold-wellness-button">
-      🌱 Cold-Pressed Wellness
-    </button>
-  </header>
-  <div class="accordion-content" id="cold-wellness-content" aria-labelledby="cold-wellness-button" hidden>
-    <div class="accordion-description">
-      <p>“The Inner Shift” – Shots and juices that reset, replenish, and rise toward resilience.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li>
-          Ginger Lemon Cayenne Shot – "The Spark" A bold, fiery blend designed to ignite energy and boost immunity—because every movement starts with a spark.<br>
-          💰 Pricing: 2 oz: $3.50 | 4 oz: $5.00<br>
-          ✨ Boost: Extra Ginger (+$0.50), Extra Lemon (+$0.50), Honey Boost (+$0.50)
-        </li>
-        <li>
-          Turmeric Glow Shot – "The Phoenix Rising" A golden blend of turmeric, coconut water, and black pepper, symbolizing renewal, resilience, and transformation.<br>
-          💰 Pricing: 2 oz: $3.75 | 4 oz: $5.25<br>
-          ✨ Boost: Extra Turmeric (+$0.50), Honey Boost (+$0.50), Cinnamon Infusion (+$0.50)
-        </li>
-        <li>
-          Elderberry Immunity Shot – "The Shield" A powerful elderberry blend fortified with cinnamon, cloves, and agave, providing natural defense and strength.<br>
-          💰 Pricing: 2 oz: $4.00 | 4 oz: $5.50<br>
-          ✨ Boost: Extra Elderberry (+$0.50), Extra Cinnamon (+$0.50), Honey Boost (+$0.50)
-        </li>
-        <li>
-          Probiotic Gut Health Shot – "The Balance" A refreshing apple-ginger blend infused with probiotics, supporting digestion and overall wellness.<br>
-          💰 Pricing: 2 oz: $3.75 | 4 oz: $5.25<br>
-          ✨ Boost: Extra Ginger (+$0.50), Extra Apple (+$0.50), Lemon Boost (+$0.50)
-        </li>
-        <li>
-          Cold-Pressed Green Juice – "The Foundation" A detoxifying mix of kale, spinach, cucumber, celery, and lemon, grounding the body for clarity and strength.<br>
-          💰 Pricing: 12 oz: $6.00 | 16 oz: $7.00 | 20 oz: $7.75 | 24 oz: $8.50<br>
-          ✨ Boost: Extra Spinach (+$0.50), Extra Lemon (+$0.50), Ginger Boost (+$0.50)
-        </li>
-        <li>
-          Cold-Pressed Citrus Blend – "The Bright Path" A refreshing fusion of orange, pineapple, lemon, and mint, bringing clarity, energy, and optimism.<br>
-          💰 Pricing: 12 oz: $6.00 | 16 oz: $7.00 | 20 oz: $7.75 | 24 oz: $8.50<br>
-          ✨ Boost: Extra Orange (+$0.50), Extra Mint (+$0.50), Honey Boost (+$0.50)
-        </li>
-        <li>
-          Cold-Pressed Beet & Ginger Juice – "The Pulse" A deep, earthy blend of beets, ginger, apple, and lemon, supporting circulation and endurance.<br>
-          💰 Pricing: 12 oz: $6.25 | 16 oz: $7.25 | 20 oz: $8.00 | 24 oz: $8.75<br>
-          ✨ Boost: Extra Beet (+$0.50), Extra Ginger (+$0.50), Lemon Boost (+$0.50)
-        </li>
-        <li>
-          Cold-Pressed Watermelon Mint Juice – "The Refresh" A hydrating mix of watermelon, mint, and lime, perfect for cooling down and recharging.<br>
-          💰 Pricing: 12 oz: $6.00 | 16 oz: $7.00 | 20 oz: $7.75 | 24 oz: $8.50<br>
-          ✨ Boost: Extra Mint (+$0.50), Extra Lime (+$0.50), Honey Boost (+$0.50)
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="smoothie-creations-content" id="smoothie-creations-button">
-      🍓 Smoothie Creations
-    </button>
-  </header>
-  <div class="accordion-content" id="smoothie-creations-content" aria-labelledby="smoothie-creations-button" hidden>
-    <div class="accordion-description">
-      <p>“Blended Resilience” – Fruit-forward and fortified, designed to nourish every layer of healing.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li>
-          Berry Blast Smoothie – "The Rise" A vibrant blend of blueberries, strawberries, and blackberries—fueling momentum with every sip.<br>
-          💰 Pricing: 16 oz: $7.25 | 20 oz: $8.00 | 24 oz: $8.75<br>
-          ✨ Boost: Protein Boost (+$1.25), Superfoods (Chia, Flax, Spirulina) (+$0.75), Nut Butter or Extra Fruit (+$0.75)
-        </li>
-        <li>
-          Tropical Mango Smoothie – "The Bright Path" Mango, pineapple, and orange fused into a bright, restorative blend—sunshine for the spirit.<br>
-          💰 Pricing: 16 oz: $7.25 | 20 oz: $8.00 | 24 oz: $8.75<br>
-          ✨ Make it Yours: Protein Boost (+$1.25), Superfoods (Chia, Flax, Spirulina) (+$0.75), Nut Butter or Extra Fruit (+$0.75)
-        </li>
-        <li>
-          Strawberry Banana Smoothie – "The Comfort" A classic, creamy favorite—grounding and familiar, like support that always shows up.<br>
-          💰 Pricing: 16 oz: $7.00 | 20 oz: $7.75 | 24 oz: $8.50<br>
-          ✨ Finishing Touch: Protein Boost (+$1.25), Superfoods (+$0.75), Nut Butter or Extra Fruit (+$0.75)
-        </li>
-        <li>
-          Green Power Smoothie – "The Rooted" Spinach, kale, banana, pineapple—a nutrient-dense blend for strength, clarity, and resilience.<br>
-          💰 Pricing: 16 oz: $7.50 | 20 oz: $8.25 | 24 oz: $9.00<br>
-          ✨ The Encore: Protein Boost (+$1.25), Superfoods (+$0.75), Nut Butter or Extra Fruit (+$0.75)
-        </li>
-        <li>
-          Protein Smoothie – "The Builder" Your choice of whey or plant-based protein, blended with banana and your pick of milk—sustaining energy for those building big things.<br>
-          💰 Pricing: 16 oz: $8.00 | 20 oz: $8.75 | 24 oz: $9.50<br>
-          ✨ Boost: Extra Protein (+$1.25), Superfoods (+$0.75), Nut Butter or Extra Fruit (+$0.75)
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="energy-hydration-content" id="energy-hydration-button">
-      ⚡ Energy + Hydration + Coca-Cola
-    </button>
-  </header>
-  <div class="accordion-content" id="energy-hydration-content" aria-labelledby="energy-hydration-button" hidden>
-    <div class="accordion-description">
-      <p>“Fuel for the Fight” – For gamers, dreamers, and late-night changemakers. Energy with intent.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li>
-          Red Bull (Regular, Sugar-Free, Seasonal Editions)<br>
-          💰 Pricing: 12 oz: $3.50 | 16 oz: $4.25
-        </li>
-        <li>
-          Celsius Energy Drink (Sparkling & Non-Sparkling Flavors)<br>
-          Tropical, Berry, Watermelon and more...<br>
-          💰 Pricing: 12 oz: $3.75 | 16 oz: $4.50
-        </li>
-        <li>
-          Liquid IV Hydration Packs (Single-Serve Electrolyte Boost)<br>
-          💰 Pricing: Single Pack: $2.50 | 3-Pack Bundle: $7.00
-        </li>
-        <li>
-          Monster Energy (Classic, Ultra, Rehab)<br>
-          💰 Pricing: 16 oz: $4.00 | 24 oz: $5.25
-        </li>
-        <li>
-          Vitamin Energy Shots (B12, Focus, Sleep, Burner+)<br>
-          💰 Pricing: 2 oz: $2.75 | 4 oz: $4.50
-        </li>
-        <li>
-          Coca-Cola (Classic, Zero Sugar, Diet Coke)<br>
-          💰 Pricing: 20 oz: $2.50
-        </li>
-        <li>
-          Dasani Bottled Water<br>
-          💰 Pricing: 20 oz: $2.00
-        </li>
-        <li>
-          Smartwater (Electrolyte-Enhanced Hydration)<br>
-          💰 Pricing: 20 oz: $2.75
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 🍽️ Nourishing Food Accordion Block -->
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="nourishing-food-content" id="nourishing-food-button">
-      🍽️ Nourishing Food
-    </button>
-  </header>
-  <div class="accordion-content" id="nourishing-food-content" aria-labelledby="nourishing-food-button" hidden>
-    <div class="accordion-description">
-      <p>“The Steady Build” – Eating with purpose—meals that nourish body, story, and spirit.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <!-- 🍳 Breakfast Section -->
-        <li class="section-label">🍳 <strong>Breakfast – “The Uplift”</strong></li>
-        <li>
-          Overnight Oats / Chia Seed Pudding – "The Grounding Start" Rotating flavors: Berry Almond, Cocoa Banana, Spiced Apple<br>
-          💰 Pricing: $5.25
-        </li>
-        <li>
-          Breakfast Burritos – "The Wrapped Up & Ready" Egg + Cheese, Veggie + Black Bean, Turkey Sausage + Cheddar<br>
-          💰 Pricing: $6.75
-        </li>
-        <li>
-          Breakfast Tacos (2 per Order) – "The Quick Stand" Egg + Cheese, Veggie + Black Bean, Turkey Sausage + Cheddar<br>
-          💰 Pricing: $5.50
-        </li>
-        <li>
-          Avocado Toast – "The Foundation" Classic, Tomato Basil, or Protein Boost w/ Egg or Chickpeas<br>
-          💰 Pricing: $6.25
-        </li>
-        <li>
-          Breakfast Scones – "The Early Strength" Seasonal (e.g., Cranberry Orange, Bacon Cheddar Chive)<br>
-          💰 Pricing: $4.50
-        </li>
-
-        <!-- 🥗 Lunch Section -->
-        <li class="section-label">🥗 <strong>Lunch – “Midday Fuel”</strong></li>
-        <li>
-          Pre-Made Quiches – "The Centered Slice" Spinach & Feta, Ham & Swiss, Mushroom & Herb<br>
-          💰 Pricing: $6.50
-        </li>
-        <li>
-          Standard Salads – "The Refresh" Garden, Caesar, Greek<br>
-          💰 Pricing: $7.00
-        </li>
-        <li>
-          Premium Salads – "The Flourish" Southwest Chipotle Chicken, Berry Walnut Goat Cheese<br>
-          💰 Pricing: $9.00
-        </li>
-        <li>
-          Pre-Made Sandwiches – "The Everyday Anchor" Turkey & Provolone, Caprese, Chicken Salad<br>
-          💰 Pricing: $7.50
-        </li>
-        <li>
-          Grain Bowls – "The Steady Build" Quinoa + Roasted Veg, Mediterranean Chickpea<br>
-          💰 Pricing: $8.25
-        </li>
-        <li>
-          Soup & Salad or Sandwich Combo<br>
-          💰 "The Pause + Purpose" Pricing: $9.00 Soup and Salad<br>
-          💰 "The Hold + Hope" Pricing: $9.50 Soup and Sandwich
-        </li>
-
-        <!-- 🍽️ Dinner Section -->
-        <li class="section-label">🌙 <strong>Dinner – “Comfort Close”</strong></li>
-        <li>
-          Flatbreads / Personal Pizzas<br>
-          – Pesto Veggie "The Garden Flame" 💰 Pricing: $7.75<br>
-          – Chicken Bacon Ranch "The Brave Bite" 💰 Pricing: $9.00<br>
-          – Margherita "The Classic Ground" 💰 Pricing: $8.50
-        </li>
-        <li>
-          Warm Bowls<br>
-          – Teriyaki Chicken & Rice "The Balance" 💰 Pricing: $9.50<br>
-          – Mac & Cheese w/ Broccoli "The Comfort Core" 💰 Pricing: $8.50<br>
-          – Sweet Potato Chili "The Rooted Flame" 💰 Pricing: $9.00
-        </li>
-        <li>
-          Soups – "The Warm Hold" Rotating Daily: Tomato Basil, Butternut Squash, Chicken Tortilla<br>
-          💰 Pricing: $4.50 (8 oz Cup) | $6.50 (12 oz Bowl)
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="desserts-content" id="desserts-button">
-      🍰 Desserts
-    </button>
-  </header>
-  <div class="accordion-content" id="desserts-content" aria-labelledby="desserts-button" hidden>
-    <div class="accordion-description">
-      <p>“The Sweet Pause” – When rest is radical. Small treats, big comfort.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li class="section-label">🍪 <strong>Sweet Selections</strong></li>
-        <li>
-          Cakes & Pies – "The Gentle Slice" Rotating small-batch slices or single-serve items<br>
-          💰 Pricing: $4.75 per slice
-        </li>
-        <li>
-          Cookies – "The Familiar Joy" Classic Chocolate Chip, Lavender Sugar, Oatmeal Walnut<br>
-          💰 Pricing: $3.00
-        </li>
-        <li>
-          Muffins – "The Crossed Paths" Available during breakfast or as an afternoon pick-me-up<br>
-          💰 Pricing: $3.50
-        </li>
-        <li>
-          Scones – "The Dual Hold" Sweet or savory options bridging the morning calm and evening wind-down<br>
-          💰 Pricing: $4.25
-        </li>
-        <li>
-          Special Feature – "The Small Wonder" Mini Bundt Cakes or Parfaits in cups<br>
-          💰 Pricing: $5.50
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="kids-corner-content" id="kids-corner-button">
-      🧸 Kids’ Corner – Little Warriors
-    </button>
-  </header>
-  <div class="accordion-content" id="kids-corner-content" aria-labelledby="kids-corner-button" hidden>
-    <div class="accordion-description">
-      <p>“The Brave Bite” – Menu made for tiny trailblazers—with warmth, joy, and strength in every sip.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li class="section-label">👶 <strong>Kids’ Selections</strong> — crafted with care for growing spirits</li>
-        <li>
-          Kids’ Hot Chocolate / Steamer – "The Cozy Cup"<br>
-          💰 Pricing: $2.50
-        </li>
-        <li>
-          Kids’ Smoothie – "The Mini Spark"<br>
-          💰 Pricing: $4.50
-        </li>
-        <li>
-          Kids’ Juice – "The Fresh Giggle"<br>
-          💰 Pricing: $3.50
-        </li>
-        <li>
-          Snack Pack (Fruit, Cheese, Yogurt) – "The Tiny Kit"<br>
-          💰 Pricing: $4.75
-        </li>
-        <li>
-          Mini Sandwich & Fruit – "The Brave Bite Jr."<br>
-          💰 Pricing: $5.25
-        </li>
-        <li>
-          Mini Mac & Cheese / Quesadilla – "The Little Anchor"<br>
-          💰 Pricing: $5.50
-        </li>
-        <li>
-          Go-GURT – "The Sidekick" A chilled, creamy companion for little ones (or the young at heart). Strawberry or cotton candy flavors, served with a smile.<br>
-          💰 Pricing: Single Tube (2 oz): $1.25 | Pair (2 tubes): $2.25<br>
-          ✨ Optional Add-On: +$1.00 when paired with any meal or drink
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <button class="accordion" aria-expanded="false" aria-controls="special-offerings-content" id="special-offerings-button">
-      🌟 Special Offerings
-    </button>
-  </header>
-  <div class="accordion-content" id="special-offerings-content" aria-labelledby="special-offerings-button" hidden>
-    <div class="accordion-description">
-      <p>“The Rotating Light” – Limited creations, surprise advocacy blends—joy with depth.</p>
-    </div>
-    <div class="accordion-list">
-      <ul>
-        <li class="section-label">🪄 <strong>Coming Soon</strong> — seasonal sips and spotlight blends</li>
-        <li>Featured drinks, seasonal highlights, and community creations</li>
-        <li>Placeholder for your next spotlight or celebration blend</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 📢 Social Sharing -->
-<section class="social-share" aria-label="Social sharing options to amplify Coffee & Connections">
-  <h3 class="share-title" id="share-title">Share a Sip of Compassion</h3>
-
-  <p class="share-text">
-    Every voice helps build a space rooted in healing, dignity, and radical welcome.
-    If this mission speaks to your heart, pass it on to someone who needs it today.
-  </p>
-
-  <p class="share-note">
-    <em>
-      Some links help others follow the journey, others let you share the invitation.
-      Either way, thank you for amplifying compassion.
-    </em>
-  </p>
-
-  <div class="share-buttons">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer"
-       role="button" aria-label="Share on Facebook">💙 Facebook</a>
-
-    <a href="https://www.linkedin.com/shareArticle?url=https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer"
-       role="button" aria-label="Share on LinkedIn">🤝 LinkedIn</a>
-
-    <a href="https://www.threads.net/intent/post?text=Discover%20Coffee%20%26%20Connections%20in%20El%20Paso.%20https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer"
-       role="button" aria-label="Share on Threads">🧵 Threads</a>
-
-    <a href="https://www.instagram.com/coffeeconnectionshub"
-       target="_blank" rel="noopener noreferrer"
-       role="button" aria-label="Visit Coffee & Connections on Instagram">📸 Instagram</a>
-
-    <a href="mailto:?subject=Coffee & Connections El Paso&body=Explore a trauma-informed café: https://connectionsep.coffee"
-       target="_blank" rel="noopener noreferrer"
-       role="button" aria-label="Share via Email">✉️ Email</a>
-  </div>
-</section>
-
   </main>
 
-    <!-- 🤝 Footer -->
-<footer>
-  <p>
-    Built with purpose. Created with care. © 2025 Coffee & Connections El Paso
-  </p>
-  <div class="social-links">
-  <a href="https://instagram.com/coffeeconnectionshub"
-     aria-label="Instagram"
-     title="Visit us on Instagram">📸 <span class="visually-hidden">Instagram</span></a>
+  <footer>
+    <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
+    <div class="social-links">
+      <a href="#">📸</a> <a href="#">🧵</a> <a href="#">🤝</a> <a href="#">💙</a>
+    </div>
+  </footer>
 
-  <a href="https://threads.net/@coffeeconnectionshub"
-     aria-label="Threads"
-     title="Follow us on Threads">🧵 <span class="visually-hidden">Threads</span></a>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-  <a href="https://linkedin.com/in/anthony-sorensen-a4b77a36a"
-     aria-label="LinkedIn"
-     title="Connect on LinkedIn">🤝 <span class="visually-hidden">LinkedIn</span></a>
-
-  <a href="https://facebook.com/profile.php?id=61576892447799"
-     aria-label="Facebook"
-     title="Like us on Facebook">💙 <span class="visually-hidden">Facebook</span></a>
-</div>
-  
-</footer>
-
-<!-- ✅ Accordion Script -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const accordions = document.querySelectorAll(".accordion");
-
-  accordions.forEach(button => {
-    button.addEventListener("click", () => {
-      const section = button.closest(".menu-section");
-      const content = section?.querySelector(".accordion-content");
-
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-      // Toggle aria-expanded value
-      button.setAttribute("aria-expanded", String(!isExpanded));
-
-      // Show or hide content using hidden attribute
-      if (content) {
-        content.hidden = isExpanded;
-      }
-
-      // Optional: toggle class for styling animation
-      button.classList.toggle("active");
-    });
-  });
-});
-</script>
+</body>
+</html>
 
 </body>
 </html>
