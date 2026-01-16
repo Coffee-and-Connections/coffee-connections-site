@@ -8,205 +8,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
-  
-  <style>
-    /* 🏠 HOMEPAGE SPECIFIC STYLES */
-    
-    /* --- HERO SECTION --- */
-    .hero-section {
-        position: relative;
-        height: 85vh; /* Takes up 85% of the screen height */
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        color: white;
-        text-align: center;
-        background-color: #2c1810;
-    }
-
-    /* Video Background */
-    #hero-video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: 0; 
-        transform: translate(-50%, -50%);
-        object-fit: cover;
-    }
-
-    /* Dark Overlay */
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(30, 15, 10, 0.6); /* 60% Dark Brown Tint */
-        z-index: 1;
-    }
-
-    /* Content */
-    .hero-content {
-        position: relative;
-        z-index: 2; 
-        padding: 2rem;
-        max-width: 900px;
-        animation: fadeIn 1.5s ease-out;
-    }
-
-    .hero-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 4rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        text-shadow: 0 4px 8px rgba(0,0,0,0.6);
-        line-height: 1.1;
-    }
-
-    .hero-subtitle {
-        font-family: 'Merriweather', serif;
-        font-size: 1.3rem;
-        margin-bottom: 2.5rem;
-        font-weight: 300;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Buttons */
-    .hero-buttons {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cta-button {
-        display: inline-block;
-        padding: 1rem 2.5rem;
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-    }
-
-    .cta-primary {
-        background-color: #d88d2a; /* Warm Gold */
-        color: #2c1810;
-    }
-    .cta-primary:hover {
-        background-color: #ffb74d;
-        transform: translateY(-3px);
-    }
-
-    .cta-secondary {
-        background-color: transparent;
-        border: 2px solid white;
-        color: white;
-    }
-    .cta-secondary:hover {
-        background-color: white;
-        color: #2c1810;
-        transform: translateY(-3px);
-    }
-
-    /* --- THE LOBBY WELCOME (New Section) --- */
-    .lobby-section {
-        text-align: center;
-        padding: 5rem 1rem;
-        background-color: #fcfbf8; /* Very light paper tone */
-        border-bottom: 1px solid #e0e0e0;
-    }
-
-    .lobby-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 3rem;
-        color: #3e2723;
-        margin-bottom: 0.5rem;
-    }
-
-    .lobby-quote {
-        font-family: 'Merriweather', serif;
-        font-style: italic;
-        font-size: 1.3rem;
-        color: #6d4c41; /* Softer brown */
-        margin: 2rem auto;
-        max-width: 600px;
-        line-height: 1.8;
-    }
-
-    .lobby-signature {
-        font-family: 'Cormorant Garamond', serif;
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: #3e2723;
-        margin-top: 1.5rem;
-    }
-
-    /* --- CONTENT BLOCKS --- */
-    .content-block {
-        padding: 6rem 1rem;
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .section-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 2.8rem;
-        color: #3e2723;
-        margin-bottom: 1.5rem;
-    }
-
-    .section-text {
-        font-family: 'Merriweather', serif;
-        font-size: 1.2rem;
-        line-height: 1.9;
-        color: #555;
-        margin-bottom: 2.5rem;
-    }
-
-    .link-arrow {
-        color: #d88d2a;
-        font-weight: bold;
-        text-decoration: none;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.1rem;
-        border-bottom: 2px solid transparent;
-        transition: border 0.3s;
-    }
-    .link-arrow:hover {
-        border-bottom: 2px solid #d88d2a;
-    }
-
-    /* Divider */
-    .divider {
-        height: 1px;
-        background-color: #e0e0e0;
-        width: 150px;
-        margin: 0 auto;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <link rel="stylesheet" href="css/(01)home.css"> 
 </head>
 
 <body>
@@ -233,13 +40,10 @@
   </nav>
 
   <main>
+    
     <section class="hero-section">
-      <video id="hero-video" autoplay muted loop playsinline poster="media/poster_placeholder.jpg">
-        <source src="media/marylou_video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
+      
+      <div class="hero-text-col">
         <h1 class="hero-title">More Than Coffee.<br>A Sanctuary.</h1>
         <p class="hero-subtitle">
           Veteran-owned. Trauma-informed. Community-led.<br>
@@ -250,14 +54,24 @@
           <a href="healing-in-motion.html" class="cta-button cta-secondary">Survivor Journal</a>
         </div>
       </div>
+
+      <div class="hero-video-col">
+        <div class="hero-video-frame">
+          <video autoplay muted loop playsinline poster="media/poster_placeholder.jpg">
+            <source src="media/marylou_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
     </section>
 
     <section class="lobby-section">
       <h1 class="lobby-title">Welcome to the Lobby</h1>
       
       <p class="lobby-quote">
-        We built this space because we needed it.<br>
-        Now, we keep the lights on because you deserve it.
+        "We built this space because we needed it.<br>
+        Now, we keep the lights on because you deserve it."
       </p>
 
       <div class="lobby-signature">- Tony Sorensen</div>
