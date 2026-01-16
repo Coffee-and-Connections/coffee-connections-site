@@ -8,14 +8,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
   
   <style>
-    /* 🏠 HOMEPAGE SPECIFIC STYLES (Inline to avoid creating a new file just for this) */
+    /* 🏠 HOMEPAGE SPECIFIC STYLES */
     
     /* --- HERO SECTION --- */
     .hero-section {
@@ -28,10 +28,10 @@
         overflow: hidden;
         color: white;
         text-align: center;
-        background-color: #2c1810; /* Fallback color if video fails */
+        background-color: #2c1810;
     }
 
-    /* Video Background - Placed at z-index 0 */
+    /* Video Background */
     #hero-video {
         position: absolute;
         top: 50%;
@@ -42,10 +42,10 @@
         height: auto;
         z-index: 0; 
         transform: translate(-50%, -50%);
-        object-fit: cover; /* Ensures video fills screen without stretching */
+        object-fit: cover;
     }
 
-    /* Dark Overlay - Placed at z-index 1 */
+    /* Dark Overlay */
     .hero-overlay {
         position: absolute;
         top: 0;
@@ -56,16 +56,15 @@
         z-index: 1;
     }
 
-    /* Content - Placed at z-index 2 */
+    /* Content */
     .hero-content {
         position: relative;
         z-index: 2; 
         padding: 2rem;
         max-width: 900px;
-        animation: fadeIn 1.5s ease-out; /* Subtle fade in */
+        animation: fadeIn 1.5s ease-out;
     }
 
-    /* Typography */
     .hero-title {
         font-family: 'Cormorant Garamond', serif;
         font-size: 4rem;
@@ -126,6 +125,39 @@
         transform: translateY(-3px);
     }
 
+    /* --- THE LOBBY WELCOME (New Section) --- */
+    .lobby-section {
+        text-align: center;
+        padding: 5rem 1rem;
+        background-color: #fcfbf8; /* Very light paper tone */
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .lobby-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        color: #3e2723;
+        margin-bottom: 0.5rem;
+    }
+
+    .lobby-quote {
+        font-family: 'Merriweather', serif;
+        font-style: italic;
+        font-size: 1.3rem;
+        color: #6d4c41; /* Softer brown */
+        margin: 2rem auto;
+        max-width: 600px;
+        line-height: 1.8;
+    }
+
+    .lobby-signature {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #3e2723;
+        margin-top: 1.5rem;
+    }
+
     /* --- CONTENT BLOCKS --- */
     .content-block {
         padding: 6rem 1rem;
@@ -136,7 +168,7 @@
 
     .section-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 3rem;
+        font-size: 2.8rem;
         color: #3e2723;
         margin-bottom: 1.5rem;
     }
@@ -162,7 +194,7 @@
         border-bottom: 2px solid #d88d2a;
     }
 
-    /* Simple divider */
+    /* Divider */
     .divider {
         height: 1px;
         background-color: #e0e0e0;
@@ -170,7 +202,6 @@
         margin: 0 auto;
     }
 
-    /* Animation Keyframes */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -207,9 +238,7 @@
         <source src="media/marylou_video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      
       <div class="hero-overlay"></div>
-
       <div class="hero-content">
         <h1 class="hero-title">More Than Coffee.<br>A Sanctuary.</h1>
         <p class="hero-subtitle">
@@ -221,6 +250,17 @@
           <a href="healing-in-motion.html" class="cta-button cta-secondary">Survivor Journal</a>
         </div>
       </div>
+    </section>
+
+    <section class="lobby-section">
+      <h1 class="lobby-title">Welcome to the Lobby</h1>
+      
+      <p class="lobby-quote">
+        We built this space because we needed it.<br>
+        Now, we keep the lights on because you deserve it.
+      </p>
+
+      <div class="lobby-signature">- Tony Sorensen</div>
     </section>
 
     <section class="content-block">
@@ -246,6 +286,9 @@
 
   <footer>
     <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
+    <div class="social-links">
+      <a href="#">📸</a> <a href="#">🧵</a> <a href="#">🤝</a> <a href="#">💙</a>
+    </div>
   </footer>
 
   <script>
