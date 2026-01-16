@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
@@ -24,7 +24,7 @@
       <li>
         <a href="menu.html" class="active">☕ Coffee</a>
         <ul class="submenu">
-          <li><a href="menu.html">Menu</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
         </ul>
       </li>
       <li>
@@ -39,22 +39,25 @@
     </ul>
   </nav>
 
-  <main class="main-layout">
+  <main>
 
     <header class="menu-header">
-      <h1>Our Menu</h1>
+      <h1>Our Offerings</h1>
       <p class="menu-subtitle">Ethically Sourced. Crafted with Care. Served with Compassion.</p>
-      <p class="sourcing-note">
-        Proudly brewing beans from <strong>Ben “The Beanfather” Riley</strong>. 
-        Every cup supports veteran-owned business and ethical trade.
-      </p>
+      <div class="sourcing-note">
+        Beans by <strong>Ben “The Beanfather” Riley</strong> • Supporting Veteran-Owned Trade
+      </div>
     </header>
 
     <div class="menu-grid">
 
       <section class="menu-category">
-        <h2 class="menu-category-title">☕ The Daily Ground</h2>
-        <p class="menu-category-subtitle">Where morning meets meaning. Familiar comfort, fresh beginnings.</p>
+        <div class="category-image">
+           <img src="https://placehold.co/600x400/e0d4c5/3e2723?text=Hot+Coffee+&+Espresso" alt="Hot Coffee Selection">
+        </div>
+
+        <h2 class="menu-category-title">The Daily Ground</h2>
+        <p class="menu-category-subtitle">Where morning meets meaning.</p>
 
         <div class="menu-item featured-item">
           <div class="item-header">
@@ -65,12 +68,10 @@
           <ul class="menu-details">
             <li><strong>To-Go:</strong> 12oz: $2.75 | 16oz: $3.25 | 20oz: $3.75 | 24oz: $4.25</li>
             
-            <li style="margin-top: 0.8rem; color: #2e7d32; font-weight: 700; border-top: 1px dashed #ccc; padding-top: 0.5rem;">
-              ☕ The "Sanctuary" Pour (For Here):
-              <span style="color: #333; font-weight: 400;">12oz: $4.80 | 16oz: $5.70</span>
-            </li>
-            <li style="font-size: 0.9em; font-style: italic; color: #555;">
-              Includes Unlimited Refills. Served in a ceramic mug. Stay as long as you need.
+            <li class="sanctuary-box">
+              <span class="sanctuary-title">☕ The "Sanctuary" Pour (For Here)</span>
+              <span>12oz: $4.80 | 16oz: $5.70</span>
+              <span class="sanctuary-note">Includes Unlimited Refills. Stay as long as you need.</span>
             </li>
           </ul>
         </div>
@@ -83,7 +84,6 @@
           <p class="item-desc">Slow-steeped, rich, and customizable.</p>
           <ul class="menu-details">
             <li>12oz: $4.50 | 16oz: $5.25 | 20oz: $5.75 | 24oz: $6.50</li>
-            <li class="add-ons">✨ Make it yours: Extra Shot (+$1.25), Cold Foam (+$0.75), Drizzle (+$0.50)</li>
           </ul>
         </div>
 
@@ -94,140 +94,116 @@
           </div>
           <p class="item-desc">Classic flavors & seasonal variations.</p>
           <ul class="menu-details">
-            <li>12oz: $5.00 | 16oz: $5.75 | 20oz: $6.50 | 24oz: $7.25</li>
-            <li class="add-ons">✨ Add-ons: Extra Shot (+$1.25), Alt Milk (+$0.75), Flavor Shot (+$0.75)</li>
+             <li class="add-ons">✨ Add-ons: Extra Shot (+$1.25), Alt Milk (+$0.75)</li>
           </ul>
         </div>
       </section>
 
       <section class="menu-category">
-        <h2 class="menu-category-title">❄️ Cold Specialty Drinks</h2>
-        <p class="menu-category-subtitle">“The Still Pulse” – Chilled strength for quiet rebels.</p>
+        <div class="category-image">
+           <img src="https://placehold.co/600x400/e0d4c5/3e2723?text=Iced+Specialty+Drinks" alt="Iced Coffee and Tea">
+        </div>
+
+        <h2 class="menu-category-title">Cold Specialty</h2>
+        <p class="menu-category-subtitle">“The Still Pulse” – Chilled strength.</p>
 
         <div class="menu-item">
           <div class="item-header">
-            <span class="item-name">Iced Mocha Latte – "The Storyteller Chill"</span>
+            <span class="item-name">Iced Mocha – "Storyteller Chill"</span>
             <span class="item-price">$5.25 - $7.50</span>
           </div>
           <p class="item-desc">Deep espresso & rich chocolate meet ice.</p>
-          <ul class="menu-details">
-            <li>12oz: $5.25 | 16oz: $6.00 | 20oz: $6.75 | 24oz: $7.50</li>
-          </ul>
         </div>
 
         <div class="menu-item">
           <div class="item-header">
-            <span class="item-name">Iced Matcha & Chai – "The Revival"</span>
+            <span class="item-name">Iced Matcha – "The Revival"</span>
             <span class="item-price">$5.50 - $7.50</span>
           </div>
           <p class="item-desc">Refreshing tea blends with natural sweetness.</p>
-          <ul class="menu-details">
-            <li>12oz: $5.50 | 16oz: $6.25 | 20oz: $6.75 | 24oz: $7.50</li>
-            <li class="add-ons">✨ Boost: Extra Matcha/Chai (+$1.00), Alt Milk (+$0.75)</li>
-          </ul>
         </div>
 
         <div class="menu-item">
           <div class="item-header">
-            <span class="item-name">Flavored Iced Teas – "The Refreshing Change"</span>
+            <span class="item-name">Flavored Teas – "The Refresh"</span>
             <span class="item-price">$5.25 - $7.50</span>
           </div>
           <p class="item-desc">Peach, Lemon, Hibiscus, Raspberry.</p>
-          <ul class="menu-details">
-            <li>12oz: $5.25 | 16oz: $6.00 | 20oz: $6.75 | 24oz: $7.50</li>
-          </ul>
         </div>
       </section>
 
       <section class="menu-category">
-        <h2 class="menu-category-title">🍵 Tea Offerings</h2>
-        <p class="menu-category-subtitle">“The Gentle Voice” – Tradition steeped in intention.</p>
+        <div class="category-image">
+           <img src="https://placehold.co/600x400/e0d4c5/3e2723?text=Hot+Tea+Selection" alt="Hot Tea">
+        </div>
+
+        <h2 class="menu-category-title">Tea Offerings</h2>
+        <p class="menu-category-subtitle">“The Gentle Voice” – Tradition & Intention.</p>
 
         <div class="menu-item">
           <div class="item-header">
             <span class="item-name">Earl Grey – "The Visionary"</span>
-            <span class="item-price">$3.75 - $5.50</span>
+            <span class="item-price">$3.75+</span>
           </div>
           <p class="item-desc">Bold, confident, and refined.</p>
-          <ul class="menu-details">
-            <li>12oz: $3.75 | 16oz: $4.50 | 20oz: $5.00 | 24oz: $5.50</li>
-          </ul>
         </div>
 
         <div class="menu-item">
           <div class="item-header">
-            <span class="item-name">Jasmine Green – "The Awakening"</span>
-            <span class="item-price">$3.75 - $5.50</span>
+            <span class="item-name">Jasmine Green – "Awakening"</span>
+            <span class="item-price">$3.75+</span>
           </div>
           <p class="item-desc">Refreshing, bright, and full of renewal.</p>
-          <ul class="menu-details">
-            <li>12oz: $3.75 | 16oz: $4.50 | 20oz: $5.00 | 24oz: $5.50</li>
-          </ul>
         </div>
 
         <div class="menu-item">
           <div class="item-header">
-            <span class="item-name">Chamomile / Peppermint</span>
-            <span class="item-price">$3.75 - $5.00</span>
+            <span class="item-name">Chamomile – "Peacekeeper"</span>
+            <span class="item-price">$3.75+</span>
           </div>
-          <p class="item-desc">"The Peacekeeper" (Calm) or "The Refresh" (Crisp).</p>
-          <ul class="menu-details">
-            <li>12oz: $3.75 | 16oz: $4.50 | 20oz: $5.00</li>
-          </ul>
+          <p class="item-desc">Calming and restorative.</p>
         </div>
       </section>
 
       <section class="menu-category">
-        <h2 class="menu-category-title">🧋 Boba Creations</h2>
-        <p class="menu-category-subtitle">Chewy joy, deep flavor, emotional fusion.</p>
+        <div class="category-image">
+           <img src="https://placehold.co/600x400/e0d4c5/3e2723?text=Boba+Tea" alt="Boba Drinks">
+        </div>
+
+        <h2 class="menu-category-title">Boba Creations</h2>
+        <p class="menu-category-subtitle">Chewy joy, deep flavor, fusion.</p>
 
         <div class="menu-item">
           <div class="item-header">
-            <span class="item-name">Classic Milk Tea – "The Foundation"</span>
-            <span class="item-price">$5.50 - $7.00</span>
+            <span class="item-name">Classic Milk Tea – "Foundation"</span>
+            <span class="item-price">$5.50+</span>
           </div>
-          <p class="item-desc">Black or Jasmine Green Tea with tapioca pearls.</p>
-          <ul class="menu-details">
-            <li>16oz: $5.50 | 20oz: $6.25 | 24oz: $7.00</li>
-          </ul>
+          <p class="item-desc">Black or Jasmine Green Tea with tapioca.</p>
         </div>
 
         <div class="menu-item">
           <div class="item-header">
-            <span class="item-name">Thai Iced Tea – "The Legacy"</span>
-            <span class="item-price">$5.75 - $7.25</span>
+            <span class="item-name">Thai Tea – "The Legacy"</span>
+            <span class="item-price">$5.75+</span>
           </div>
-          <p class="item-desc">Sweet, creamy spiced tea with signature boba.</p>
-          <ul class="menu-details">
-            <li>16oz: $5.75 | 20oz: $6.50 | 24oz: $7.25</li>
-          </ul>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Brown Sugar Boba Latte – "The Courage"</span>
-            <span class="item-price">$6.25 - $7.75</span>
-          </div>
-          <p class="item-desc">Caramel-like sweetness in a creamy milk tea.</p>
-          <ul class="menu-details">
-            <li>16oz: $6.25 | 20oz: $7.00 | 24oz: $7.75</li>
-          </ul>
+          <p class="item-desc">Sweet, creamy spiced tea with boba.</p>
         </div>
       </section>
 
       <section class="menu-category">
-        <h2 class="menu-category-title">🌱 Cold-Pressed Wellness</h2>
-        <p class="menu-category-subtitle">“The Inner Shift” – Reset, replenish, and rise.</p>
+        <div class="category-image">
+           <img src="https://placehold.co/600x400/e0d4c5/3e2723?text=Juice+%26+Smoothies" alt="Smoothies and Juice">
+        </div>
+
+        <h2 class="menu-category-title">Wellness & Smoothies</h2>
+        <p class="menu-category-subtitle">“The Inner Shift” – Reset & Rise.</p>
 
         <div class="menu-item">
           <div class="item-header">
             <span class="item-name">Wellness Shots</span>
-            <span class="item-price">$3.50 - $5.50</span>
+            <span class="item-price">$3.50+</span>
           </div>
-          <p class="item-desc">Ginger Lemon (The Spark), Turmeric (Phoenix), Elderberry (Shield).</p>
-          <ul class="menu-details">
-            <li>2oz: $3.50+ | 4oz: $5.00+</li>
-          </ul>
+          <p class="item-desc">Ginger Lemon, Turmeric, Elderberry.</p>
         </div>
 
         <div class="menu-item">
@@ -235,44 +211,29 @@
             <span class="item-name">Cold-Pressed Juices</span>
             <span class="item-price">$6.00 - $8.75</span>
           </div>
-          <p class="item-desc">Green (Foundation), Citrus (Bright Path), Beet (Pulse), Watermelon (Refresh).</p>
-          <ul class="menu-details">
-            <li>12oz: $6.00 | 16oz: $7.00 | 20oz: $7.75 | 24oz: $8.50+</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="menu-category">
-        <h2 class="menu-category-title">🍓 Smoothie Creations</h2>
-        <p class="menu-category-subtitle">“Blended Resilience” – Fruit-forward and fortified.</p>
-
-        <div class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Fruit Smoothies</span>
-            <span class="item-price">$7.00 - $8.75</span>
-          </div>
-          <p class="item-desc">Berry Blast (Rise), Tropical Mango (Bright Path), Strawberry Banana (Comfort).</p>
-          <ul class="menu-details">
-            <li>16oz: $7.00 - $7.25 start price</li>
-          </ul>
+          <p class="item-desc">Green, Citrus, Beet, Watermelon.</p>
         </div>
 
         <div class="menu-item">
           <div class="item-header">
             <span class="item-name">Protein Smoothie – "The Builder"</span>
-            <span class="item-price">$8.00 - $9.50</span>
+            <span class="item-price">$8.00+</span>
           </div>
-          <p class="item-desc">Whey or plant-based protein with banana and choice of milk.</p>
+          <p class="item-desc">Whey/Plant protein, banana, milk choice.</p>
         </div>
       </section>
 
       <section class="menu-category full-width">
-        <h2 class="menu-category-title">🍽️ Nourishing Food</h2>
+        <div class="category-image" style="height: 250px;">
+           <img src="https://placehold.co/1200x400/e0d4c5/3e2723?text=Food+%26+Bakery" alt="Food Menu">
+        </div>
+
+        <h2 class="menu-category-title">Nourishing Food</h2>
         <p class="menu-category-subtitle">“The Steady Build” – Meals that nourish body and spirit.</p>
 
         <div class="menu-grid-inner">
           <div class="food-column">
-            <h3>🍳 Breakfast (The Uplift)</h3>
+            <h3>🍳 Breakfast</h3>
             <div class="menu-item">
               <div class="item-header"><span class="item-name">Overnight Oats</span> <span class="item-price">$5.25</span></div>
             </div>
@@ -285,12 +246,40 @@
           </div>
 
           <div class="food-column">
-            <h3>🥗 Lunch (Midday Fuel)</h3>
+            <h3>🥗 Lunch</h3>
             <div class="menu-item">
               <div class="item-header"><span class="item-name">Quiche</span> <span class="item-price">$6.50</span></div>
             </div>
             <div class="menu-item">
               <div class="item-header"><span class="item-name">Sandwiches</span> <span class="item-price">$7.50</span></div>
             </div>
+          </div>
+
+          <div class="food-column">
+            <h3>🌙 Dinner</h3>
             <div class="menu-item">
-              <div class="item-header"><span class="item-name">
+              <div class="item-header"><span class="item-name">Flatbreads/Pizzas</span> <span class="item-price">$7.75+</span></div>
+            </div>
+            <div class="menu-item">
+              <div class="item-header"><span class="item-name">Warm Bowls</span> <span class="item-price">$8.50+</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
+    <div class="social-links">
+      <a href="#">📸</a> <a href="#">🧵</a> <a href="#">🤝</a> <a href="#">💙</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
