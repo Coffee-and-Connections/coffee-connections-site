@@ -3,38 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Coffee Connections El Paso - Radical Welcome." />
-  <title>Coffee Connections El Paso | Home</title>
+  <meta name="description" content="Coffee & Connections: A trauma-informed sanctuary in El Paso. Veteran-owned, community-led, and dedicated to healing." />
+  <title>Home | Coffee & Connections</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
-  <link rel="stylesheet" href="css/(01)index.css"> 
+  
+  <style>
+    /* 🏠 HOMEPAGE SPECIFIC STYLES (Inline to avoid creating a new file just for this) */
+    
+    /* --- HERO SECTION --- */
+    .hero-section {
+        position: relative;
+        height: 85vh; /* Takes up 85% of the screen height */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        background-color: #2c1810; /* Fallback color if video fails */
+    }
+
+    /* Video Background - Placed at z-index 0 */
+    #hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0; 
+        transform: translate(-50%, -50%);
+        object-fit: cover; /* Ensures video fills screen without stretching */
+    }
+
+    /* Dark Overlay - Placed at z-index 1 */
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(30, 15, 10, 0.6); /* 60% Dark Brown Tint */
+        z-index: 1;
+    }
+
+    /* Content - Placed at z-index 2 */
+    .hero-content {
+        position: relative;
+        z-index: 2; 
+        padding: 2rem;
+        max-width: 900px;
+        animation: fadeIn 1.5s ease-out; /* Subtle fade in */
+    }
+
+    /* Typography */
+    .hero-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 4rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 4px 8px rgba(0,0,0,0.6);
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-family: 'Merriweather', serif;
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .cta-primary {
+        background-color: #d88d2a; /* Warm Gold */
+        color: #2c1810;
+    }
+    .cta-primary:hover {
+        background-color: #ffb74d;
+        transform: translateY(-3px);
+    }
+
+    .cta-secondary {
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+    }
+    .cta-secondary:hover {
+        background-color: white;
+        color: #2c1810;
+        transform: translateY(-3px);
+    }
+
+    /* --- CONTENT BLOCKS --- */
+    .content-block {
+        padding: 6rem 1rem;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .section-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        color: #3e2723;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-text {
+        font-family: 'Merriweather', serif;
+        font-size: 1.2rem;
+        line-height: 1.9;
+        color: #555;
+        margin-bottom: 2.5rem;
+    }
+
+    .link-arrow {
+        color: #d88d2a;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.1rem;
+        border-bottom: 2px solid transparent;
+        transition: border 0.3s;
+    }
+    .link-arrow:hover {
+        border-bottom: 2px solid #d88d2a;
+    }
+
+    /* Simple divider */
+    .divider {
+        height: 1px;
+        background-color: #e0e0e0;
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="banner-header" role="banner">
-    <div class="banner-overlay"></div>
-    <div class="banner-container">
-      <div class="logo-block">
-        <img src="asset/CCEP_SVG.svg" alt="Coffee & Connections logo" />
-      </div>
-      <div class="text-block">
-        <h1>Coffee & Connections</h1>
-        <p class="tagline">Where Coffee Meets Compassion & Connections Change Lives</p>
-      </div>
-    </div>
-  </header>
-
   <nav class="nav-container" role="navigation">
     <ul class="nav-menu">
       <li><a href="index.html" class="active">🏠 Home</a></li>
-      <li><a href="menu.html">☕ Coffee</a></li>
+      <li>
+        <a href="menu.html">☕ Coffee</a>
+        <ul class="submenu">
+          <li><a href="menu.html">Full Menu</a></li>
+        </ul>
+      </li>
       <li>
         <a href="our-mission.html">💬 Mission</a>
         <ul class="submenu">
@@ -47,64 +201,51 @@
     </ul>
   </nav>
 
-  <main class="main-layout">
-
-    <div class="lobby-grid">
+  <main>
+    <section class="hero-section">
+      <video id="hero-video" autoplay muted loop playsinline poster="media/poster_placeholder.jpg">
+        <source src="media/marylou_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       
-      <section class="hub-card area-lobby">
-        <div class="video-wrapper">
-          <iframe src="https://drive.google.com/file/d/1KcrclHJNfFTYyhK7eq2EOEsMFoJ1EWdN/preview" title="Welcome Video"></iframe>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">More Than Coffee.<br>A Sanctuary.</h1>
+        <p class="hero-subtitle">
+          Veteran-owned. Trauma-informed. Community-led.<br>
+          A safe space to pause, breathe, and reconnect in El Paso.
+        </p>
+        <div class="hero-buttons">
+          <a href="menu.html" class="cta-button cta-primary">View Menu</a>
+          <a href="healing-in-motion.html" class="cta-button cta-secondary">Survivor Journal</a>
         </div>
-        <div class="lobby-content">
-          <h2>Welcome to the Lobby</h2>
-          <p class="tagline">Where Coffee Meets Compassion</p>
-          <p>
-            Coffee & Connections is more than a café—it’s a gentle refuge. 
-            Here, healing begins not with answers, but with presence.
-          </p>
-          <p><strong>It’s okay NOT to be okay.</strong></p>
-          <em class="founder-name">—Tony Sorensen</em>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <a href="menu.html" class="hub-card area-menu">
-        <div class="card-icon">☕</div>
-        <h3>The Coffee</h3>
-        <p>View our menu & seasonal brews.</p>
-        <span class="btn-text">Order Now &rarr;</span>
-      </a>
+    <section class="content-block">
+      <h2 class="section-title">The Daily Ground</h2>
+      <p class="section-text">
+        From our "Sanctuary Pour" to our ethically sourced beans, every cup is an invitation to stay. 
+        We aren't just serving caffeine; we are serving connection. Experience our space where you are encouraged to linger, not rush.
+      </p>
+      <a href="menu.html" class="link-arrow">Explore Our Offerings →</a>
+    </section>
 
-      <a href="our-mission.html" class="hub-card area-mission">
-        <div class="card-icon">💬</div>
-        <h3>The Mission</h3>
-        <p>Trauma-informed & healing-centered.</p>
-        <span class="btn-text">Read Our Story &rarr;</span>
-      </a>
+    <div class="divider"></div>
 
-      <a href="how-you-can-help.html" class="hub-card area-help">
-        <div class="card-icon">🤝</div>
-        <h3>How You Can Help</h3>
-        <p>Volunteer, donate, or advocate.</p>
-        <span class="btn-text">Get Involved &rarr;</span>
-      </a>
-
-      <a href="founding-circle.html" class="hub-card area-circle">
-        <div class="card-icon">🌿</div>
-        <h3>Founding Circle</h3>
-        <p>Leadership with lived experience.</p>
-        <span class="btn-text">Meet the Circle &rarr;</span>
-      </a>
-
-    </div>
-
+    <section class="content-block">
+      <h2 class="section-title">Healing in Motion</h2>
+      <p class="section-text">
+        Words matter. While the term "victim" is a legal definition, we choose to use "Survivor." 
+        Our interactive journal is a collection of resilience—stories from real people in our community who have turned the page.
+      </p>
+      <a href="healing-in-motion.html" class="cta-button cta-primary">Open the Journal</a>
+    </section>
   </main>
+
   <footer>
-    <p>
-      Built with purpose. Created with care. © <span id="year">2026</span> Coffee & Connections El Paso
-    </p>
-    <div class="social-links">
-      <a href="#">📸</a> <a href="#">🧵</a> <a href="#">🤝</a> <a href="#">💙</a>
-    </div>
+    <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
   </footer>
 
   <script>
@@ -113,4 +254,3 @@
 
 </body>
 </html>
-"invisible comment"
