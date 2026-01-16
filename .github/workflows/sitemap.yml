@@ -1,12 +1,13 @@
-permissions:
-  contents: write
-
 name: Generate Sitemap
 
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   build:
@@ -27,16 +28,10 @@ jobs:
           echo "Listing files in workspace:"
           ls -la
 
-      - name: Stage sitemap.xml explicitly
-        run: git add sitemap.xml
-
-      - name: Add .nojekyll for GitHub Pages
-        run: touch .nojekyll
-
       - name: Create Pull Request with sitemap
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Add sitemap.xml and .nojekyll for Pages visibility
           branch: sitemap-update
           title: Add sitemap.xml
@@ -45,4 +40,3 @@ jobs:
             and includes a .nojekyll file to ensure GitHub Pages serves it properly.
           add-paths: |
             sitemap.xml
-            .nojekyll
