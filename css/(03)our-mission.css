@@ -1,28 +1,31 @@
-/* 📜 (03)mission.css - The Rotating Manifesto */
+/* 📜 (04)mission.css - The Living Manifesto */
 
-/* --- VARIABLES (Matching the Warm Palette) --- */
+/* --- VARIABLES --- */
 :root {
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Merriweather', serif;
     --font-ui: 'DM Sans', sans-serif;
     
     --color-bg: #f4f1ea;          /* Overall Background */
-    --color-paper: #fffbf5;       /* Card Background */
+    --color-paper: #fffbf5;       /* Card/Paper Background */
     --color-ink: #3e2723;         /* Dark Coffee Text */
     --color-accent: #d88d2a;      /* Gold/Orange highlight */
-    --shadow-card: 0 10px 30px rgba(62, 39, 35, 0.1);
+    --color-subtle: #8d6e63;      /* Muted Brown */
+    
+    --shadow-paper: 0 1px 4px rgba(0,0,0,0.05), 0 10px 30px rgba(62, 39, 35, 0.05);
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-body);
+    line-height: 1.6;
 }
 
 /* --- HERO SECTION --- */
 .mission-hero {
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 5rem 1rem 3rem 1rem;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -30,134 +33,151 @@ body {
 .mission-title {
     font-family: var(--font-heading);
     font-size: 3.5rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 1rem;
     color: var(--color-ink);
+    line-height: 1.1;
 }
 
-.mission-statement {
-    font-size: 1.4rem;
-    line-height: 1.6;
+.mission-subtitle {
+    font-size: 1.3rem;
     color: #5d4037;
     font-style: italic;
     font-family: var(--font-heading);
-}
-
-/* --- THE REVOLVING DECK (Carousel) --- */
-.values-section {
-    padding: 3rem 1rem;
-    background-color: #efebe9; /* Slightly darker band for contrast */
-    overflow: hidden; /* Hide scrollbars */
-}
-
-.deck-container {
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto;
-    position: relative;
-    padding: 2rem 0;
 }
 
-.deck-title {
-    text-align: center;
+/* --- THE ORIGIN STORY (Paper Effect) --- */
+.story-container {
+    max-width: 850px;
+    margin: 0 auto 4rem auto;
+    background-color: var(--color-paper);
+    padding: 3rem 4rem; /* Wide padding for letter look */
+    box-shadow: var(--shadow-paper);
+    border-top: 4px solid var(--color-accent); /* Gold Accent Top */
+    position: relative;
+}
+
+.story-heading {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: var(--color-ink);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e0d4c5;
+    padding-bottom: 0.5rem;
+}
+
+.story-text {
+    font-size: 1.05rem;
+    color: #4a3b32;
+    margin-bottom: 1.5rem;
+    line-height: 1.8; /* Breathable reading */
+}
+
+.highlight-text {
+    font-weight: 700;
     color: var(--color-ink);
 }
 
-/* The Grid that holds cards (Desktop: All visible / Mobile: Scroll/Stack) */
-.cards-grid {
-    display: flex;
+/* --- FOUNDERS QUOTES --- */
+.founders-voice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed #d7ccc8;
 }
 
-.parchment-card {
-    background-color: var(--color-paper);
-    width: 280px;
+.quote-block {
+    text-align: center;
+}
+
+.quote-text {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #5d4037;
+    margin-bottom: 0.5rem;
+}
+
+.quote-author {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- GUIDING PRINCIPLES (Static Grid) --- */
+.principles-section {
+    background-color: #efebe9; /* Slightly darker band */
+    padding: 4rem 1rem;
+}
+
+.section-header {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: var(--color-ink);
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.principle-card {
+    background-color: #fffbf5;
     padding: 2rem;
     border-radius: 4px;
-    box-shadow: var(--shadow-card);
     border: 1px solid #e0d4c5;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
+    transition: transform 0.2s;
 }
 
-/* "Paper Texture" overlay effect */
-.parchment-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-    opacity: 0.5;
-    pointer-events: none;
+.principle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.parchment-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(62, 39, 35, 0.15);
-}
-
-.card-icon {
-    font-size: 2.5rem;
+.principle-icon {
+    font-size: 2rem;
     margin-bottom: 1rem;
     display: block;
 }
 
-.card-title {
+.principle-title {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
     color: var(--color-accent);
-    border-bottom: 1px dashed #d7ccc8;
-    padding-bottom: 0.5rem;
 }
 
-.card-text {
+.principle-desc {
     font-size: 0.95rem;
-    line-height: 1.6;
     color: #555;
+    line-height: 1.6;
 }
 
-/* --- THE "MANIFESTO" SCROLL SECTION --- */
-.manifesto-section {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 3rem;
-    background-color: #fffbf5;
-    border-radius: 2px;
-    box-shadow: 
-        0 1px 4px rgba(0,0,0,0.1),
-        0 0 40px rgba(0,0,0,0.05) inset;
-    position: relative;
-}
-
-/* Visual "Tape" or "Pin" look */
-.manifesto-section::after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 25px;
-    background-color: rgba(216, 141, 42, 0.3); /* Tape look */
-}
-
-.manifesto-text {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    line-height: 1.8;
-    text-align: center;
-    color: #3e2723;
-}
-
-/* --- CALL TO ACTION --- */
+/* --- CTA SECTION --- */
 .mission-cta {
     text-align: center;
-    padding: 3rem 1rem 5rem 1rem;
+    padding: 5rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-ink);
 }
 
 .cta-button {
@@ -178,22 +198,9 @@ body {
     background-color: #1b5e20;
 }
 
-/* Mobile: Turn the Grid into a Scrollable Deck */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .cards-grid {
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Allow horizontal scroll */
-        justify-content: flex-start;
-        padding-bottom: 1rem;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        padding: 0 1rem;
-    }
-
-    .parchment-card {
-        min-width: 260px; /* Fixed width for scrolling */
-        scroll-snap-align: center;
-    }
-    
+    .story-container { padding: 2rem 1.5rem; }
+    .founders-voice { grid-template-columns: 1fr; gap: 3rem; }
     .mission-title { font-size: 2.5rem; }
 }
