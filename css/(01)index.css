@@ -1,143 +1,123 @@
-/* =========================================
-   THE LOBBY GRID LAYOUT
-   ========================================= */
+/* 🏠 (01)home.css - The Sanctuary Layout */
 
-/* 1. The Container */
-.lobby-grid {
-  display: grid;
-  max-width: 1400px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  gap: 1.5rem; /* Space between the boxes */
-  
-  /* 📐 THE BLUEPRINT (Matches your drawing) */
-  /* Left Column | Center Column | Right Column */
-  grid-template-columns: 1fr 2fr 1fr; 
-  grid-template-areas: 
-    "menu   lobby   help"
-    "mission lobby   circle";
+/* --- VARIABLES --- */
+:root {
+    --color-bg: #fcfbf8;        /* Very light paper tone */
+    --color-ink: #3e2723;       /* Dark Coffee Text */
+    --color-accent: #d88d2a;    /* Gold/Orange */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Merriweather', serif;
+    --font-ui: 'DM Sans', sans-serif;
 }
 
-/* 2. Assigning the Areas */
-.area-lobby   { grid-area: lobby; }
-.area-menu    { grid-area: menu; }
-.area-mission { grid-area: mission; }
-.area-help    { grid-area: help; }
-.area-circle  { grid-area: circle; }
-
-/* 3. The "Lobby" (Center Stage) */
-.area-lobby {
-  background-color: var(--bg-white);
-  border: 1px solid rgba(0,0,0,0.05);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+/* --- HERO SECTION (Video Background) --- */
+.hero-section {
+    position: relative;
+    height: 85vh; /* Takes up 85% of the screen height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    background-color: #2c1810;
 }
 
-.area-lobby iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0; 
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
-.lobby-content h2 {
-  font-family: var(--font-heading);
-  color: var(--coffee-dark);
-  font-size: 2rem;
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 15, 10, 0.6); /* 60% Dark Brown Tint */
+    z-index: 1;
 }
 
-/* 4. The "Rooms" (Side Cards) */
-.hub-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 12px;
-  text-decoration: none; /* Removes underline from links */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--bg-cream); /* Light text by default */
-  position: relative;
-  overflow: hidden;
+.hero-content {
+    position: relative;
+    z-index: 2; 
+    padding: 2rem;
+    max-width: 900px;
+    animation: fadeIn 1.5s ease-out;
 }
 
-/* Hover Effects */
-.hub-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    line-height: 1.1;
 }
 
-/* 🎨 Distinct Colors for Each Room */
-
-/* Menu: Coffee Dark */
-.area-menu { 
-  background-color: var(--coffee-dark); 
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Mission: Deep Plum */
-.area-mission { 
-  background-color: #4E2753; 
+/* --- HERO BUTTONS --- */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Help: Resilience Teal */
-.area-help { 
-  background-color: var(--resilience-teal); 
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-/* Circle: Healing Green */
-.area-circle { 
-  background-color: var(--healing-green); 
+.cta-primary {
+    background-color: var(--color-accent);
+    color: #2c1810;
+}
+.cta-primary:hover {
+    background-color: #ffb74d;
+    transform: translateY(-3px);
 }
 
-/* 5. Typography inside the cards */
-.hub-card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
-  color: #fff;
+.cta-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.cta-secondary:hover {
+    background-color: white;
+    color: #2c1810;
+    transform: translateY(-3px);
 }
 
-.hub-card p {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 1.5rem;
-}
-
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.btn-text {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  border: 1px solid rgba(255,255,255,0.4);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-}
-
-.hub-card:hover .btn-text {
-  background: #fff;
-  color: var(--text-dark);
-}
-
-/* 📱 MOBILE LAYOUT (Essential!) */
-@media (max-width: 900px) {
-  .lobby-grid {
-    grid-template-columns: 1fr; /* Single column */
-    grid-template-areas: 
-      "lobby"
-      "menu"
-      "mission"
-      "help"
-      "circle";
-  }
-}
+/* --- THE LOBBY WELCOME (Tony's Quote) --- */
+.lobby-section {
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid
