@@ -1,88 +1,196 @@
-/* 🧑‍🤝‍🧑 Founding Circle Intro Block */
-.founding-intro {
-  background-color: var(--dignity-cream);
-  padding: 60px 30px;
+/* =========================================
+   (04) FOUNDING-CIRCLE.CSS
+   ========================================= */
+
+/* --- HEADER --- */
+.circle-header {
   text-align: center;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-}
-
-.circle-title {
-  font-size: 2.125rem;
-  font-weight: 700;
-  color: var(--deep-plum);
-  margin-bottom: 16px;
-}
-
-.circle-text {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  font-style: italic;
-  color: var(--text-dark);
   max-width: 800px;
-  margin: 0 auto;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
-/* 🪑 Founding Seat Cards */
-.founding-seats {
-  padding: 60px 30px;
-  background-color: var(--eggshell);
-  border-top: 2px solid rgba(0, 0, 0, 0.04);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+.circle-header h1 {
+  font-size: 3rem;
+  color: var(--coffee-dark);
+  margin-bottom: 0.5rem;
 }
 
-.founding-seat {
-  background-color: var(--dignity-cream);
-  border-left: 8px solid var(--resilience-teal);
-  padding: 30px;
-  margin: 40px auto;
-  max-width: 900px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+.circle-header .subtitle {
+  font-size: 1.25rem;
+  color: var(--resilience-teal);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
-.founding-seat:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-3px);
+.circle-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-main);
 }
 
-.seat-title {
-  font-size: 1.625rem;
-  color: var(--deep-plum);
-  margin-bottom: 10px;
+/* --- THE SEATS GRID --- */
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive columns */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 5rem auto;
+  padding: 0 1rem;
 }
 
-.origin-voice {
-  font-weight: bold;
-  color: var(--deep-plum);
+/* --- SEAT CARD (Base Style) --- */
+.seat-card {
+  background-color: var(--bg-white);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative; /* Needed for the seat number tag */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
-.mission-emphasis {
+.seat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* The "Seat 01" Badge */
+.seat-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  background-color: var(--bg-cream);
+}
+
+/* Icons for Empty Seats */
+.seat-icon {
+  font-size: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* Typography */
+.seat-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--coffee-dark);
+}
+
+.seat-role {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--resilience-teal);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.seat-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Pushes the status dot to the bottom */
+}
+
+/* --- STATUS INDICATORS (Bottom of Card) --- */
+.seat-status {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--india-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-/* 🔗 Resource Links */
-.founding-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 1.0625rem;
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.founding-links li {
-  margin-bottom: 8px;
+/* Status Colors */
+.open { background-color: #f4f4f4; color: #888; }
+.open .status-dot { background-color: #ccc; }
+
+.pending { background-color: #fff3cd; color: #856404; }
+.pending .status-dot { background-color: #ffc107; }
+
+.active { background-color: var(--mint-highlight); color: var(--coffee-dark); }
+.active .status-dot { background-color: var(--healing-green); }
+
+
+/* --- SPECIAL STYLE: FILLED SEAT (Ben) --- */
+.filled-seat {
+  border: 2px solid var(--healing-green); /* Highlights the active card */
+  background-color: #FAFCF8; /* Very subtle green tint */
 }
 
-.founding-links a {
-  color: var(--india-green);
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.seat-img-wrapper {
+  width: 150px;
+  height: 150px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--bg-white);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.founding-links a:hover {
-  color: var(--deep-plum);
-  text-decoration: underline;
+.seat-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* --- CALL TO ACTION --- */
+.join-table {
+  text-align: center;
+  background-color: var(--coffee-dark);
+  color: var(--bg-white);
+  padding: 4rem 1rem;
+  margin-top: 4rem;
+}
+
+.join-table h2 { color: var(--bg-white); } /* Override default dark heading */
+.join-table p { 
+  max-width: 600px; 
+  margin: 0 auto 2rem auto; 
+  opacity: 0.9; 
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--resilience-teal);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: var(--healing-green);
+  transform: translateY(-2px);
 }
 
