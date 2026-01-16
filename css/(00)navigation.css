@@ -1,123 +1,95 @@
-/* 🌐 Navigation Styles — Coffee & Connections */
-/* Last updated: 2025-07-27 by Anthony & Copilot */
+/* =========================================
+   (00) NAVIGATION.CSS
+   ========================================= */
 
-/* 🧭 Container */
 .nav-container {
-  background-color: var(--eggshell);
-  padding: 1rem 2rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-  font-family: var(--font-main);
-  position: relative;
+  background-color: var(--bg-white);
+  border-bottom: 3px solid var(--resilience-teal);
+  position: sticky; /* Keeps menu at top when scrolling */
+  top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* 📁 Top-Level Menu */
 .nav-menu {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
   list-style: none;
+  padding: 0;
   margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-/* 📂 Top-Level Items */
 .nav-menu > li {
-  position: relative;
+  position: relative; /* Anchor for submenu */
 }
 
+/* Top Level Links */
 .nav-menu > li > a {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--deep-plum);
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-/* 🌱 Hover & Focus */
-.nav-menu > li > a:hover,
-.nav-menu > li > a:focus {
-  color: var(--resilience-teal);
-  background-color: var(--mint-healing);
-}
-
-/* 🧭 Focus Outline */
-.nav-menu > li > a:focus-visible {
-  outline: 2px dashed var(--resilience-teal);
-  outline-offset: 4px;
-}
-
-/* 🔘 Active Page */
-.nav-menu > li > a.active,
-.nav-menu > li > a.current-page {
-  background-color: var(--resilience-teal);
-  color: var(--dignity-cream);
+  display: block;
+  padding: 1rem 1.5rem;
   font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--coffee-dark);
+  transition: color 0.3s ease;
 }
 
-/* 📎 Dropdown Container */
+.nav-menu > li > a:hover,
+.nav-menu > li > a.active {
+  color: var(--resilience-teal);
+  background-color: rgba(0,0,0,0.02);
+}
+
+/* --- DROPDOWN SUBMENU --- */
 .submenu {
-  display: none;
+  display: none; /* Hidden by default */
   position: absolute;
-  top: calc(100% + 0.375rem);
+  top: 100%;
   left: 0;
-  background-color: var(--dignity-cream);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  padding: 0.75rem 0;
-  min-width: 220px;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-  z-index: 1100;
-}
-
-/* 🔹 Dropdown Items */
-.submenu li {
+  background-color: var(--bg-white);
+  list-style: none;
   padding: 0;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
 }
 
-.submenu li a {
+.submenu li {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.submenu a {
   display: block;
-  padding: 0.625rem 1.125rem;
-  font-size: 1rem;
-  color: var(--text-dark);
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: background 0.2s;
 }
 
-.submenu li a:hover {
-  background-color: var(--mint-healing);
-  color: var(--deep-plum);
-  font-weight: 500;
+.submenu a:hover {
+  background-color: var(--mint-highlight);
+  color: var(--coffee-dark);
 }
 
-/* ✨ Reveal Dropdown */
-.nav-menu > li:hover .submenu,
-.nav-menu > li:focus-within .submenu {
+/* Show Submenu on Hover */
+.nav-menu > li:hover .submenu {
   display: block;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
-/* 📱 Responsive Adjustments */
+/* Mobile Nav Stack */
 @media (max-width: 768px) {
   .nav-menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
   }
-
   .submenu {
-    top: calc(100% + 0.375rem);
-    left: 0;
-    min-width: 100%;
+    position: static; /* Stack inside the menu on mobile */
+    box-shadow: none;
+    border-left: 4px solid var(--resilience-teal);
   }
 }
 
