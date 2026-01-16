@@ -1,4 +1,4 @@
-/* 🏠 (01)home.css - The Sanctuary Layout */
+/* 🏠 (01)home.css - The Split Sanctuary Layout */
 
 /* --- VARIABLES --- */
 :root {
@@ -10,76 +10,79 @@
     --font-ui: 'DM Sans', sans-serif;
 }
 
-/* --- HERO SECTION (Video Background) --- */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    margin: 0;
+}
+
+/* --- HERO SECTION (Split Layout) --- */
 .hero-section {
-    position: relative;
-    height: 85vh; /* Takes up 85% of the screen height */
-    width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal split: 50% Text | 50% Video */
+    gap: 4rem;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: white;
-    text-align: center;
-    background-color: #2c1810;
+    padding: 4rem 5%; /* Breathing room on sides */
+    min-height: 85vh;
+    background-color: var(--color-bg);
 }
 
-#hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0; 
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(30, 15, 10, 0.6); /* 60% Dark Brown Tint */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; 
-    padding: 2rem;
-    max-width: 900px;
+/* Left Column: Text */
+.hero-text-col {
+    text-align: left;
+    padding-right: 2rem;
     animation: fadeIn 1.5s ease-out;
 }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 4rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.6);
-    line-height: 1.1;
+    font-size: 4.5rem; /* Larger for impact */
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    color: var(--color-ink);
 }
 
 .hero-subtitle {
     font-family: var(--font-body);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #5d4037;
     margin-bottom: 2.5rem;
-    font-weight: 300;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 600px;
 }
 
-/* --- HERO BUTTONS --- */
+/* Right Column: Video */
+.hero-video-col {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-video-frame {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px; /* Soft corners */
+    overflow: hidden;
+    box-shadow: 20px 20px 0px rgba(216, 141, 42, 0.2); /* Offset Gold Shadow */
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-video-frame video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Buttons */
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
+    justify-content: flex-start; /* Align left */
     flex-wrap: wrap;
 }
 
@@ -97,7 +100,7 @@
 
 .cta-primary {
     background-color: var(--color-accent);
-    color: #2c1810;
+    color: #fff;
 }
 .cta-primary:hover {
     background-color: #ffb74d;
@@ -106,18 +109,126 @@
 
 .cta-secondary {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--color-ink);
+    color: var(--color-ink);
 }
 .cta-secondary:hover {
-    background-color: white;
-    color: #2c1810;
+    background-color: var(--color-ink);
+    color: white;
     transform: translateY(-3px);
 }
 
 /* --- THE LOBBY WELCOME (Tony's Quote) --- */
 .lobby-section {
     text-align: center;
-    padding: 5rem 1rem;
-    background-color: var(--color-bg);
-    border-bottom: 1px solid
+    padding: 6rem 1rem;
+    background-color: #fff; /* Slight contrast */
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.lobby-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-ink);
+    margin-bottom: 0.5rem;
+}
+
+.lobby-quote {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #6d4c41; 
+    margin: 2rem auto;
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+.lobby-signature {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-ink);
+    margin-top: 1.5rem;
+}
+
+/* --- GENERAL CONTENT BLOCKS --- */
+.content-block {
+    padding: 6rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--color-ink);
+    margin-bottom: 1.5rem;
+}
+
+.section-text {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+.link-arrow {
+    color: var(--color-accent);
+    font-weight: bold;
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-size: 1.1rem;
+    border-bottom: 2px solid transparent;
+    transition: border 0.3s;
+}
+.link-arrow:hover {
+    border-bottom: 2px solid var(--color-accent);
+}
+
+/* Divider Line */
+.divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    width: 150px;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- MOBILE ADJUSTMENTS --- */
+@media (max-width: 900px) {
+    .hero-section {
+        grid-template-columns: 1fr; /* Stack into 1 column */
+        text-align: center;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
+    }
+
+    .hero-text-col {
+        padding-right: 0;
+        order: 2; /* Put text BELOW video on mobile? Or set to 1 for ABOVE. */
+        /* Currently set to 2 so they see the video first, then read. 
+           Change to 'order: 1' if you want text first. */
+        order: 1; 
+    }
+
+    .hero-video-col {
+        order: 2;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-title { font-size: 3rem; }
+    
+    .hero-video-frame {
+        box-shadow: 10px 10px 0px rgba(216, 141, 42, 0.2);
+    }
+}
