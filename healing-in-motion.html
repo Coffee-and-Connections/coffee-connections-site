@@ -3,43 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Healing in Motion: A Survivor Journal. Real stories of resilience, recovery, and hope from the El Paso community." />
   <title>Healing in Motion | Coffee & Connections</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
-
-<link rel="stylesheet" href="css/(05)healing-in-motion.css">
+  <link rel="stylesheet" href="css/(03)healing.css"> 
 </head>
 
 <body>
+
   <nav class="nav-container" role="navigation">
     <ul class="nav-menu">
       <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="menu.html">☕ Coffee</a></li>
-      <li><a href="our-mission.html">💬 Mission</a></li>
+      <li>
+        <a href="menu.html">☕ Coffee</a>
+        <ul class="submenu">
+          <li><a href="menu.html">Menu</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="our-mission.html" class="active">💬 Mission</a>
+        <ul class="submenu">
+          <li><a href="healing-in-motion.html">Healing in Motion</a></li>
+          <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
+          <li><a href="how-you-can-help.html">How You Can Help</a></li>
+        </ul>
+      </li>
       <li><a href="resilience-market.html">🛍️ Shop</a></li>
     </ul>
   </nav>
 
   <main class="main-layout">
-    <div class="construction-box">
-      <span class="construction-icon">🚧</span>
-      <h1>This page is still finding its rhythm.</h1>
-      <p>
-        We're shaping it with care, community, and compassion — just like everything else we do.
-      </p>
-      <p>
-        Stay tuned as we build a space for movement, restoration, and stories in motion.
-      </p>
-      <a href="index.html" style="color: var(--resilience-teal); font-weight: bold;">&larr; Return Home</a>
-    </div>
+
+    <section class="preamble-section">
+      <h1 class="page-title">The Language of Healing</h1>
+      <div class="preamble-content">
+        <p>In this space, words matter. While the term "victim" is a necessary legal definition describing an event that happened to a person, we choose to focus on the journey that follows.</p>
+        <p class="emphasis-text">We use the term "Survivor."</p>
+        <p>A survivor is defined not by the harm inflicted upon them, but by their capacity to persist, adapt, and reclaim their life. By choosing this language, we honor the agency, strength, and resilience of every individual who shares their story here.</p>
+        <p>These are their pages. This is their truth.</p>
+      </div>
+    </section>
+
+    <section class="journal-container">
+      <div class="leather-book">
+        
+        <div class="book-spine"></div>
+        
+        <div class="journal-spread active" id="spread-1">
+          <div class="page left-page title-page">
+            <h2>The<br>Survivor<br>Journal</h2>
+            <div class="ornament">❦</div>
+            <p class="publish-info">Est. 2025<br>El Paso, Texas</p>
+          </div>
+          <div class="page right-page dedication-page">
+            <p class="dedication-text">
+              <em>Your stories aren’t chapters — they’re declarations.</em><br><br>
+              <em>Declarations that trauma doesn’t define you. That healing is radical. That survival is sacred.</em><br><br>
+              <em>This journal holds every voice that refused erasure, every truth whispered too late, every heart that rose anyway.</em>
+            </p>
+          </div>
+        </div>
+
+        <div class="journal-spread" id="spread-2">
+          <div class="page left-page">
+            <span class="page-number">2</span>
+            <h3 class="entry-header">From Anthony</h3>
+            <div class="entry-content">
+              <p class="handwritten">"I tried to die to make someone care."</p>
+              <p>Now I live to make sure no one feels alone again.</p>
+            </div>
+            <div class="signature">— Founder</div>
+          </div>
+          <div class="page right-page">
+            <span class="page-number">3</span>
+            <h3 class="entry-header">From Marylou</h3>
+            <div class="entry-content">
+              <p class="handwritten">"I survived what never should’ve happened."</p>
+              <p>So now I build what never existed—a space that sees the whole person before the crisis.</p>
+            </div>
+            <div class="signature">— Founder</div>
+          </div>
+        </div>
+
+        <div class="journal-spread" id="spread-3">
+          <div class="page left-page">
+            <span class="page-number">4</span>
+            <div class="entry-content">
+              <p>“I came here not knowing if I’d be believed. Now I tell others—this café gave me a place to exhale.”</p>
+            </div>
+            <div class="signature">— Guest, El Paso</div>
+            <hr class="separator">
+            <div class="entry-content">
+              <p>“I’ve battled PTSD and addiction. Coffee & Connections didn’t ask for paperwork—they asked how I was. That changed everything.”</p>
+            </div>
+            <div class="signature">— Guest, Unknown</div>
+          </div>
+          
+          <div class="page right-page">
+            <span class="page-number">5</span>
+            <h3 class="entry-header">Jas J</h3>
+            <div class="entry-content">
+              <p>“I tried to push what happened to me to the back of my head, away from my forethoughts—but I realized that talking helps the healing.”</p>
+              <p>“Don’t be afraid to speak about what you silently go through.”</p>
+            </div>
+            <div class="signature">— Jas J, El Paso</div>
+            <div class="tag-box">
+              <span class="tag tag-sexual-assault">Sexual Assault Survivor</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="journal-spread" id="spread-4">
+          <div class="page left-page">
+            <span class="page-number">6</span>
+            <h3 class="entry-header">My Story</h3>
+            <div class="entry-content long-form">
+              <p>I was sexually assaulted when I was 5. I grew up with a protective family, and they didn’t know until I was an adult.</p>
+              <p>I then got married young—to a toxic high school sweetheart. He maritally raped me on our wedding night, multiple times.</p>
+              <p>I then joined the military... I was raped over five times, by the same and different people. I found myself in a cycle of trust, grief, blame, and feeling like I always deserved it all.</p>
+              <p>I coped extensively with alcohol... I also attempted suicide about five times—what a failure, right?</p>
+            </div>
+          </div>
+          <div class="page right-page">
+            <span class="page-number">7</span>
+            <div class="entry-content long-form">
+              <p>But after INTENSIVE self work... I’d like to share this story. It’s not normal for your body to be used.</p>
+              <p>It’s not okay for a Lieutenant to ask you, mid mental breakdown, “WTF is actually wrong with you?”</p>
+              <p>The anxiety, depression, and PTSD I’ve faced shouldn’t have been so isolated. I now have fibromyalgia, slight agoraphobia... but I am here.</p>
+            </div>
+            <div class="signature">— Anonymous, Fort Bliss</div>
+            <div class="tag-box wrap-tags">
+              <span class="tag tag-mental-health">Mental Health</span>
+              <span class="tag tag-domestic-violence">Domestic Violence</span>
+              <span class="tag tag-ptsd">PTSD</span>
+              <span class="tag tag-addiction">Addiction Recovery</span>
+              <span class="tag tag-military">Military Experience</span>
+              <span class="tag tag-suicide">Suicide Survivor</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="book-controls">
+        <button id="prevBtn" class="book-btn" disabled>← Previous Page</button>
+        <button id="nextBtn" class="book-btn">Next Page →</button>
+      </div>
+    </section>
+
+    <section class="journal-form-section">
+      <div class="form-intro">
+        <h2>Lend Your Voice</h2>
+        <p>This journal holds survival, strength, and solidarity. Whether you share a whisper or a declaration, your words help someone else feel seen.</p>
+      </div>
+
+      <form id="journal-entry-form" action="https://getform.io/f/allzdmra" method="POST" class="styled-form">
+        <input type="hidden" name="_gotcha" style="display:none !important">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="entry-name">Name / Alias (Optional)</label>
+            <input type="text" id="entry-name" name="entry-name">
+          </div>
+          <div class="form-group">
+            <label for="entry-location">City / Base (Optional)</label>
+            <input type="text" id="entry-location" name="entry-location">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Your Story touches on:</label>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="entry-topics[]" value="Mental Health"> Mental Health Journey</label>
+            <label><input type="checkbox" name="entry-topics[]" value="Domestic Violence"> Domestic Violence</label>
+            <label><input type="checkbox" name="entry-topics[]" value="Sexual Assault"> Sexual Assault Survivor</label>
+            <label><input type="checkbox" name="entry-topics[]" value="PTSD"> PTSD / Complex Trauma</label>
+            <label><input type="checkbox" name="entry-topics[]" value="Military"> Military Experience</label>
+            <label><input type="checkbox" name="entry-topics[]" value="Addiction"> Addiction Recovery</label>
+            <label><input type="checkbox" name="entry-topics[]" value="Grief"> Grief & Loss</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="entry-message">Your Message</label>
+          <textarea id="entry-message" name="entry-message" rows="6" required placeholder="What would you say to someone walking a similar path?"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Add My Story</button>
+      </form>
+    </section>
+
   </main>
 
   <footer>
     <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
   </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Book Turn Logic
+    const spreads = document.querySelectorAll('.journal-spread');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSpread = 0;
+
+    function updateBook() {
+      // Hide all spreads
+      spreads.forEach(spread => spread.classList.remove('active'));
+      // Show current
+      spreads[currentSpread].classList.add('active');
+
+      // Button states
+      prevBtn.disabled = (currentSpread === 0);
+      nextBtn.disabled = (currentSpread === spreads.length - 1);
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (currentSpread < spreads.length - 1) {
+        currentSpread++;
+        updateBook();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentSpread > 0) {
+        currentSpread--;
+        updateBook();
+      }
+    });
+  </script>
+
 </body>
 </html>
