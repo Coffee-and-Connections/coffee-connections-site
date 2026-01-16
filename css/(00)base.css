@@ -1,322 +1,86 @@
-/* ♿ Accessibility Philosophy
-   Purpose: Support inclusive, trauma-informed digital spaces
-   Notes: Use semantic markup, readable contrast, and screen-reader utilities
----------------------------------------------------------- */
+/* =========================================
+   (00) HEADER-FOOTER.CSS
+   ========================================= */
 
-/* 🎨 Mission-Aligned Colors
-   Purpose: Emotional storytelling via storefront styling
----------------------------------------------------------- */
-/* 🎨 Mission-Aligned Theme System */
-:root {
- /* 🖋️ Font System */
-  --font-main: 'DM Sans', sans-serif;             /* Friendly, readable body text */
-  --font-heading: 'Libre Franklin', sans-serif;   /* Clear, dignified headers with modern warmth */
-
-  /* Color Palette */
-  --dignity-cream: #F6F2EC;
-  --healing-green: #7CB342;
-  --resilience-teal: #009688;
-  --connection-purple: #673AB7;
-  --india-green: #138808;
-  --jade-green: #00A86B;
-  --viridian: #40826D;
-  --deep-plum: #4E2753;
-  --mocha-brown: #554c43;
-  --eggshell: #f4f1ea;
-  --text-dark: #333333;
-  --lavender-soft: #F3DCF9;
-  --aqua-soft: #B7F7F9;
-  --mint-healing: #D8F4E7;
-  --teal-mist: #EBF2FD;
-  --plum-veil: #E9E5F8;
+/* --- HEADER (The Banner) --- */
+.banner-header {
+  position: relative;
+  width: 100%;
+  background-color: var(--coffee-dark); /* Fallback color */
+  background-image: url('../asset/New-Banner.png');
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
 }
 
-/* ✨ Global Typography & Layout Enhancements
-   Purpose: Establish foundational readability, clarity, and emotional tone
----------------------------------------------------------- */
-*, *::before, *::after {
-  box-sizing: border-box; /* Prevent layout surprises across padding/borders */
-}
-
-body {
-  background-color: var(--eggshell);      /* Trauma-informed warmth */
-  color: var(--text-dark);                /* Readable base tone */
-  font-family: var(--font-main);          /* DM Sans for clean readability */
-  font-weight: 400;                       /* Set default weight for consistency */
-  line-height: 1.7;                       /* Comfortable vertical rhythm */
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);       /* Libre Franklin for clear, dignified headers */
-  font-weight: 700;
-  line-height: 1.3;
-  margin-top: 0;
-}
-
-p, li, a, span, input, textarea, button {
-  font-family: var(--font-main);          /* Uniform clarity across elements */
-}
-
-/* 📱 Global Utility: Mobile View Toggle
-   Purpose: JS-driven layout adjustments for mobile state
----------------------------------------------------------- */
-body.mobile-view {
-  /* Apply tweaks if JS toggles mobile state manually */
-}
-
-/* 🔗 Optional Responsive Enhancements */
-html {
-  font-size: 100%; /* Defaults to user/browser preference */
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 95%; /* Slight downscale for compact readability */
-  }
-}
-
-button,
-.cta {
-  max-width: 100%;
-  word-wrap: break-word;
-}
-
-section {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-@media (hover: none) {
-  .submenu {
-    opacity: 1 !important;
-    transform: none !important;
-    display: block !important;
-    pointer-events: auto !important;
-  }
-}
-
-body {
-  padding-top: 4rem; /* match header height if fixed */
-}
-
-/* 🧠 Accessibility Utility: Visually Hidden Text
-   Purpose: Provide screen-reader-only labels for emoji links
----------------------------------------------------------- */
-.visually-hidden {
+/* Dark overlay so text pops */
+.banner-overlay {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 50% darkness */
+  z-index: 1;
 }
 
-/* 🔗 Social Links Layout (Shared Across Footer and Share Sections)
----------------------------------------------------------- */
-.social-links {
+.banner-container {
+  position: relative;
+  z-index: 2; /* Sits on top of overlay */
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.75rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Logo Sizing */
+.logo-block img {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.text-block h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: var(--coffee-dark);
+  color: var(--bg-cream);
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+}
+
+.social-links {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .social-links a {
-  font-size: 1.5rem;
-  transition: opacity 0.3s ease;
+  margin: 0 10px;
+  transition: opacity 0.3s;
 }
 
 .social-links a:hover {
   opacity: 0.7;
 }
 
-/* 🌟 Featured Collection Styles
-   Target: .featured-collection
----------------------------------------------------------- */
-.featured-collection {
-  text-align: center;
-  padding: 60px 30px;
-  background-color: var(--dignity-cream);
-  border-radius: 12px;
-  margin-bottom: 60px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-.featured-collection h2 {
-  font-size: 1.75rem;     /* 28px */
-  font-weight: 700;
-  color: var(--deep-plum);
-  margin-bottom: 16px;
-}
-
-.featured-collection p {
-  font-size: 1.125rem;    /* 18px */
-  line-height: 1.7;
-  color: var(--text-dark);
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.featured-collection h2 {
-  font-family: var(--font-heading);
-}
-
-.featured-collection p {
-  font-family: var(--font-main);
-}
-
-/* 🧱 Product Grid Layouts
-   Target: All grid sections
----------------------------------------------------------- */
-.product-grid,
-.grid-resilience,
-.grid-pages,
-.grid-sip,
-.grid-voices {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin: 40px 0;
-}
-
-/* 🎨 Product Card Styling
-   Target: .product-card
----------------------------------------------------------- */
-.product-card {
-  background-color: var(--dignity-cream);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.product-card:hover {
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  transform: translateY(-3px);
-}
-
-/* 🖼️ Product Imagery
-   Target: .product-image
----------------------------------------------------------- */
-.product-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
-
-/* 🧾 Product Typography
-   Target: Titles, descriptions, prices
----------------------------------------------------------- */
-.product-card h3 {
-  font-size: 1.375rem;    /* 22px */
-  color: var(--deep-plum);
-  margin-bottom: 10px;
-}
-
-.product-card p {
-  font-size: 1.125rem;    /* 18px */
-  color: var(--text-dark);
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.price {
-  font-weight: bold;
-  font-size: 1.125rem;    /* 18px */
-  color: var(--india-green);
-}
-
-/* 🟢 Emotional Grid Borders
-   Purpose: Visual storytelling via left accent
----------------------------------------------------------- */
-.grid-resilience .product-card {
-  border-left: 6px solid var(--healing-green);
-}
-.grid-pages .product-card {
-  border-left: 6px solid var(--connection-purple);
-}
-.grid-sip .product-card {
-  border-left: 6px solid var(--resilience-teal);
-}
-.grid-voices .product-card {
-  border-left: 6px solid var(--viridian);
-}
-
-/* 🔘 CTA Buttons (Universal)
-   Target: .cta inside .product-card
----------------------------------------------------------- */
-.product-card .cta {
-  display: inline-block;
-  padding: 10px 18px;
-  font-size: 1.125rem;    /* 18px */
-  font-weight: bold;
-  background-color: var(--dignity-cream);
-  color: var(--deep-plum);
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 🎯 CTA Background by Grid Type
----------------------------------------------------------- */
-.grid-resilience .cta,
-.grid-sip .cta {
-  background-color: var(--resilience-teal);
-}
-.grid-pages .cta {
-  background-color: var(--connection-purple);
-}
-.grid-voices .cta {
-  background-color: var(--viridian);
-}
-
-/* ✨ CTA Hover Styling
-   Target: All .cta buttons
----------------------------------------------------------- */
-.product-card .cta:hover {
-  background-color: var(--deep-plum);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* 🛍️ Section Container: Resilience on Display */
-.resilience-display {
-  padding: 60px 30px;
-  background-color: var(--eggshell);
-  text-align: center;
-  border-radius: 12px;
-  margin-bottom: 40px;
-}
-
-/* ☕ Section Container: Sip with Purpose */
-.sip-with-purpose {
-  padding: 60px 30px;
-  background-color: var(--eggshell);
-  text-align: center;
-  border-radius: 12px;
-  margin-bottom: 40px;
-}
-
-/* 📓 Section Container: Pages of Healing */
-.pages-of-healing {
-  padding: 60px 30px;
-  background-color: var(--eggshell);
-  text-align: center;
-  border-radius: 12px;
-  margin-bottom: 40px;
-}
-
-/* 🖼️ Section Container: Voices on the Wall */
-.voices-on-the-wall {
-  padding: 60px 30px;
-  background-color: var(--eggshell);
-  text-align: center;
-  border-radius: 12px;
-  margin-bottom: 40px;
+/* Mobile Tweak */
+@media (max-width: 768px) {
+  .text-block h1 { font-size: 2rem; }
 }
