@@ -1,112 +1,87 @@
+/* =========================================
+   (00) HEADER-FOOTER.CSS
+   ========================================= */
+
+/* --- HEADER (The Banner) --- */
 .banner-header {
   position: relative;
-  background-image: url('../asset/New-Banner.png'); /* Latte art background */
+  width: 100%;
+  background-color: var(--coffee-dark); /* Fallback color */
+  background-image: url('../asset/New-Banner.png');
   background-size: cover;
   background-position: center;
-  color: #fff;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
 }
 
+/* Dark overlay so text pops */
 .banner-overlay {
-  content: "";
   position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Overlay for contrast */
-  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 50% darkness */
+  z-index: 1;
 }
 
 .banner-container {
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Sits on top of overlay */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  max-width: 1000px;
-  width: 100%;
+  gap: 1.5rem;
 }
 
-.logo-block {
-  flex: 0 0 auto;
-  text-align: right;
-  padding-right: 2rem;
-}
-
+/* Logo Sizing */
 .logo-block img {
-  height: 2in;
-  width: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.logo-caption {
-  font-size: 0.9rem;
-  text-align: center;
-  color: #eee;
-  margin-top: 0.5rem;
-}
-
-.text-block {
-  flex: 1;
-  text-align: left;
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
 
 .text-block h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #fff;
-  line-height: 1.3;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.text-block .tagline {
-  font-size: 1.25rem;
-  font-style: italic;
-  color: #ddd;
-  margin-top: 0.5rem;
+.tagline {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* 🤝 Site Footer Styles
-   Used in: All pages
-   Purpose: End-of-page statement of values
----------------------------------------------------------- */
-
+/* --- FOOTER --- */
 footer {
-  background-color: var(--eggshell);
-  color: var(--text-dark);
-  padding: 1.5rem 1.25rem;
+  background-color: var(--coffee-dark);
+  color: var(--bg-cream);
   text-align: center;
-  font-size: 1rem;
-  border-top: 2px solid rgba(0, 0, 0, 0.05);
+  padding: 3rem 1rem;
+  margin-top: 4rem;
 }
 
-/* 🔗 Social Links Inline Below Footer Text (Emoji-Based) */
-footer .social-links {
-  margin-top: 0.75rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-footer .social-links a {
+.social-links {
+  margin-top: 1.5rem;
   font-size: 1.5rem;
-  transition: opacity 0.3s ease;
 }
 
-footer .social-links a:hover {
+.social-links a {
+  margin: 0 10px;
+  transition: opacity 0.3s;
+}
+
+.social-links a:hover {
   opacity: 0.7;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+/* Mobile Tweak */
+@media (max-width: 768px) {
+  .text-block h1 { font-size: 2rem; }
 }
 
