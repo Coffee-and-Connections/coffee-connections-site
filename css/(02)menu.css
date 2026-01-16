@@ -1,171 +1,218 @@
-/* =========================================
-   (02) MENU.CSS
-   ========================================= */
+/* ☕ (02)menu.css - Trauma-Informed Edition */
 
-/* --- HEADER --- */
+/* --- VARIABLES (Warm Palette) --- */
+:root {
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Merriweather', serif;
+    --font-ui: 'DM Sans', sans-serif;
+    
+    --color-bg: #f4f1ea;          /* Overall Background */
+    --color-card: #fffbf5;        /* Menu Card Background (Warmer than white) */
+    --color-ink: #3e2723;         /* Dark Coffee Text */
+    --color-accent: #d88d2a;      /* Gold/Orange highlight */
+    --color-green: #2e7d32;       /* Sanctuary Green */
+    --shadow-soft: 0 4px 20px rgba(62, 39, 35, 0.08);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+}
+
+/* --- HERO HEADER --- */
 .menu-header {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: var(--bg-cream);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 4rem 1rem 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .menu-header h1 {
-  font-size: 3rem;
-  color: var(--coffee-dark);
-  margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-ink);
 }
 
 .menu-subtitle {
-  font-size: 1.25rem;
-  color: var(--resilience-teal);
-  font-style: italic;
-  margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #6d4c41;
+    margin-bottom: 1.5rem;
 }
 
 .sourcing-note {
-  background-color: var(--bg-white);
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  border: 1px solid var(--coffee-light);
-  font-size: 0.9rem;
-  color: var(--text-muted);
+    font-family: var(--font-ui);
+    background-color: #e0d4c5; /* Soft brown tag */
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #3e2723;
 }
 
 /* --- MENU GRID LAYOUT --- */
 .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 4rem 2rem; /* Big vertical gap, smaller horizontal gap */
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.menu-category h2 {
-  font-family: var(--font-heading);
-  color: var(--coffee-dark);
-  border-bottom: 3px solid var(--resilience-teal);
-  display: inline-block;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Used for the Food section to span full width */
+/* Full width for Food section */
 .full-width {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
+}
+
+/* --- MENU CATEGORY CARD --- */
+.menu-category {
+    background-color: var(--color-card);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid #efebe9;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Placeholder Box */
+.category-image {
+    width: 100%;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills box without stretching */
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.menu-category:hover .category-image img {
+    opacity: 1; /* Brighten on hover */
+}
+
+/* Typography */
+.menu-category-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-ink);
+    margin-bottom: 0.2rem;
+    border-bottom: 2px solid #e0d4c5;
+    padding-bottom: 0.5rem;
+}
+
+.menu-category-subtitle {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: #8d6e63;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
 /* --- MENU ITEMS --- */
-.menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.menu-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #e0e0e0;
 }
 
-.menu-item {
-  margin-bottom: 1.5rem;
+.menu-item:last-child {
+    border-bottom: none;
 }
 
 .item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.25rem;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text-main);
-  border-bottom: 1px dotted #ccc; /* The classic "dot leader" effect */
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3rem;
 }
 
 .item-name {
-  background-color: var(--bg-cream); /* Covers the dots behind the text */
-  padding-right: 10px;
-  z-index: 1;
-  position: relative;
-  bottom: -4px; /* Aligns visually with the dotted line */
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--color-ink);
 }
 
 .item-price {
-  background-color: var(--bg-cream);
-  padding-left: 10px;
-  z-index: 1;
-  position: relative;
-  bottom: -4px;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    color: #5d4037;
 }
 
 .item-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-top: 0.25rem;
-  line-height: 1.4;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
 }
 
-/* --- SPECIAL "SANCTUARY POUR" STYLING --- */
-.featured-item {
-  background-color: var(--bg-white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid var(--healing-green);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-top: 1rem;
+.menu-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    font-family: var(--font-ui);
 }
 
-.featured-item .item-header {
-  border-bottom: none; /* Remove standard dots for the header */
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: var(--coffee-dark);
+.add-ons {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #8d6e63;
 }
 
-.pricing-options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
+/* --- SANCTUARY POUR SPECIAL --- */
+/* The Green Highlight Box */
+.sanctuary-box {
+    margin-top: 0.8rem;
+    background-color: #e8f5e9; /* Very light green bg */
+    border-left: 3px solid var(--color-green);
+    padding: 0.8rem;
+    border-radius: 0 4px 4px 0;
 }
 
-.price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.95rem;
+.sanctuary-title {
+    color: var(--color-green);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.2rem;
 }
 
-.p-name { font-weight: 600; }
-.p-name small { font-weight: 400; opacity: 0.8; }
-
-/* Dotted line filler for the sub-options */
-.p-dots {
-  flex-grow: 1;
-  border-bottom: 1px dotted #aaa;
-  margin: 0 10px;
-  position: relative;
-  top: -4px;
+.sanctuary-note {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #555;
+    display: block;
+    margin-top: 0.3rem;
 }
 
-.sanctuary-row {
-  color: var(--coffee-dark);
-  font-weight: bold;
+/* --- FOOD GRID (Inner layout for the wide food section) --- */
+.menu-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
-.sanctuary-row .p-cost {
-  background-color: var(--mint-highlight);
-  padding: 0.1rem 0.5rem;
-  border-radius: 4px;
+.food-column h3 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 600px) {
-  .menu-grid {
-    grid-template-columns: 1fr; /* Single column stack */
-  }
-  
-  .item-header {
-    font-size: 1rem;
-  }
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .menu-header h1 { font-size: 2.5rem; }
+    .menu-grid { padding: 1rem; gap: 1rem; }
 }
-
