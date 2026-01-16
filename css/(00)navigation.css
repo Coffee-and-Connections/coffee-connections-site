@@ -1,95 +1,111 @@
-/* =========================================
-   (00) NAVIGATION.CSS
-   ========================================= */
+/* 🧭 (00)navigation.css - Complete Rewrite */
 
+/* --- Main Navigation Container --- */
 .nav-container {
-  background-color: var(--bg-white);
-  border-bottom: 3px solid var(--resilience-teal);
-  position: sticky; /* Keeps menu at top when scrolling */
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 1rem;
+    position: relative; /* Essential for z-index to work */
+    z-index: 1000;      /* Keeps the menu ABOVE the video */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    height: 70px;       /* Fixed height for stability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* --- The Menu List (UL) --- */
 .nav-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem; /* Spacing between top-level items */
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
 }
 
+/* --- Top Level Links --- */
 .nav-menu > li {
-  position: relative; /* Anchor for submenu */
+    position: relative; /* Anchor point for dropdowns */
 }
 
-/* Top Level Links */
-.nav-menu > li > a {
-  display: block;
-  padding: 1rem 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  color: var(--coffee-dark);
-  transition: color 0.3s ease;
+.nav-menu a {
+    text-decoration: none;
+    color: #3e2723; /* Dark Coffee Brown */
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
 }
 
-.nav-menu > li > a:hover,
-.nav-menu > li > a.active {
-  color: var(--resilience-teal);
-  background-color: rgba(0,0,0,0.02);
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #d88d2a; /* Warm Gold */
 }
 
-/* --- DROPDOWN SUBMENU --- */
+/* --- Dropdown Menus (Submenu) --- */
 .submenu {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--bg-white);
-  list-style: none;
-  padding: 0;
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-radius: 0 0 8px 8px;
-  overflow: hidden;
-}
-
-.submenu li {
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.submenu a {
-  display: block;
-  padding: 1rem;
-  font-size: 0.95rem;
-  color: var(--text-main);
-  transition: background 0.2s;
-}
-
-.submenu a:hover {
-  background-color: var(--mint-highlight);
-  color: var(--coffee-dark);
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Drops directly below parent */
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px; /* Wide enough for long titles */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1001; /* Higher than the nav bar */
 }
 
 /* Show Submenu on Hover */
 .nav-menu > li:hover .submenu {
-  display: block;
+    display: block;
 }
 
-/* Mobile Nav Stack */
+/* --- Submenu Links --- */
+.submenu li a {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    color: #555;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.submenu li:last-child a {
+    border-bottom: none;
+}
+
+.submenu li a:hover {
+    background-color: #fcf8f2; /* Very light cream hover */
+    color: #d88d2a;
+    padding-left: 25px; /* Slight slide effect */
+}
+
+/* --- Mobile Menu (Simple Fallback) --- */
+/* Note: For a fully responsive mobile burger menu, we would need extra JS. 
+   This ensures it stacks cleanly on small screens for now. */
 @media (max-width: 768px) {
-  .nav-menu {
-    flex-direction: column;
-    text-align: center;
-    gap: 0;
-  }
-  .submenu {
-    position: static; /* Stack inside the menu on mobile */
-    box-shadow: none;
-    border-left: 4px solid var(--resilience-teal);
-  }
-}
+    .nav-container {
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
 
+    .submenu {
+        position: static; /* Stack naturally on mobile */
+        box-shadow: none;
+        background-color: #fafafa;
+        text-align: center;
+        display: none; /* Still hide until hover/click logic */
+    }
+
+    .nav-menu > li:hover .submenu {
+        display: block;
+    }
+}
