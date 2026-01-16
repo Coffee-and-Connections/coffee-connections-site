@@ -1,112 +1,143 @@
-/* 🎨 Page-Specific Styles for index.html */
+/* =========================================
+   THE LOBBY GRID LAYOUT
+   ========================================= */
 
-/* Mission Grid Layout */
-.mission-grid {
+/* 1. The Container */
+.lobby-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  gap: 1.5rem; /* Space between the boxes */
+  
+  /* 📐 THE BLUEPRINT (Matches your drawing) */
+  /* Left Column | Center Column | Right Column */
+  grid-template-columns: 1fr 2fr 1fr; 
+  grid-template-areas: 
+    "menu   lobby   help"
+    "mission lobby   circle";
 }
 
-/* Mission Left (Video) */
-.mission-left {
+/* 2. Assigning the Areas */
+.area-lobby   { grid-area: lobby; }
+.area-menu    { grid-area: menu; }
+.area-mission { grid-area: mission; }
+.area-help    { grid-area: help; }
+.area-circle  { grid-area: circle; }
+
+/* 3. The "Lobby" (Center Stage) */
+.area-lobby {
+  background-color: var(--bg-white);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.video-wrapper {
-  margin-bottom: 1rem;
+.area-lobby iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
-.video-caption {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  color: var(--text-dark);
-  font-family: var(--font-heading); /* 🎨 Mission-aligned font system */
+.lobby-content h2 {
+  font-family: var(--font-heading);
+  color: var(--coffee-dark);
+  font-size: 2rem;
 }
 
-/* Mission Right (Statement) */
-.mission-right {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--text-medium);
-  font-family: var(--font-main); /* Add this */
-}
-
-.founder-name {
-  font-style: italic;
-  margin-top: 1rem;
-  display: inline-block;
-    font-family: var(--font-main); /* Add this */
-}
-
-/* Founding Circle Snippet */
-.founding-circle-snippet {
-  background-color: var(--soft-cream);
-  padding: 3rem 1.5rem;
-  margin: 3rem auto;
-  max-width: 960px;
+/* 4. The "Rooms" (Side Cards) */
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  text-decoration: none; /* Removes underline from links */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--bg-cream); /* Light text by default */
+  position: relative;
+  overflow: hidden;
 }
 
-.read-more-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--accent-medium);
-  font-weight: bold;
-  text-decoration: none;
-  font-family: var(--font-main); /* Add this */
+/* Hover Effects */
+.hub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.read-more-link:hover {
-  text-decoration: underline;
+/* 🎨 Distinct Colors for Each Room */
+
+/* Menu: Coffee Dark */
+.area-menu { 
+  background-color: var(--coffee-dark); 
 }
 
-/* 🎉 Grand Opening Countdown Styles */
-.countdown-section {
-  text-align: center;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  max-width: 960px;
-  font-family: var(--font-heading); /* ✨ Bold, celebratory type */
-  color: var(--text-dark);
+/* Mission: Deep Plum */
+.area-mission { 
+  background-color: #4E2753; 
 }
 
-/* 🧾 Footer Styles */
-footer {
-  background-color: var(--soft-cream);
-  padding: 2rem 1.5rem;
-  text-align: center;
+/* Help: Resilience Teal */
+.area-help { 
+  background-color: var(--resilience-teal); 
+}
+
+/* Circle: Healing Green */
+.area-circle { 
+  background-color: var(--healing-green); 
+}
+
+/* 5. Typography inside the cards */
+.hub-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #fff;
+}
+
+.hub-card p {
+  font-family: var(--font-body);
   font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-text {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.hub-card:hover .btn-text {
+  background: #fff;
   color: var(--text-dark);
-  font-family: var(--font-main); /* Add this */
 }
 
-footer p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* 🔗 Soft Link for Fallback Video */
-.soft-link {
-  color: inherit;
-  text-decoration: underline dotted;
-  font-style: italic;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.soft-link:hover {
-  opacity: 1;
-  text-decoration: underline solid;
-}
-
-.read-more-link:focus,
-.soft-link:focus {
-  outline: 2px dashed var(--accent-medium);
-  outline-offset: 4px;
+/* 📱 MOBILE LAYOUT (Essential!) */
+@media (max-width: 900px) {
+  .lobby-grid {
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-areas: 
+      "lobby"
+      "menu"
+      "mission"
+      "help"
+      "circle";
+  }
 }
