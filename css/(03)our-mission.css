@@ -1,306 +1,174 @@
-/*/* 📜 Mission Hero Block
-   Purpose: Introductory storytelling with emotional tone
----------------------------------------------------------- */
+/* =========================================
+   (03) OUT-MISSION.CSS (The Story Version)
+   ========================================= */
+
+/* --- HERO SECTION --- */
 .mission-hero {
-  background-color: var(--dignity-cream);
-  text-align: left;
-  padding: 60px 30px;
-  border-left: 8px solid var(--resilience-teal);
-  border-radius: 10px;
-}
-
-/* 📝 Mission Title */
-.mission-title {
-  font-size: 2rem;              /* 32px */
-  font-weight: 700;
-  font-family: var(--font-heading);  /* Merriweather for warmth */
-  color: var(--deep-plum);
-  margin-bottom: 30px;
-}
-
-/* 📖 Mission Intro Text */
-.mission-subtext,
-.mission-story {
-  font-size: 1.25rem;           /* 20px */
-  line-height: 1.6;
-  font-family: var(--font-main);     /* DM Sans for readability */
-  color: var(--text-dark);
-  margin-bottom: 20px;
-}
-
-/* 🛤️ Origin Journey Grid
-   Purpose: Narrative split block for origin storytelling
----------------------------------------------------------- */
-.mission-origin {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: flex-start;
-  padding: 60px 30px;
-  background-color: var(--eggshell);
-  border-top: 2px solid rgba(0, 0, 0, 0.05);
-}
-
-/* 🔍 Left Text Column */
-.origin-left {
-  flex: 1;
-  min-width: 280px;
-}
-
-/* 🖼️ Right Image Column */
-.origin-right {
-  flex: 1;
-  min-width: 280px;
   text-align: center;
-}
-
-.origin-right img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* 📸 Founder Photo Caption */
-.founder-photo {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.founder-photo figcaption {
-  font-size: 1rem;
-  color: var(--text-muted);         /* Use your preferred accent tone */
-  margin-top: 8px;
-  font-style: italic;
-  line-height: 1.5;
-}
-
-.caption-context {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-  font-style: italic;
-}
-/* ✒️ Section Heading */
-.origin-title {
-  font-size: 2rem;                  /* 32px */
-  font-weight: 700;
-  font-family: var(--font-heading); /* Merriweather for warmth */
-  color: var(--deep-plum);
-  margin-bottom: 30px;
-}
-
-/* 📖 Story Text */
-.story-block p {
-  font-size: 1.25rem;               /* 20px */
-  line-height: 1.6;
-  font-family: var(--font-main);   /* DM Sans for clarity */
-  color: var(--text-dark);
-  margin-bottom: 24px;
-}
-
-/* 🎯 Mission Pillars
-   Purpose: Showcase foundational values with clarity and warmth
----------------------------------------------------------- */
-.mission-pillars {
-  background-color: var(--dignity-cream);
-  padding: 60px 30px;
-  border-left: 8px solid var(--connection-purple);
-  border-radius: 10px;
-}
-
-/* 🔖 Pillars Title */
-.pillars-title {
-  font-size: 2rem;                   /* 32px */
-  font-weight: 700;
-  font-family: var(--font-heading); /* Merriweather for depth and identity */
-  color: var(--deep-plum);
-  margin-bottom: 30px;
-}
-
-/* 📋 Pillars List Container */
-.pillars-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-/* 🪜 Individual Pillars */
-.pillars-list li {
-  font-size: 1.25rem;                /* 20px */
-  line-height: 1.6;
-  font-family: var(--font-main);    /* DM Sans for clarity and trust */
-  color: var(--text-dark);
-  margin-bottom: 24px;
-}
-
-/* 🏷️ Pillar Labels */
-.pillar-label {
-  font-weight: 600;
-  font-family: var(--font-main);    /* Consistent body font */
-  color: var(--deep-plum);
-  display: block;
-  margin-bottom: 6px;
-}
-
-/* ✍️ Founders' Message
-   Purpose: Personal testimony that feels hand-written and heartfelt
----------------------------------------------------------- */
-.mission-founders {
-  background-color: var(--dignity-cream);
-  padding: 60px 30px;
-  border-left: 8px solid var(--resilience-teal);
-  font-style: italic;
-  font-size: 1.5rem;                     /* 24px */
-  line-height: 1.8;
-  font-family: var(--font-heading);     /* Merriweather for warm, journal tone */
-  color: var(--text-dark);
   max-width: 900px;
-  margin: 0 auto 60px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
-/* 🖋️ Voice Attribution */
-.origin-voice {
-  display: block;
-  font-weight: bold;
-  font-style: normal;
-  font-family: var(--font-main);        /* DM Sans for clear attribution */
-  color: var(--deep-plum);
-  margin-bottom: 8px;
+.mission-hero h1 {
+  font-size: 2.5rem;
+  color: var(--coffee-dark);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
-/* 💬 Collective Closing Call */
-.collective-call {
-  font-weight: 600;
-  font-family: var(--font-main);        /* Consistent body styling */
-  color: var(--connection-purple);
-}
-
-/* 💌 Mission Invitation CTA
-   Purpose: Final emotional nudge to join in the journey
----------------------------------------------------------- */
-.mission-invitation {
-  text-align: center;
-  background-color: var(--dignity-cream);
-  padding: 50px 30px;
-  border-top: 2px solid rgba(0, 0, 0, 0.04);
-}
-
-/* 📣 Invitation Heading */
-.invitation-title {
-  font-size: 1.75rem;                   /* 28px */
-  font-weight: 700;
-  font-family: var(--font-heading);    /* Merriweather for depth */
-  color: var(--deep-plum);
-  margin-bottom: 15px;
-}
-
-/* 📝 Invitation Text */
-.invitation-text {
-  font-size: 1.125rem;                  /* 18px */
-  font-family: var(--font-main);       /* DM Sans for warm accessibility */
-  color: var(--text-dark);
-  margin-bottom: 20px;
-}
-
-/* ✨ Call-to-Action Join Button
-   Purpose: Invite participation with warmth and clarity
----------------------------------------------------------- */
-.cta-join {
-  display: inline-block;
-  font-size: 1.125rem;               /* 18px */
-  font-weight: 700;
-  font-family: var(--font-main);    /* DM Sans for clarity and energy */
-  padding: 12px 20px;
-  background-color: var(--connection-purple);
-  color: var(--dignity-cream);
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-join:hover {
-  background-color: var(--deep-plum);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* 📢 Social Sharing Block
-   Purpose: Extend community ripple effect
----------------------------------------------------------- */
-.social-share {
-  background-color: var(--eggshell);
-  padding: 60px 30px;
-  text-align: center;
-  border-top: 2px solid rgba(0, 0, 0, 0.03);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.03);
-}
-
-/* 📣 Share Title */
-.share-title {
-  font-size: 1.75rem;                 /* 28px */
-  font-weight: 700;
-  font-family: var(--font-heading);  /* Merriweather for emotional tone */
-  color: var(--deep-plum);
-  margin-bottom: 20px;
-}
-
-/* 📝 Share Description */
-.share-text {
-  font-size: 1.25rem;                 /* 20px */
-  font-family: var(--font-main);     /* DM Sans for approachable storytelling */
-  color: var(--text-dark);
-  margin-bottom: 24px;
-}
-
-/* 🔍 Subnote Styling */
-.share-note {
-  font-size: 1rem;                    /* 16px */
-  font-family: var(--font-main);
-  color: var(--text-dark);
-  opacity: 0.8;
-  margin-bottom: 20px;
-}
-
-/* 🔗 Share Buttons */
-.share-buttons a {
-  margin: 8px;
-  font-size: 1.125rem;               /* 18px */
-  font-family: var(--font-main);
-  color: var(--connection-purple);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.share-buttons a:hover {
-  color: var(--deep-plum);
-}
-
-/* 🎨 Semantic Emphasis Classes
-   Purpose: Textual emotion, advocacy, and healing-based design accents
----------------------------------------------------------- */
-
-/* 🟢 Empathetic Strength */
-.mission-emphasis {
-  font-weight: 600;
-  font-family: var(--font-main);         /* Clear, confident tone */
-  color: var(--india-green);
-}
-
-/* 💜 Emotional Italics */
-.callout-emotion {
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  color: var(--resilience-teal);
   font-style: italic;
-  font-family: var(--font-main);         /* Personal storytelling tone */
-  color: var(--connection-purple);
+  font-weight: 400;
+  margin-bottom: 2rem;
 }
 
-/* ✊ Truth Highlight */
-.truth-strike {
-  font-weight: 700;
-  font-family: var(--font-main);         /* Strong declaration */
-  background-color: var(--mint-healing);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+.hero-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+/* --- ORIGIN STORY --- */
+.origin-story, .the-solution {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.origin-story h3, .the-solution h3 {
+  font-size: 2rem;
+  color: var(--coffee-dark);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--healing-green);
+  display: inline-block;
+}
+
+.highlight-box {
+  background-color: var(--bg-white);
+  border-left: 5px solid var(--coffee-dark);
+  padding: 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.founders-signoff {
+  margin-top: 3rem;
+  text-align: right;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 1rem;
+}
+
+.founders-signoff p { font-weight: bold; color: var(--coffee-dark); margin-bottom: 0; }
+.founders-signoff small { font-style: italic; color: var(--text-muted); }
+
+/* --- PRINCIPLES GRID --- */
+.principles-section {
+  background-color: var(--bg-white);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.principles-section h3 {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.principle-card {
+  background-color: var(--bg-cream);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.principle-card h4 {
+  color: var(--resilience-teal);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.principle-card p {
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-bottom: 0;
+}
+
+/* --- PERSONAL QUOTES --- */
+.personal-quotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.quote-block {
+  background-color: var(--coffee-dark);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  position: relative;
+}
+
+.quote-block strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--healing-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.quote-block p {
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* --- CLOSING --- */
+.mission-closing {
+  text-align: center;
+  max-width: 700px;
+  margin: 4rem auto 6rem auto;
+  padding: 0 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--resilience-teal);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: var(--healing-green);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .personal-quotes { grid-template-columns: 1fr; }
+  .mission-hero h1 { font-size: 2rem; }
 }
