@@ -3,480 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Healing in Motion: A Survivor Journal. Real stories of resilience from the El Paso community." />
-  <title>Healing in Motion | Coffee & Connections</title>
+  <meta name="description" content="The Story of Coffee & Connections. Born from fire, built for safety. The mission behind the sanctuary." />
+  <title>Our Mission | Coffee & Connections</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/(00)base.css">
   <link rel="stylesheet" href="css/(00)header-footer.css">
   <link rel="stylesheet" href="css/(00)navigation.css">
-
-  <style>
-    /* 📖 INTERNAL STYLES - Ensures the Book Loads Correctly */
-    
-    /* Variables for the Book Look */
-    :root {
-        --book-leather: #3e2723;   /* Dark Brown Leather */
-        --book-paper: #fcf6e9;     /* Warm Antique Paper */
-        --book-shadow: #d7ccc8;    /* Paper Shadows */
-        --ink-color: #2c1810;      /* Dark Coffee Ink */
-        --gold-accent: #c5a059;    /* Gold Leaf Text */
-        
-        --font-title: 'Cormorant Garamond', serif;
-        --font-text: 'Merriweather', serif;
-    }
-
-    /* Page Background */
-    body {
-        background-color: #efebe9; /* Light grey/brown surrounding the book */
-    }
-
-    main {
-        padding-top: 2rem;
-        padding-bottom: 4rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* --- 1. THE PREAMBLE (Intro Text) --- */
-    .preamble-section {
-        text-align: center;
-        max-width: 800px;
-        margin-bottom: 3rem;
-        padding: 0 1rem;
-    }
-
-    .preamble-title {
-        font-family: var(--font-title);
-        font-size: 3rem;
-        color: var(--book-leather);
-        margin-bottom: 1rem;
-    }
-
-    .preamble-text {
-        font-family: var(--font-text);
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #4e342e;
-    }
-
-    /* --- 2. THE LEATHER BOOK CONTAINER --- */
-    .book-container {
-        position: relative;
-        width: 100%;
-        max-width: 950px;
-        height: 650px; /* Fixed height for the book */
-        background-color: var(--book-leather);
-        border-radius: 12px;
-        box-shadow: 
-            0 20px 50px rgba(0,0,0,0.5), /* Deep Shadow */
-            inset 0 0 60px rgba(0,0,0,0.8); /* Inner leather shadow */
-        padding: 20px; /* The "Leather Rim" around the paper */
-        display: flex;
-        justify-content: center;
-        perspective: 1500px; /* Setup for 3D page turns if we added them later */
-    }
-
-    /* The Center Spine Shadow */
-    .book-container::after {
-        content: "";
-        position: absolute;
-        top: 20px;
-        bottom: 20px;
-        left: 50%;
-        width: 40px;
-        transform: translateX(-50%);
-        background: linear-gradient(to right, 
-            rgba(0,0,0,0.05), 
-            rgba(0,0,0,0.3) 40%, 
-            rgba(0,0,0,0.3) 60%, 
-            rgba(0,0,0,0.05)
-        );
-        z-index: 10;
-        pointer-events: none;
-    }
-
-    /* --- 3. THE SPREADS (Two Pages Visible at Once) --- */
-    .journal-spread {
-        display: none; /* Hidden by default */
-        width: 100%;
-        height: 100%;
-        background-color: var(--book-paper);
-        box-shadow: inset 0 0 30px rgba(62, 39, 35, 0.2); /* Paper aging */
-        border-radius: 4px;
-    }
-
-    /* Only show the active spread */
-    .journal-spread.active {
-        display: flex; /* Shows two pages side-by-side */
-    }
-
-    /* Individual Page Styling */
-    .page {
-        flex: 1; /* Each page takes 50% width */
-        padding: 3rem 2.5rem;
-        overflow-y: auto; /* Allow scrolling if text is long */
-        position: relative;
-    }
-
-    /* Left Page Shadow (Gutter) */
-    .page.left {
-        border-right: 1px solid #e0e0e0;
-        background: linear-gradient(to right, var(--book-paper) 90%, #eee0c9 100%);
-    }
-
-    /* Right Page Shadow (Gutter) */
-    .page.right {
-        background: linear-gradient(to left, var(--book-paper) 90%, #eee0c9 100%);
-    }
-
-    /* --- TYPOGRAPHY INSIDE THE BOOK --- */
-    .page-num {
-        position: absolute;
-        bottom: 1.5rem;
-        font-family: var(--font-title);
-        color: #8d6e63;
-        font-size: 1rem;
-    }
-    .page.left .page-num { left: 2rem; }
-    .page.right .page-num { right: 2rem; }
-
-    .entry-title {
-        font-family: var(--font-title);
-        font-size: 2.2rem;
-        color: var(--ink-color);
-        border-bottom: 2px solid #d7ccc8;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .entry-text {
-        font-family: var(--font-text);
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #3e2723;
-        margin-bottom: 1.5rem;
-    }
-
-    .handwritten {
-        font-family: var(--font-title);
-        font-style: italic;
-        font-size: 1.5rem;
-        color: #5d4037;
-    }
-
-    .signature {
-        text-align: right;
-        font-family: var(--font-title);
-        font-weight: 700;
-        margin-top: 1rem;
-        color: #6d4c41;
-        font-style: italic;
-    }
-
-    /* --- COVER PAGE STYLING (Spread 1) --- */
-    .title-page-content {
-        text-align: center;
-        margin-top: 20%;
-        border: 4px double var(--ink-color);
-        padding: 2rem;
-    }
-    .book-main-title {
-        font-family: var(--font-title);
-        font-size: 3.5rem;
-        line-height: 1;
-        margin-bottom: 1rem;
-        color: var(--ink-color);
-    }
-    .dedication {
-        font-style: italic;
-        font-size: 1.2rem;
-        margin-top: 30%;
-        text-align: center;
-        color: #5d4037;
-    }
-
-    /* --- TAGS STYLING --- */
-    .tags-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 2rem;
-    }
-    .tag {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        color: white;
-        padding: 4px 8px;
-        border-radius: 4px;
-        letter-spacing: 0.5px;
-    }
-    /* Specific Tag Colors */
-    .tag-sa { background-color: #008080; } /* Teal */
-    .tag-mh { background-color: #4682B4; } /* Blue */
-    .tag-dv { background-color: #800080; } /* Purple */
-    .tag-ptsd { background-color: #556B2F; } /* Olive */
-    .tag-mil { background-color: #708090; } /* Slate */
-
-    /* --- NAVIGATION BUTTONS --- */
-    .book-controls {
-        margin-top: 2rem;
-        display: flex;
-        gap: 1.5rem;
-    }
-
-    .control-btn {
-        background-color: var(--book-leather);
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-family: var(--font-title);
-        font-size: 1.2rem;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: background 0.2s;
-    }
-    .control-btn:hover:not(:disabled) {
-        background-color: #5d4037;
-    }
-    .control-btn:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-
-    /* --- FORM SECTION STYLING --- */
-    .form-section {
-        margin-top: 5rem;
-        max-width: 600px;
-        width: 100%;
-        padding: 0 1rem;
-    }
-    .form-container {
-        background-color: #fff;
-        padding: 2rem;
-        border-radius: 8px;
-        border: 1px solid #d7ccc8;
-    }
-    .form-input, .form-textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        font-family: var(--font-text);
-    }
-    .submit-btn {
-        width: 100%;
-        padding: 1rem;
-        background-color: #2e7d32;
-        color: white;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-    }
-
-    /* --- MOBILE RESPONSIVENESS --- */
-    @media (max-width: 768px) {
-        .book-container { height: auto; padding: 10px; }
-        .journal-spread.active { flex-direction: column; } /* Stack pages on mobile */
-        .page.left { border-right: none; border-bottom: 1px solid #ccc; }
-        .page { min-height: 400px; padding: 1.5rem; }
-    }
-  </style>
+  
+  <link rel="stylesheet" href="css/(02)mission.css">
 </head>
 
 <body>
 
-<nav class="nav-container" role="navigation">
-  <ul class="nav-menu">
-    <li><a href="index.html">🏠 Home</a></li>
-    <li>
-      <a href="menu.html">☕ Coffee</a>
-      <ul class="submenu">
-        <li><a href="menu.html">Full Menu</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="our-mission.html">💬 Mission</a>
-      <ul class="submenu">
-        <li><a href="healing-in-motion.html">Healing in Motion</a></li>
-        <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
-        <li><a href="founding-circle.html">Founding Circle</a></li>
-        <li><a href="how-you-can-help.html">How You Can Help</a></li>
-      </ul>
-    </li>
-    <li><a href="resilience-market.html">🛍️ Shop</a></li>
-  </ul>
-</nav>
+  <nav class="nav-container" role="navigation">
+    <ul class="nav-menu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li>
+        <a href="menu.html">☕ Coffee</a>
+        <ul class="submenu">
+          <li><a href="menu.html">Full Menu</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="our-mission.html" class="active">💬 Mission</a>
+        <ul class="submenu">
+          <li><a href="healing-in-motion.html">Healing in Motion</a></li>
+          <li><a href="trauma-informed-design.html">Trauma-Informed Design</a></li>
+          <li><a href="founding-circle.html">Founding Circle</a></li>
+          <li><a href="how-you-can-help.html">How You Can Help</a></li>
+        </ul>
+      </li>
+      <li><a href="resilience-market.html">🛍️ Shop</a></li>
+    </ul>
+  </nav>
 
   <main>
-    <section class="preamble-section">
-      <h1 class="preamble-title">The Language of Healing</h1>
-      <p class="preamble-text">
-        In this space, words matter. While "victim" is a legal term, we choose <strong>"Survivor."</strong> 
-        A survivor is defined by their capacity to persist and reclaim their life. 
-        These are their pages. This is their truth.
-      </p>
+
+    <header class="mission-hero">
+      <h1 class="hero-quote">
+        “Coffee & Connections is a sanctuary—<br>
+        where safety lives before healing begins.”
+      </h1>
+    </header>
+
+    <section class="story-section">
+      <div class="story-block">
+        <h2>Born From Fire</h2>
+        <p>
+          We didn't build this to serve coffee. We built it because too many of us found pain before we ever found safety.
+          <br><br>
+          Marylou survived trauma inside a system that tried to silence her. Tony almost died at his own hand to show how deeply it was broken.
+          <br><br>
+          This space was born from that fire—from stories no one wanted to hear, and lives no one cared to try to save.
+        </p>
+      </div>
+
+      <div class="story-divider"></div>
+
+      <div class="story-block">
+        <h2>The Spark</h2>
+        <p>
+          It started in a car. Tony had been thinking about what life might look like after the Army. His love of coffee sparked an idea: <em>“I should open a coffee shop.”</em>
+        </p>
+        <p>
+          One day, on the way to a trauma therapy appointment, Marylou said: 
+          <br>
+          <strong class="highlight-text">“What if you tied your coffee shop to mental health?”</strong>
+        </p>
+        <p>
+          A simple sentence. And an idea was born. What if we took all the pain—all the missed opportunities—and turned them into a bridge? A space that caught people <em>before</em> the crisis.
+        </p>
+      </div>
     </section>
 
-    <div class="book-container">
-      
-      <div class="journal-spread active" id="spread-1">
-        <div class="page left">
-          <div class="title-page-content">
-            <h2 class="book-main-title">The<br>Survivor<br>Journal</h2>
-            <div style="font-size: 2rem; color: #8d6e63;">❦</div>
-            <p>Est. 2025 • El Paso</p>
-          </div>
-        </div>
-        <div class="page right">
-          <div class="dedication">
-            <p>"Your stories aren’t chapters — they’re declarations."</p>
-            <br>
-            <p>Declarations that trauma doesn’t define you. That healing is radical. That survival is sacred.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="journal-spread" id="spread-2">
-        <div class="page left">
-          <span class="page-num">2</span>
-          <h3 class="entry-title">From Anthony</h3>
-          <p class="entry-text handwritten">"I tried to die to make someone care."</p>
-          <p class="entry-text">Now I live to make sure no one feels alone again.</p>
-          <div class="signature">— Founder</div>
-        </div>
-        <div class="page right">
-          <span class="page-num">3</span>
-          <h3 class="entry-title">From Marylou</h3>
-          <p class="entry-text handwritten">"I survived what never should’ve happened."</p>
-          <p class="entry-text">So now I build what never existed—a space that sees the whole person before the crisis.</p>
-          <div class="signature">— Founder</div>
-        </div>
-      </div>
-
-      <div class="journal-spread" id="spread-3">
-        <div class="page left">
-          <span class="page-num">4</span>
-          <h3 class="entry-title">Community Voices</h3>
-          <p class="entry-text">“I came here not knowing if I’d be believed. Now I tell others—this café gave me a place to exhale.”</p>
-          <div class="signature">— Guest, El Paso</div>
-          <hr style="margin: 2rem 0; border: 0; border-top: 1px dashed #ccc;">
-          <p class="entry-text">“Coffee & Connections didn’t ask for paperwork—they asked how I was. That changed everything.”</p>
-          <div class="signature">— Guest, Unknown</div>
-        </div>
-        <div class="page right">
-          <span class="page-num">5</span>
-          <h3 class="entry-title">Jas J</h3>
-          <p class="entry-text">“I tried to push what happened to me to the back of my head... but I realized that talking helps the healing.”</p>
-          <p class="entry-text handwritten">“Don’t be afraid to speak about what you silently go through.”</p>
-          <div class="tags-container">
-            <span class="tag tag-sa">Sexual Assault Survivor</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="journal-spread" id="spread-4">
-        <div class="page left">
-          <span class="page-num">6</span>
-          <h3 class="entry-title">My Story</h3>
-          <p class="entry-text">I was sexually assaulted when I was 5... I then joined the military and went through a nasty divorce. I was raped over five times, by the same and different people.</p>
-          <p class="entry-text">I found myself in a cycle of trust, grief, blame, and feeling like I always deserved it all.</p>
-          <p class="entry-text">I coped extensively with alcohol... I also attempted suicide about five times—what a failure, right?</p>
-        </div>
-        <div class="page right">
-          <span class="page-num">7</span>
-          <p class="entry-text">But after INTENSIVE self work... I’d like to share this story. It’s not normal for your body to be used.</p>
-          <p class="entry-text">The anxiety, depression, and PTSD I’ve faced shouldn’t have been so isolated. I now have fibromyalgia, slight agoraphobia... but I am here.</p>
-          <div class="signature">— Anonymous, Fort Bliss</div>
-          <div class="tags-container">
-            <span class="tag tag-mh">Mental Health</span>
-            <span class="tag tag-dv">Domestic Violence</span>
-            <span class="tag tag-ptsd">PTSD</span>
-            <span class="tag tag-mil">Military</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="book-controls">
-      <button id="prevBtn" class="control-btn" disabled>← Previous Page</button>
-      <button id="nextBtn" class="control-btn">Next Page →</button>
-    </div>
-
-    <section class="form-section">
-      <div class="form-container">
-        <h2 style="font-family: var(--font-title); margin-bottom: 1rem;">Lend Your Voice</h2>
-        <p style="margin-bottom: 1.5rem; color: #555;">Your words may help someone feel seen.</p>
+    <section class="principles-container">
+      <h2 class="principles-header">Our Guiding Principles</h2>
+      <div class="principles-grid">
         
-        <form action="https://getform.io/f/allzdmra" method="POST">
-          <label>Name / Alias</label>
-          <input type="text" name="name" class="form-input" placeholder="Optional">
-          
-          <label>Your Message</label>
-          <textarea name="message" rows="5" class="form-textarea" required></textarea>
-          
-          <button type="submit" class="submit-btn">Add My Story</button>
-        </form>
+        <div class="principle-card">
+          <span class="p-icon">☕</span>
+          <h3>Comfort First</h3>
+          <p>Coffee is a ritual—a warmth offered, not sold. Every cup is a gesture of care.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="p-icon">👥</span>
+          <h3>Belonging Before Bureaucracy</h3>
+          <p>We don't need paperwork to welcome you. We see the person, their story, and their lived truth first.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="p-icon">🧠</span>
+          <h3>Trauma-Informed Always</h3>
+          <p>From how we greet you to how our chairs are arranged—we build with your nervous system in mind.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="p-icon">🎯</span>
+          <h3>Governance with Heart</h3>
+          <p>We reject hierarchy that harms. Every decision is shaped by shared voice, transparency, and dignity.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="p-icon">🎮</span>
+          <h3>Joy Is Resistance</h3>
+          <p>Our gaming rooms are landing pads for laughter. Joy isn’t a luxury here—it’s a healing force.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="p-icon">🌍</span>
+          <h3>Context Creates Clarity</h3>
+          <p>We honor the layers of lived truth—history, identity, and culture. Every story carries weight.</p>
+        </div>
+
       </div>
     </section>
+
+    <section class="founders-message">
+      <div class="message-container">
+        <div class="founder-voice">
+          <h3>From Anthony</h3>
+          <p class="italicized">"I tried to die to make someone care. Now I live to make sure no one feels alone again."</p>
+        </div>
+        
+        <div class="founder-voice">
+          <h3>From Marylou</h3>
+          <p class="italicized">"I survived what never should’ve happened. So now I build what never existed."</p>
+        </div>
+      </div>
+
+      <div class="final-cta">
+        <p>We built this for you. Not for clicks. Not for praise. But for connection.</p>
+        <a href="founding-circle.html" class="cta-btn">Join the Founding Circle</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
+    <div class="social-links">
+      <a href="#">📸</a> <a href="#">🧵</a> <a href="#">🤝</a> <a href="#">💙</a>
+    </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // 1. Get all the spreads (pages)
-    const spreads = document.querySelectorAll('.journal-spread');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    
-    // 2. Track which spread is showing (Starts at 0 = Title Page)
-    let currentSpreadIndex = 0;
-
-    // 3. Function to update the view
-    function updateBook() {
-      // Loop through all spreads and hide them
-      spreads.forEach((spread, index) => {
-        if (index === currentSpreadIndex) {
-          spread.classList.add('active'); // Show this one
-        } else {
-          spread.classList.remove('active'); // Hide others
-        }
-      });
-
-      // Disable 'Previous' if we are on page 1
-      prevBtn.disabled = (currentSpreadIndex === 0);
-      
-      // Disable 'Next' if we are on the last page
-      nextBtn.disabled = (currentSpreadIndex === spreads.length - 1);
-    }
-
-    // 4. Button Listeners
-    nextBtn.addEventListener('click', () => {
-      if (currentSpreadIndex < spreads.length - 1) {
-        currentSpreadIndex++; // Go forward
-        updateBook();
-      }
-    });
-
-    prevBtn.addEventListener('click', () => {
-      if (currentSpreadIndex > 0) {
-        currentSpreadIndex--; // Go backward
-        updateBook();
-      }
-    });
-
-    // 5. Run once on load to set initial state
-    updateBook();
   </script>
 
 </body>
