@@ -1,206 +1,174 @@
-/* 📜 (03)mission.css - The Living Manifesto */
+/* (03)mission.css - The Origin Story */
 
-/* --- VARIABLES --- */
 :root {
+    --bg-paper: #fcfbf8;
+    --ink-dark: #2c1810;
+    --accent-gold: #d88d2a;
+    --accent-teal: #008080;
+    
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Merriweather', serif;
-    --font-ui: 'DM Sans', sans-serif;
-    
-    --color-bg: #f4f1ea;          /* Overall Background */
-    --color-paper: #fffbf5;       /* Card/Paper Background */
-    --color-ink: #3e2723;         /* Dark Coffee Text */
-    --color-accent: #d88d2a;      /* Gold/Orange highlight */
-    --color-subtle: #8d6e63;      /* Muted Brown */
-    
-    --shadow-paper: 0 1px 4px rgba(0,0,0,0.05), 0 10px 30px rgba(62, 39, 35, 0.05);
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-ink);
+    background-color: var(--bg-paper);
+    color: var(--ink-dark);
     font-family: var(--font-body);
-    line-height: 1.6;
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO QUOTE --- */
 .mission-hero {
     text-align: center;
-    padding: 5rem 1rem 3rem 1rem;
+    padding: 6rem 1rem;
+    background-color: #2c1810;
+    color: #fcfbf8;
+}
+
+.hero-quote {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-style: italic;
+    line-height: 1.4;
     max-width: 900px;
     margin: 0 auto;
 }
 
-.mission-title {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--color-ink);
-    line-height: 1.1;
-}
-
-.mission-subtitle {
-    font-size: 1.3rem;
-    color: #5d4037;
-    font-style: italic;
-    font-family: var(--font-heading);
-    max-width: 700px;
+/* --- STORY SECTIONS --- */
+.story-section {
+    max-width: 800px;
     margin: 0 auto;
+    padding: 5rem 1rem;
 }
 
-/* --- THE ORIGIN STORY (Paper Effect) --- */
-.story-container {
-    max-width: 850px;
-    margin: 0 auto 4rem auto;
-    background-color: var(--color-paper);
-    padding: 3rem 4rem; /* Wide padding for letter look */
-    box-shadow: var(--shadow-paper);
-    border-top: 4px solid var(--color-accent); /* Gold Accent Top */
-    position: relative;
-}
-
-.story-heading {
+.story-block h2 {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
-    color: var(--color-ink);
+    font-size: 2.5rem;
+    color: var(--accent-gold);
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid #e0d4c5;
-    padding-bottom: 0.5rem;
 }
 
-.story-text {
-    font-size: 1.05rem;
-    color: #4a3b32;
+.story-block p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #4e342e;
     margin-bottom: 1.5rem;
-    line-height: 1.8; /* Breathable reading */
 }
 
 .highlight-text {
-    font-weight: 700;
-    color: var(--color-ink);
-}
-
-/* --- FOUNDERS QUOTES --- */
-.founders-voice {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px dashed #d7ccc8;
-}
-
-.quote-block {
-    text-align: center;
-}
-
-.quote-text {
-    font-family: var(--font-heading);
+    color: var(--ink-dark);
+    font-size: 1.3rem;
+    display: block;
+    margin-top: 1rem;
+    border-left: 4px solid var(--accent-gold);
+    padding-left: 1rem;
     font-style: italic;
-    font-size: 1.4rem;
-    color: #5d4037;
-    margin-bottom: 0.5rem;
 }
 
-.quote-author {
-    font-family: var(--font-ui);
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.story-divider {
+    height: 1px;
+    background-color: #d7ccc8;
+    width: 100px;
+    margin: 3rem auto;
 }
 
-/* --- GUIDING PRINCIPLES (Static Grid) --- */
-.principles-section {
-    background-color: #efebe9; /* Slightly darker band */
-    padding: 4rem 1rem;
+/* --- PRINCIPLES GRID --- */
+.principles-container {
+    background-color: #efebe9; /* Slightly darker backing */
+    padding: 5rem 1rem;
 }
 
-.section-header {
+.principles-header {
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin-bottom: 3rem;
-    color: var(--color-ink);
+    color: var(--ink-dark);
 }
 
 .principles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .principle-card {
-    background-color: #fffbf5;
+    background-color: #fff;
     padding: 2rem;
-    border-radius: 4px;
-    border: 1px solid #e0d4c5;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--accent-gold);
     transition: transform 0.2s;
 }
 
 .principle-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
 }
 
-.principle-icon {
-    font-size: 2rem;
+.p-icon {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     display: block;
 }
 
-.principle-title {
+.principle-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-.principle-desc {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* --- CTA SECTION --- */
-.mission-cta {
+/* --- FOUNDERS VOICE --- */
+.founders-message {
+    padding: 6rem 1rem;
     text-align: center;
-    padding: 5rem 1rem;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.cta-text {
+.message-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.founder-voice h3 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--color-ink);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent-teal);
 }
 
-.cta-button {
+.italicized {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.final-cta {
+    border-top: 1px solid #d7ccc8;
+    padding-top: 3rem;
+}
+
+.cta-btn {
     display: inline-block;
+    background-color: var(--accent-gold);
+    color: #2c1810;
     padding: 1rem 2.5rem;
-    background-color: #2e7d32; /* Healing Green */
-    color: white;
-    font-family: var(--font-ui);
-    font-weight: bold;
-    text-transform: uppercase;
     text-decoration: none;
+    font-weight: 700;
     border-radius: 4px;
-    letter-spacing: 1px;
-    transition: background 0.3s;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
 }
 
-.cta-button:hover {
-    background-color: #1b5e20;
+.cta-btn:hover {
+    background-color: #ffb74d;
 }
 
-/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .story-container { padding: 2rem 1.5rem; }
-    .founders-voice { grid-template-columns: 1fr; gap: 3rem; }
-    .mission-title { font-size: 2.5rem; }
+    .message-container { grid-template-columns: 1fr; }
+    .hero-quote { font-size: 1.8rem; }
 }
