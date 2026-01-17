@@ -74,7 +74,8 @@ body {
 
 .hero-video-frame video {
     width: 100%;
-    height: auto;
+    height: 100%;       /* CHANGED: Forces the video to fill the frame */
+    object-fit: cover;  /* ADDED: Ensures it doesn't stretch/squish */
     display: block;
 }
 
