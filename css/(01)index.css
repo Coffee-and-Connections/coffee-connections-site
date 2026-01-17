@@ -54,12 +54,12 @@ body {
 }
 
 /* Right Column: Video Container */
-.hero-video-col {
-    position: relative;
+/* UPDATED: targeting 'iframe' instead of 'video' */
+.hero-video-frame iframe {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    border: none;       /* Removes the ugly border */
+    display: block;
 }
 
 /* The "Frame" - Forces the shape */
