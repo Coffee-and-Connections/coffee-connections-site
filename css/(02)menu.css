@@ -2,217 +2,277 @@
 
 /* --- VARIABLES (Warm Palette) --- */
 :root {
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Merriweather', serif;
-    --font-ui: 'DM Sans', sans-serif;
-    
-    --color-bg: #f4f1ea;          /* Overall Background */
-    --color-card: #fffbf5;        /* Menu Card Background (Warmer than white) */
-    --color-ink: #3e2723;         /* Dark Coffee Text */
-    --color-accent: #d88d2a;      /* Gold/Orange highlight */
-    --color-green: #2e7d32;       /* Sanctuary Green */
-    --shadow-soft: 0 4px 20px rgba(62, 39, 35, 0.08);
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Merriweather', serif;
+  --font-ui: 'DM Sans', sans-serif;
+  
+  --color-bg: #f4f1ea;          /* Overall Background */
+  --color-card: #fffbf5;        /* Menu Card Background (Warmer than white) */
+  --color-ink: #3e2723;         /* Dark Coffee Text */
+  --color-accent: #d88d2a;      /* Gold/Orange highlight */
+  --color-green: #2e7d32;       /* Sanctuary Green */
+  --shadow-soft: 0 4px 20px rgba(62, 39, 35, 0.08);
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-ink);
-    font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
 }
 
 /* --- HERO HEADER --- */
 .menu-header {
-    text-align: center;
-    padding: 4rem 1rem 2rem 1rem;
-    max-width: 800px;
-    margin: 0 auto;
+  text-align: center;
+  padding: 4rem 1rem 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .menu-header h1 {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-ink);
 }
 
 .menu-subtitle {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #6d4c41;
-    margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #6d4c41;
+  margin-bottom: 1.5rem;
 }
 
 .sourcing-note {
-    font-family: var(--font-ui);
-    background-color: #e0d4c5; /* Soft brown tag */
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    color: #3e2723;
+  font-family: var(--font-ui);
+  background-color: #e0d4c5; /* Soft brown tag */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #3e2723;
 }
 
-/* --- MENU GRID LAYOUT --- */
+/* --- NEW: CATEGORY NAVIGATION (Trauma-Informed Buttons) --- */
+/* This section styles the "Quick Links" or Category Buttons if you use them */
+.menu-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto 3rem auto; /* Spacing below the header */
+  padding: 0 1rem;
+}
+
+.menu-category-card {
+  /* 1. TYPOGRAPHY: Standardized for Safety */
+  font-family: var(--font-ui);
+  font-size: 1.2rem;   /* Fixed size for all buttons */
+  font-weight: 700;
+  color: var(--color-ink);
+  
+  /* 2. WRAPPING: Prevents text from being cut off */
+  white-space: normal; 
+  word-wrap: break-word;
+  line-height: 1.3;
+  
+  /* 3. ALIGNMENT & SHAPE */
+  display: flex;
+  align-items: center;     /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  text-align: center;      
+  
+  width: 100%;
+  min-height: 80px;        /* Ensures symmetry regardless of text length */
+  padding: 0.8rem;
+  
+  /* 4. AESTHETICS */
+  background-color: #e6dedd; 
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s;
+  text-decoration: none; /* In case you use <a> tags */
+}
+
+.menu-category-card:hover {
+  transform: translateY(-2px);
+  background-color: #d7ccc8;
+}
+
+/* --- MENU SECTIONS LAYOUT --- */
 .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Full width for Food section */
 .full-width {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
-/* --- MENU CATEGORY CARD --- */
+/* --- MENU CATEGORY CONTAINER --- */
 .menu-category {
-    background-color: var(--color-card);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid #efebe9;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--color-card);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #efebe9;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Image Placeholder Box */
 .category-image {
-    width: 100%;
-    height: 200px;
-    background-color: #e0e0e0;
-    border-radius: 6px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .category-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills box without stretching */
-    opacity: 0.9;
-    transition: opacity 0.3s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: opacity 0.3s;
 }
 
 .menu-category:hover .category-image img {
-    opacity: 1; /* Brighten on hover */
+  opacity: 1; 
 }
 
-/* Typography */
+/* Typography for Section Headers */
 .menu-category-title {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    color: var(--color-ink);
-    margin-bottom: 0.2rem;
-    border-bottom: 2px solid #e0d4c5;
-    padding-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--color-ink);
+  margin-bottom: 0.2rem;
+  border-bottom: 2px solid #e0d4c5;
+  padding-bottom: 0.5rem;
+  
+  /* Wrapping Support for Long Titles */
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.1;
 }
 
 .menu-category-subtitle {
-    font-family: var(--font-heading);
-    font-style: italic;
-    color: #8d6e63;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: #8d6e63;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
 /* --- MENU ITEMS --- */
 .menu-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px dashed #e0e0e0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #e0e0e0;
 }
 
 .menu-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+  
+  /* Wrap support for item names */
+  flex-wrap: wrap; 
 }
 
 .item-name {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--color-ink);
+  padding-right: 0.5rem; /* Space between name and price */
 }
 
 .item-price {
-    font-family: var(--font-ui);
-    font-weight: 700;
-    color: #5d4037;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  color: #5d4037;
+  white-space: nowrap; /* Keeps price together ($4.50) */
 }
 
 .item-desc {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
 .menu-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
-    color: #555;
-    font-family: var(--font-ui);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+  font-family: var(--font-ui);
 }
 
 .add-ons {
-    margin-top: 0.4rem;
-    font-size: 0.85rem;
-    color: #8d6e63;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #8d6e63;
 }
 
 /* --- SANCTUARY POUR SPECIAL --- */
 /* The Green Highlight Box */
 .sanctuary-box {
-    margin-top: 0.8rem;
-    background-color: #e8f5e9; /* Very light green bg */
-    border-left: 3px solid var(--color-green);
-    padding: 0.8rem;
-    border-radius: 0 4px 4px 0;
+  margin-top: 0.8rem;
+  background-color: #e8f5e9; 
+  border-left: 3px solid var(--color-green);
+  padding: 0.8rem;
+  border-radius: 0 4px 4px 0;
 }
 
 .sanctuary-title {
-    color: var(--color-green);
-    font-weight: 700;
-    display: block;
-    margin-bottom: 0.2rem;
+  color: var(--color-green);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
 }
 
 .sanctuary-note {
-    font-style: italic;
-    font-size: 0.85rem;
-    color: #555;
-    display: block;
-    margin-top: 0.3rem;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #555;
+  display: block;
+  margin-top: 0.3rem;
 }
 
 /* --- FOOD GRID (Inner layout for the wide food section) --- */
 .menu-grid-inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .food-column h3 {
-    font-family: var(--font-heading);
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-    .menu-header h1 { font-size: 2.5rem; }
-    .menu-grid { padding: 1rem; gap: 1rem; }
+  .menu-header h1 { font-size: 2.5rem; }
+  .menu-grid { padding: 1rem; gap: 1rem; }
+  
+  /* Ensure titles don't get massive on small screens */
+  .menu-category-title { font-size: 1.8rem; }
 }
