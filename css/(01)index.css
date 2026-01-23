@@ -1,5 +1,56 @@
 /* 🏠 (01)home.css - The Split Sanctuary Layout */
 
+/* --- MASTHEAD (BRANDING HEADER) --- */
+.site-masthead {
+    width: 100%;
+    background-color: #3e2723; /* Deep Coffee Foundation */
+    border-bottom: 4px solid #d88d2a; /* The "Gold Line" of Resilience */
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Subtle lift */
+    position: relative;
+    z-index: 10; /* Ensures it sits on top of everything */
+}
+
+.masthead-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.masthead-title {
+    font-family: 'Cormorant Garamond', serif; /* Your Heading Font */
+    font-size: 3.5rem; /* Large and Authoritative */
+    font-weight: 700;
+    color: #d88d2a; /* Gold Accent Color */
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase; /* Optional: Makes it look more like a "Sign" */
+}
+
+.masthead-slogan {
+    font-family: 'Merriweather', serif; /* Your Body Font */
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #f4f1ea; /* Soft Cream for readability against dark bg */
+    margin-top: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+/* RESPONSIVE: Scale down for mobile phones */
+@media (max-width: 768px) {
+    .site-masthead {
+        padding: 1.5rem 1rem;
+    }
+    .masthead-title {
+        font-size: 2.2rem; /* Smaller on mobile so it doesn't wrap awkwardly */
+    }
+    .masthead-slogan {
+        font-size: 0.95rem;
+    }
+}
+
 /* --- VARIABLES --- */
 :root {
     --color-bg: #fcfbf8;        /* Very light paper tone */
