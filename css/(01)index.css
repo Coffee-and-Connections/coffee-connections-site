@@ -1,61 +1,11 @@
-/* 🏠 (01)home.css - The Split Sanctuary Layout */
-
-/* --- MASTHEAD (BRANDING HEADER) --- */
-.site-masthead {
-    width: 100%;
-    background-color: #3e2723; /* Deep Coffee Foundation */
-    border-bottom: 4px solid #d88d2a; /* The "Gold Line" of Resilience */
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Subtle lift */
-    position: relative;
-    z-index: 10; /* Ensures it sits on top of everything */
-}
-
-.masthead-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.masthead-title {
-    font-family: 'Cormorant Garamond', serif; /* Your Heading Font */
-    font-size: 3.5rem; /* Large and Authoritative */
-    font-weight: 700;
-    color: #d88d2a; /* Gold Accent Color */
-    margin: 0;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    text-transform: uppercase; /* Optional: Makes it look more like a "Sign" */
-}
-
-.masthead-slogan {
-    font-family: 'Merriweather', serif; /* Your Body Font */
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #f4f1ea; /* Soft Cream for readability against dark bg */
-    margin-top: 0.8rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-}
-
-/* RESPONSIVE: Scale down for mobile phones */
-@media (max-width: 768px) {
-    .site-masthead {
-        padding: 1.5rem 1rem;
-    }
-    .masthead-title {
-        font-size: 2.2rem; /* Smaller on mobile so it doesn't wrap awkwardly */
-    }
-    .masthead-slogan {
-        font-size: 0.95rem;
-    }
-}
+/* 🏠 (01)home.css - The Sanctuary Layout */
 
 /* --- VARIABLES --- */
 :root {
     --color-bg: #fcfbf8;        /* Very light paper tone */
     --color-ink: #3e2723;       /* Dark Coffee Text */
     --color-accent: #d88d2a;    /* Gold/Orange */
+    
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Merriweather', serif;
     --font-ui: 'DM Sans', sans-serif;
@@ -68,13 +18,51 @@ body {
     margin: 0;
 }
 
+/* --- MASTHEAD (BRANDING HEADER) --- */
+.site-masthead {
+    width: 100%;
+    background-color: #3e2723; /* Deep Coffee Foundation */
+    border-bottom: 4px solid #d88d2a; /* The "Gold Line" of Resilience */
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10;
+}
+
+.masthead-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.masthead-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #d88d2a; /* Gold Accent */
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.masthead-slogan {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #f4f1ea; /* Soft Cream */
+    margin-top: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
 /* --- HERO SECTION (Split Layout) --- */
 .hero-section {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Equal split: 50% Text | 50% Video */
+    grid-template-columns: 1fr 1fr; /* Equal split */
     gap: 4rem;
-    align-items: center;
-    padding: 4rem 5%; /* Breathing room on sides */
+    align-items: center; /* Vertically center the video and text */
+    padding: 4rem 5%;
     min-height: 85vh;
     background-color: var(--color-bg);
 }
@@ -88,7 +76,7 @@ body {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 4.5rem; /* Larger for impact */
+    font-size: 4.5rem;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 1.5rem;
@@ -104,45 +92,34 @@ body {
     max-width: 600px;
 }
 
-/* Right Column: Video Container */
-/* UPDATED: targeting 'iframe' instead of 'video' */
-.hero-video-frame iframe {
-    width: 100%;
-    height: 100%;
-    border: none;       /* Removes the ugly border */
-    display: block;
-}
-
-/* The "Frame" - Forces the shape */
+/* Right Column: The "Phone" Video Frame */
 .hero-video-frame {
     width: 100%;
-    max-width: 700px;
-    border-radius: 12px;
+    max-width: 380px; /* LIMIT WIDTH TO PHONE SIZE */
+    aspect-ratio: 9 / 16; /* VERTICAL ASPECT RATIO FOR SHORTS */
+    margin: 0 auto; /* Center in its column */
+    border-radius: 20px; /* More rounded like a phone */
     overflow: hidden;
-    
-    /* 1. FORCE THE ASPECT RATIO */
-    aspect-ratio: 16 / 9; 
-    
-    /* 2. BACKGROUND COLOR (so it's not white while loading) */
-    background-color: #2c1810; 
-    
-    box-shadow: 20px 20px 0px rgba(216, 141, 42, 0.2);
-    border: 1px solid rgba(0,0,0,0.05);
+    background-color: #2c1810;
+    box-shadow: 20px 20px 0px rgba(216, 141, 42, 0.2); /* Offset Gold Shadow */
+    border: 4px solid #d88d2a; /* Gold Border */
+    position: relative;
 }
 
-/* The Video Player - Forces the fill */
-.hero-video-frame video {
+.hero-video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;       /* changed from auto */
-    object-fit: cover;  /* Ensures no stretching */
-    display: block;
+    height: 100%;
+    border: none;
 }
 
-/* Buttons */
+/* --- BUTTONS (Updated for Accessibility) --- */
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
-    justify-content: flex-start; /* Align left */
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -158,13 +135,15 @@ body {
     transition: all 0.3s ease;
 }
 
+/* FIXED: Dark Text on Gold for High Contrast */
 .cta-primary {
     background-color: var(--color-accent);
-    color: #fff;
+    color: #2c1810; 
 }
 .cta-primary:hover {
     background-color: #ffb74d;
     transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(216, 141, 42, 0.4);
 }
 
 .cta-secondary {
@@ -178,11 +157,11 @@ body {
     transform: translateY(-3px);
 }
 
-/* --- THE LOBBY WELCOME (Tony's Quote) --- */
+/* --- THE LOBBY WELCOME --- */
 .lobby-section {
     text-align: center;
     padding: 6rem 1rem;
-    background-color: #fff; /* Slight contrast */
+    background-color: #fff;
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -263,8 +242,14 @@ body {
 
 /* --- MOBILE ADJUSTMENTS --- */
 @media (max-width: 900px) {
+    /* Scale down Masthead */
+    .site-masthead { padding: 1.5rem 1rem; }
+    .masthead-title { font-size: 2.2rem; }
+    .masthead-slogan { font-size: 0.95rem; }
+
+    /* Stack the Hero Section */
     .hero-section {
-        grid-template-columns: 1fr; /* Stack into 1 column */
+        grid-template-columns: 1fr;
         text-align: center;
         padding: 4rem 1.5rem;
         gap: 3rem;
@@ -272,14 +257,12 @@ body {
 
     .hero-text-col {
         padding-right: 0;
-        order: 2; /* Put text BELOW video on mobile? Or set to 1 for ABOVE. */
-        /* Currently set to 2 so they see the video first, then read. 
-           Change to 'order: 1' if you want text first. */
-        order: 1; 
+        order: 1; /* Text First */
     }
 
-    .hero-video-col {
-        order: 2;
+    .hero-video-frame {
+        max-width: 320px; /* Slightly smaller on mobile */
+        order: 2; /* Video Second */
     }
 
     .hero-buttons {
@@ -287,8 +270,4 @@ body {
     }
 
     .hero-title { font-size: 3rem; }
-    
-    .hero-video-frame {
-        box-shadow: 10px 10px 0px rgba(216, 141, 42, 0.2);
-    }
 }
