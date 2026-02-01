@@ -78,16 +78,15 @@
           <label>Your Story</label>
           <textarea id="message" rows="6" class="form-textarea" required placeholder="Speak your truth..."></textarea>
 
-          <label>Primary Theme</label>
-          <select id="tags" class="form-select" required>
-            <option value="" disabled selected>Select a Category...</option>
-            <option value="MH">Mental Health</option>
-            <option value="DV">Domestic Violence</option>
-            <option value="PTSD">PTSD</option>
-            <option value="MST">Military Sexual Trauma (MST)</option>
-            <option value="SUI">Suicide Prevention/Survivor</option>
-            <option value="SUD">Substance Abuse Disorder</option>
-          </select>
+          <span class="tag-selector-label">Themes (Select all that apply)</span>
+          <div class="tag-selector-container" id="tagContainer">
+              <button type="button" class="tag-option" data-value="MH">Mental Health</button>
+              <button type="button" class="tag-option" data-value="DV">Domestic Violence</button>
+              <button type="button" class="tag-option" data-value="PTSD">PTSD</button>
+              <button type="button" class="tag-option" data-value="MST">Military Sexual Trauma (MST)</button>
+              <button type="button" class="tag-option" data-value="SUI">Suicide Prevention</button>
+              <button type="button" class="tag-option" data-value="SUD">Substance Abuse Disorder</button>
+          </div>
           
           <button type="submit" class="submit-btn">Add My Story</button>
         </form>
@@ -113,9 +112,37 @@
         'SUD': 'Substance Abuse Disorder'
     };
 
-    // 1. SUBMIT STORY LOGIC
+    // --- 1. HANDLE MULTI-SELECT CLICKS ---
+    const tagButtons = document.querySelectorAll('.tag-option');
+    let selectedTags = [];
+
+    tagButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const val = btn.dataset.value;
+            
+            // Toggle Logic
+            if (selectedTags.includes(val)) {
+                // Remove it
+                selectedTags = selectedTags.filter(t => t !== val);
+                btn.classList.remove('selected');
+            } else {
+                // Add it
+                selectedTags.push(val);
+                btn.classList.add('selected');
+            }
+        });
+    });
+
+    // --- 2. SUBMIT STORY LOGIC ---
     document.getElementById('storyForm').addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        // VALIDATION: Must select at least one tag
+        if (selectedTags.length === 0) {
+            alert("Please select at least one theme for your story.");
+            return;
+        }
+
         const btn = document.querySelector('.submit-btn');
         const originalText = btn.innerText;
         btn.innerText = "Sending to Secure Vault...";
@@ -124,11 +151,11 @@
         const storyData = {
             alias: document.getElementById('alias').value || "Anonymous",
             message: document.getElementById('message').value,
-            tags: [document.getElementById('tags').value] // Send as array ["DV"]
+            tags: selectedTags // Now sends the array: ["MST", "PTSD"]
         };
 
         try {
-            // CALL THE VAULT (Port 6000)
+            // CALL THE VAULT
             const res = await fetch(CONFIG.endpoints.submitStory, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -137,7 +164,12 @@
 
             if (res.ok) {
                 alert("Thank you. Your story has been securely received and will appear in the journal shortly.");
+                
+                // Reset Form and Tags
                 document.getElementById('storyForm').reset();
+                selectedTags = [];
+                tagButtons.forEach(b => b.classList.remove('selected'));
+                
                 btn.innerText = "Story Submitted";
             } else {
                 throw new Error("Server rejected submission");
@@ -150,32 +182,31 @@
         }
     });
 
-    // 2. FETCH STORIES & BUILD BOOK
+    // --- 3. FETCH STORIES & BUILD BOOK ---
     async function loadJournal() {
         try {
-            // GET APPROVED STORIES
             const res = await fetch(CONFIG.endpoints.getStories);
             const stories = await res.json();
-            
             const bookContainer = document.getElementById('journalBook');
             
-            // Loop through stories in pairs (2 per spread)
             for (let i = 0; i < stories.length; i += 2) {
                 const storyLeft = stories[i];
-                const storyRight = stories[i + 1]; // Might be undefined if odd number
+                const storyRight = stories[i + 1]; 
 
                 const spreadDiv = document.createElement('div');
                 spreadDiv.className = 'journal-spread';
                 spreadDiv.id = `spread-${(i/2) + 1}`;
 
-                // Helper to generate Page HTML
+                // Helper to generate Page HTML with Multiple Tags
                 const createPage = (story, pageNum, side) => {
                     if (!story) return `<div class="page ${side}"><div class="dedication"><p>...</p></div></div>`;
                     
-                    // Get CSS class for tag color (e.g., 'tag-dv')
-                    const tagCode = story.tags[0] || 'misc';
-                    const tagName = TAG_MAP[tagCode] || tagCode;
-                    const tagClass = `tag-${tagCode.toLowerCase()}`;
+                    // Generate HTML for ALL tags on the story
+                    const tagsHTML = story.tags.map(tagCode => {
+                        const tagName = TAG_MAP[tagCode] || tagCode;
+                        const tagClass = `tag-${tagCode.toLowerCase()}`;
+                        return `<span class="tag ${tagClass}">${tagName}</span>`;
+                    }).join('');
 
                     return `
                         <div class="page ${side}">
@@ -184,7 +215,7 @@
                             <p class="entry-text">${story.message}</p>
                             <div class="signature">— Survivor</div>
                             <div class="tags-container">
-                                <span class="tag ${tagClass}">${tagName}</span>
+                                ${tagsHTML}
                             </div>
                         </div>
                     `;
@@ -195,16 +226,13 @@
                 
                 bookContainer.appendChild(spreadDiv);
             }
-            
-            initPageTurning(); // Re-bind buttons
-
+            initPageTurning();
         } catch (err) {
             console.error("Journal Load Error:", err);
-            // If offline, book stays on Title Page (graceful failure)
         }
     }
 
-    // 3. PAGE TURNING
+    // --- 4. PAGE TURNING ---
     function initPageTurning() {
         const spreads = document.querySelectorAll('.journal-spread');
         const prevBtn = document.getElementById('prevBtn');
@@ -220,19 +248,8 @@
             nextBtn.disabled = (currentSpread === spreads.length - 1);
         }
 
-        nextBtn.onclick = () => {
-            if (currentSpread < spreads.length - 1) {
-                currentSpread++;
-                updateBook();
-            }
-        };
-
-        prevBtn.onclick = () => {
-            if (currentSpread > 0) {
-                currentSpread--;
-                updateBook();
-            }
-        };
+        nextBtn.onclick = () => { if (currentSpread < spreads.length - 1) { currentSpread++; updateBook(); } };
+        prevBtn.onclick = () => { if (currentSpread > 0) { currentSpread--; updateBook(); } };
     }
 
     // START
@@ -241,4 +258,5 @@
 </script>
 
 </body>
+</html>
 </html>
