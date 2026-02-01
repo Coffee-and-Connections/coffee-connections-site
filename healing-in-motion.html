@@ -102,7 +102,18 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // MAP TAG CODES TO FULL NAMES FOR DISPLAY
+    // =========================================
+    // 1. CONFIGURATION & VARIABLES
+    // =========================================
+    const bookContainer = document.getElementById('journalBook');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    // Start with the static Title Page spread
+    let spreads = document.querySelectorAll('.journal-spread'); 
+    let currentSpread = 0;
+
+    // Map Tag Codes to Full Names for Display
     const TAG_MAP = {
         'MH': 'Mental Health',
         'DV': 'Domestic Violence',
@@ -112,7 +123,45 @@
         'SUD': 'Substance Abuse Disorder'
     };
 
-    // --- 1. HANDLE MULTI-SELECT CLICKS ---
+    // =========================================
+    // 2. PAGE TURNING ENGINE (Always Active)
+    // =========================================
+    function updateBookState() {
+        // Re-count pages (in case dynamic ones were added)
+        spreads = document.querySelectorAll('.journal-spread');
+        
+        // Show/Hide Pages based on current index
+        spreads.forEach((spread, index) => {
+            if (index === currentSpread) spread.classList.add('active');
+            else spread.classList.remove('active');
+        });
+
+        // Enable/Disable Buttons
+        prevBtn.disabled = (currentSpread === 0);
+        nextBtn.disabled = (currentSpread === spreads.length - 1);
+    }
+
+    // Attach Listeners Immediately (So buttons are never "dead")
+    nextBtn.onclick = () => {
+        if (currentSpread < spreads.length - 1) {
+            currentSpread++;
+            updateBookState();
+        }
+    };
+
+    prevBtn.onclick = () => {
+        if (currentSpread > 0) {
+            currentSpread--;
+            updateBookState();
+        }
+    };
+
+    // Initialize State (Locks "Previous" button on load)
+    updateBookState();
+
+    // =========================================
+    // 3. MULTI-SELECT TAG LOGIC
+    // =========================================
     const tagButtons = document.querySelectorAll('.tag-option');
     let selectedTags = [];
 
@@ -122,22 +171,24 @@
             
             // Toggle Logic
             if (selectedTags.includes(val)) {
-                // Remove it
+                // Remove Tag
                 selectedTags = selectedTags.filter(t => t !== val);
                 btn.classList.remove('selected');
             } else {
-                // Add it
+                // Add Tag
                 selectedTags.push(val);
                 btn.classList.add('selected');
             }
         });
     });
 
-    // --- 2. SUBMIT STORY LOGIC ---
+    // =========================================
+    // 4. SUBMIT STORY LOGIC
+    // =========================================
     document.getElementById('storyForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // VALIDATION: Must select at least one tag
+        // Validation: User must pick at least one theme
         if (selectedTags.length === 0) {
             alert("Please select at least one theme for your story.");
             return;
@@ -151,11 +202,10 @@
         const storyData = {
             alias: document.getElementById('alias').value || "Anonymous",
             message: document.getElementById('message').value,
-            tags: selectedTags // Now sends the array: ["MST", "PTSD"]
+            tags: selectedTags // Sends array ["PTSD", "MST"]
         };
 
         try {
-            // CALL THE VAULT
             const res = await fetch(CONFIG.endpoints.submitStory, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -165,7 +215,7 @@
             if (res.ok) {
                 alert("Thank you. Your story has been securely received and will appear in the journal shortly.");
                 
-                // Reset Form and Tags
+                // Reset Form
                 document.getElementById('storyForm').reset();
                 selectedTags = [];
                 tagButtons.forEach(b => b.classList.remove('selected'));
@@ -182,13 +232,20 @@
         }
     });
 
-    // --- 3. FETCH STORIES & BUILD BOOK ---
+    // =========================================
+    // 5. FETCH STORIES & BUILD BOOK
+    // =========================================
     async function loadJournal() {
         try {
+            // Attempt to talk to the Vault
             const res = await fetch(CONFIG.endpoints.getStories);
-            const stories = await res.json();
-            const bookContainer = document.getElementById('journalBook');
             
+            // Graceful Failure: If server is down, keep the Title Page visible
+            if (!res.ok) throw new Error("Vault Offline");
+
+            const stories = await res.json();
+            
+            // Loop through stories in pairs (2 per spread)
             for (let i = 0; i < stories.length; i += 2) {
                 const storyLeft = stories[i];
                 const storyRight = stories[i + 1]; 
@@ -226,30 +283,13 @@
                 
                 bookContainer.appendChild(spreadDiv);
             }
-            initPageTurning();
+            
+            // Refresh the Page Turner so it knows about the new pages
+            updateBookState();
+
         } catch (err) {
-            console.error("Journal Load Error:", err);
+            console.warn("Journal Mode: Offline (Displaying Title Page Only)");
         }
-    }
-
-    // --- 4. PAGE TURNING ---
-    function initPageTurning() {
-        const spreads = document.querySelectorAll('.journal-spread');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentSpread = 0;
-
-        function updateBook() {
-            spreads.forEach((spread, index) => {
-                if (index === currentSpread) spread.classList.add('active');
-                else spread.classList.remove('active');
-            });
-            prevBtn.disabled = (currentSpread === 0);
-            nextBtn.disabled = (currentSpread === spreads.length - 1);
-        }
-
-        nextBtn.onclick = () => { if (currentSpread < spreads.length - 1) { currentSpread++; updateBook(); } };
-        prevBtn.onclick = () => { if (currentSpread > 0) { currentSpread--; updateBook(); } };
     }
 
     // START
@@ -258,5 +298,4 @@
 </script>
 
 </body>
-</html>
 </html>
