@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: #efebe9; /* Light grey/brown surrounding the book */
+    background-color: #efebe9; 
     color: var(--ink-color);
     font-family: var(--font-body);
 }
@@ -27,7 +27,7 @@ main {
     align-items: center;
 }
 
-/* --- 1. THE PREAMBLE (Intro Text) --- */
+/* --- PREAMBLE --- */
 .preamble-section {
     text-align: center;
     max-width: 800px;
@@ -49,106 +49,91 @@ main {
     color: #4e342e;
 }
 
-/* --- 2. THE LEATHER BOOK CONTAINER --- */
+/* --- BOOK CONTAINER (Leather Case) --- */
 .book-container {
     position: relative;
     width: 100%;
     max-width: 950px;
-    height: 650px; /* Fixed height for the book */
+    height: 650px;
     background-color: var(--book-leather);
     border-radius: 12px;
     box-shadow: 
-        0 20px 50px rgba(0,0,0,0.5), /* Deep Shadow */
-        inset 0 0 60px rgba(0,0,0,0.8); /* Inner leather shadow */
-    padding: 20px; /* The "Leather Rim" around the paper */
+        0 20px 50px rgba(0,0,0,0.5), 
+        inset 0 0 60px rgba(0,0,0,0.8);
+    padding: 20px;
     display: flex;
     justify-content: center;
 }
 
-/* The Center Spine Shadow */
+/* Spine Shadow */
 .book-container::after {
     content: "";
     position: absolute;
-    top: 20px;
-    bottom: 20px;
-    left: 50%;
+    top: 20px; bottom: 20px; left: 50%;
     width: 40px;
     transform: translateX(-50%);
-    background: linear-gradient(to right, 
-        rgba(0,0,0,0.05), 
-        rgba(0,0,0,0.3) 40%, 
-        rgba(0,0,0,0.3) 60%, 
-        rgba(0,0,0,0.05)
-    );
+    background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.05));
     z-index: 10;
     pointer-events: none;
 }
 
-/* --- 3. THE SPREADS (Pages) --- */
+/* --- PAGES (Spreads) --- */
 .journal-spread {
-    display: none; /* Hidden by default */
-    width: 100%;
-    height: 100%;
+    display: none;
+    width: 100%; height: 100%;
     background-color: var(--book-paper);
-    box-shadow: inset 0 0 30px rgba(62, 39, 35, 0.2); /* Paper aging */
+    box-shadow: inset 0 0 30px rgba(62, 39, 35, 0.2);
     border-radius: 4px;
 }
 
-/* Only show the active spread */
-.journal-spread.active {
-    display: flex; /* Shows two pages side-by-side */
-}
+.journal-spread.active { display: flex; }
 
-/* Individual Page Styling */
 .page {
-    flex: 1; /* Each page takes 50% width */
+    flex: 1;
     padding: 3rem 2.5rem;
-    overflow-y: auto; /* Allow scrolling if text is long */
+    overflow-y: auto;
     position: relative;
 }
 
-/* Left Page Shadow (Gutter) */
 .page.left {
     border-right: 1px solid #e0e0e0;
     background: linear-gradient(to right, var(--book-paper) 90%, #eee0c9 100%);
 }
 
-/* Right Page Shadow (Gutter) */
 .page.right {
     background: linear-gradient(to left, var(--book-paper) 90%, #eee0c9 100%);
 }
 
-/* --- TYPOGRAPHY INSIDE THE BOOK --- */
+/* --- TYPOGRAPHY --- */
 .page-num {
-    position: absolute;
-    bottom: 1.5rem;
+    position: absolute; bottom: 1.5rem;
     font-family: var(--font-heading);
-    color: #8d6e63;
-    font-size: 1rem;
+    color: #8d6e63; font-size: 1rem;
 }
 .page.left .page-num { left: 2rem; }
 .page.right .page-num { right: 2rem; }
 
 .entry-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--ink-color);
     border-bottom: 2px solid #d7ccc8;
     padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .entry-text {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.7;
     color: #3e2723;
     margin-bottom: 1.5rem;
+    white-space: pre-wrap; /* Preserves paragraph breaks from user input */
 }
 
 .handwritten {
     font-family: var(--font-heading);
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #5d4037;
 }
 
@@ -161,113 +146,81 @@ main {
     font-style: italic;
 }
 
-/* --- COVER PAGE STYLING (Spread 1) --- */
+/* --- TITLE PAGE --- */
 .title-page-content {
-    text-align: center;
-    margin-top: 20%;
-    border: 4px double var(--ink-color);
-    padding: 2rem;
+    text-align: center; margin-top: 20%;
+    border: 4px double var(--ink-color); padding: 2rem;
 }
 .book-main-title {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    line-height: 1;
-    margin-bottom: 1rem;
-    color: var(--ink-color);
+    font-family: var(--font-heading); font-size: 3.5rem;
+    line-height: 1; margin-bottom: 1rem; color: var(--ink-color);
 }
 .dedication {
-    font-style: italic;
-    font-size: 1.2rem;
-    margin-top: 30%;
-    text-align: center;
-    color: #5d4037;
+    font-style: italic; font-size: 1.2rem; margin-top: 30%;
+    text-align: center; color: #5d4037;
 }
 
-/* --- TAGS STYLING --- */
+/* --- ADVOCACY TAGS (The Colors) --- */
 .tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 2rem;
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem;
 }
 .tag {
     font-family: var(--font-ui);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 4px 10px;
+    border-radius: 50px; /* Pill Shape */
     letter-spacing: 0.5px;
-}
-/* Specific Tag Colors */
-.tag-sa { background-color: #008080; } /* Teal */
-.tag-mh { background-color: #4682B4; } /* Blue */
-.tag-dv { background-color: #800080; } /* Purple */
-.tag-ptsd { background-color: #556B2F; } /* Olive */
-.tag-mil { background-color: #708090; } /* Slate */
-
-/* --- NAVIGATION BUTTONS --- */
-.book-controls {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1.5rem;
+    font-weight: 600;
 }
 
+/* --- COLOR CODES (Awareness Ribbons) --- */
+.tag-mh   { background-color: #2E8B57; } /* Mental Health - Green/Sage */
+.tag-dv   { background-color: #7B1FA2; } /* Domestic Violence - Purple */
+.tag-ptsd { background-color: #556B2F; } /* PTSD - Olive Drab */
+.tag-mst  { background-color: #008080; } /* MST / Sexual Assault - Teal */
+.tag-sui  { background-color: #DAA520; } /* Suicide Prevention - Gold/Yellow */
+.tag-sud  { background-color: #C62828; } /* Substance Abuse - Red */
+.tag-misc { background-color: #607D8B; } /* Other - Blue Grey */
+
+/* --- CONTROLS --- */
+.book-controls { margin-top: 2rem; display: flex; gap: 1.5rem; }
 .control-btn {
-    background-color: var(--book-leather);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.2s;
+    background-color: var(--book-leather); color: #fff;
+    border: none; padding: 10px 20px;
+    font-family: var(--font-heading); font-size: 1.2rem;
+    cursor: pointer; border-radius: 4px;
 }
-.control-btn:hover:not(:disabled) {
-    background-color: #5d4037;
-}
-.control-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+.control-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* --- FORM --- */
+.form-section { margin-top: 5rem; max-width: 600px; width: 100%; padding: 0 1rem; }
+.form-container { background-color: #fff; padding: 2rem; border-radius: 8px; border: 1px solid #d7ccc8; }
+.form-input, .form-textarea, .form-select {
+    width: 100%; padding: 12px; margin-bottom: 1rem;
+    border: 1px solid #ccc; font-family: var(--font-body);
 }
 
-/* --- FORM SECTION STYLING --- */
-.form-section {
-    margin-top: 5rem;
-    max-width: 600px;
-    width: 100%;
-    padding: 0 1rem;
-}
-.form-container {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid #d7ccc8;
-}
-.form-input, .form-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    font-family: var(--font-body);
-}
-.submit-btn {
-    width: 100%;
+/* DISCLAIMER BOX */
+.disclaimer-box {
+    background-color: #fff3e0;
+    border-left: 4px solid #ff9800;
     padding: 1rem;
-    background-color: #2e7d32;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    font-family: var(--font-ui);
-    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #e65100;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+.submit-btn {
+    width: 100%; padding: 1rem; background-color: #2e7d32;
+    color: white; font-weight: bold; border: none;
+    cursor: pointer; font-family: var(--font-ui); text-transform: uppercase;
+}
+.submit-btn:hover { background-color: #1b5e20; }
+
+/* MOBILE */
 @media (max-width: 768px) {
-    .book-container { height: auto; padding: 10px; }
-    .journal-spread.active { flex-direction: column; } /* Stack pages on mobile */
-    .page.left { border-right: none; border-bottom: 1px solid #ccc; }
-    .page { min-height: 400px; padding: 1.5rem; }
+    .journal-spread.active { flex-direction: column; }
+    .page { min-height: 400px; }
 }
