@@ -12,7 +12,7 @@ const storyDisplay = document.getElementById('story-display');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
-const VAULT_ENDPOINT = "https://strong-bonds-vault.onrender.com/api/stories";
+const VAULT_ENDPOINT = "https://strong-bonds-vault.onrender.com/api/vault/stories";
 
 async function loadStories() {
     try {
