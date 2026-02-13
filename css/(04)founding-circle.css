@@ -6,154 +6,155 @@
 .circle-header {
   text-align: center;
   max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
 }
 
 .circle-header h1 {
   font-size: 3rem;
-  color: var(--coffee-dark);
+  color: var(--bg-cream);
   margin-bottom: 0.5rem;
 }
 
 .circle-header .subtitle {
-  font-size: 1.25rem;
-  color: var(--resilience-teal);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--coffee-accent); /* Sanctuary Purple */
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
 
 .circle-intro {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text-main);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* --- THE SEATS GRID --- */
 .seats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive columns */
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto 5rem auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 /* --- SEAT CARD (Base Style) --- */
 .seat-card {
-  background-color: var(--bg-white);
-  border: 1px solid rgba(0,0,0,0.05);
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative; /* Needed for the seat number tag */
+  background-color: rgba(255, 255, 255, 0.03); /* Translucent dark card */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   overflow: hidden;
 }
 
 .seat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: var(--coffee-accent);
 }
 
 /* The "Seat 01" Badge */
 .seat-number {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 0.75rem;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--text-muted);
-  border: 1px solid rgba(0,0,0,0.1);
-  padding: 0.25rem 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
   border-radius: 50px;
-  background-color: var(--bg-cream);
 }
 
 /* Icons for Empty Seats */
 .seat-icon {
-  font-size: 4rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  opacity: 0.8;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
 }
 
 /* Typography */
 .seat-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--coffee-dark);
+  color: var(--bg-cream);
 }
 
 .seat-role {
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--resilience-teal);
+  color: var(--coffee-accent);
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
 }
 
 .seat-desc {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
-  flex-grow: 1; /* Pushes the status dot to the bottom */
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
-/* --- STATUS INDICATORS (Bottom of Card) --- */
+/* --- STATUS INDICATORS --- */
 .seat-status {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.8rem;
   border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .status-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  display: inline-block;
 }
 
-/* Status Colors */
-.open { background-color: #f4f4f4; color: #888; }
-.open .status-dot { background-color: #ccc; }
+/* Status Colors Synced to Dark Theme */
+.open { background-color: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.4); }
+.open .status-dot { background-color: rgba(255, 255, 255, 0.2); }
 
-.pending { background-color: #fff3cd; color: #856404; }
+.pending { background-color: rgba(255, 193, 7, 0.1); color: #ffc107; }
 .pending .status-dot { background-color: #ffc107; }
 
-.active { background-color: var(--mint-highlight); color: var(--coffee-dark); }
-.active .status-dot { background-color: var(--healing-green); }
+.active { background-color: rgba(78, 39, 83, 0.2); color: #fff; border: 1px solid var(--coffee-accent); }
+.active .status-dot { background-color: #a370f7; box-shadow: 0 0 8px #a370f7; }
 
 
 /* --- SPECIAL STYLE: FILLED SEAT (Ben) --- */
 .filled-seat {
-  border: 2px solid var(--healing-green); /* Highlights the active card */
-  background-color: #FAFCF8; /* Very subtle green tint */
+  background-color: rgba(78, 39, 83, 0.1);
+  border: 1px solid var(--coffee-accent);
 }
 
 .seat-img-wrapper {
-  width: 150px;
-  height: 150px;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1.5rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--bg-white);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 3px solid var(--coffee-accent);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .seat-photo {
@@ -166,31 +167,28 @@
 /* --- CALL TO ACTION --- */
 .join-table {
   text-align: center;
-  background-color: var(--coffee-dark);
-  color: var(--bg-white);
-  padding: 4rem 1rem;
-  margin-top: 4rem;
+  background-color: rgba(0,0,0,0.2);
+  padding: 5rem 1.5rem;
 }
 
-.join-table h2 { color: var(--bg-white); } /* Override default dark heading */
-.join-table p { 
-  max-width: 600px; 
-  margin: 0 auto 2rem auto; 
-  opacity: 0.9; 
+.join-table h2 { 
+    color: var(--bg-cream);
+    margin-bottom: 1rem;
 }
 
 .cta-button {
   display: inline-block;
-  background-color: var(--resilience-teal);
+  background-color: var(--coffee-accent);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   border-radius: 50px;
   font-weight: 700;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 39, 83, 0.3);
 }
 
 .cta-button:hover {
-  background-color: var(--healing-green);
-  transform: translateY(-2px);
+  background-color: white;
+  color: var(--coffee-accent);
+  transform: translateY(-3px);
 }
-
