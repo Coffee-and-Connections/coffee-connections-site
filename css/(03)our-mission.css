@@ -1,58 +1,66 @@
 /* =========================================
    (03) OUR-MISSION.CSS 
-   "The Genesis Story" - Visual Novel Edition
+   "The Genesis Story" - Clean Refactor
    ========================================= */
 
-/* --- 1. GLOBAL LAYOUT & BUFFER --- */
+/* --- 1. GLOBAL CONTAINER & SAFETY BUFFER --- */
 .visual-narrative {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 24px; /* The .25 inch "Safety Buffer" */
+    padding: 24px; /* Global .25in Protected Space */
 }
 
 .story-panel {
-    margin-bottom: 80px;
-    opacity: 0; /* Prepared for a fade-in scroll effect */
-    animation: fadeInStory 1s forwards;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
 }
 
-@keyframes fadeInStory {
+@keyframes fadeInUp {
     to { opacity: 1; transform: translateY(0); }
-    from { opacity: 0; transform: translateY(20px); }
 }
 
-/* --- 2. THE INTRO PANEL --- */
+/* --- 2. INTRO SECTION --- */
 .intro-panel {
     text-align: center;
-    padding: 4rem 0;
+    padding: 5rem 0;
+}
+
+.intro-panel h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
 }
 
 .intro-subtext {
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.8);
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto;
     line-height: 1.8;
 }
 
 /* --- 3. THE CAR SCENE (Visual Novel Frame) --- */
 .visual-novel-frame {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 24px;
-    border: 2px solid var(--coffee-accent);
-    padding: 60px 30px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    border: 3px solid var(--coffee-accent);
+    padding: 80px 40px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 60px;
     position: relative;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    overflow: hidden;
 }
 
 .character-panel {
     display: flex;
     align-items: flex-start;
-    gap: 25px;
+    gap: 30px;
     width: 100%;
+    transition: transform 0.3s ease;
 }
 
 .marylou-right {
@@ -61,13 +69,14 @@
 }
 
 .avatar-img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 4px solid var(--coffee-accent);
-    background-color: var(--coffee-dark);
+    background-color: white; /* Contrast for cartoon art */
     object-fit: cover;
     flex-shrink: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 .bubble-group {
@@ -78,11 +87,11 @@
 
 .speaker-label {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: var(--coffee-accent);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-weight: 800;
 }
 
@@ -91,16 +100,17 @@
 .speech-bubble {
     background: var(--bg-cream);
     color: var(--coffee-dark);
-    padding: 24px;
-    border-radius: 20px;
+    padding: 25px 30px;
+    border-radius: 24px;
     font-family: var(--font-body);
     font-weight: 600;
-    line-height: 1.5;
-    font-size: 1.1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    line-height: 1.6;
+    font-size: 1.15rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    position: relative;
 }
 
-/* Highlight for the "Amazing Idea" bubble */
+/* Accent bubble for the "Amazing Idea" realization */
 .speech-bubble.highlight {
     background: var(--coffee-accent);
     color: white;
@@ -108,98 +118,116 @@
 
 .scene-narration {
     text-align: center;
+    font-family: var(--font-body);
     font-style: italic;
     color: var(--coffee-accent);
-    margin-top: 20px;
-    font-size: 1.1rem;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
-/* --- 4. THE BOILER SPLIT --- */
+/* --- 4. THE BOILER/VISION SECTION --- */
 .split-frame {
     display: flex;
     gap: 60px;
     align-items: center;
-    margin: 120px 0;
+    margin: 140px 0;
 }
 
-.visual-box { flex: 1; }
-.text-box { flex: 1; }
+.visual-box, .text-box { flex: 1; }
 
 .boiler-container {
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .boiler-img {
     width: 100%;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
 .boiler-container:hover .boiler-img {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .boiler-caption {
     background: var(--coffee-accent);
     color: white;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- 5. NAMI ENDORSEMENT --- */
+/* --- 5. NAMI CARD & ENDORSEMENT --- */
 .nami-endorsement {
-    margin: 100px 0;
-    text-align: center;
+    margin: 120px 0;
 }
 
 .nami-card {
-    background: rgba(78, 39, 83, 0.1);
-    border: 1px dashed var(--coffee-accent);
-    padding: 50px 30px;
-    border-radius: 24px;
+    background: rgba(78, 39, 83, 0.15);
+    border: 2px dashed var(--coffee-accent);
+    padding: 60px 40px;
+    border-radius: 28px;
+    text-align: center;
 }
 
 .nami-card h3 {
+    font-size: 2rem;
     color: var(--bg-cream);
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
-/* --- 6. FINAL CALL --- */
+.nami-card p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- 6. FINAL CTA --- */
 .final-cta {
     text-align: center;
-    padding: 100px 0;
+    padding: 8rem 0;
 }
 
 .btn-main {
     display: inline-block;
     background: var(--coffee-accent);
     color: white;
-    padding: 20px 40px;
+    padding: 22px 50px;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 60px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .btn-main:hover {
     background: white;
     color: var(--coffee-accent);
-    transform: translateY(-5px);
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(78, 39, 83, 0.4);
 }
 
 /* --- 7. MOBILE RESPONSIVENESS --- */
-@media (max-width: 768px) {
-    .visual-novel-frame { padding: 30px 15px; }
+@media (max-width: 900px) {
+    .split-frame { flex-direction: column; text-align: center; gap: 40px; }
+    .visual-novel-frame { padding: 40px 20px; }
     .bubble-group { max-width: 85%; }
-    .split-frame { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 600px) {
     .character-panel { gap: 15px; }
-    .avatar-img { width: 60px; height: 60px; }
-    .speech-bubble { font-size: 1rem; padding: 15px; }
+    .avatar-img { width: 70px; height: 70px; }
+    .speech-bubble { font-size: 1rem; padding: 18px; }
+    .visual-narrative { padding: 15px; }
 }
