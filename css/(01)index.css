@@ -8,13 +8,12 @@
   max-width: 1400px;
   margin: 2rem auto;
   padding: 0 1rem;
-  gap: 1.5rem; /* Space between the boxes */
+  gap: 1.5rem; 
   
-  /* 📐 THE BLUEPRINT (Matches your drawing) */
-  /* Left Column | Center Column | Right Column */
+  /* 📐 THE BLUEPRINT */
   grid-template-columns: 1fr 2fr 1fr; 
   grid-template-areas: 
-    "menu   lobby   help"
+    "menu    lobby   help"
     "mission lobby   circle";
 }
 
@@ -27,14 +26,15 @@
 
 /* 3. The "Lobby" (Center Stage) */
 .area-lobby {
-  background-color: var(--bg-white);
-  border: 1px solid rgba(0,0,0,0.05);
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle glass effect for dark mode */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   text-align: center;
+  backdrop-filter: blur(10px); /* Modern frosted glass look */
 }
 
 .area-lobby iframe {
@@ -42,11 +42,12 @@
   aspect-ratio: 16/9;
   border-radius: 8px;
   margin-bottom: 1.5rem;
+  border: none;
 }
 
 .lobby-content h2 {
   font-family: var(--font-heading);
-  color: var(--coffee-dark);
+  color: var(--bg-cream); /* Use your cream variable */
   font-size: 2rem;
 }
 
@@ -59,9 +60,9 @@
   text-align: center;
   padding: 2rem;
   border-radius: 12px;
-  text-decoration: none; /* Removes underline from links */
+  text-decoration: none; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--bg-cream); /* Light text by default */
+  color: var(--bg-cream);
   position: relative;
   overflow: hidden;
 }
@@ -69,29 +70,30 @@
 /* Hover Effects */
 .hub-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* 🎨 Distinct Colors for Each Room */
+/* 🎨 Sanctuary Palette Alignment */
 
 /* Menu: Coffee Dark */
 .area-menu { 
   background-color: var(--coffee-dark); 
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Mission: Deep Plum */
+/* Mission: Sanctuary Purple (Matches your base.css) */
 .area-mission { 
-  background-color: #4E2753; 
+  background-color: var(--coffee-accent); 
 }
 
-/* Help: Resilience Teal */
+/* Help: Desaturated Slate (Replaces Teal for sensory safety) */
 .area-help { 
-  background-color: var(--resilience-teal); 
+  background-color: #4A5D5E; 
 }
 
-/* Circle: Healing Green */
+/* Circle: Grounding Earth (Replaces Green) */
 .area-circle { 
-  background-color: var(--healing-green); 
+  background-color: #6B4C3B; 
 }
 
 /* 5. Typography inside the cards */
@@ -104,8 +106,8 @@
 
 .hub-card p {
   font-family: var(--font-body);
-  font-size: 1rem;
-  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
   margin-bottom: 1.5rem;
 }
 
@@ -117,22 +119,23 @@
 .btn-text {
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   border: 1px solid rgba(255,255,255,0.4);
   padding: 0.5rem 1rem;
   border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .hub-card:hover .btn-text {
   background: #fff;
-  color: var(--text-dark);
+  color: var(--coffee-dark);
 }
 
-/* 📱 MOBILE LAYOUT (Essential!) */
+/* 📱 MOBILE LAYOUT */
 @media (max-width: 900px) {
   .lobby-grid {
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr;
     grid-template-areas: 
       "lobby"
       "menu"
