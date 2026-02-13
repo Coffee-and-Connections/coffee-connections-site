@@ -10,36 +10,61 @@ const storyDisplay = document.getElementById('story-display');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
-// 1. FETCH STORIES FROM THE VAULT
+// 1. THE HANDSHAKE (Linking to Render)
+const VAULT_ENDPOINT = "https://strong-bonds-vault.onrender.com/api/stories";
+
 async function loadStories() {
     try {
-        // We use the URL defined in your config.js
-        const response = await fetch(CONFIG.endpoints.getStories);
+        // High-Contrast Loading State
+        storyDisplay.innerHTML = "<p class='loading-state'>Opening the secure vault...</p>";
+        
+        const response = await fetch(VAULT_ENDPOINT);
+        
+        if (!response.ok) {
+            throw new Error('Vault is temporarily suspended.');
+        }
+
         stories = await response.json();
 
-        if (stories.length > 0) {
+        if (stories && stories.length > 0) {
             displayStory(0);
         } else {
-            storyDisplay.innerHTML = "<p class='loading-state'>The vault is currently resting. Check back soon.</p>";
+            storyDisplay.innerHTML = `
+                <div class="story-content">
+                    <p class="loading-state">The vault is resting. We are currently vetting new narratives of resilience. Check back shortly.</p>
+                </div>`;
         }
     } catch (error) {
         console.error("Vault Connection Error:", error);
-        storyDisplay.innerHTML = "<p class='loading-state'>Secure Connection Lost. Please refresh.</p>";
+        storyDisplay.innerHTML = `
+            <div class="story-content">
+                <p class="error-text" style="color:#b71c1c; font-weight:800;">
+                    Secure Connection Lost.<br>
+                    <span style="font-size: 0.9rem; font-weight:400;">Our advocates are working to restore the link. Please refresh.</span>
+                </p>
+            </div>`;
     }
 }
 
-// 2. DISPLAY THE STORY
+// 2. DISPLAY THE STORY (High-Contrast "Latte" Rendering)
 function displayStory(index) {
     const story = stories[index];
     
-    // Smooth transition effect
+    // Smooth transition
     storyDisplay.style.opacity = 0;
     
     setTimeout(() => {
+        // Using the text/content field from your MongoDB collection
+        const narrativeText = story.text || story.content || "Narrative content missing.";
+        const narrativeTitle = story.title || "Vetted Narrative";
+        
         storyDisplay.innerHTML = `
-            <div class="story-content">
-                <p>"${story.text}"</p>
-                <cite>— Shared via Secure Vault</cite>
+            <div class="story-content fadeIn">
+                <h2 style="color:var(--coffee-accent); margin-bottom:1rem;">${narrativeTitle}</h2>
+                <p style="font-size:1.3rem; line-height:1.8; color:var(--text-dark);">"${narrativeText}"</p>
+                <cite style="display:block; margin-top:20px; font-weight:700; color:#6a4a3a;">
+                    — Received ${new Date(story.timestamp || Date.now()).toLocaleDateString()}
+                </cite>
             </div>
         `;
         storyDisplay.style.opacity = 1;
@@ -47,10 +72,14 @@ function displayStory(index) {
     }, 300);
 }
 
-// 3. BUTTON LOGIC (The Page Turners)
+// 3. NAVIGATION LOGIC
 function updateButtons() {
-    prevBtn.disabled = (currentStoryIndex === 0);
-    nextBtn.disabled = (currentStoryIndex === stories.length - 1);
+    // We use visibility instead of disabled to keep the "Look" consistent
+    prevBtn.style.opacity = (currentStoryIndex === 0) ? "0.3" : "1";
+    prevBtn.style.pointerEvents = (currentStoryIndex === 0) ? "none" : "auto";
+    
+    nextBtn.style.opacity = (currentStoryIndex === stories.length - 1) ? "0.3" : "1";
+    nextBtn.style.pointerEvents = (currentStoryIndex === stories.length - 1) ? "none" : "auto";
 }
 
 prevBtn.addEventListener('click', () => {
