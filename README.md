@@ -1,4 +1,4 @@
-# Coffee & Connections | El Paso Borderplex
+# Coffee & Connections | El Paso Borderplex 
 **A Vertically Integrated Ecosystem for Survivor Stability & Community Resilience.**
 
 ## 🏙️ Project Vision
