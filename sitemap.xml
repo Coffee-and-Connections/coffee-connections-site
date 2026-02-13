@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://connectionsep.coffee/</loc><lastmod>2026-01-16</lastmod></url>
-  <url><loc>https://connectionsep.coffee/menu.html</loc><lastmod>2026-01-16</lastmod></url>
-  <url><loc>https://connectionsep.coffee/our-mission.html</loc><lastmod>2026-01-16</lastmod></url>
-  <url><loc>https://connectionsep.coffee/healing-in-motion.html</loc><lastmod>2026-01-16</lastmod></url>
-  <url><loc>https://connectionsep.coffee/trauma-informed-design.html</loc><lastmod>2026-01-16</lastmod></url>
-  <url><loc>https://connectionsep.coffee/founding-circle.html</loc><lastmod>2026-01-16</lastmod></url>
-  <url><loc>https://connectionsep.coffee/how-you-can-help.html</loc><lastmod>2026-01-16</lastmod></url>
+<url>
+<loc>https://connectionsep.coffee/</loc>
+<lastmod>2026-01-16T08:10:09-07:00</lastmod>
+</url>
+<url>
+<loc>https://connectionsep.coffee/founding-circle.html</loc>
+<lastmod>2026-01-16T08:23:39-07:00</lastmod>
+</url>
+<url>
+<loc>https://connectionsep.coffee/healing-in-motion.html</loc>
+<lastmod>2026-01-16T08:18:27-07:00</lastmod>
+</url>
+<url>
+<loc>https://connectionsep.coffee/how-you-can-help.html</loc>
+<lastmod>2026-01-16T08:27:59-07:00</lastmod>
+</url>
+<url>
+<loc>https://connectionsep.coffee/menu.html</loc>
+<lastmod>2026-01-16T08:21:17-07:00</lastmod>
+</url>
+<url>
+<loc>https://connectionsep.coffee/our-mission.html</loc>
+<lastmod>2026-01-16T08:12:15-07:00</lastmod>
+</url>
+<url>
+<loc>https://connectionsep.coffee/resilience-market.html</loc>
+<lastmod>2026-01-16T08:15:08-07:00</lastmod>
+</url>
+<url>
+<loc>https://connectionsep.coffee/trauma-informed-design.html</loc>
+<lastmod>2026-01-16T08:26:08-07:00</lastmod>
+</url>
 </urlset>
