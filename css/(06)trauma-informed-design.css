@@ -1,9 +1,7 @@
-/* (06) TRAUMA-INFORMED-DESIGN.CSS */
-
-.dark-theme {
-    background-color: #1a1a1a; /* Professional Dark Base */
-    color: #f4ece2;
-}
+/* =========================================
+   (06) TRAUMA-INFORMED-DESIGN.CSS
+   "Architecture of Stability"
+   ========================================= */
 
 .design-content {
     max-width: 1000px;
@@ -13,50 +11,92 @@
 
 .page-hero {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .page-hero h1 {
-    font-size: 3rem;
-    color: #d4af37; /* Gold Accent */
+    font-size: 3.5rem;
+    color: var(--bg-cream);
     margin-bottom: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--coffee-accent);
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .subtitle {
-    font-size: 1.25rem;
-    opacity: 0.8;
+    font-size: 1.4rem;
+    color: var(--coffee-accent);
+    font-family: var(--font-journal);
+    font-style: italic;
 }
 
+/* --- THE BLUEPRINT GRID --- */
 .design-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
 }
 
 .design-card {
-    background: #2c241e; /* Deep Leather Brown */
-    padding: 2.5rem;
-    border-radius: 12px;
-    border-left: 4px solid #d4af37;
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.03); /* Translucent depth */
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--coffee-accent); /* Accent on top for "stability" */
+    transition: all 0.3s ease;
 }
 
 .design-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--coffee-accent);
+}
+
+.card-num {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--coffee-accent);
+    opacity: 0.5;
+    margin-bottom: 1rem;
 }
 
 .design-card h3 {
-    color: #d4af37;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    color: var(--bg-cream);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .design-card p {
-    line-height: 1.6;
-    opacity: 0.9;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+}
+
+/* --- BOTTOM LINE PITCH --- */
+.pitch-footer {
+    text-align: center;
+    margin-top: 6rem;
+    padding: 3rem;
+    background: rgba(78, 39, 83, 0.1); /* Subtle purple wash */
+    border-radius: 12px;
+}
+
+.pitch-footer p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    color: var(--bg-cream);
 }
 
 @media (max-width: 768px) {
-    .page-hero h1 { font-size: 2.2rem; }
+    .page-hero h1 { font-size: 2.5rem; }
     .design-grid { grid-template-columns: 1fr; }
 }
