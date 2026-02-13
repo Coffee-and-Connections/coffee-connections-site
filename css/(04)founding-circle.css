@@ -1,76 +1,126 @@
 /* =========================================
-   (04) FOUNDING-CIRCLE.CSS - Open Table Update
+   (04) FOUNDING-CIRCLE.CSS 
    ========================================= */
 
-/* --- CATEGORY SECTIONS --- */
-.circle-section {
-  max-width: 1200px;
-  margin: 0 auto 6rem auto;
-  padding: 0 1.5rem;
+.main-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px; /* The .25in Safety Buffer */
 }
 
-.section-title {
-  font-family: var(--font-heading);
-  color: var(--bg-cream);
-  font-size: 1.8rem;
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+.circle-header {
+    text-align: center;
+    padding: 4rem 0;
 }
-
-/* The line next to the category title */
-.section-title::after {
-  content: "";
-  flex-grow: 1;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* --- SEAT CARD REFINEMENTS --- */
-
-/* Label for confirmed partners (NAMI/Ben) */
-.seat-label {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--coffee-accent);
-  background: rgba(78, 39, 83, 0.1);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  letter-spacing: 1px;
-}
-
-/* Specific styling for Open Seats to make them look "available" */
-.open-seat {
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  background-color: transparent;
-}
-
-.open-seat:hover {
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0.4);
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.open-seat .seat-icon {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.open-seat:hover .seat-icon {
-  filter: grayscale(0%);
-}
-
-/* --- THE REMAINING STYLES (Keep as previously defined) --- */
 
 .seats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
 }
 
-/* ... include the .seat-card, .status, and .filled-seat styles here ... */
+/* --- THE FLEXIBLE LOGO ENGINE --- */
+.brand-flex-wrapper {
+    width: 100%;
+    height: 150px; /* Fixed height for all cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.brand-logo {
+    max-height: 100%; /* Prevents logo from overflowing the height */
+    width: auto;      /* Allows width to expand naturally (Perfect for NAMI) */
+    display: block;
+    filter: brightness(1.1);
+}
+
+/* Special Case: If it's a square portrait, keep it neat */
+.brand-logo.square {
+    border-radius: 8px;
+}
+
+/* --- THE SEAT CARDS --- */
+.seat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.filled-seat {
+    border: 1px solid var(--coffee-accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.seat-label {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--coffee-accent);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.seat-status {
+    margin-top: auto;
+    font-size: 0.8rem;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    height: 8px; width: 8px;
+    border-radius: 50%;
+    background: #4caf50; /* Green for Active */
+}
+
+/* --- OPEN SEAT STYLING --- */
+.open-seat {
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    text-align: center;
+    justify-content: center;
+}
+
+.seat-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+/* --- CTA BUTTON --- */
+.join-table {
+    text-align: center;
+    padding: 5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--coffee-accent);
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    margin-top: 2rem;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: white;
+    color: var(--coffee-accent);
+    transform: translateY(-5px);
+}
