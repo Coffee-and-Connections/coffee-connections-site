@@ -3,12 +3,13 @@
    ========================================= */
 
 .nav-container {
-  background-color: var(--bg-white);
-  border-bottom: 3px solid var(--resilience-teal);
-  position: sticky; /* Keeps menu at top when scrolling */
+  /* Using Sanctuary variables for a grounded feel */
+  background-color: var(--coffee-dark); 
+  border-bottom: 2px solid var(--coffee-accent);
+  position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .nav-menu {
@@ -17,61 +18,61 @@
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-menu > li {
-  position: relative; /* Anchor for submenu */
+  position: relative; 
 }
 
 /* Top Level Links */
 .nav-menu > li > a {
   display: block;
-  padding: 1rem 1.5rem;
-  font-weight: 700;
+  padding: 1.2rem 1rem;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 1px;
-  color: var(--coffee-dark);
-  transition: color 0.3s ease;
+  color: var(--bg-cream); /* Cream text on dark background */
+  transition: all 0.3s ease;
 }
 
 .nav-menu > li > a:hover,
 .nav-menu > li > a.active {
-  color: var(--resilience-teal);
-  background-color: rgba(0,0,0,0.02);
+  color: white;
+  background-color: var(--coffee-accent); /* Sanctuary Purple highlight */
 }
 
 /* --- DROPDOWN SUBMENU --- */
 .submenu {
-  display: none; /* Hidden by default */
+  display: none; 
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--bg-white);
+  background-color: #3d2b22; /* Slightly lighter brown than base for depth */
   list-style: none;
   padding: 0;
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  min-width: 240px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
   border-radius: 0 0 8px 8px;
   overflow: hidden;
 }
 
 .submenu li {
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .submenu a {
   display: block;
   padding: 1rem;
-  font-size: 0.95rem;
-  color: var(--text-main);
+  font-size: 0.9rem;
+  color: var(--bg-cream);
   transition: background 0.2s;
 }
 
 .submenu a:hover {
-  background-color: var(--mint-highlight);
-  color: var(--coffee-dark);
+  background-color: var(--coffee-accent);
+  color: white;
 }
 
 /* Show Submenu on Hover */
@@ -83,13 +84,13 @@
 @media (max-width: 768px) {
   .nav-menu {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     gap: 0;
   }
   .submenu {
-    position: static; /* Stack inside the menu on mobile */
+    position: static; 
     box-shadow: none;
-    border-left: 4px solid var(--resilience-teal);
+    background-color: rgba(0,0,0,0.2);
+    border-left: 4px solid var(--coffee-accent);
   }
 }
-
