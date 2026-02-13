@@ -1,54 +1,65 @@
 /* =========================================
-   (01) INDEX.CSS - The High-Contrast Split
+   (01) INDEX.CSS - Content Island Refactor
    ========================================= */
 
 .hero-split {
     display: flex;
-    min-height: 85vh;
+    min-height: 70vh; /* Reduced height to make room for header/footer */
     gap: 30px;
-    margin-top: 20px;
+    margin: 40px 0;
 }
 
 .column {
     flex: 1;
-    border-radius: 24px;
-    padding: 40px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    border: 1px solid rgba(253, 245, 230, 0.1);
 }
 
-/* THE INNER CARDS (The secret to readability) */
-.engine-side, .mission-side {
-    background-color: var(--espresso-dark);
-}
-
-/* Content wrapper that creates the 'latte' island */
+/* THE CONTENT ISLAND - High Contrast, Low Strain */
 .content-island {
     background-color: var(--latte-cream);
-    color: var(--text-dark);
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    padding: 50px 40px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    max-width: 500px;
 }
 
-.content-island h1 { color: var(--coffee-accent); margin-top: 10px; }
-.content-island p { color: var(--text-dark); font-weight: 600; }
+.content-island h1 { 
+    color: var(--coffee-accent); /* Dark purple is readable on cream */
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
 
+.content-island p { 
+    color: var(--text-dark); /* Dark brown for high-performance reading */
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.content-island .tagline {
+    color: var(--coffee-accent);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* BUTTONS */
 .btn {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 800;
-    margin-top: 1rem;
-    text-align: center;
+    margin-top: 1.5rem;
+    transition: 0.3s;
 }
 
 .btn-engine { background: var(--coffee-accent); color: white; }
 .btn-mission { border: 2px solid var(--coffee-accent); color: var(--coffee-accent); }
 
+.btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
 @media (max-width: 900px) {
     .hero-split { flex-direction: column; }
+    .content-island { max-width: 100%; }
 }
