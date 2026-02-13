@@ -1,0 +1,127 @@
+/* Dashboard Specific Layout */
+
+.hero-split {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 85vh;
+    align-items: stretch;
+}
+
+.column {
+    flex: 1;
+    min-width: 350px;
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background 0.4s ease;
+}
+
+/* Colors & Accents */
+.engine-side {
+    background-color: #2c241e; /* Deep Coffee Brown */
+    color: #f4ece2;
+    border-right: 1px solid #3d332b;
+}
+
+.mission-side {
+    background-color: #121212; /* Deep Professional Charcoal */
+    color: #ffffff;
+}
+
+/* Typography */
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.tagline {
+    color: #d4af37; /* Gold accent */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: fit-content;
+    transition: transform 0.2s ease;
+}
+
+.btn-engine {
+    border: 2px solid #f4ece2;
+    color: #f4ece2;
+}
+
+.btn-mission {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.1);
+}
+
+/* Nav & Footer Styling */
+.main-nav {
+    background: #000;
+    padding: 20px;
+}
+
+.nav-links a {
+    color: #bbb;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.nav-links a.active {
+    color: #d4af37;
+}
+
+.inclusive-footer {
+    padding: 40px;
+    text-align: center;
+    background: #f4f4f4;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .hero-split { flex-direction: column; }
+    h1 { font-size: 2.5rem; }
+}
