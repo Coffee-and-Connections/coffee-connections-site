@@ -65,7 +65,7 @@ function displayStory(index) {
     storyDisplay.style.opacity = 0;
     
     setTimeout(() => {
-        const narrativeText = story.text || story.content || "Narrative content missing.";
+        const narrativeText = story.message || story.text || "Narrative content missing.";
         const narrativeTitle = story.title || "Vetted Narrative";
         
         storyDisplay.innerHTML = `
