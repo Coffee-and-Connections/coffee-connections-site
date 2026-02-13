@@ -1,5 +1,5 @@
 # Coffee & Connections | El Paso Borderplex 
-**A Vertically Integrated Ecosystem for Survivor Stability & Community Resilience.**  
+**A Vertically Integrated Ecosystem for Survivor Stability & Community Resilience.**
 
 ## 🏙️ Project Vision
 Coffee & Connections is a dual-engine social enterprise designed to bridge the gap between crisis and stability. Located at **216 E Overland**, this project integrates a trauma-informed "Sanctuary" Café with transitional safe-haven housing.
