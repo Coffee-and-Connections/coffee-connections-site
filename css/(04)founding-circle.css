@@ -3,7 +3,7 @@
    ========================================= */
 
 .main-layout {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 24px; /* The .25in Safety Buffer */
 }
@@ -13,69 +13,71 @@
     padding: 4rem 0;
 }
 
+.circle-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* --- THE SEAT CARDS --- */
 .seats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-bottom: 60px;
+    margin-top: 40px;
 }
 
-/* --- THE FLEXIBLE LOGO ENGINE --- */
-.brand-flex-wrapper {
-    width: 100%;
-    height: 150px; /* Fixed height for all cards */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 20px;
-    overflow: hidden;
-}
-
-.brand-logo {
-    max-height: 100%; /* Prevents logo from overflowing the height */
-    width: auto;      /* Allows width to expand naturally (Perfect for NAMI) */
-    display: block;
-    filter: brightness(1.1);
-}
-
-/* Special Case: If it's a square portrait, keep it neat */
-.brand-logo.square {
-    border-radius: 8px;
-}
-
-/* --- THE SEAT CARDS --- */
 .seat-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+    padding: 40px 30px;
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
 }
 
 .filled-seat {
     border: 1px solid var(--coffee-accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+/* --- THE FLEX LOGO ENGINE --- */
+.brand-flex-wrapper {
+    width: 100%;
+    height: 100px; /* Fixed vertical anchor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.brand-logo {
+    max-height: 100%; /* Prevents logo from overflowing card */
+    width: auto;      /* Respects wide logos like NAMI */
+    display: block;
+    filter: brightness(1.1);
+}
+
+/* Handle portraits/square logos separately */
+.brand-logo.portrait {
+    border-radius: 50%;
+    border: 2px solid var(--coffee-accent);
+}
+
+/* --- TEXT ELEMENTS --- */
 .seat-label {
     font-family: var(--font-heading);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--coffee-accent);
-    margin-bottom: 15px;
-    font-weight: 800;
+    margin-bottom: 20px;
 }
 
 .seat-status {
     margin-top: auto;
-    font-size: 0.8rem;
     padding-top: 20px;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -84,43 +86,17 @@
 .status-dot {
     height: 8px; width: 8px;
     border-radius: 50%;
-    background: #4caf50; /* Green for Active */
+    background: #4caf50;
 }
 
-/* --- OPEN SEAT STYLING --- */
+/* --- OPEN SEATS --- */
 .open-seat {
-    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border: 1px dashed rgba(255,255,255,0.2);
     text-align: center;
-    justify-content: center;
 }
 
 .seat-icon {
     font-size: 3rem;
     margin-bottom: 15px;
-    opacity: 0.5;
-}
-
-/* --- CTA BUTTON --- */
-.join-table {
-    text-align: center;
-    padding: 5rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--coffee-accent);
-    color: white;
-    padding: 1.2rem 3rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 800;
-    margin-top: 2rem;
-    transition: 0.3s;
-}
-
-.cta-button:hover {
-    background: white;
-    color: var(--coffee-accent);
-    transform: translateY(-5px);
+    opacity: 0.3;
 }
