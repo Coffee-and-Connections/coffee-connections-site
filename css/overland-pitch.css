@@ -1,4 +1,7 @@
-/* overland-pitch.css */
+/* =========================================
+   OVERLAND-PITCH.CSS
+   The Vertically Integrated Prospectus
+   ========================================= */
 
 .pitch-container {
     max-width: 1100px;
@@ -8,85 +11,138 @@
 
 .pitch-hero {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
 }
 
 .tag {
-    background: #d4af37;
-    color: #000;
-    padding: 5px 15px;
-    font-weight: bold;
+    background: var(--coffee-accent);
+    color: #fff;
+    padding: 6px 16px;
+    font-weight: 700;
     border-radius: 4px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .pitch-hero h1 {
-    font-size: 4rem;
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
     margin: 1.5rem 0;
-    color: #f4ece2;
+    color: var(--bg-cream);
+    line-height: 1.1;
 }
 
+.hero-sub {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-journal);
+    font-style: italic;
+}
+
+/* --- THE FLOOR STACK --- */
 .floor-breakdown {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 5rem;
+    gap: 2.5rem;
+    margin-bottom: 6rem;
 }
 
 .floor-card {
     display: flex;
-    background: #252525;
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
     overflow: hidden;
-    border: 1px solid #333;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.floor-card:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .floor-card.highlight {
-    border: 2px solid #d4af37;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--coffee-accent);
+    box-shadow: 0 10px 30px rgba(78, 39, 83, 0.2);
 }
 
 .floor-num {
-    background: #d4af37;
-    color: #000;
-    font-size: 2.5rem;
-    font-weight: 900;
+    background: var(--coffee-dark);
+    color: var(--coffee-accent);
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
     padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 120px;
+    min-width: 140px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .floor-content {
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 .floor-content h3 {
-    color: #d4af37;
-    margin-bottom: 10px;
+    font-family: var(--font-heading);
+    color: var(--bg-cream);
+    margin-bottom: 15px;
+    font-size: 1.6rem;
 }
 
+.floor-content p {
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+/* --- PARTNERSHIP ECOSYSTEM --- */
 .partnership-box {
-    background: #1a1a1a;
-    padding: 4rem;
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5rem 3rem;
+    border-radius: 20px;
     text-align: center;
-    border: 1px dashed #444;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.partnership-box h2 {
+    color: var(--bg-cream);
+    margin-bottom: 1rem;
 }
 
 .partner-logos {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .partner {
-    border: 1px solid #d4af37;
-    padding: 20px;
-    border-radius: 8px;
-    min-width: 180px;
+    border: 1px solid var(--coffee-accent);
+    background: rgba(78, 39, 83, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.partner strong {
+    color: var(--bg-cream);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.partner:hover {
+    background: var(--coffee-accent);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .pitch-hero h1 { font-size: 3rem; }
+    .floor-card { flex-direction: column; }
+    .floor-num { min-width: 100%; padding: 1rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
 }
