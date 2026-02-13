@@ -1,198 +1,79 @@
 /* =========================================
-   (03) OUR-MISSION.CSS - The Story Aesthetic
+   (03) OUR-MISSION.CSS - Visual Novel Edition
    ========================================= */
 
-/* --- HERO SECTION --- */
-.mission-hero {
-  text-align: center;
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+.visual-narrative {
+    padding: 24px; /* Global Buffer */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.mission-hero h1 {
-  font-size: 3rem;
-  color: var(--bg-cream); /* Cream on Dark */
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
+/* --- THE CAR SCENE FRAME --- */
+.visual-novel-frame {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../asset/car-background-art.jpg');
+    background-size: cover;
+    height: 500px;
+    border-radius: 20px;
+    border: 4px solid var(--coffee-accent);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    margin: 4rem 0;
 }
 
-.hero-subtitle {
-  font-family: var(--font-journal); /* Serif for a literary feel */
-  font-size: 1.75rem;
-  color: var(--coffee-accent); /* Sanctuary Purple */
-  font-style: italic;
-  font-weight: 400;
-  margin-bottom: 2.5rem;
+/* THE DIALOGUE BOX */
+.dialogue-box {
+    background: rgba(44, 27, 20, 0.95); /* Coffee Dark with slight transparency */
+    border: 2px solid var(--coffee-accent);
+    margin: 20px;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 10;
 }
 
-.hero-text {
-  font-size: 1.25rem;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.9);
+.speaker-name {
+    color: var(--coffee-accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
 }
 
-.tag {
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-  color: var(--coffee-accent);
-  margin-bottom: 1rem;
+.dialogue-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: white;
 }
 
-/* --- NARRATIVE BLOCKS --- */
-.origin-story, .the-solution {
-  max-width: 800px;
-  margin: 5rem auto;
-  padding: 0 1.5rem;
-  font-size: 1.2rem;
-  line-height: 1.8;
+/* THE BOILER ILLUSTRATION */
+.boiler-illustration {
+    position: relative;
+    padding: 2rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    border: 1px solid var(--coffee-accent);
 }
 
-.origin-story h3, .the-solution h3 {
-  font-size: 2.2rem;
-  color: var(--bg-cream);
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--coffee-accent);
-  display: inline-block;
-  padding-bottom: 0.5rem;
+.glow-effect {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(78,39,83,0.4) 0%, transparent 70%);
+    animation: pulse 3s infinite;
 }
 
-.highlight-box {
-  background-color: rgba(255, 255, 255, 0.05); /* Glass effect */
-  border-left: 5px solid var(--coffee-accent);
-  padding: 2.5rem;
-  margin: 3rem 0;
-  font-style: italic;
-  font-family: var(--font-journal);
-  font-size: 1.4rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.4; }
 }
 
-.founders-signoff {
-  margin-top: 3.5rem;
-  text-align: right;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 1.5rem;
-}
-
-.founders-signoff p { font-weight: bold; color: var(--bg-cream); margin-bottom: 0; }
-.founders-signoff small { font-style: italic; color: rgba(255,255,255,0.6); }
-
-/* --- PRINCIPLES GRID --- */
-.principles-section {
-  background-color: rgba(0,0,0,0.2);
-  padding: 6rem 1.5rem;
-  text-align: center;
-}
-
-.principles-section h3 {
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-  color: var(--bg-cream);
-}
-
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.principle-card {
-  background-color: var(--coffee-dark);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: transform 0.3s ease;
-}
-
-.principle-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--coffee-accent);
-}
-
-.principle-card h4 {
-  color: var(--coffee-accent);
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.principle-card p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* --- PERSONAL QUOTES --- */
-.personal-quotes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 1100px;
-  margin: 5rem auto;
-  padding: 0 1.5rem;
-}
-
-.quote-card {
-  background-color: var(--coffee-accent);
-  color: white;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-}
-
-.quote-card p {
-  font-size: 1.4rem;
-  font-style: italic;
-  font-family: var(--font-journal);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.quote-card cite {
-  display: block;
-  text-align: right;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-  font-style: normal;
-}
-
-/* --- CLOSING --- */
-.mission-closing {
-  text-align: center;
-  max-width: 700px;
-  margin: 6rem auto 8rem auto;
-  padding: 0 1.5rem;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--coffee-accent);
-  color: white;
-  padding: 1.2rem 2.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(78, 39, 83, 0.4);
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
-  background-color: white;
-  color: var(--coffee-accent);
-}
-
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE BUFFERS --- */
 @media (max-width: 768px) {
-  .personal-quotes { grid-template-columns: 1fr; }
-  .mission-hero h1 { font-size: 2.2rem; }
-  .origin-story, .the-solution { margin: 3rem auto; }
+    .visual-novel-frame { height: auto; }
+    .dialogue-text { font-size: 1.1rem; }
 }
