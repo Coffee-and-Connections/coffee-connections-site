@@ -1,4 +1,47 @@
-# Coffee & Connections (Public Website)
+# Coffee & Connections | Dual-Entity Ecosystem
+### *Commerce as the Engine, Resilience as the Mission.*
+
+**Primary Domain:** `connectionsep.coffee`
+**Sub-Directory Logic:** `/cafe` (The Engine) | `/mission` (The Mission) | `/overland` (The Bridge)
+**Backend API:** Connects to `C-CEP-APP` (The Vault)
+**Status:** Re-Skin in Progress / Deployment Live
+
+---
+
+## 1. Overview: The Triple-Pillar Model
+This repository hosts the public-facing infrastructure for a hybrid social enterprise. The architecture is designed to support three distinct lines of effort:
+
+1.  **The Sanctuary (Ground Floor):** A trauma-informed "Third Place" (Café) that provides sensory-regulated space and vocational training.
+2.  **Strong Bonds Resilience (Advocacy):** A 501(c)(3) mission delivering rapid-response microgrants and peer-led recovery groups.
+3.  **The Bridge @ Overland (Housing):** A strategic development plan for 216 E Overland, integrating transitional housing with social commerce.
+
+---
+
+## 2. Directory Structure & Logic
+We use a **categorical hierarchy** to professionalize the organizational image for stakeholders and investors.
+
+```text
+/
+├── /cafe                 # THE ENGINE: Commercial operations
+│   ├── menu.html         # Digital Menu & Sanctuary Fund notice
+│   └── resilience-market.html # Retail & Merch revenue stream
+│
+├── /mission              # THE MISSION: Social Impact (Strong Bonds)
+│   ├── our-mission.html  # Organizational story & Ethos
+│   ├── healing-in-motion.html # Survivor Journal (API Connected)
+│   ├── founding-circle.html   # Social proof & donor list
+│   ├── trauma-informed-design.html # Design philosophy
+│   └── how-you-can-help.html  # Call to Action / Donations
+│
+├── /overland             # THE PROJECT: Real Estate & Development
+│   └── transitional-housing.html # Investor Pitch & Partner Model (CASFV/YWCA)
+│
+├── /css                  # Modular Stylesheets (00)base -> (07)page
+├── /media                # Video assets & Heavy content
+├── /asset                # Static images, logos, and UI assets
+└── index.html            # THE DASHBOARD: Dual-Mission Gateway
+
+OLD # Coffee & Connections (Public Website)
 ### *More Than Just Coffee.*
 
 **Repository:** `connectionsep.com` (The Face)
