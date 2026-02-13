@@ -1,33 +1,32 @@
 /* =========================================
-   (00) BASE.CSS - Updated Typography & Global Padding
+   (00) BASE.CSS - Updated for Readability
    ========================================= */
 
 :root {
-  /* Sanctuary Colors */
   --coffee-dark: #2C1B14;
   --coffee-accent: #4E2753;
   --bg-cream: #F9F5F0;
   --text-light: #F9F5F0;
   
-  /* Updated Trauma-Informed Typography */
-  --font-heading: 'Montserrat', sans-serif; /* Stable & Bold */
-  --font-body: 'Open Sans', sans-serif;    /* Clean & Friendly */
-}
-
-/* Base Reset & Global Buffer */
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+  /* NEW: High-Legibility Pairing */
+  --font-heading: 'Montserrat', sans-serif; 
+  --font-body: 'Open Sans', sans-serif;
 }
 
 body {
   font-family: var(--font-body);
-  line-height: 1.6;
   background-color: var(--coffee-dark);
   color: var(--text-light);
-  /* Adding the requested .25in (approx 24px) buffer to the whole site */
-  padding: 1.5rem; 
+  line-height: 1.7; /* Increased for cognitive ease */
+  
+  /* THE BUFFER: .25 inch of protected space around the screen */
+  padding: 24px; 
+}
+
+h1, h2, h3, .nav-menu a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.02em; /* Prevents visual crowding */
 }
 
 h1, h2, h3 { 
