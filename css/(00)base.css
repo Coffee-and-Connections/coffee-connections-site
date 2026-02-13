@@ -1,86 +1,38 @@
 /* =========================================
-   (00) HEADER-FOOTER.CSS
+   (00) BASE.CSS - The Palette & Typography
    ========================================= */
 
-/* --- HEADER (The Banner) --- */
-.banner-header {
-  position: relative;
-  width: 100%;
-  background-color: var(--coffee-dark); /* Fallback color */
-  background-image: url('../asset/New-Banner.png');
-  background-size: cover;
-  background-position: center;
-  padding: 3rem 1rem;
-  text-align: center;
-  color: white;
+:root {
+  /* Sanctuary Colors */
+  --coffee-dark: #2C1B14;    /* Deep Grounding Brown */
+  --coffee-accent: #4E2753;  /* Trauma-Informed Purple */
+  --bg-cream: #F9F5F0;       /* Soft Sand / Cream */
+  --text-light: #F9F5F0;     /* For use on dark backgrounds */
+  --text-dark: #333333;      /* For use on light backgrounds */
+  
+  /* Modern Typography */
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-journal: 'Cormorant Garamond', serif;
 }
 
-/* Dark overlay so text pops */
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* 50% darkness */
-  z-index: 1;
-}
+/* Base Resets */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-.banner-container {
-  position: relative;
-  z-index: 2; /* Sits on top of overlay */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-/* Logo Sizing */
-.logo-block img {
-  width: 120px;
-  height: auto;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-}
-
-.text-block h1 {
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.tagline {
+body {
   font-family: var(--font-body);
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  background-color: var(--bg-cream); /* Default fallback */
+  color: var(--text-dark);
+  transition: background-color 0.3s ease;
 }
 
-/* --- FOOTER --- */
-footer {
+/* THE GLOBAL SWITCH: Ensures "dark-theme" works site-wide */
+body.dark-theme {
   background-color: var(--coffee-dark);
-  color: var(--bg-cream);
-  text-align: center;
-  padding: 3rem 1rem;
-  margin-top: 4rem;
+  color: var(--text-light);
 }
 
-.social-links {
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
-}
-
-.social-links a {
-  margin: 0 10px;
-  transition: opacity 0.3s;
-}
-
-.social-links a:hover {
-  opacity: 0.7;
-}
-
-/* Mobile Tweak */
-@media (max-width: 768px) {
-  .text-block h1 { font-size: 2rem; }
-}
+h1, h2, h3, h4 { font-family: var(--font-heading); }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
