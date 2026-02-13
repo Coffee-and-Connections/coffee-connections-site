@@ -1,174 +1,198 @@
 /* =========================================
-   (03) OUT-MISSION.CSS (The Story Version)
+   (03) OUR-MISSION.CSS - The Story Aesthetic
    ========================================= */
 
 /* --- HERO SECTION --- */
 .mission-hero {
   text-align: center;
   max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
 }
 
 .mission-hero h1 {
-  font-size: 2.5rem;
-  color: var(--coffee-dark);
+  font-size: 3rem;
+  color: var(--bg-cream); /* Cream on Dark */
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero-subtitle {
-  font-family: var(--font-body);
-  font-size: 1.5rem;
-  color: var(--resilience-teal);
+  font-family: var(--font-journal); /* Serif for a literary feel */
+  font-size: 1.75rem;
+  color: var(--coffee-accent); /* Sanctuary Purple */
   font-style: italic;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero-text {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: var(--text-main);
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* --- ORIGIN STORY --- */
+.tag {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: var(--coffee-accent);
+  margin-bottom: 1rem;
+}
+
+/* --- NARRATIVE BLOCKS --- */
 .origin-story, .the-solution {
   max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-  font-size: 1.15rem;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.8;
 }
 
 .origin-story h3, .the-solution h3 {
-  font-size: 2rem;
-  color: var(--coffee-dark);
+  font-size: 2.2rem;
+  color: var(--bg-cream);
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--healing-green);
+  border-bottom: 2px solid var(--coffee-accent);
   display: inline-block;
+  padding-bottom: 0.5rem;
 }
 
 .highlight-box {
-  background-color: var(--bg-white);
-  border-left: 5px solid var(--coffee-dark);
-  padding: 2rem;
-  margin: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.05); /* Glass effect */
+  border-left: 5px solid var(--coffee-accent);
+  padding: 2.5rem;
+  margin: 3rem 0;
   font-style: italic;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-family: var(--font-journal);
+  font-size: 1.4rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .founders-signoff {
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   text-align: right;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
 }
 
-.founders-signoff p { font-weight: bold; color: var(--coffee-dark); margin-bottom: 0; }
-.founders-signoff small { font-style: italic; color: var(--text-muted); }
+.founders-signoff p { font-weight: bold; color: var(--bg-cream); margin-bottom: 0; }
+.founders-signoff small { font-style: italic; color: rgba(255,255,255,0.6); }
 
 /* --- PRINCIPLES GRID --- */
 .principles-section {
-  background-color: var(--bg-white);
-  padding: 4rem 1rem;
+  background-color: rgba(0,0,0,0.2);
+  padding: 6rem 1.5rem;
   text-align: center;
 }
 
 .principles-section h3 {
-  font-size: 2.2rem;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: var(--bg-cream);
 }
 
 .principles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
 }
 
 .principle-card {
-  background-color: var(--bg-cream);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.05);
+  background-color: var(--coffee-dark);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s ease;
+}
+
+.principle-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--coffee-accent);
 }
 
 .principle-card h4 {
-  color: var(--resilience-teal);
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  color: var(--coffee-accent);
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
 }
 
 .principle-card p {
   font-size: 1rem;
-  color: var(--text-main);
-  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* --- PERSONAL QUOTES --- */
 .personal-quotes {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 0 1rem;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
 }
 
-.quote-block {
-  background-color: var(--coffee-dark);
+.quote-card {
+  background-color: var(--coffee-accent);
   color: white;
-  padding: 2.5rem;
-  border-radius: 12px;
-  position: relative;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
-.quote-block strong {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: var(--healing-green);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.quote-block p {
-  font-size: 1.3rem;
+.quote-card p {
+  font-size: 1.4rem;
   font-style: italic;
-  line-height: 1.4;
-  margin-bottom: 0;
+  font-family: var(--font-journal);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.quote-card cite {
+  display: block;
+  text-align: right;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-style: normal;
 }
 
 /* --- CLOSING --- */
 .mission-closing {
   text-align: center;
   max-width: 700px;
-  margin: 4rem auto 6rem auto;
-  padding: 0 1rem;
+  margin: 6rem auto 8rem auto;
+  padding: 0 1.5rem;
 }
 
 .cta-button {
   display: inline-block;
-  background-color: var(--resilience-teal);
+  background-color: var(--coffee-accent);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 1.5rem;
-  transition: background 0.3s;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(78, 39, 83, 0.4);
 }
 
 .cta-button:hover {
-  background-color: var(--healing-green);
+  transform: scale(1.05);
+  background-color: white;
+  color: var(--coffee-accent);
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .personal-quotes { grid-template-columns: 1fr; }
-  .mission-hero h1 { font-size: 2rem; }
+  .mission-hero h1 { font-size: 2.2rem; }
+  .origin-story, .the-solution { margin: 3rem auto; }
 }
