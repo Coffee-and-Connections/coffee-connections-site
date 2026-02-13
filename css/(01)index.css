@@ -1,146 +1,54 @@
 /* =========================================
-   THE LOBBY GRID LAYOUT
+   (01) INDEX.CSS - The High-Contrast Split
    ========================================= */
 
-/* 1. The Container */
-.lobby-grid {
-  display: grid;
-  max-width: 1400px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  gap: 1.5rem; 
-  
-  /* 📐 THE BLUEPRINT */
-  grid-template-columns: 1fr 2fr 1fr; 
-  grid-template-areas: 
-    "menu    lobby   help"
-    "mission lobby   circle";
+.hero-split {
+    display: flex;
+    min-height: 85vh;
+    gap: 30px;
+    margin-top: 20px;
 }
 
-/* 2. Assigning the Areas */
-.area-lobby   { grid-area: lobby; }
-.area-menu    { grid-area: menu; }
-.area-mission { grid-area: mission; }
-.area-help    { grid-area: help; }
-.area-circle  { grid-area: circle; }
-
-/* 3. The "Lobby" (Center Stage) */
-.area-lobby {
-  background-color: rgba(255, 255, 255, 0.05); /* Subtle glass effect for dark mode */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  backdrop-filter: blur(10px); /* Modern frosted glass look */
+.column {
+    flex: 1;
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(253, 245, 230, 0.1);
 }
 
-.area-lobby iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  border: none;
+/* THE INNER CARDS (The secret to readability) */
+.engine-side, .mission-side {
+    background-color: var(--espresso-dark);
 }
 
-.lobby-content h2 {
-  font-family: var(--font-heading);
-  color: var(--bg-cream); /* Use your cream variable */
-  font-size: 2rem;
+/* Content wrapper that creates the 'latte' island */
+.content-island {
+    background-color: var(--latte-cream);
+    color: var(--text-dark);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
-/* 4. The "Rooms" (Side Cards) */
-.hub-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 12px;
-  text-decoration: none; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--bg-cream);
-  position: relative;
-  overflow: hidden;
+.content-island h1 { color: var(--coffee-accent); margin-top: 10px; }
+.content-island p { color: var(--text-dark); font-weight: 600; }
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    margin-top: 1rem;
+    text-align: center;
 }
 
-/* Hover Effects */
-.hub-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
+.btn-engine { background: var(--coffee-accent); color: white; }
+.btn-mission { border: 2px solid var(--coffee-accent); color: var(--coffee-accent); }
 
-/* 🎨 Sanctuary Palette Alignment */
-
-/* Menu: Coffee Dark */
-.area-menu { 
-  background-color: var(--coffee-dark); 
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Mission: Sanctuary Purple (Matches your base.css) */
-.area-mission { 
-  background-color: var(--coffee-accent); 
-}
-
-/* Help: Desaturated Slate (Replaces Teal for sensory safety) */
-.area-help { 
-  background-color: #4A5D5E; 
-}
-
-/* Circle: Grounding Earth (Replaces Green) */
-.area-circle { 
-  background-color: #6B4C3B; 
-}
-
-/* 5. Typography inside the cards */
-.hub-card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
-  color: #fff;
-}
-
-.hub-card p {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 1.5rem;
-}
-
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.btn-text {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  border: 1px solid rgba(255,255,255,0.4);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.hub-card:hover .btn-text {
-  background: #fff;
-  color: var(--coffee-dark);
-}
-
-/* 📱 MOBILE LAYOUT */
 @media (max-width: 900px) {
-  .lobby-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "lobby"
-      "menu"
-      "mission"
-      "help"
-      "circle";
-  }
+    .hero-split { flex-direction: column; }
 }
