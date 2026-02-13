@@ -1,86 +1,86 @@
-/* 🎨 (00)base.css - Global Variables & Utilities */
+/* =========================================
+   (00) HEADER-FOOTER.CSS
+   ========================================= */
 
-/* 1. GLOBAL VARIABLES (The DNA of the site) */
-:root {
-    /* Color Palette */
-    --color-bg: #fcfbf8;        /* Cream Paper */
-    --color-ink: #3e2723;       /* Standard Text (Dark Brown) */
-    --color-accent: #d88d2a;    /* Brand Gold */
-    --color-coffee-dark: #2c1810; /* Black/Brown for High Contrast Text */
-    
-    /* Fonts */
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Merriweather', serif;
-    --font-ui: 'DM Sans', sans-serif;
+/* --- HEADER (The Banner) --- */
+.banner-header {
+  position: relative;
+  width: 100%;
+  background-color: var(--coffee-dark); /* Fallback color */
+  background-image: url('../asset/New-Banner.png');
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
 }
 
-/* 2. RESET & DEFAULTS */
-* {
-    box-sizing: border-box; /* Makes sizing predictable */
+/* Dark overlay so text pops */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 50% darkness */
+  z-index: 1;
 }
 
-body {
-    background-color: var(--color-bg);
-    color: var(--color-ink);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    margin: 0;
+.banner-container {
+  position: relative;
+  z-index: 2; /* Sits on top of overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-/* 3. ACCESSIBILITY FIX: The High-Contrast Buttons */
-/* This is what fixes the Lighthouse "Contrast" Score */
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-family: var(--font-ui);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
+/* Logo Sizing */
+.logo-block img {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
 
-/* PRIMARY BUTTON (Gold Background) */
-.cta-primary {
-    background-color: var(--color-accent);
-    /* CRITICAL FIX BELOW: Dark Text (#2c1810) on Gold Background */
-    color: var(--color-coffee-dark); 
+.text-block h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.cta-primary:hover {
-    background-color: #ffb74d; /* Lighter Gold */
-    color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(216, 141, 42, 0.4);
+.tagline {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* SECONDARY BUTTON (Outline) */
-.cta-secondary {
-    background-color: transparent;
-    border: 2px solid var(--color-ink);
-    color: var(--color-ink);
+/* --- FOOTER --- */
+footer {
+  background-color: var(--coffee-dark);
+  color: var(--bg-cream);
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
 }
 
-.cta-secondary:hover {
-    background-color: var(--color-ink);
-    color: #fff;
-    transform: translateY(-2px);
+.social-links {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
 }
 
-/* LINK ARROWS (Text Links) */
-.link-arrow {
-    color: var(--color-accent);
-    font-weight: 700;
-    text-decoration: none;
-    font-family: var(--font-ui);
-    border-bottom: 2px solid transparent;
-    transition: border 0.3s;
+.social-links a {
+  margin: 0 10px;
+  transition: opacity 0.3s;
 }
 
-.link-arrow:hover {
-    border-bottom: 2px solid var(--color-accent);
+.social-links a:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Tweak */
+@media (max-width: 768px) {
+  .text-block h1 { font-size: 2rem; }
 }

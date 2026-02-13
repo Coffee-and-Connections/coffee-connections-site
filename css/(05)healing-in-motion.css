@@ -1,308 +1,84 @@
-/* 📖 (05)healing-in-motion.css - The Survivor Journal */
-
 /* =========================================
-   1. VARIABLES & GLOBAL
+   (05) HEALING-IN-MOTION.CSS
+   "Finding Its Rhythm" / Placeholder Style
    ========================================= */
-:root {
-    --book-leather: #3e2723;   /* Dark Brown Leather */
-    --book-paper: #fcf6e9;     /* Warm Antique Paper */
-    --book-shadow: #d7ccc8;    /* Paper Shadows */
-    --ink-color: #2c1810;      /* Dark Coffee Ink */
-    --gold-accent: #c5a059;    /* Gold Leaf Text */
-    
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Merriweather', serif;
-    --font-ui: 'DM Sans', sans-serif;
+
+/* Use the main container to center everything vertically if needed */
+.main-layout {
+  min-height: 60vh; /* Ensures the footer doesn't creep up too high */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body {
-    background-color: #efebe9; 
-    color: var(--ink-color);
-    font-family: var(--font-body);
+/* The "Under Construction" Card */
+.construction-box {
+  max-width: 650px;
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  
+  /* Dashed border implies "Work in Progress" */
+  border: 3px dashed var(--coffee-light); 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-main {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.construction-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite; /* Gentle floating animation */
 }
 
-/* =========================================
-   2. PREAMBLE SECTION
-   ========================================= */
-.preamble-section {
-    text-align: center;
-    max-width: 800px;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
+/* Typography */
+.construction-box h1 {
+  font-size: 2rem;
+  color: var(--coffee-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
 
-.preamble-title {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--book-leather);
-    margin-bottom: 1rem;
-    font-weight: 700;
+.construction-box p {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.preamble-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4e342e;
+/* The "Return Home" Link */
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--resilience-teal);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
-/* =========================================
-   3. BOOK CONTAINER (Leather Case)
-   ========================================= */
-.book-container {
-    position: relative;
-    width: 100%;
-    max-width: 950px;
-    height: 650px;
-    background-color: var(--book-leather);
-    border-radius: 12px;
-    box-shadow: 
-        0 20px 50px rgba(0,0,0,0.5), 
-        inset 0 0 60px rgba(0,0,0,0.8);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+.back-link:hover {
+  color: var(--healing-green);
+  border-bottom-color: var(--healing-green);
+  transform: translateX(-5px); /* Moves slightly left to invite clicking back */
 }
 
-/* Center Spine Shadow Effect */
-.book-container::after {
-    content: "";
-    position: absolute;
-    top: 20px; bottom: 20px; left: 50%;
-    width: 40px;
-    transform: translateX(-50%);
-    background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.05));
-    z-index: 10;
-    pointer-events: none;
+/* 💫 Animation Keyframes */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-/* =========================================
-   4. PAGES (Spreads)
-   ========================================= */
-.journal-spread {
-    display: none;
-    width: 100%; height: 100%;
-    background-color: var(--book-paper);
-    box-shadow: inset 0 0 30px rgba(62, 39, 35, 0.2);
-    border-radius: 4px;
-}
-
-.journal-spread.active { display: flex; }
-
-.page {
-    flex: 1;
-    padding: 3rem 2.5rem;
-    overflow-y: auto;
-    position: relative;
-}
-
-.page.left {
-    border-right: 1px solid #e0e0e0;
-    background: linear-gradient(to right, var(--book-paper) 90%, #eee0c9 100%);
-}
-
-.page.right {
-    background: linear-gradient(to left, var(--book-paper) 90%, #eee0c9 100%);
-}
-
-/* =========================================
-   5. TYPOGRAPHY (Inside Book)
-   ========================================= */
-.page-num {
-    position: absolute; bottom: 1.5rem;
-    font-family: var(--font-heading);
-    color: #8d6e63; font-size: 1rem;
-}
-.page.left .page-num { left: 2rem; }
-.page.right .page-num { right: 2rem; }
-
-.entry-title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--ink-color);
-    border-bottom: 2px solid #d7ccc8;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.entry-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #3e2723;
-    margin-bottom: 1.5rem;
-    white-space: pre-wrap; /* Preserves user's paragraph breaks */
-}
-
-.handwritten {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 1.4rem;
-    color: #5d4037;
-}
-
-.signature {
-    text-align: right;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    margin-top: 1rem;
-    color: #6d4c41;
-    font-style: italic;
-}
-
-/* Title Page Specifics */
-.title-page-content {
-    text-align: center; margin-top: 20%;
-    border: 4px double var(--ink-color); padding: 2rem;
-}
-.book-main-title {
-    font-family: var(--font-heading); font-size: 3.5rem;
-    line-height: 1; margin-bottom: 1rem; color: var(--ink-color);
-}
-.dedication {
-    font-style: italic; font-size: 1.2rem; margin-top: 30%;
-    text-align: center; color: #5d4037;
-}
-
-/* =========================================
-   6. ADVOCACY TAGS (Display in Book)
-   ========================================= */
-.tags-container {
-    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem;
-}
-.tag {
-    font-family: var(--font-ui);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 50px;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
-
-/* Display Color Mapping */
-.tag-mh   { background-color: #2E8B57; } /* Mental Health - Green */
-.tag-dv   { background-color: #7B1FA2; } /* Domestic Violence - Purple */
-.tag-ptsd { background-color: #556B2F; } /* PTSD - Olive */
-.tag-mst  { background-color: #008080; } /* MST - Teal */
-.tag-sui  { background-color: #DAA520; } /* Suicide - Gold */
-.tag-sud  { background-color: #C62828; } /* Substance Abuse - Red */
-.tag-misc { background-color: #607D8B; } /* Other - Blue Grey */
-
-/* =========================================
-   7. BOOK CONTROLS (Next/Prev)
-   ========================================= */
-.book-controls { margin-top: 2rem; display: flex; gap: 1.5rem; }
-.control-btn {
-    background-color: var(--book-leather); color: #fff;
-    border: none; padding: 10px 20px;
-    font-family: var(--font-heading); font-size: 1.2rem;
-    cursor: pointer; border-radius: 4px;
-}
-.control-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-/* =========================================
-   8. FORM & INPUTS
-   ========================================= */
-.form-section { margin-top: 5rem; max-width: 600px; width: 100%; padding: 0 1rem; }
-.form-container { background-color: #fff; padding: 2rem; border-radius: 8px; border: 1px solid #d7ccc8; }
-.form-input, .form-textarea {
-    width: 100%; padding: 12px; margin-bottom: 1rem;
-    border: 1px solid #ccc; font-family: var(--font-body);
-}
-
-/* Disclaimer Warning */
-.disclaimer-box {
-    background-color: #fff3e0;
-    border-left: 4px solid #ff9800;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    color: #e65100;
-}
-
-/* =========================================
-   9. NEW MULTI-SELECT SYSTEM (Interaction)
-   ========================================= */
-.tag-selector-label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #4e342e;
-}
-
-.tag-selector-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 0;
-}
-
-.tag-option {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    color: #666;
-    padding: 8px 16px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-family: var(--font-ui);
-    font-weight: 600;
-    transition: all 0.2s ease;
-    user-select: none;
-}
-
-.tag-option:hover {
-    background-color: #e0e0e0;
-}
-
-/* ACTIVE SELECTED STATES */
-.tag-option.selected {
-    color: white;
-    border-color: transparent;
-    transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Map Data Values to Background Colors */
-.tag-option[data-value="MH"].selected   { background-color: #2E8B57; }
-.tag-option[data-value="DV"].selected   { background-color: #7B1FA2; }
-.tag-option[data-value="PTSD"].selected { background-color: #556B2F; }
-.tag-option[data-value="MST"].selected  { background-color: #008080; }
-.tag-option[data-value="SUI"].selected  { background-color: #DAA520; }
-.tag-option[data-value="SUD"].selected  { background-color: #C62828; }
-
-/* Submit Button */
-.submit-btn {
-    width: 100%; padding: 1rem; background-color: #2e7d32;
-    color: white; font-weight: bold; border: none;
-    cursor: pointer; font-family: var(--font-ui); text-transform: uppercase;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-.submit-btn:hover { background-color: #1b5e20; }
-
-/* =========================================
-   10. MOBILE RESPONSIVENESS
-   ========================================= */
-@media (max-width: 768px) {
-    .journal-spread.active { flex-direction: column; }
-    .page { min-height: 400px; padding: 1.5rem; }
-    .page.left { border-right: none; border-bottom: 1px solid #e0e0e0; }
-    .book-container { height: auto; padding: 10px; }
-}}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .journal-spread.active { flex-direction: column; }
-    .page { min-height: 400px; }
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .construction-box {
+    padding: 2rem 1rem;
+    border-width: 2px;
+  }
+  .construction-box h1 {
+    font-size: 1.5rem;
+  }
 }

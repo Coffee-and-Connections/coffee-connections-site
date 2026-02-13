@@ -1,239 +1,196 @@
 /* =========================================
-   (04) FOUNDING-CIRCLE.CSS - Sanctuary Style
+   (04) FOUNDING-CIRCLE.CSS
    ========================================= */
-
-/* --- VARIABLES --- */
-:root {
-    --page-bg: #2c1810;         /* Rich Dark Leather */
-    --card-bg: #fdfbf7;         /* Warm Antique Paper */
-    --text-on-dark: #f4f1ea;    /* Cream text for headers */
-    --text-on-light: #3e2723;   /* Coffee text for inside cards */
-    --accent-gold: #d88d2a;     /* Brand Gold */
-    
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Merriweather', serif;
-    --font-ui: 'DM Sans', sans-serif;
-}
-
-body {
-    background-color: var(--page-bg);
-    color: var(--text-on-dark);
-    font-family: var(--font-body);
-}
 
 /* --- HEADER --- */
 .circle-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 4rem auto 3rem;
-    padding: 0 1rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
 .circle-header h1 {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    color: var(--accent-gold);
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+  font-size: 3rem;
+  color: var(--coffee-dark);
+  margin-bottom: 0.5rem;
 }
 
 .circle-header .subtitle {
-    font-family: var(--font-ui);
-    font-size: 1rem;
-    color: rgba(255,255,255,0.7);
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
+  font-size: 1.25rem;
+  color: var(--resilience-teal);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 .circle-intro {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.9);
-    font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-main);
 }
 
 /* --- THE SEATS GRID --- */
 .seats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive columns */
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto 5rem auto;
-    padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive columns */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 5rem auto;
+  padding: 0 1rem;
 }
 
 /* --- SEAT CARD (Base Style) --- */
 .seat-card {
-    background-color: var(--card-bg);
-    color: var(--text-on-light);
-    border: 1px solid #e0e0e0;
-    border-radius: 4px; /* Slightly sharper corners for elegance */
-    padding: 2.5rem 2rem;
-    position: relative; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Deep shadow on dark bg */
+  background-color: var(--bg-white);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative; /* Needed for the seat number tag */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .seat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-    border-color: var(--accent-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* The "Seat 01" Badge */
 .seat-number {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    font-family: var(--font-ui);
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #8d6e63;
-    border: 1px solid #d7ccc8;
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    background-color: #fff;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  background-color: var(--bg-cream);
 }
 
-/* Icons */
+/* Icons for Empty Seats */
 .seat-icon {
-    font-size: 3.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  font-size: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
 }
 
-/* Typography inside Card */
+/* Typography */
 .seat-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-on-light);
-    font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--coffee-dark);
 }
 
 .seat-role {
-    font-family: var(--font-ui);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent-gold); /* Gold Text */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--resilience-teal);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .seat-desc {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: #5d4037;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    flex-grow: 1; 
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Pushes the status dot to the bottom */
 }
 
-/* --- STATUS INDICATORS --- */
+/* --- STATUS INDICATORS (Bottom of Card) --- */
 .seat-status {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 4px;
-    font-family: var(--font-ui);
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-/* Status Colors - Refined for Sanctuary Theme */
-.open { 
-    background-color: #f5f5f5; 
-    color: #9e9e9e; 
-    border: 1px solid #eeeeee;
+/* Status Colors */
+.open { background-color: #f4f4f4; color: #888; }
+.open .status-dot { background-color: #ccc; }
+
+.pending { background-color: #fff3cd; color: #856404; }
+.pending .status-dot { background-color: #ffc107; }
+
+.active { background-color: var(--mint-highlight); color: var(--coffee-dark); }
+.active .status-dot { background-color: var(--healing-green); }
+
+
+/* --- SPECIAL STYLE: FILLED SEAT (Ben) --- */
+.filled-seat {
+  border: 2px solid var(--healing-green); /* Highlights the active card */
+  background-color: #FAFCF8; /* Very subtle green tint */
 }
-.open .status-dot { background-color: #bdbdbd; }
 
-.pending { 
-    background-color: #fff8e1; /* Light Gold BG */
-    color: #f57f17; 
-    border: 1px solid #ffe0b2;
+.seat-img-wrapper {
+  width: 150px;
+  height: 150px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--bg-white);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-.pending .status-dot { background-color: #ffb300; }
 
-.active { 
-    background-color: #e8f5e9; /* Light Green BG */
-    color: #2e7d32; 
-    border: 1px solid #c8e6c9;
+.seat-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.active .status-dot { background-color: #43a047; }
 
 
-/* --- JOIN SECTION (Bottom) --- */
+/* --- CALL TO ACTION --- */
 .join-table {
-    text-align: center;
-    background-color: #1e100a; /* Even darker brown for contrast */
-    color: var(--text-on-dark);
-    padding: 6rem 1rem;
-    margin-top: 4rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  background-color: var(--coffee-dark);
+  color: var(--bg-white);
+  padding: 4rem 1rem;
+  margin-top: 4rem;
 }
 
-.join-table h2 { 
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--accent-gold);
-    margin-bottom: 1rem;
-} 
-
+.join-table h2 { color: var(--bg-white); } /* Override default dark heading */
 .join-table p { 
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    max-width: 600px; 
-    margin: 0 auto 2.5rem auto; 
-    opacity: 0.8; 
-    line-height: 1.8;
+  max-width: 600px; 
+  margin: 0 auto 2rem auto; 
+  opacity: 0.9; 
 }
 
 .cta-button {
-    display: inline-block;
-    background-color: var(--accent-gold);
-    color: #2c1810; /* Dark Text on Gold Button */
-    padding: 1rem 3rem;
-    border-radius: 4px;
-    font-family: var(--font-ui);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: all 0.3s;
+  display: inline-block;
+  background-color: var(--resilience-teal);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: background 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #ffb74d;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(216, 141, 42, 0.3);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .circle-header h1 { font-size: 2.5rem; }
-    .seats-grid { padding: 0 1rem; }
+  background-color: var(--healing-green);
+  transform: translateY(-2px);
 }
 
