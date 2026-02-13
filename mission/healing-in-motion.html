@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Healing in Motion: A digital sanctuary for survivor stories. Browse approved narratives of resilience and strength." />
     <title>Healing in Motion | Strong Bonds Resilience</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/(00)base.css">
     <link rel="stylesheet" href="../css/(00)header-footer.css">
     <link rel="stylesheet" href="../css/(00)navigation.css">
-    <link rel="stylesheet" href="../css/(05)healing-in-motion.css">
+    <link rel="stylesheet" href="../css/(05)healing-in-motion.css"> 
 </head>
 
-<body>
+<body class="dark-theme">
 
-<nav class="nav-container" role="navigation">
+    <nav class="nav-container" role="navigation">
         <ul class="nav-menu">
-            <li><a href="../index-new.html">Dashboard</a></li>
-
+            <li><a href="../index.html">Dashboard</a></li>
             <li>
                 <a href="#">The Sanctuary</a>
                 <ul class="submenu">
                     <li><a href="../cafe/menu.html">Coffee & Connections</a></li>
                     <li><a href="../cafe/trauma-informed-design.html">Design Philosophy</a></li>
-                    <li><a href="../resilience-market.html">Resilience Market</a></li>
+                    <li><a href="../cafe/resilience-market.html">Resilience Market</a></li>
                 </ul>
             </li>
-
             <li>
-                <a href="#">The Mission</a>
+                <a href="#" class="active">The Mission</a>
                 <ul class="submenu">
                     <li><a href="our-mission.html">Strong Bonds Resilience</a></li>
                     <li><a href="healing-in-motion.html" class="active">Healing in Motion</a></li>
@@ -37,28 +38,36 @@
                     <li><a href="how-you-can-help.html">Support the Cause</a></li>
                 </ul>
             </li>
-
             <li><a href="../overland/transitional-housing.html">The Bridge @ Overland</a></li>
         </ul>
     </nav>
-  
-  <main class="main-layout">
-    <div class="construction-box">
-      <span class="construction-icon">🚧</span>
-      <h1>This page is still finding its rhythm.</h1>
-      <p>
-        We're shaping it with care, community, and compassion — just like everything else we do.
-      </p>
-      <p>
-        Stay tuned as we build a space for movement, restoration, and stories in motion.
-      </p>
-      <a href="index.html" style="color: var(--resilience-teal); font-weight: bold;">&larr; Return Home</a>
-    </div>
-  </main>
 
-  <footer>
-    <p>© <span id="year">2026</span> Coffee & Connections El Paso</p>
-  </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    <main class="journal-container">
+        <header class="journal-header">
+            <span class="journal-label">A Living Archive of Resilience</span>
+            <h1>Healing in Motion</h1>
+            <p class="journal-intro">A digital sanctuary where stories aren't just told—they are honored. These approved narratives from our community serve as beacons for those still navigating the dark.</p>
+        </header>
+
+        <div id="journal-wrapper" class="journal-book">
+            <div id="story-display" class="story-page">
+                <div class="loading-state">Opening the vault...</div>
+            </div>
+            
+            <div class="journal-controls">
+                <button id="prev-btn" class="nav-btn">← Previous Story</button>
+                <button id="next-btn" class="nav-btn">Next Story →</button>
+            </div>
+        </div>
+
+        <section class="journal-disclaimer">
+            <p><strong>Note on Security:</strong> All stories are submitted anonymously via our Secure Vault and vetted by our advocates before appearing here. Your safety is our primary mission.</p>
+            <a href="how-you-can-help.html#submit" class="btn-submit">Add Your Story to the Vault</a>
+        </section>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/journal-logic.js"></script>
+
 </body>
 </html>
