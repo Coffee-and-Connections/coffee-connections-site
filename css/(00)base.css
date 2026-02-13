@@ -1,38 +1,36 @@
 /* =========================================
-   (00) BASE.CSS - The Palette & Typography
+   (00) BASE.CSS - Updated Typography & Global Padding
    ========================================= */
 
 :root {
   /* Sanctuary Colors */
-  --coffee-dark: #2C1B14;    /* Deep Grounding Brown */
-  --coffee-accent: #4E2753;  /* Trauma-Informed Purple */
-  --bg-cream: #F9F5F0;       /* Soft Sand / Cream */
-  --text-light: #F9F5F0;     /* For use on dark backgrounds */
-  --text-dark: #333333;      /* For use on light backgrounds */
+  --coffee-dark: #2C1B14;
+  --coffee-accent: #4E2753;
+  --bg-cream: #F9F5F0;
+  --text-light: #F9F5F0;
   
-  /* Modern Typography */
-  --font-heading: 'Merriweather', serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-journal: 'Cormorant Garamond', serif;
+  /* Updated Trauma-Informed Typography */
+  --font-heading: 'Montserrat', sans-serif; /* Stable & Bold */
+  --font-body: 'Open Sans', sans-serif;    /* Clean & Friendly */
 }
 
-/* Base Resets */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Base Reset & Global Buffer */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
 
 body {
   font-family: var(--font-body);
   line-height: 1.6;
-  background-color: var(--bg-cream); /* Default fallback */
-  color: var(--text-dark);
-  transition: background-color 0.3s ease;
-}
-
-/* THE GLOBAL SWITCH: Ensures "dark-theme" works site-wide */
-body.dark-theme {
   background-color: var(--coffee-dark);
   color: var(--text-light);
+  /* Adding the requested .25in (approx 24px) buffer to the whole site */
+  padding: 1.5rem; 
 }
 
-h1, h2, h3, h4 { font-family: var(--font-heading); }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+h1, h2, h3 { 
+  font-family: var(--font-heading); 
+  letter-spacing: 0.5px; /* Slight spacing to prevent letters from touching */
+}
