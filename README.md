@@ -30,5 +30,13 @@ Our mission is guided by an **Open Table** governance model, ensuring lived expe
 * **Healing in Motion logic**: Activated the Digital Archive engine with functional page-turner mechanics and secure API hooks.
 * **NAMI Integration**: Formally recognized NAMI El Paso as the Mental Health Chair following the receipt of the official Letter of Support.
 
+## 🎨 Trauma-Informed Design System (NAMI-Aligned)
+The visual interface is engineered for "Cognitive Ease" to support users who may be experiencing sensory overload or trauma-related stress.
+
+* **Typography (The Legibility Engine):**
+    * **Montserrat (Headers):** A geometric sans-serif that provides architectural stability and strength.
+    * **Open Sans (Body):** A humanist sans-serif chosen for its "friendly" open apertures and high legibility, reducing the effort required to process information.
+* **The Safety Buffer:** A global **0.25-inch (24px)** padding is enforced across all viewports. This creates essential "white space," preventing visual crowding and providing a psychological boundary for the user.
+* **Visual Storytelling:** Mission-critical pages utilize a **Visual Novel / Storyboard** layout to break down complex survivor narratives into digestible, low-impact segments.
 ---
 *Built with resilience in the El Paso Borderplex.*
