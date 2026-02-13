@@ -1,79 +1,205 @@
 /* =========================================
-   (03) OUR-MISSION.CSS - Visual Novel Edition
+   (03) OUR-MISSION.CSS 
+   "The Genesis Story" - Visual Novel Edition
    ========================================= */
 
+/* --- 1. GLOBAL LAYOUT & BUFFER --- */
 .visual-narrative {
-    padding: 24px; /* Global Buffer */
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 24px; /* The .25 inch "Safety Buffer" */
 }
 
-/* --- THE CAR SCENE FRAME --- */
+.story-panel {
+    margin-bottom: 80px;
+    opacity: 0; /* Prepared for a fade-in scroll effect */
+    animation: fadeInStory 1s forwards;
+}
+
+@keyframes fadeInStory {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+}
+
+/* --- 2. THE INTRO PANEL --- */
+.intro-panel {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.intro-subtext {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* --- 3. THE CAR SCENE (Visual Novel Frame) --- */
 .visual-novel-frame {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../asset/car-background-art.jpg');
-    background-size: cover;
-    height: 500px;
-    border-radius: 20px;
-    border: 4px solid var(--coffee-accent);
-    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    border: 2px solid var(--coffee-accent);
+    padding: 60px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    overflow: hidden;
-    margin: 4rem 0;
-}
-
-/* THE DIALOGUE BOX */
-.dialogue-box {
-    background: rgba(44, 27, 20, 0.95); /* Coffee Dark with slight transparency */
-    border: 2px solid var(--coffee-accent);
-    margin: 20px;
-    padding: 25px;
-    border-radius: 12px;
+    gap: 50px;
     position: relative;
-    z-index: 10;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
-.speaker-name {
-    color: var(--coffee-accent);
-    font-size: 0.9rem;
+.character-panel {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    width: 100%;
+}
+
+.marylou-right {
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--coffee-accent);
+    background-color: var(--coffee-dark);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.bubble-group {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+}
+
+.speaker-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    color: var(--coffee-accent);
     margin-bottom: 8px;
+    font-weight: 800;
 }
 
-.dialogue-text {
-    font-size: 1.3rem;
-    font-style: italic;
+.marylou-right .speaker-label { text-align: right; }
+
+.speech-bubble {
+    background: var(--bg-cream);
+    color: var(--coffee-dark);
+    padding: 24px;
+    border-radius: 20px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Highlight for the "Amazing Idea" bubble */
+.speech-bubble.highlight {
+    background: var(--coffee-accent);
     color: white;
 }
 
-/* THE BOILER ILLUSTRATION */
-.boiler-illustration {
+.scene-narration {
+    text-align: center;
+    font-style: italic;
+    color: var(--coffee-accent);
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- 4. THE BOILER SPLIT --- */
+.split-frame {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin: 120px 0;
+}
+
+.visual-box { flex: 1; }
+.text-box { flex: 1; }
+
+.boiler-container {
     position: relative;
-    padding: 2rem;
-    background: rgba(0,0,0,0.3);
-    border-radius: 50%;
-    border: 1px solid var(--coffee-accent);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.glow-effect {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(78,39,83,0.4) 0%, transparent 70%);
-    animation: pulse 3s infinite;
+.boiler-img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-@keyframes pulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.4; }
+.boiler-container:hover .boiler-img {
+    transform: scale(1.03);
 }
 
-/* --- RESPONSIVE BUFFERS --- */
+.boiler-caption {
+    background: var(--coffee-accent);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* --- 5. NAMI ENDORSEMENT --- */
+.nami-endorsement {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.nami-card {
+    background: rgba(78, 39, 83, 0.1);
+    border: 1px dashed var(--coffee-accent);
+    padding: 50px 30px;
+    border-radius: 24px;
+}
+
+.nami-card h3 {
+    color: var(--bg-cream);
+    margin-bottom: 20px;
+}
+
+/* --- 6. FINAL CALL --- */
+.final-cta {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.btn-main {
+    display: inline-block;
+    background: var(--coffee-accent);
+    color: white;
+    padding: 20px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+    background: white;
+    color: var(--coffee-accent);
+    transform: translateY(-5px);
+}
+
+/* --- 7. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .visual-novel-frame { height: auto; }
-    .dialogue-text { font-size: 1.1rem; }
+    .visual-novel-frame { padding: 30px 15px; }
+    .bubble-group { max-width: 85%; }
+    .split-frame { flex-direction: column; text-align: center; }
+    .character-panel { gap: 15px; }
+    .avatar-img { width: 60px; height: 60px; }
+    .speech-bubble { font-size: 1rem; padding: 15px; }
 }
