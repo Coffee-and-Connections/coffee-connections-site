@@ -1,57 +1,32 @@
 /* =========================================
-   (00) BASE.CSS - High-Accessibility Version
+   (00) BASE.CSS - High-Contrast Refactor
    ========================================= */
 
 :root {
-    /* The Sanctuary Palette */
-    --espresso-dark: #1a0f0a;     /* Deeper, more grounding background */
-    --latte-cream: #fdf5e6;       /* Warm, low-glare cream for content boxes */
-    --coffee-accent: #4e2753;    /* NAMI-aligned Purple */
-    --text-main: #fdf5e6;        /* Cream text on dark backgrounds */
-    --text-dark: #2c1b14;        /* Dark brown text for use on Cream boxes */
-    
-    /* Typography Bump */
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
-    
-    /* Global Safety Buffer (.25 inch) */
+    --espresso-dark: #1a0f0a;     /* Grounding base */
+    --latte-cream: #fdf5e6;       /* Warm, high-contrast container */
+    --coffee-accent: #4e2753;    /* Original Purple */
+    --nami-purple-light: #d8b4fe; /* New light purple for dark backgrounds */
+    --text-main: #fdf5e6;        /* Cream text */
+    --text-dark: #2c1b14;        /* Deep brown for light boxes */
     --buffer: 24px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
-    /* Bumping base size so 1rem = 18px instead of 16px */
-    font-size: 112.5%; 
+    font-size: 115%; /* Bumped slightly more for ease */
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: 'Open Sans', sans-serif;
     background-color: var(--espresso-dark);
     color: var(--text-main);
-    line-height: 1.8; /* More space between lines for easier tracking */
+    line-height: 1.8;
     padding: var(--buffer);
-    -webkit-font-smoothing: antialiased;
 }
 
-/* Global Heading Sizes - Bumping them all up */
-h1 { font-family: var(--font-heading); font-size: 3rem; line-height: 1.2; margin-bottom: 1.5rem; }
-h2 { font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1.2rem; }
-h3 { font-family: var(--font-heading); font-size: 1.8rem; }
-
-p { margin-bottom: 1.5rem; font-size: 1.15rem; } /* Bumping paragraph text */
-
-.tagline {
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    letter-spacing: 3px;
+/* FIXING THE PURPLE STRAIN */
+.tagline, .speaker-label {
+    color: var(--nami-purple-light); /* Light purple glows on dark */
     font-weight: 800;
-    color: var(--coffee-accent);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    display: block;
+    letter-spacing: 2px;
 }
