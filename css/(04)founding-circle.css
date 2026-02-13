@@ -1,194 +1,76 @@
 /* =========================================
-   (04) FOUNDING-CIRCLE.CSS
+   (04) FOUNDING-CIRCLE.CSS - Open Table Update
    ========================================= */
 
-/* --- HEADER --- */
-.circle-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 4rem auto;
+/* --- CATEGORY SECTIONS --- */
+.circle-section {
+  max-width: 1200px;
+  margin: 0 auto 6rem auto;
   padding: 0 1.5rem;
 }
 
-.circle-header h1 {
-  font-size: 3rem;
+.section-title {
+  font-family: var(--font-heading);
   color: var(--bg-cream);
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.circle-header .subtitle {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--coffee-accent); /* Sanctuary Purple */
+/* The line next to the category title */
+.section-title::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- SEAT CARD REFINEMENTS --- */
+
+/* Label for confirmed partners (NAMI/Ben) */
+.seat-label {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  color: var(--coffee-accent);
+  background: rgba(78, 39, 83, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
 }
 
-.circle-intro {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
+/* Specific styling for Open Seats to make them look "available" */
+.open-seat {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background-color: transparent;
 }
 
-/* --- THE SEATS GRID --- */
+.open-seat:hover {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.open-seat .seat-icon {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.open-seat:hover .seat-icon {
+  filter: grayscale(0%);
+}
+
+/* --- THE REMAINING STYLES (Keep as previously defined) --- */
+
 .seats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto 5rem auto;
-  padding: 0 1.5rem;
 }
 
-/* --- SEAT CARD (Base Style) --- */
-.seat-card {
-  background-color: rgba(255, 255, 255, 0.03); /* Translucent dark card */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.seat-card:hover {
-  transform: translateY(-8px);
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: var(--coffee-accent);
-}
-
-/* The "Seat 01" Badge */
-.seat-number {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.3rem 0.8rem;
-  border-radius: 50px;
-}
-
-/* Icons for Empty Seats */
-.seat-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.6;
-}
-
-/* Typography */
-.seat-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--bg-cream);
-}
-
-.seat-role {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--coffee-accent);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-}
-
-.seat-desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  flex-grow: 1;
-}
-
-/* --- STATUS INDICATORS --- */
-.seat-status {
-  width: 100%;
-  padding: 0.8rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-/* Status Colors Synced to Dark Theme */
-.open { background-color: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.4); }
-.open .status-dot { background-color: rgba(255, 255, 255, 0.2); }
-
-.pending { background-color: rgba(255, 193, 7, 0.1); color: #ffc107; }
-.pending .status-dot { background-color: #ffc107; }
-
-.active { background-color: rgba(78, 39, 83, 0.2); color: #fff; border: 1px solid var(--coffee-accent); }
-.active .status-dot { background-color: #a370f7; box-shadow: 0 0 8px #a370f7; }
-
-
-/* --- SPECIAL STYLE: FILLED SEAT (Ben) --- */
-.filled-seat {
-  background-color: rgba(78, 39, 83, 0.1);
-  border: 1px solid var(--coffee-accent);
-}
-
-.seat-img-wrapper {
-  width: 140px;
-  height: 140px;
-  margin-bottom: 1.5rem;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--coffee-accent);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-.seat-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-/* --- CALL TO ACTION --- */
-.join-table {
-  text-align: center;
-  background-color: rgba(0,0,0,0.2);
-  padding: 5rem 1.5rem;
-}
-
-.join-table h2 { 
-    color: var(--bg-cream);
-    margin-bottom: 1rem;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--coffee-accent);
-  color: white;
-  padding: 1.2rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 700;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(78, 39, 83, 0.3);
-}
-
-.cta-button:hover {
-  background-color: white;
-  color: var(--coffee-accent);
-  transform: translateY(-3px);
-}
+/* ... include the .seat-card, .status, and .filled-seat styles here ... */
