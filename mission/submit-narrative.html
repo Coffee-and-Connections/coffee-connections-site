@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Own Your Truth | Strong Bonds</title>
+
+    <link rel="stylesheet" href="../css/(00)base.css">
+    <link rel="stylesheet" href="../css/(00)header-footer.css">
+    <link rel="stylesheet" href="../css/(05)healing-in-motion.css"> 
+</head>
+<body class="dark-theme">
+    <main class="journal-container">
+        <header class="journal-header">
+            <span class="tag">Secure Submission</span>
+            <h1>Share Your Story</h1>
+            <p>Your resilience is a roadmap for someone else. Speak your truth safely.</p>
+        </header>
+
+        <div class="content-island journal-book">
+            <form id="vault-form">
+                <div class="form-group">
+                    <label for="alias-input">Identity/Alias</label>
+                    <input type="text" id="alias-input" class="vault-input" placeholder="How should we address you? (e.g., Anonymous Sgt.)">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Your Communities (Identification Tags)</label>
+                    <div class="tag-selector" id="tag-cloud">
+                        <button type="button" class="tag-chip" data-tag="DV">#DomesticViolence</button>
+                        <button type="button" class="tag-chip" data-tag="SA">#SexualAssault/MST</button>
+                        <button type="button" class="tag-chip" data-tag="MH">#PTSD/Trauma</button>
+                        <button type="button" class="tag-chip" data-tag="SUI">#SuicideAwareness</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="story-input">Your Narrative</label>
+                    <textarea id="story-input" class="vault-textarea" placeholder="Write your story here..."></textarea>
+                </div>
+                
+                <div id="submission-status" class="status-box"></div>
+                
+                <button type="submit" class="btn btn-mission btn-full">Deposit Narrative in the Vault</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/vault-submit.js"></script>
+</body>
+</html>
