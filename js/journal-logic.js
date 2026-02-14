@@ -1,9 +1,9 @@
 /* =========================================
-   JOURNAL-LOGIC.JS (The Bunkered Version)
-   Mission: Fetch narratives from the Vault and handle navigation.
+   JOURNAL-LOGIC.JS
+   The Digital Archive Engine
+   Mission: Render narratives and advocacy ribbons.
    ========================================= */
 
-// 1. Connection & State
 const VAULT_ENDPOINT = CONFIG.endpoints.getStories;
 let currentStoryIndex = 0;
 
@@ -30,7 +30,6 @@ async function loadStories() {
         const storiesData = await response.json();
 
         if (storiesData && storiesData.length > 0) {
-            // Attach data to window so it's accessible across the whole script
             window.stories = storiesData; 
             displayStory(0); 
         } else {
@@ -38,50 +37,59 @@ async function loadStories() {
         }
     } catch (error) {
         console.error("[VAULT ERROR]", error);
-        storyDisplay.innerHTML = `
-            <div class="story-content">
-                <p class="error-text" style="color:#b71c1c; font-weight:800;">
-                    Secure Connection Lost.<br>
-                    <span style="font-size: 0.8rem; font-weight:400; color:#333;">
-                        The bunker is secure, but the link is unstable. Please refresh.
-                    </span>
-                </p>
-            </div>`;
+        storyDisplay.innerHTML = `<p class="error-text">Secure Connection Lost. Please refresh.</p>`;
     }
 }
 
 /**
  * DISPLAY LOGIC
- * Renders a specific story based on the index provided.
+ * Renders a specific story and its identifying advocacy ribbons.
  */
 function displayStory(index) {
     const storyDisplay = document.getElementById('story-display');
-    
-    // Safety check: ensure stories exist and index is valid
     if (!window.stories || !window.stories[index]) return;
 
-    // Sync the "Bookmark"
     currentStoryIndex = index;
     const story = window.stories[index];
 
-    // Render to the high-contrast UI
+    // THE COMMUNITY RIBBON LOGIC
+    // Maps shorthand codes to their specific advocacy colors
+    const tagHTML = (story.tags || []).map(tag => {
+        let color = "#888"; // Default Grey
+        if(tag === "DV")    color = "#800080"; // Purple
+        if(tag === "SA")    color = "#008080"; // Teal
+        if(tag === "MH")    color = "#00FF00"; // Green
+        if(tag === "SUI")   color = "#0000FF"; // Blue
+        if(tag === "MIL")   color = "#ffd700"; // Gold
+        if(tag === "ACE")   color = "#ff69b4"; // Pink
+        if(tag === "SYS")   color = "#ff8c00"; // Orange
+        if(tag === "LGBTQ") color = "#4B0082"; // Indigo
+
+        return `<span class="ribbon-tag" style="border-color:${color}; color:${color}; margin-right: 8px;">#${tag}</span>`;
+    }).join('');
+
+    // Render the Final Page
     storyDisplay.innerHTML = `
         <div class="active-story">
-            <p class="story-text">"${story.message}"</p>
-            <span class="story-meta">— ${story.alias || 'Anonymous'}</span>
+            <div class="community-ribbon" style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                ${tagHTML}
+            </div>
+            <p class="story-text" style="font-size: 1.3rem; line-height: 1.8;">"${story.message}"</p>
+            <span class="story-meta" style="display: block; margin-top: 2rem; font-style: italic; font-weight: 700;">
+                — ${story.alias || 'Anonymous'}
+            </span>
         </div>
     `;
 }
 
 /**
  * NAVIGATION LOGIC
- * Moves through the stories and loops back at the ends.
  */
 function nextStory() {
     if (window.stories && currentStoryIndex < window.stories.length - 1) {
         displayStory(currentStoryIndex + 1);
     } else {
-        displayStory(0); // Loop to start
+        displayStory(0); 
     }
 }
 
@@ -89,6 +97,6 @@ function prevStory() {
     if (window.stories && currentStoryIndex > 0) {
         displayStory(currentStoryIndex - 1);
     } else {
-        displayStory(window.stories.length - 1); // Loop to end
+        displayStory(window.stories.length - 1);
     }
 }
