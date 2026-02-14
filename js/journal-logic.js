@@ -53,3 +53,42 @@ function displayStory(index) {
         </div>
     `;
 }
+
+// Tracker for the current story being viewed
+let currentStoryIndex = 0;
+
+function displayStory(index) {
+    const storyDisplay = document.getElementById('story-display');
+    // Safety check: Ensure stories exist and the index is valid
+    if (!window.stories || !window.stories[index]) return;
+
+    currentStoryIndex = index;
+    const story = window.stories[index];
+
+    // Map the data to the high-contrast UI
+    storyDisplay.innerHTML = `
+        <div class="active-story">
+            <p class="story-text">"${story.message}"</p>
+            <span class="story-meta">— ${story.alias || 'Anonymous'}</span>
+        </div>
+    `;
+}
+
+// THE BUTTON LOGIC
+function nextStory() {
+    if (window.stories && currentStoryIndex < window.stories.length - 1) {
+        displayStory(currentStoryIndex + 1);
+    } else {
+        // Optional: Loop back to the first story
+        displayStory(0);
+    }
+}
+
+function prevStory() {
+    if (window.stories && currentStoryIndex > 0) {
+        displayStory(currentStoryIndex - 1);
+    } else {
+        // Optional: Loop to the last story
+        displayStory(window.stories.length - 1);
+    }
+}
