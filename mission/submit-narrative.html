@@ -7,53 +7,75 @@
 
     <link rel="stylesheet" href="../css/(00)base.css">
     <link rel="stylesheet" href="../css/(00)header-footer.css">
+    <link rel="stylesheet" href="../css/(00)navigation.css">
     <link rel="stylesheet" href="../css/(05)healing-in-motion.css"> 
 </head>
 <body class="dark-theme">
+
+    <header class="main-nav">
+        <nav class="nav-container" role="navigation">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="healing-in-motion.html">Back to Archive</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main class="journal-container">
         <header class="journal-header">
             <span class="tag">Secure Submission</span>
-            <h1>Share Your Story</h1>
-            <p>Your resilience is a roadmap for someone else. Speak your truth safely.</p>
+            <h1>Own Your Truth</h1>
+            <p class="journal-intro">Your resilience is a roadmap for someone else. Speak your truth safely and inspire others to stay for the sunrise.</p>
         </header>
 
-       <div class="content-island journal-book">
-    <form id="vault-form">
-        <div class="form-group">
-            <p class="alias-guidance">
-                Your privacy is important. If you don't want to share your name, you don't have to, 
-                but we would love to be able to thank you!
-            </p>
-            <div class="alias-grid">
-                <input type="text" id="first-name" class="vault-input" placeholder="First Name (e.g. Michael)">
-                <input type="text" id="last-initial" class="vault-input" placeholder="Initial (e.g. B)">
-            </div>
-            <p style="text-align: center; margin: 10px 0; color: #666;">— OR —</p>
-            <input type="text" id="alias-input" class="vault-input" placeholder="Alias (e.g. A Survivor)">
+        <div class="content-island journal-book">
+            <form id="vault-form">
+                <div class="form-group">
+                    <p class="alias-guidance">
+                        Your privacy is important. If you don't want to share your name, you don't have to, 
+                        but we would love to be able to thank you!
+                    </p>
+                    <div class="alias-grid">
+                        <input type="text" id="first-name" class="vault-input" placeholder="First Name (e.g. Michael)">
+                        <input type="text" id="last-initial" class="vault-input" placeholder="Initial (e.g. B)">
+                    </div>
+                    <p style="text-align: center; margin: 10px 0; color: #666; font-size: 0.8rem;">— OR —</p>
+                    <input type="text" id="alias-input" class="vault-input" placeholder="Chosen Alias (e.g. A Survivor)">
+                </div>
+
+                <div class="form-group">
+                    <label style="color: var(--coffee-accent); font-weight: 700;">Select Your Communities</label>
+                    <div class="tag-selector" id="tag-cloud">
+                        <button type="button" class="tag-chip" data-tag="DV">#DomesticViolence</button>
+                        <button type="button" class="tag-chip" data-tag="SA">#SexualAssault/MST</button>
+                        <button type="button" class="tag-chip" data-tag="MH">#PTSD/Trauma</button>
+                        <button type="button" class="tag-chip" data-tag="SUI">#SuicideAwareness</button>
+                        <button type="button" class="tag-chip" data-tag="MIL">#Combat/Service</button>
+                        <button type="button" class="tag-chip" data-tag="ACE">#ChildhoodTrauma</button>
+                        <button type="button" class="tag-chip" data-tag="SYS">#Hate/Systemic</button>
+                        <button type="button" class="tag-chip" data-tag="LGBTQ">#Identity/Pride</button>
+                    </div>
+                    <p style="color: #666; font-size: 0.8rem; font-style: italic; margin-top: 5px;">
+                        Can't find a tag that fits? Share your story anyway—your truth is enough.
+                    </p>
+                </div>
+
+                <div class="form-group" style="margin-top: 30px;">
+                    <label for="story-input" style="color: var(--coffee-accent); font-weight: 700;">Your Narrative</label>
+                    <textarea id="story-input" class="vault-textarea" placeholder="Speak your truth here..."></textarea>
+                </div>
+                
+                <div id="submission-status" class="status-box"></div>
+                
+                <button type="submit" class="btn btn-mission btn-full">
+                    Deposit Narrative in the Vault
+                </button>
+            </form>
         </div>
 
-        <div class="form-group">
-            <label>Select Your Communities</label>
-            <div class="tag-selector" id="tag-cloud">
-                <button type="button" class="tag-chip" data-tag="DV">#DOMESTICVIOLENCE</button>
-                <button type="button" class="tag-chip" data-tag="SA">#SEXUALASSAULT/MST</button>
-                <button type="button" class="tag-chip" data-tag="MH">#PTSD/TRAUMA</button>
-                <button type="button" class="tag-chip" data-tag="SUI">#SUICIDEAWARENESS</button>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="story-input">Your Narrative</label>
-            <textarea id="story-input" class="vault-textarea" placeholder="Speak your truth here..."></textarea>
-        </div>
-        
-        <div id="submission-status" class="status-box"></div>
-        
-        <button type="submit" class="btn btn-mission btn-full" style="padding: 18px; font-size: 1.1rem;">
-            Deposit Narrative in the Vault
-        </button>
-    </form>
-</div>
+        <section class="journal-disclaimer" style="margin-top: 40px; opacity: 0.7;">
+            <p><small>Note: All submissions are encrypted and reviewed by our advocacy team before being archived. No personal metadata is stored.</small></p>
+        </section>
     </main>
 
     <script src="../js/config.js"></script>
