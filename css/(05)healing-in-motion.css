@@ -97,6 +97,17 @@
 .tag-chip[data-tag="SYS"].active { border-color: #ff8c00; color: #ffe0b2; background: rgba(255,140,0,0.15); box-shadow: 0 0 10px rgba(255,140,0,0.2); }
 .tag-chip[data-tag="LGBTQ"].active { border-color: #4B0082; color: #b39ddb; background: rgba(75, 0, 130, 0.2); box-shadow: 0 0 10px rgba(75, 0, 130, 0.3); }
 
+/* Ribbon rendering for the Journal view */
+.ribbon-tag {
+    padding: 4px 12px;
+    border: 1px solid;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.05);
+}
+
 /* =========================================
    TRAUMA-INFORMED SUBMISSION UI
    ========================================= */
@@ -127,11 +138,10 @@
     font-size: 1rem;
 }
 
-/* The Narrative Canvas */
 .vault-textarea {
     width: 100%;
     min-height: 380px;
-    background: #1e1e1e; /* Soft Slate */
+    background: #1e1e1e; /* Soft Slate to avoid trigger */
     color: #f0f0f0;
     border: 2px solid #2a2a2a;
     padding: 30px; 
@@ -167,6 +177,3 @@
 /* UTILITY */
 .error-text { color: #b71c1c; font-weight: 700; text-align: center; padding-top: 100px; }
 .loading-state { text-align: center; font-style: italic; opacity: 0.6; padding-top: 100px; }
-    border-color: #008080; /* Teal focus for calmness */
-    outline: none;
-}
