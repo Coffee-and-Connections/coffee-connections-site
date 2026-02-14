@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel a Sanctuary Pour | Strong Bonds Resilience</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/(00)base.css">
+    <link rel="stylesheet" href="../css/(00)header-footer.css">
+    <link rel="stylesheet" href="../css/(00)navigation.css">
+    <link rel="stylesheet" href="../css/pillar-pages.css">
+</head>
+
+<body class="dark-theme" style="--pillar-color: #ffd700;"> <header class="main-nav">
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="how-you-can-help.html" class="active">The Mission</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="pillar-hero">
+        <span class="subtitle">Mission Engagement: Pillar 1</span>
+        <h1>Fuel a Sanctuary Pour</h1>
+        <p style="max-width: 600px; margin: 1rem auto; opacity: 0.8;">The "Pay-it-Forward" system ensures that no survivor ever walks away from the Sanctuary because they can't afford a cup.</p>
+    </section>
+
+    <main class="pillar-content">
+        <div class="vault-form-container" style="text-align: center;">
+            
+            <div style="margin-bottom: 3rem;">
+                <h2 style="color: var(--pillar-color); font-size: 3rem;" id="live-count">12</h2>
+                <p class="subtitle">Pours Currently in the Vault</p>
+                <div style="height: 4px; width: 60px; background: var(--pillar-color); margin: 15px auto;"></div>
+            </div>
+
+            <div class="pillar-text" style="text-align: left; margin-bottom: 2rem;">
+                <h3>How it Works</h3>
+                <p>When you purchase a Sanctuary Pour, a physical wooden token is placed in our "Vault" at the cafe. Any survivor who needs a moment of connection but lacks the funds can take a token—no questions asked, no identity required.</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="action-box" style="cursor: pointer; transition: 0.3s;" onclick="selectAmount(5)">
+                    <h3 style="margin-bottom: 0;">1 Pour</h3>
+                    <p>$5.00</p>
+                </div>
+                <div class="action-box" style="cursor: pointer; transition: 0.3s; border-width: 2px;" onclick="selectAmount(20)">
+                    <span class="tag" style="background: var(--pillar-color); color: #000;">Most Popular</span>
+                    <h3 style="margin-bottom: 0;">4 Pours</h3>
+                    <p>$20.00</p>
+                </div>
+                <div class="action-box" style="cursor: pointer; transition: 0.3s;" onclick="selectAmount(50)">
+                    <h3 style="margin-bottom: 0;">10 Pours</h3>
+                    <p>$50.00</p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-pillar-submit" style="margin-top: 3rem;">Purchase & Deposit Tokens</button>
+            
+            <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6; font-style: italic;">
+                *All Sanctuary Pours are 100% tax-deductible. A digital receipt will be emailed to you instantly.
+            </p>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Strong Bonds Resilience. Coffee & Connections.</p>
+    </footer>
+
+    <script>
+        function selectAmount(amt) {
+            // Future logic to handle Square/Stripe checkout
+            console.log("Selected amount: $" + amt);
+        }
+    </script>
+</body>
+</html>
