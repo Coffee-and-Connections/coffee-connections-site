@@ -18,7 +18,7 @@
 <body class="dark-theme" style="--pillar-color: #ffd700;"> <header class="main-nav">
         <nav class="nav-container">
             <ul class="nav-menu">
-                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="../../index.html">Dashboard</a></li>
                 <li><a href="how-you-can-help.html" class="active">The Mission</a></li>
             </ul>
         </nav>
@@ -45,16 +45,16 @@
             </div>
 
             <div class="form-grid">
-                <div class="action-box" style="cursor: pointer; transition: 0.3s;" onclick="selectAmount(5)">
+                <div class="action-box" style="cursor: pointer; transition: 0.3s; border: 1px solid #333;" onclick="selectAmount(5, this)">
                     <h3 style="margin-bottom: 0;">1 Pour</h3>
                     <p>$5.00</p>
                 </div>
-                <div class="action-box" style="cursor: pointer; transition: 0.3s; border-width: 2px;" onclick="selectAmount(20)">
-                    <span class="tag" style="background: var(--pillar-color); color: #000;">Most Popular</span>
+                <div class="action-box" style="cursor: pointer; transition: 0.3s; border: 2px solid var(--pillar-color);" onclick="selectAmount(20, this)">
+                    <span class="tag" style="background: var(--pillar-color); color: #000; font-size: 0.7rem; font-weight: 800;">Most Popular</span>
                     <h3 style="margin-bottom: 0;">4 Pours</h3>
                     <p>$20.00</p>
                 </div>
-                <div class="action-box" style="cursor: pointer; transition: 0.3s;" onclick="selectAmount(50)">
+                <div class="action-box" style="cursor: pointer; transition: 0.3s; border: 1px solid #333;" onclick="selectAmount(50, this)">
                     <h3 style="margin-bottom: 0;">10 Pours</h3>
                     <p>$50.00</p>
                 </div>
@@ -63,19 +63,27 @@
             <button type="submit" class="btn-pillar-submit" style="margin-top: 3rem;">Purchase & Deposit Tokens</button>
             
             <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6; font-style: italic;">
-                *All Sanctuary Pours are 100% tax-deductible. A digital receipt will be emailed to you instantly.
+                *All Sanctuary Pours are 100% tax-deductible contributions to Strong Bonds Resilience Corp.
             </p>
         </div>
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2026 Strong Bonds Resilience. Coffee & Connections.</p>
+        <p>&copy; 2026 Strong Bonds Resilience. Coffee & Connections El Paso.</p>
     </footer>
 
     <script>
-        function selectAmount(amt) {
-            // Future logic to handle Square/Stripe checkout
-            console.log("Selected amount: $" + amt);
+        function selectAmount(amt, element) {
+            // Reset borders
+            document.querySelectorAll('.action-box').forEach(box => {
+                box.style.borderColor = "#333";
+                box.style.borderWidth = "1px";
+            });
+            // Highlight selected
+            element.style.borderColor = "var(--pillar-color)";
+            element.style.borderWidth = "2px";
+            
+            console.log("Stripe/Square Preparation: $" + amt);
         }
     </script>
 </body>
