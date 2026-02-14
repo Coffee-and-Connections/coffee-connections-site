@@ -4,89 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How You Can Help | Coffee & Connections</title>
+    
     <link rel="stylesheet" href="../../css/(00)base.css">
     <link rel="stylesheet" href="../../css/(00)header-footer.css">
     <link rel="stylesheet" href="../../css/(00)navigation.css">
-    <link rel="stylesheet" href="../../css/pillar-pages.css">
-    <link rel="stylesheet" href="../css/(05)healing-in-motion.css"> 
-    <link rel="stylesheet" href="../css/(02)menu.css"> </head>
+    <link rel="stylesheet" href="../../css/(07)how-you-can-help.css">
+</head>
 <body class="dark-theme">
 
     <main class="journal-container">
-        <header class="journal-header">
+        <header class="help-header">
             <span class="tag">Active Solidarity</span>
             <h1>How You Can Help</h1>
-            <p class="journal-intro">Sustaining the Sanctuary requires a community. Whether it's a cup of coffee or a strategic partnership, your action changes the reality for a survivor.</p>
+            <p class="subtitle">Sustaining the Sanctuary requires a community.</p>
         </header>
 
-        <div class="menu-discovery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="action-grid">
             
-             <div class="action-card pillar-gold">
-                  <div class="tier-label">Community Ledger</div>
-                  <h3>Fuel a Pour</h3>
-                  <p>Current Vault Balance: <strong id="pour-count">--</strong> Pours Available.</p>
-                  <p>Your $5 donation places a coffee token in the hands of a survivor who needs it today.</p>
-                  <button class="btn-action" onclick="window.location.href='checkout-pour.html'">Buy a Token</button>
+            <div class="action-card pillar-gold">
+                <div class="tier-label">Community Ledger</div>
+                <h3>Fuel a Pour</h3>
+                <p>Current Vault Balance: <strong id="pour-count">12</strong> Pours Available.</p>
+                <p>Your $5 donation places a coffee token in the hands of a survivor.</p>
+                <a href="checkout-pour.html" class="btn-action">Buy a Token</a>
             </div>
 
-            <div class="menu-pillar pillar-green" style="border-color: #00FF00;">
-                <h2>Sponsor Healing</h2>
-                <p>Fund one hour of clinical, trauma-informed therapy for a survivor in crisis.</p>
+            <div class="action-card pillar-green">
                 <div class="tier-label">Mid Tier: $100.00</div>
-                <button class="btn-engine">Sponsor Session</button>
+                <h3>Sponsor Healing</h3>
+                <p>Fund one hour of clinical, trauma-informed therapy for a survivor in crisis.</p>
+                <a href="sponsor-healing.html" class="btn-action">Sponsor Session</a>
             </div>
 
-            <div class="menu-pillar pillar-teal">
-                <h2>Become a Leader</h2>
-                <p>Join the Genesis Program. Use your lived experience to lead a peer community.</p>
+            <div class="action-card pillar-teal">
                 <div class="tier-label">Action: Vetting Required</div>
-                <a href="apply-to-lead.html" class="btn-engine">Start Vetting</a>
+                <h3>Become a Leader</h3>
+                <p>Join the Genesis Program. Use your lived experience to lead a peer community.</p>
+                <a href="apply-to-lead.html" class="btn-action">Start Vetting</a>
             </div>
 
-            <div class="menu-pillar pillar-purple">
-                <h2>Professional TIER</h2>
-                <p>Secure referral portal for Medical, Legal, and First Responder advocates.</p>
+            <div class="action-card pillar-purple">
                 <div class="tier-label">Action: Professional Gate</div>
-                <a href="request-support.html" class="btn-engine">Access Portal</a>
+                <h3>Professional TIER</h3>
+                <p>Secure referral portal for Medical, Legal, and First Responder advocates.</p>
+                <a href="request-support.html" class="btn-action">Access Portal</a>
             </div>
 
-            <div class="menu-pillar pillar-blue">
-                <h2>Sign Up: Seminars</h2>
-                <p>Register for NAMI-led classes, resilience briefings, and wellness workshops.</p>
+            <div class="action-card pillar-blue">
                 <div class="tier-label">Community: Education</div>
-                <button class="btn-engine">View Calendar</button>
+                <h3>Join a Seminar</h3>
+                <p>Register for NAMI-led classes, resilience briefings, and wellness workshops.</p>
+                <a href="seminar-registry.html" class="btn-action">View Calendar</a>
             </div>
 
-            <div class="menu-pillar pillar-orange" style="border-color: #ff8c00;">
-                <h2>Resilience Market</h2>
-                <p>Support survivor-owned businesses. Economic stability through community commerce.</p>
+            <div class="action-card pillar-orange">
                 <div class="tier-label">Economic: Shop Survivor</div>
-                <a href="market.html" class="btn-engine">Shop the Market</a>
+                <h3>Resilience Market</h3>
+                <p>Support survivor-owned businesses. Economic stability through commerce.</p>
+                <a href="market.html" class="btn-action">Shop the Market</a>
             </div>
 
-            <div class="menu-pillar pillar-pink" style="border-color: #ff69b4;">
-                <h2>Own Your Truth</h2>
-                <p>Share your story. Your narrative is the roadmap for those still in the dark.</p>
+            <div class="action-card pillar-pink">
                 <div class="tier-label">Expression: The Vault</div>
-                <a href="submit-narrative.html" class="btn-engine">Deposit Story</a>
+                <h3>Own Your Truth</h3>
+                <p>Share your story. Your narrative is the roadmap for those still in the dark.</p>
+                <a href="submit-narrative.html" class="btn-action">Deposit Story</a>
             </div>
 
-            <div class="menu-pillar pillar-indigo" style="border-color: #4B0082;">
-                <h2>Founding Circle</h2>
-                <p>Strategic partnerships for corporate, policy, and high-impact individual allies.</p>
+            <div class="action-card pillar-indigo">
                 <div class="tier-label">High Tier: Partnership</div>
-                <a href="founding-circle.html" class="btn-engine">Join the Circle</a>
+                <h3>Founding Circle</h3>
+                <p>Strategic partnerships for corporate, policy, and high-impact allies.</p>
+                <a href="founding-circle.html" class="btn-action">Join the Circle</a>
             </div>
 
         </div>
     </main>
 
-    <script src="../js/config.js"></script>
-    <script>
-        function initiatePour() {
-            // This will link to our Sanctuary Pour logic
-            alert("Digital Ledger Connection Initiated...");
-        }
-    </script>
+    <script src="../../js/config.js"></script>
 </body>
 </html>
