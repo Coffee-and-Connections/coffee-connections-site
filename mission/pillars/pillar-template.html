@@ -4,50 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pillar Name | Strong Bonds Resilience</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../../css/(00)base.css">
     <link rel="stylesheet" href="../../css/(00)header-footer.css">
     <link rel="stylesheet" href="../../css/(00)navigation.css">
     <link rel="stylesheet" href="../../css/pillar-pages.css">
+
     <style>
-        /* Pillar-Specific Theme (We change this per page) */
-        :root { --pillar-color: #ffd700; } /* Example: Gold */
+        /* Pillar-Specific Theme (Change the hex code per page) */
+        :root { 
+            --pillar-color: #ffd700; /* Default: Gold */
+            --pillar-bg-soft: rgba(255, 215, 0, 0.05);
+        } 
         
         .pillar-hero {
             padding: 6rem 1.5rem;
             text-align: center;
             border-bottom: 2px solid var(--pillar-color);
-            background: linear-gradient(to bottom, rgba(255,255,255,0.02), transparent);
+            background: linear-gradient(to bottom, var(--pillar-bg-soft), transparent);
         }
+
         .pillar-content {
             max-width: 800px;
             margin: 4rem auto;
             padding: 0 1.5rem;
             line-height: 1.8;
         }
+
         .action-box {
             border: 1px solid var(--pillar-color);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 12px;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.02);
             margin-top: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-pillar-submit {
+            background: var(--pillar-color);
+            color: #000;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-pillar-submit:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
         }
     </style>
 </head>
 <body class="dark-theme">
+
+    <header class="main-nav">
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Dashboard</a></li>
+                <li><a href="how-you-can-help.html" class="active">The Mission</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="pillar-hero">
-        <span class="subtitle" style="color: var(--pillar-color)">The Sanctuary 8</span>
+        <span class="subtitle" style="color: var(--pillar-color); font-weight: 800; letter-spacing: 2px;">The Sanctuary 8</span>
         <h1>Pillar Title</h1>
+        <p style="opacity: 0.7; margin-top: 10px;">A descriptive subtitle explaining the pillar's purpose.</p>
     </section>
 
-    <article class="pillar-content">
-        <p class="journal-intro">Contextual mission statement here...</p>
+    <main class="pillar-content">
+        <div class="journal-intro">
+            <p><strong>The Objective:</strong> This section explains the "Why" behind the pillar. For the landlord or donors, this proves the programmatic depth of the Strong Bonds model.</p>
+        </div>
         
         <div class="action-box">
-            <h3 style="color: var(--pillar-color)">Take Action</h3>
-            <p>Specific instructions for the user.</p>
-            <button class="btn-engine" style="background: var(--pillar-color); color: #000;">Commit to Action</button>
+            <h3 style="color: var(--pillar-color); margin-bottom: 1rem;">Take Strategic Action</h3>
+            <p style="margin-bottom: 2rem;">Clear, concise instructions for the user to engage with this specific mission objective.</p>
+            
+            <button class="btn-pillar-submit">Commit to Action</button>
         </div>
-    </article>
+    </main>
 
-    </body>
+    <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the historic Lenox Building.</p>
+        <p style="margin-top: 10px;"><a href="how-you-can-help.html" style="color: var(--pillar-color); text-decoration: none;">&larr; Back to Mission Hub</a></p>
+    </footer>
+
+</body>
 </html>
