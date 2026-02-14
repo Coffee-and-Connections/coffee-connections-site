@@ -27,14 +27,16 @@
                     <ul class="submenu">
                         <li><a href="../cafe/menu.html">Coffee & Connections</a></li>
                         <li><a href="../overland/trauma-informed-design.html">Design Philosophy</a></li>
+                        <li><a href="pillars/market.html">Resilience Market</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="active">The Mission</a>
                     <ul class="submenu">
                         <li><a href="our-mission.html">The Genesis</a></li>
-                        <li><a href="healing-in-motion.html" class="active">Healing in Motion</a></li>
-                        <li><a href="founding-circle.html">Founding Circle</a></li>
+                        <li><a href="healing-in-motion.html" class="active">The Journal</a></li>
+                        <li><a href="pillars/how-you-can-help.html">Support the Cause</a></li>
+                        <li><a href="pillars/request-support.html">Professional TIER</a></li>
                     </ul>
                 </li>
                 <li><a href="../overland/transitional-housing.html">The Bridge @ Overland</a></li>
@@ -55,24 +57,27 @@
             </div>
             
             <div class="journal-controls">
-                <button id="prev-btn" class="btn btn-mission">← Previous Story</button>
-                <button id="next-btn" class="btn btn-mission">Next Story →</button>
+                <button id="prev-btn" class="btn-action" style="padding: 0.8rem 1.5rem;">← Previous Story</button>
+                <button id="next-btn" class="btn-action" style="padding: 0.8rem 1.5rem;">Next Story →</button>
             </div>
         </div>
 
         <section class="journal-disclaimer">
-            <p><strong>Note on Security:</strong> Every story is vetted by advocates before appearing here. Your perception is your reality, and your truth is safe with us.</p>
-            <a href="submit-narrative.html" class="btn-engine">Share Your Story & Inspire Someone Else</a>
+            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                <p><strong>Note on Security:</strong> Every story is vetted by advocates before appearing here. Your perception is your reality, and your truth is safe with us.</p>
+                <a href="submit-narrative.html" class="btn-engine" style="margin-top: 1.5rem; display: inline-block;">Share Your Story & Inspire Someone Else</a>
+            </div>
         </section>
     </main>
+
+    <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2026 Strong Bonds Resilience. Occupying The Lenox Heritage.</p>
+    </footer>
 
     <script src="../js/config.js"></script>
     <script src="../js/journal-logic.js"></script>
 
     <script>
-        /**
-         * INITIALIZE THE ARCHIVE
-         */
         document.addEventListener('DOMContentLoaded', () => {
             // Load the stories from the Vault Tower
             if (typeof loadStories === 'function') {
