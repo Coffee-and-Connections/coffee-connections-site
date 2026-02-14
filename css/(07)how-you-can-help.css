@@ -1,6 +1,7 @@
 /* =========================================
    (07) HOW-YOU-CAN-HELP.CSS
    "The Movement Engine" - Sanctuary 8 Edition
+   Symmetry & Border Specificity Fix
    ========================================= */
 
 /* --- HEADER & FOUNDATION --- */
@@ -31,21 +32,22 @@
 /* --- THE 8-PILLAR ACTION GRID --- */
 .action-grid {
   display: grid;
-  /* Reduced minimum width to force 4-across on laptops */
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-  gap: 1.5rem; /* Tightened gap slightly to save horizontal space */
-  max-width: 1400px; /* Expanded max-width for wider screens */
+  /* Reduced to 230px to force 4-across on standard laptops at 100% zoom */
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+  gap: 1.5rem; 
+  max-width: 1400px; 
   margin: 3rem auto;
   padding: 0 24px;
 }
 
 /* --- MISSION PILLAR CARDS --- */
+/* We establish the 1px border here globally so it never disappears */
 .action-card {
-  background-color: #1e1e1e; /* Sanctuary Soft Slate */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1e1e1e; 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
   border-radius: 20px;
   padding: 2.5rem 2rem;
-  text-align: left; /* Aligned for readability */
+  text-align: left; 
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
@@ -59,22 +61,23 @@
 }
 
 /* MISSION GLOWS (Subconscious Connection) */
-.pillar-gold { border-top: 5px solid #ffd700; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.05); }
-.pillar-green { border-top: 5px solid #00FF00; box-shadow: 0 10px 30px rgba(0, 255, 0, 0.05); }
-.pillar-teal { border-top: 5px solid #008080; box-shadow: 0 10px 30px rgba(0, 128, 128, 0.05); }
-.pillar-purple { border-top: 5px solid #800080; box-shadow: 0 10px 30px rgba(128, 0, 128, 0.05); }
-.pillar-blue { border-top: 5px solid #0000ff; box-shadow: 0 10px 30px rgba(0, 0, 255, 0.05); }
-.pillar-orange { border-top: 5px solid #ff8c00; box-shadow: 0 10px 30px rgba(255, 140, 0, 0.05); }
-.pillar-pink { border-top: 5px solid #ff69b4; box-shadow: 0 10px 30px rgba(255, 105, 180, 0.05); }
-.pillar-indigo { border-top: 5px solid #4B0082; box-shadow: 0 10px 30px rgba(75, 0, 130, 0.05); }
+/* We use !important on the borders to ensure specific pillar classes always override the base */
+.pillar-gold   { border: 1px solid #ffd700 !important; border-top: 6px solid #ffd700 !important; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.08); }
+.pillar-green  { border: 1px solid #00FF00 !important; border-top: 6px solid #00FF00 !important; box-shadow: 0 10px 30px rgba(0, 255, 0, 0.08); }
+.pillar-teal   { border: 1px solid #008080 !important; border-top: 6px solid #008080 !important; box-shadow: 0 10px 30px rgba(0, 128, 128, 0.08); }
+.pillar-purple { border: 1px solid #800080 !important; border-top: 6px solid #800080 !important; box-shadow: 0 10px 30px rgba(128, 0, 128, 0.08); }
+.pillar-blue   { border: 1px solid #0000ff !important; border-top: 6px solid #0000ff !important; box-shadow: 0 10px 30px rgba(0, 0, 255, 0.08); }
+.pillar-orange { border: 1px solid #ff8c00 !important; border-top: 6px solid #ff8c00 !important; box-shadow: 0 10px 30px rgba(255, 140, 0, 0.08); }
+.pillar-pink   { border: 1px solid #ff69b4 !important; border-top: 6px solid #ff69b4 !important; box-shadow: 0 10px 30px rgba(255, 105, 180, 0.08); }
+.pillar-indigo { border: 1px solid #4B0082 !important; border-top: 6px solid #4B0082 !important; box-shadow: 0 10px 30px rgba(75, 0, 130, 0.08); }
 
 .tier-label {
-    font-size: 0.7rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 1rem;
-    color: rgba(255,255,255,0.4);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.4);
 }
 
 .action-card h3 {
