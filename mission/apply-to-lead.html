@@ -1,28 +1,100 @@
-<section class="pillar-content">
-    <p>Becoming a Peer Leader is more than a volunteer role; it is a commitment to the stability of our community. We require lived experience, a background check, and a deep understanding of <strong>Perception is Reality.</strong></p>
+<body class="dark-theme" style="--pillar-color: #008080;"> <section class="pillar-hero">
+        <span class="subtitle">Mission Engagement: Pillar 3</span>
+        <h1>Become a Peer Leader</h1>
+    </section>
 
-    <form class="vault-form" style="margin-top: 3rem;">
-        <div class="alias-grid">
-            <input type="text" placeholder="Full Legal Name" class="vault-input" required>
-            <input type="text" placeholder="Rank / Branch / Agency" class="vault-input">
+    <main class="pillar-content">
+        <div class="vault-form-container">
+            <form action="#" method="POST" enctype="multipart/form-data">
+                
+                <fieldset>
+                    <legend>Personal Data</legend>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Full Legal Name</label>
+                            <input type="text" class="vault-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Preferred Name (Trauma-Informed)</label>
+                            <input type="text" class="vault-input" placeholder="How should we address you?">
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Date of Birth</label>
+                            <input type="date" class="vault-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="vault-input" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" class="vault-input" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Experience & Stability</legend>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Veteran Status</label>
+                            <select class="vault-input">
+                                <option>Veteran</option>
+                                <option>Active Duty</option>
+                                <option>Civilian</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>In Active Support?</label>
+                            <select class="vault-input">
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>Prefer not to answer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Lived Experience Narrative (Stability Focus)</label>
+                        <textarea class="vault-textarea" placeholder="Please share why you want to lead a group and what values you bring..."></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Safety & Conflict Disclosure</legend>
+                    <div class="input-group">
+                        <label>Disclosure: Have you ever been convicted of a violent or abusive offense?</label>
+                        <select class="vault-input">
+                            <option>No</option>
+                            <option>Yes (Explain below)</option>
+                        </select>
+                    </div>
+                    <textarea class="vault-textarea" style="margin-top:10px" placeholder="If yes, please explain..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Values & Boundaries</legend>
+                    <div class="agreement-block">
+                        <input type="checkbox" required>
+                        <span class="agreement-text"><strong>Connection, Not Care:</strong> I understand I am not a clinician. I agree to follow the Warm Handoff protocol.</span>
+                    </div>
+                    <div class="agreement-block">
+                        <input type="checkbox" required>
+                        <span class="agreement-text">I acknowledge the Mandatory Reporting requirements and the SBR Confidentiality Agreement.</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Final Verification</legend>
+                    <div class="input-group">
+                        <label>Photo ID Upload (Required for Background Check)</label>
+                        <input type="file" class="vault-input">
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-pillar-submit">Submit Vetting Application</button>
+            </form>
         </div>
-        
-        <label class="alias-guidance">Primary Sanctuary Community (Select One)</label>
-        <select class="vault-input" style="margin-bottom: 20px;">
-            <option>Combat / Service</option>
-            <option>Sexual Assault / MST</option>
-            <option>Domestic Violence</option>
-            <option>Suicide Awareness</option>
-            </select>
-
-        <textarea class="vault-textarea" placeholder="Tell us about a time you chose a person over a 'Standard'. Describe your leadership style."></textarea>
-
-        <div class="action-box" style="border-color: #888;">
-            <p style="font-size: 0.8rem;">
-                <input type="checkbox" required> I consent to a background check and certify that I have been "in the dark" and have found my way toward the light.
-            </p>
-        </div>
-
-        <button type="submit" class="btn-engine" style="background: #008080; width: 100%; margin-top: 20px;">Submit for Vetting</button>
-    </form>
-</section>
+    </main>
+</body>
