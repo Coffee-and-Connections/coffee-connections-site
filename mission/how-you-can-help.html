@@ -19,11 +19,12 @@
 
         <div class="menu-discovery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
             
-            <div class="menu-pillar pillar-gold">
-                <h2>Fuel a Pour</h2>
-                <p>Purchase a "Pay-it-Forward" coffee for a survivor. A simple gesture with a massive impact.</p>
-                <div class="tier-label">Low Tier: $5.00</div>
-                <button class="btn-engine" onclick="initiatePour()">Buy a Token</button>
+             <div class="action-card pillar-gold">
+                  <div class="tier-label">Community Ledger</div>
+                  <h3>Fuel a Pour</h3>
+                  <p>Current Vault Balance: <strong id="pour-count">--</strong> Pours Available.</p>
+                  <p>Your $5 donation places a coffee token in the hands of a survivor who needs it today.</p>
+                  <button class="btn-action" onclick="window.location.href='checkout-pour.html'">Buy a Token</button>
             </div>
 
             <div class="menu-pillar pillar-green" style="border-color: #00FF00;">
