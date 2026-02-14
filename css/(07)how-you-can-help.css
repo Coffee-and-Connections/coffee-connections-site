@@ -1,154 +1,147 @@
 /* =========================================
    (07) HOW-YOU-CAN-HELP.CSS
-   "The Movement Engine"
+   "The Movement Engine" - Sanctuary 8 Edition
    ========================================= */
 
-/* --- HEADER --- */
+/* --- HEADER & FOUNDATION --- */
 .help-header {
   text-align: center;
-  padding: 4rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.03); 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.02); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .help-header h1 {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   color: var(--bg-cream);
-  margin-bottom: 0.75rem;
-  line-height: 1.1;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  letter-spacing: -1px;
 }
 
 .help-header .subtitle {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--coffee-accent);
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
+  letter-spacing: 3px;
 }
 
-.tag {
-  display: inline-block;
-  background-color: var(--coffee-accent);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-/* --- ACTION GRID --- */
+/* --- THE 8-PILLAR ACTION GRID --- */
 .action-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1300px;
   margin: 4rem auto;
-  padding: 0 1.5rem;
+  padding: 0 24px; /* Sanctuary Safety Buffer */
 }
 
-/* --- CARDS --- */
+/* --- MISSION PILLAR CARDS --- */
 .action-card {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #1e1e1e; /* Sanctuary Soft Slate */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: left; /* Aligned for readability */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .action-card:hover {
-  transform: translateY(-8px);
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: var(--coffee-accent);
+  transform: translateY(-10px);
+  background-color: #252525;
 }
 
-.action-card.highlight {
-  border: 1px solid var(--coffee-accent);
-  background-color: rgba(78, 39, 83, 0.1);
-}
+/* MISSION GLOWS (Subconscious Connection) */
+.pillar-gold { border-top: 5px solid #ffd700; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.05); }
+.pillar-green { border-top: 5px solid #00FF00; box-shadow: 0 10px 30px rgba(0, 255, 0, 0.05); }
+.pillar-teal { border-top: 5px solid #008080; box-shadow: 0 10px 30px rgba(0, 128, 128, 0.05); }
+.pillar-purple { border-top: 5px solid #800080; box-shadow: 0 10px 30px rgba(128, 0, 128, 0.05); }
+.pillar-blue { border-top: 5px solid #0000ff; box-shadow: 0 10px 30px rgba(0, 0, 255, 0.05); }
+.pillar-orange { border-top: 5px solid #ff8c00; box-shadow: 0 10px 30px rgba(255, 140, 0, 0.05); }
+.pillar-pink { border-top: 5px solid #ff69b4; box-shadow: 0 10px 30px rgba(255, 105, 180, 0.05); }
+.pillar-indigo { border-top: 5px solid #4B0082; box-shadow: 0 10px 30px rgba(75, 0, 130, 0.05); }
 
-.card-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  display: block;
+.tier-label {
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    color: rgba(255,255,255,0.4);
 }
 
 .action-card h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--bg-cream);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
 }
 
 .action-card p {
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
-  line-height: 1.7;
+  line-height: 1.6;
   flex-grow: 1;
 }
 
-/* --- BUTTONS --- */
+/* --- ACTION BUTTONS --- */
 .btn-action {
   margin-top: auto;
-  padding: 1.2rem 2rem;
-  border: none;
-  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
   font-weight: 700;
+  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
-  display: inline-block;
-}
-
-/* Primary Action: Sanctuary Purple */
-.action-card .btn-action {
-  background-color: var(--coffee-accent);
+  background: rgba(255,255,255,0.05);
   color: white;
-  box-shadow: 0 4px 15px rgba(78, 39, 83, 0.3);
 }
 
-.action-card .btn-action:hover {
-  background-color: white;
-  color: var(--coffee-accent);
-  transform: scale(1.05);
+.btn-action:hover {
+  background: white;
+  color: black;
+  border-color: white;
 }
 
-/* --- COMMUNITY NOTE --- */
+/* --- THE MISSION STATEMENT NOTE --- */
 .community-note {
   text-align: center;
-  max-width: 800px;
+  max-width: 900px;
   margin: 6rem auto;
-  padding: 3rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .community-note p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-style: italic;
   color: var(--bg-cream);
-  line-height: 1.6;
+  line-height: 1.8;
+  font-family: 'Open Sans', sans-serif;
 }
 
-/* Footer override for this page */
-footer {
-  margin-top: 0;
+/* --- RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+  .action-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-    .help-header h1 { font-size: 2.2rem; }
-}
-
-/* --- MOBILE --- */
-@media (max-width: 768px) {
-  .help-header h1 { font-size: 2rem; }
+  .help-header h1 { font-size: 2.5rem; }
   .action-grid { grid-template-columns: 1fr; }
+  .community-note { margin: 3rem 1.5rem; padding: 2rem; }
 }
