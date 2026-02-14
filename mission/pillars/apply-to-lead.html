@@ -15,14 +15,11 @@
     <link rel="stylesheet" href="../../css/pillar-pages.css">
 </head>
 
-<body class="dark-theme" style="--pillar-color: #008080;">
-
-    <header class="main-nav">
+<body class="dark-theme" style="--pillar-color: #008080;"> <header class="main-nav">
         <nav class="nav-container">
             <ul class="nav-menu">
-                <li><a href="../../css/index.html">Dashboard</a></li>
+                <li><a href="../../index.html">Dashboard</a></li>
                 <li><a href="how-you-can-help.html" class="active">The Mission</a></li>
-                <li><a href="../overland/transitional-housing.html">Overland</a></li>
             </ul>
         </nav>
     </header>
@@ -63,25 +60,22 @@
                         <label>Email Address</label>
                         <input type="email" class="vault-input" required>
                     </div>
-                    <div class="input-group" style="margin-top: 20px;">
-                        <label>Full Address (Street, City, State, Zip)</label>
-                        <input type="text" class="vault-input" required>
-                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Experience & Stability</legend>
                     <div class="form-grid">
                         <div class="input-group">
-                            <label>Veteran Status</label>
+                            <label>Service Status</label>
                             <select class="vault-input">
                                 <option>Veteran</option>
                                 <option>Active Duty</option>
-                                <option>Civilian</option>
+                                <option>First Responder</option>
+                                <option>Civilian Ally</option>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label>In Active Therapy/Support?</label>
+                            <label>Active Support System?</label>
                             <select class="vault-input">
                                 <option>Yes</option>
                                 <option>No</option>
@@ -97,73 +91,26 @@
 
                 <fieldset>
                     <legend>Safety & Legal Disclosure</legend>
+                    <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1.5rem;">To protect our vulnerable community, all leaders must undergo a background check. Disclosing a record does not automatically disqualify you, but honesty is mandatory.</p>
                     <div class="input-group">
-                        <label>Have you ever been convicted of a violent, sexual, or domestic violence offense?</label>
+                        <label>Have you ever been convicted of a violent or sexual offense?</label>
                         <select class="vault-input" required>
                             <option value="no">No</option>
-                            <option value="yes">Yes (Please explain below)</option>
+                            <option value="yes">Yes (Explanation Required)</option>
                         </select>
                     </div>
-                    <div class="form-grid" style="margin-top: 15px;">
-                        <div class="input-group">
-                            <label>Active Restraining Orders?</label>
-                            <select class="vault-input"><option>No</option><option>Yes</option></select>
-                        </div>
-                        <div class="input-group">
-                            <label>Prohibited from Vulnerable Groups?</label>
-                            <select class="vault-input"><option>No</option><option>Yes</option></select>
-                        </div>
-                    </div>
-                    <textarea class="vault-textarea" style="margin-top:15px" placeholder="If 'Yes' to any above, please provide a brief explanation for our board and NAMI assessment."></textarea>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Availability & Emergency Contact</legend>
-                    <div class="form-grid">
-                        <div class="input-group">
-                            <label>Can attend NAMI training?</label>
-                            <select class="vault-input"><option>Yes</option><option>No</option></select>
-                        </div>
-                        <div class="input-group">
-                            <label>Commitment (Min 1x/Mo)</label>
-                            <input type="text" class="vault-input" placeholder="e.g. Every 2nd Tuesday">
-                        </div>
-                    </div>
-                    <div class="form-grid" style="margin-top: 15px;">
-                        <div class="input-group">
-                            <label>Emergency Contact Name</label>
-                            <input type="text" class="vault-input">
-                        </div>
-                        <div class="input-group">
-                            <label>Emergency Phone</label>
-                            <input type="tel" class="vault-input">
-                        </div>
-                    </div>
+                    <textarea class="vault-textarea" style="margin-top:15px" placeholder="If 'Yes', please provide context for the NAMI-led review board."></textarea>
                 </fieldset>
 
                 <fieldset>
                     <legend>Boundaries & Code of Conduct</legend>
                     <div class="agreement-block">
                         <input type="checkbox" required>
-                        <span class="agreement-text"><strong>Connection, Not Care:</strong> I understand I am a Peer Leader, not a therapist. I agree to follow the "Warm Handoff" protocol and the SBR field boundaries.</span>
+                        <span class="agreement-text"><strong>Connection, Not Care:</strong> I understand I am a Peer Leader, not a therapist. I agree to follow the "Warm Handoff" protocol and the SBR boundaries.</span>
                     </div>
                     <div class="agreement-block">
                         <input type="checkbox" required>
-                        <span class="agreement-text"><strong>Confidentiality:</strong> I agree to maintain absolute confidentiality for all Sanctuary participants and follow mandatory reporting laws as outlined in the field manual.</span>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Identity Verification</legend>
-                    <div class="form-grid">
-                        <div class="input-group">
-                            <label>Photo ID Upload (For Background Check)</label>
-                            <input type="file" class="vault-input">
-                        </div>
-                        <div class="input-group">
-                            <label>Character Reference (Name/Contact)</label>
-                            <input type="text" class="vault-input" placeholder="Someone to vouch for your stability">
-                        </div>
+                        <span class="agreement-text"><strong>Confidentiality:</strong> I agree to maintain absolute confidentiality for all Sanctuary participants as outlined in the Field Manual.</span>
                     </div>
                 </fieldset>
 
@@ -173,7 +120,7 @@
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2026 Strong Bonds Resilience. Coffee & Connections is a "Connection, Not Care" environment.</p>
+        <p>&copy; 2026 Strong Bonds Resilience. Peer Leadership Program.</p>
     </footer>
 
 </body>
