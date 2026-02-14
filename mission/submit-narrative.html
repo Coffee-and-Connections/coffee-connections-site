@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,39 +36,39 @@
         <div class="content-island journal-book">
             <form id="vault-form">
                 <div class="form-group">
-                    <p class="alias-guidance">
+                    <div class="alias-guidance">
                          "Perception is reality." Your privacy is our mission. Use your first name and last initial, or a chosen alias that reflects your truth.
-                    </p>
+                    </div>
                     <div class="alias-grid">
                         <input type="text" id="first-name" class="vault-input" placeholder="First Name">
                         <input type="text" id="last-initial" class="vault-input" placeholder="Initial">
                     </div>
-                    <p style="text-align: center; margin: 10px 0; color: #666; font-size: 0.8rem;">— OR —</p>
+                    <p style="text-align: center; margin: 10px 0; color: rgba(255,255,255,0.3); font-size: 0.8rem; font-weight: 800;">— OR —</p>
                     <input type="text" id="alias-input" class="vault-input" placeholder="Chosen Alias (e.g. A Survivor)">
                 </div>
 
-                <div class="form-group">
-                    <label style="color: var(--coffee-accent); font-weight: 700; display: block; margin-bottom: 10px;">Select Your Communities</label>
+                <div class="form-group" style="margin-top: 3rem;">
+                    <label style="color: var(--coffee-accent); font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; display: block; margin-bottom: 15px;">Select Your Communities</label>
                     <div class="tag-selector" id="tag-cloud">
-                        <button type="button" class="tag-chip" data-tag="MIL" style="--tag-color: #ffd700;">#Combat/Service</button>
-                        <button type="button" class="tag-chip" data-tag="MH" style="--tag-color: #00FF00;">#PTSD/Trauma</button>
-                        <button type="button" class="tag-chip" data-tag="DV" style="--tag-color: #800080;">#DomesticViolence</button>
-                        <button type="button" class="tag-chip" data-tag="SUI" style="--tag-color: #0000ff;">#SuicideAwareness</button>
-                        <button type="button" class="tag-chip" data-tag="SA" style="--tag-color: #008080;">#SexualAssault/MST</button>
-                        <button type="button" class="tag-chip" data-tag="ACE" style="--tag-color: #ff69b4;">#ChildhoodTrauma</button>
-                        <button type="button" class="tag-chip" data-tag="SYS" style="--tag-color: #ff8c00;">#Hate/Systemic</button>
-                        <button type="button" class="tag-chip" data-tag="GEN" style="--tag-color: #4B0082;">#Genesis/Leadership</button>
+                        <button type="button" class="tag-chip" data-tag="MIL">#Combat/Service</button>
+                        <button type="button" class="tag-chip" data-tag="MH">#PTSD/Trauma</button>
+                        <button type="button" class="tag-chip" data-tag="DV">#DomesticViolence</button>
+                        <button type="button" class="tag-chip" data-tag="SUI">#SuicideAwareness</button>
+                        <button type="button" class="tag-chip" data-tag="SA">#SexualAssault/MST</button>
+                        <button type="button" class="tag-chip" data-tag="ACE">#ChildhoodTrauma</button>
+                        <button type="button" class="tag-chip" data-tag="SYS">#Hate/Systemic</button>
+                        <button type="button" class="tag-chip" data-tag="GEN">#Genesis/Leadership</button>
                     </div>
                 </div>
 
-                <div class="form-group" style="margin-top: 30px;">
-                    <label for="story-input" style="color: var(--coffee-accent); font-weight: 700; display: block; margin-bottom: 10px;">Your Narrative</label>
+                <div class="form-group" style="margin-top: 3rem;">
+                    <label for="story-input" style="color: var(--coffee-accent); font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; display: block; margin-bottom: 15px;">Your Narrative</label>
                     <textarea id="story-input" class="vault-textarea" placeholder="Speak your truth here..."></textarea>
                 </div>
                 
                 <div id="submission-status" class="status-box"></div>
                 
-                <button type="submit" class="btn-action" style="width: 100%; padding: 1.2rem; font-size: 1rem; border-radius: 12px;">
+                <button type="submit" class="btn-action" style="width: 100%; padding: 1.5rem; font-size: 1.1rem; border-radius: 12px; margin-top: 10px;">
                     Deposit Narrative in the Vault
                 </button>
             </form>
@@ -80,7 +80,19 @@
     </main>
 
     <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
-        <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the Lenox Building.</p>
+        <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the historic Lenox Building.</p>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/vault-submit.js"></script>
+</body>
+</html>
+            <p><small>Note: All submissions are reviewed by the Strong Bonds advocacy team before archiving. No personal metadata is stored.</small></p>
+        </section>
+    </main>
+
+    <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the historic Lenox Building.</p>
     </footer>
 
     <script src="../js/config.js"></script>
