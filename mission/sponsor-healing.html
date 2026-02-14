@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="../css/pillar-pages.css">
 </head>
 
-<body class="dark-theme" style="--pillar-color: #00FF00;"> <header class="main-nav">
+<body class="dark-theme" style="--pillar-color: #00FF00;"> 
+    <header class="main-nav">
         <nav class="nav-container">
             <ul class="nav-menu">
                 <li><a href="../index.html">Dashboard</a></li>
@@ -40,11 +41,11 @@
             </div>
 
             <div class="form-grid">
-                <div class="action-box" style="border-color: #333; text-align: center; cursor: pointer;" onclick="selectTier(100)">
+                <div class="action-box" style="border-color: #333; text-align: center; cursor: pointer;" onclick="selectTier(100, this)">
                     <h4 style="margin-bottom: 0.5rem;">One Session</h4>
                     <p style="font-size: 1.5rem; color: var(--pillar-color);">$100.00</p>
                 </div>
-                <div class="action-box" style="border-color: var(--pillar-color); text-align: center; cursor: pointer; background: rgba(0, 255, 0, 0.03);" onclick="selectTier(300)">
+                <div class="action-box" style="border-color: var(--pillar-color); text-align: center; cursor: pointer; background: rgba(0, 255, 0, 0.03);" onclick="selectTier(300, this)">
                     <span class="tag" style="background: var(--pillar-color); color: #000; margin-bottom: 5px;">Critical Support</span>
                     <h4 style="margin-bottom: 0.5rem;">Three Sessions</h4>
                     <p style="font-size: 1.5rem; color: var(--pillar-color);">$300.00</p>
@@ -56,7 +57,7 @@
                 <p style="font-size: 0.9rem; opacity: 0.8;">SBR only partners with licensed mental health professionals who specialize in trauma-informed care, MST (Military Sexual Trauma), and PTSD. 100% of your sponsorship goes to the provider's fee.</p>
             </div>
 
-            <button type="button" class="btn-pillar-submit" style="margin-top: 2.5rem;">Proceed to Secure Sponsorship</button>
+            <button type="button" class="btn-pillar-submit" onclick="proceedToCheckout()" style="margin-top: 2.5rem;">Proceed to Secure Sponsorship</button>
 
             <div style="text-align: center; margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
                 <p><i class="fas fa-lock"></i> Secure Transaction via SBR Finance Tower</p>
@@ -71,34 +72,34 @@
     <script>
         let selectedAmount = 300; // Default to the "Critical Support" tier
 
-function selectTier(amount, element) {
-    // 1. Update the variable
-    selectedAmount = amount;
-    
-    // 2. Remove "active" style from all boxes
-    const boxes = document.querySelectorAll('.action-box');
-    boxes.forEach(box => {
-        box.style.borderColor = "#333";
-        box.style.background = "rgba(255,255,255,0.02)";
-    });
+        function selectTier(amount, element) {
+            // 1. Update the variable
+            selectedAmount = amount;
+            
+            // 2. Reset all boxes to default grey
+            const boxes = document.querySelectorAll('.action-box');
+            boxes.forEach(box => {
+                box.style.borderColor = "#333";
+                box.style.background = "rgba(255,255,255,0.02)";
+            });
 
-    // 3. Add "active" style to the clicked box
-    element.style.borderColor = "var(--pillar-color)";
-    element.style.background = "rgba(0, 255, 0, 0.05)";
-    
-    console.log("Selected Tier: $" + selectedAmount);
-}
+            // 3. Highlight the selected box with the pillar color
+            element.style.borderColor = "var(--pillar-color)";
+            element.style.background = "rgba(0, 255, 0, 0.05)";
+            
+            console.log("Selected Tier: $" + selectedAmount);
+        }
 
-function proceedToCheckout() {
-    // These would be your actual Square Checkout URLs
-    const squareLinks = {
-        100: "https://checkout.square.site/merchant/YOUR_ID/checkout/LINK_1",
-        300: "https://checkout.square.site/merchant/YOUR_ID/checkout/LINK_3"
-    };
+        function proceedToCheckout() {
+            // These would be your actual Square Checkout URLs from your Square Dashboard
+            const squareLinks = {
+                100: "https://checkout.square.site/merchant/YOUR_ID/checkout/LINK_1",
+                300: "https://checkout.square.site/merchant/YOUR_ID/checkout/LINK_3"
+            };
 
-    // Redirect the user to the secure Square site
-    window.location.href = squareLinks[selectedAmount];
-}
+            // Redirect the user to the secure Square site
+            window.location.href = squareLinks[selectedAmount];
+        }
     </script>
 </body>
 </html>
