@@ -74,3 +74,54 @@
     opacity: 0.6;
     padding-top: 100px;
 }
+
+/* =========================================
+   IDENTITY TAGS & SUBMISSION FORM
+   ========================================= */
+
+.tag-selector { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    margin: 25px 0; 
+}
+
+.tag-chip {
+    padding: 10px 18px;
+    border: 2px solid #333;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.05);
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Advocacy Ribbon Colors (Active States) */
+.tag-chip[data-tag="DV"].active { border-color: #800080; color: #e0b0ff; background: rgba(128,0,128,0.2); box-shadow: 0 0 10px rgba(128,0,128,0.3); }
+.tag-chip[data-tag="SA"].active { border-color: #008080; color: #80cbc4; background: rgba(0,128,128,0.2); box-shadow: 0 0 10px rgba(0,128,128,0.3); }
+.tag-chip[data-tag="MH"].active { border-color: #00FF00; color: #b2ff59; background: rgba(0,255,0,0.1); box-shadow: 0 0 10px rgba(0,255,0,0.2); }
+.tag-chip[data-tag="SUI"].active { border-color: #0000FF; color: #82b1ff; background: rgba(0,0,255,0.1); box-shadow: 0 0 10px rgba(0,0,255,0.2); }
+
+/* Submission Inputs */
+.vault-textarea {
+    width: 100%;
+    min-height: 300px;
+    background: #0a0a0a;
+    color: #f0f0f0;
+    border: 2px solid #222;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.vault-textarea:focus {
+    border-color: var(--coffee-accent);
+    outline: none;
+}
