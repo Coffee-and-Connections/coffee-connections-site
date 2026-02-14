@@ -69,10 +69,36 @@
     </footer>
 
     <script>
-        function selectTier(amount) {
-            console.log("Sponsorship Tier Selected: $" + amount);
-            // This will link to the payment gateway in the next phase
-        }
+        let selectedAmount = 300; // Default to the "Critical Support" tier
+
+function selectTier(amount, element) {
+    // 1. Update the variable
+    selectedAmount = amount;
+    
+    // 2. Remove "active" style from all boxes
+    const boxes = document.querySelectorAll('.action-box');
+    boxes.forEach(box => {
+        box.style.borderColor = "#333";
+        box.style.background = "rgba(255,255,255,0.02)";
+    });
+
+    // 3. Add "active" style to the clicked box
+    element.style.borderColor = "var(--pillar-color)";
+    element.style.background = "rgba(0, 255, 0, 0.05)";
+    
+    console.log("Selected Tier: $" + selectedAmount);
+}
+
+function proceedToCheckout() {
+    // These would be your actual Square Checkout URLs
+    const squareLinks = {
+        100: "https://checkout.square.site/merchant/YOUR_ID/checkout/LINK_1",
+        300: "https://checkout.square.site/merchant/YOUR_ID/checkout/LINK_3"
+    };
+
+    // Redirect the user to the secure Square site
+    window.location.href = squareLinks[selectedAmount];
+}
     </script>
 </body>
 </html>
