@@ -1,102 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Healing in Motion: A digital sanctuary for survivor stories." />
-    <title>Healing in Motion | Strong Bonds Resilience</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How You Can Help | Strong Bonds Resilience</title>
     
-    <link rel="stylesheet" href="../css/(00)base.css">
-    <link rel="stylesheet" href="../css/(00)header-footer.css">
-    <link rel="stylesheet" href="../css/(00)navigation.css">
-    <link rel="stylesheet" href="../css/(05)healing-in-motion.css"> 
+    <link rel="stylesheet" href="../../css/(00)base.css">
+    <link rel="stylesheet" href="../../css/(00)header-footer.css">
+    <link rel="stylesheet" href="../../css/(00)navigation.css">
+    <link rel="stylesheet" href="../../css/(07)how-you-can-help.css">
 </head>
-
 <body class="dark-theme">
 
     <header class="main-nav">
         <nav class="nav-container" role="navigation">
             <ul class="nav-menu">
-                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="../../index.html">Dashboard</a></li>
                 <li>
                     <a href="#">The Sanctuary</a>
                     <ul class="submenu">
-                        <li><a href="../cafe/menu.html">Coffee & Connections</a></li>
-                        <li><a href="../overland/trauma-informed-design.html">Design Philosophy</a></li>
-                        <li><a href="pillars/market.html">Resilience Market</a></li>
+                        <li><a href="../../cafe/menu.html">Coffee & Connections</a></li>
+                        <li><a href="../../overland/trauma-informed-design.html">Design Philosophy</a></li>
+                        <li><a href="market.html">Resilience Market</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="active">The Mission</a>
+                    <a href="../our-mission.html" class="active">The Mission</a>
                     <ul class="submenu">
-                        <li><a href="our-mission.html">The Genesis</a></li>
-                        <li><a href="healing-in-motion.html" class="active">The Journal</a></li>
-                        <li><a href="pillars/how-you-can-help.html">Support the Cause</a></li>
-                        <li><a href="pillars/request-support.html">Professional TIER</a></li>
+                        <li><a href="../our-mission.html">The Genesis</a></li>
+                        <li><a href="../healing-in-motion.html">The Journal</a></li>
+                        <li><a href="how-you-can-help.html" class="active">Support the Cause</a></li>
                     </ul>
                 </li>
-                <li><a href="../overland/transitional-housing.html">The Bridge @ Overland</a></li>
+                <li><a href="../../overland/transitional-housing.html">The Bridge @ Overland</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="journal-container">
-        <header class="journal-header">
-            <span class="tag">A Living Archive of Resilience</span>
-            <h1>Healing in Motion</h1>
-            <p class="journal-intro">These narratives from our community serve as beacons for those still navigating the dark. You are not alone.</p>
+        <header class="help-header">
+            <span class="tag" style="color: var(--coffee-accent); font-weight: 800; letter-spacing: 2px;">Active Solidarity</span>
+            <h1>How You Can Help</h1>
+            <p class="subtitle" style="margin-top: 10px; opacity: 0.7;">Sustaining the sanctuary requires a community.</p>
         </header>
 
-        <div id="journal-wrapper" class="content-island journal-book">
-            <div id="story-display" class="story-page">
-                <div class="loading-state">Accessing the Vault...</div>
-            </div>
+        <div class="action-grid">
             
-            <div class="journal-controls">
-                <button id="prev-btn" class="btn-action" style="padding: 0.8rem 1.5rem;">← Previous Story</button>
-                <button id="next-btn" class="btn-action" style="padding: 0.8rem 1.5rem;">Next Story →</button>
+            <div class="action-card pillar-gold">
+                <div class="tier-label">Community Ledger</div>
+                <h3>Fuel a Pour</h3>
+                <p>Current Vault Balance: <strong id="pour-count">12</strong> Pours Available.</p>
+                <p>Your $5 donation places a coffee token in the hands of a survivor.</p>
+                <a href="checkout-pour.html" class="btn-action">Buy a Token</a>
             </div>
-        </div>
 
-        <section class="journal-disclaimer">
-            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                <p><strong>Note on Security:</strong> Every story is vetted by advocates before appearing here. Your perception is your reality, and your truth is safe with us.</p>
-                <a href="submit-narrative.html" class="btn-engine" style="margin-top: 1.5rem; display: inline-block;">Share Your Story & Inspire Someone Else</a>
+            <div class="action-card pillar-green">
+                <div class="tier-label">Mid Tier: $100.00</div>
+                <h3>Sponsor Healing</h3>
+                <p>Fund one hour of clinical, trauma-informed therapy for a survivor in crisis.</p>
+                <a href="sponsor-healing.html" class="btn-action">Sponsor Session</a>
             </div>
-        </section>
+
+            <div class="action-card pillar-teal">
+                <div class="tier-label">Action: Vetting Required</div>
+                <h3>Become a Leader</h3>
+                <p>Join the Genesis Program. Use your lived experience to lead a peer community.</p>
+                <a href="apply-to-lead.html" class="btn-action">Start Vetting</a>
+            </div>
+
+            <div class="action-card pillar-purple">
+                <div class="tier-label">Action: Professional Gate</div>
+                <h3>Professional TIER</h3>
+                <p>Secure referral portal for Medical, Legal, and First Responder advocates.</p>
+                <a href="request-support.html" class="btn-action">Access Portal</a>
+            </div>
+
+            <div class="action-card pillar-blue">
+                <div class="tier-label">Community: Education</div>
+                <h3>Join a Seminar</h3>
+                <p>Register for NAMI-led classes, resilience briefings, and wellness workshops.</p>
+                <a href="seminar-registry.html" class="btn-action">View Calendar</a>
+            </div>
+
+            <div class="action-card pillar-orange">
+                <div class="tier-label">Economic: Shop Survivor</div>
+                <h3>Resilience Market</h3>
+                <p>Support survivor-owned businesses. Economic stability through commerce.</p>
+                <a href="market.html" class="btn-action">Shop the Market</a>
+            </div>
+
+            <div class="action-card pillar-pink">
+                <div class="tier-label">Expression: The Vault</div>
+                <h3>Own Your Truth</h3>
+                <p>Share your story. Your narrative is the roadmap for those still in the dark.</p>
+                <a href="../submit-narrative.html" class="btn-action">Deposit Story</a>
+            </div>
+
+            <div class="action-card pillar-indigo">
+                <div class="tier-label">High Tier: Partnership</div>
+                <h3>Founding Circle</h3>
+                <p>Strategic partnerships for corporate, policy, and high-impact allies.</p>
+                <a href="founding-circle.html" class="btn-action">Join the Circle</a>
+            </div>
+
+        </div>
     </main>
 
-    <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
-        <p>&copy; 2026 Strong Bonds Resilience. Occupying The Lenox Heritage.</p>
+    <footer class="main-footer" style="margin-top: 5rem; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <p style="margin-bottom: 2rem; opacity: 0.6;">© 2026 Strong Bonds Resilience | El Paso, TX</p>
+        <a href="../../index.html" style="color: var(--coffee-accent); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">
+            ← Return to Dashboard
+        </a>
     </footer>
 
-    <script src="../js/config.js"></script>
-    <script src="../js/journal-logic.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load the stories from the Vault Tower
-            if (typeof loadStories === 'function') {
-                loadStories();
-            } else {
-                console.error("[CRITICAL] journal-logic.js failed to initialize.");
-                document.getElementById('story-display').innerHTML = 
-                    `<div class="error-text">System Initialization Error. Please check connection.</div>`;
-            }
-
-            // Wire up navigation controls
-            document.getElementById('prev-btn')?.addEventListener('click', () => {
-                if (typeof prevStory === 'function') prevStory();
-            });
-            
-            document.getElementById('next-btn')?.addEventListener('click', () => {
-                if (typeof nextStory === 'function') nextStory();
-            });
-        });
-    </script>
+    <script src="../../js/config.js"></script>
 </body>
 </html>
