@@ -1,12 +1,12 @@
 /* =========================================
-   (02) MENU.CSS
+   (02) MENU.CSS - The Sanctuary Edition
+   Tactical Layout with Mission-Linked Accents
    ========================================= */
 
 /* --- HEADER --- */
 .menu-header {
   text-align: center;
   padding: 4rem 1.5rem;
-  /* Switched to dark-theme awareness */
   background-color: rgba(255, 255, 255, 0.03); 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -19,140 +19,89 @@
 
 .menu-subtitle {
   font-size: 1.25rem;
-  color: var(--coffee-accent); /* Sanctuary Purple */
+  color: var(--coffee-accent);
   font-style: italic;
   margin-bottom: 2rem;
 }
 
-.sourcing-note {
-  background-color: var(--coffee-accent);
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  color: white;
-  letter-spacing: 0.5px;
+/* --- THE DISCOVERY GRID --- */
+.menu-discovery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
 }
 
-/* --- MENU GRID LAYOUT --- */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 4rem 3rem;
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
+/* THE PILLAR BOXES (The "Islands") */
+.menu-pillar {
+    background: #1e1e1e; /* Our soft slate grey */
+    border: 2px solid #333;
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.menu-category h2 {
-  font-family: var(--font-heading);
-  color: var(--bg-cream);
-  border-bottom: 3px solid var(--coffee-accent);
-  display: inline-block;
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.menu-pillar:hover {
+    transform: translateY(-5px);
 }
 
-/* --- MENU ITEMS --- */
-.menu-item {
-  margin-bottom: 2rem;
+/* MISSION GLOW ACCENTS */
+/* These map back to our Sanctuary 8 Identity Tags */
+.pillar-gold { border-color: #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.1); }
+.pillar-teal { border-color: #008080; box-shadow: 0 0 15px rgba(0, 128, 128, 0.1); }
+.pillar-blue { border-color: #0000ff; box-shadow: 0 0 15px rgba(0, 0, 255, 0.1); }
+.pillar-purple { border-color: #800080; box-shadow: 0 0 15px rgba(128, 0, 128, 0.1); }
+
+.menu-pillar h2 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
 }
 
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: white;
-  /* Dot leader effect adjusted for dark background */
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.2); 
+/* --- DRINK ITEMS --- */
+.drink-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted rgba(255,255,255,0.1);
 }
 
-.item-name {
-  background-color: var(--coffee-dark); /* Masks dots */
-  padding-right: 12px;
-  position: relative;
-  bottom: -4px;
+.drink-name {
+    font-weight: 700;
+    color: #eee;
+    font-size: 1.05rem;
 }
 
-.item-price {
-  background-color: var(--coffee-dark);
-  padding-left: 12px;
-  position: relative;
-  bottom: -4px;
+.mission-name {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 2px;
 }
 
-.item-desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-style: italic;
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-
-/* --- SPECIAL "SANCTUARY POUR" STYLING --- */
-.featured-item {
-  background-color: rgba(78, 39, 83, 0.15); /* Subtle purple tint */
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid var(--coffee-accent);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  margin-top: 1rem;
-}
-
-.featured-item .item-header {
-  border-bottom: none;
-  font-size: 1.4rem;
-  color: var(--bg-cream);
-}
-
-.pricing-options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin: 1rem 0;
-}
-
-.price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.p-dots {
-  flex-grow: 1;
-  border-bottom: 1px dotted rgba(255,255,255,0.3);
-  margin: 0 10px;
-  position: relative;
-  top: -4px;
-}
-
-.sanctuary-row {
-  color: white;
-  font-weight: 700;
-}
-
-.sanctuary-row .p-cost {
-  background-color: var(--coffee-accent);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(78, 39, 83, 0.5);
+.drink-price {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--coffee-accent);
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-}
-  .item-header {
-    font-size: 1rem;
-  }
+    .menu-discovery-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
 }
 
