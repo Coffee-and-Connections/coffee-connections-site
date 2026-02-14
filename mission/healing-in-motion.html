@@ -46,12 +46,12 @@
         <header class="journal-header">
             <span class="tag">A Living Archive of Resilience</span>
             <h1>Healing in Motion</h1>
-            <p class="journal-intro">These approved narratives from our community serve as beacons for those still navigating the dark.</p>
+            <p class="journal-intro">These narratives from our community serve as beacons for those still navigating the dark. You are not alone.</p>
         </header>
 
         <div id="journal-wrapper" class="content-island journal-book">
             <div id="story-display" class="story-page">
-                <div class="loading-state">Opening the vault...</div>
+                <div class="loading-state">Accessing the Vault...</div>
             </div>
             
             <div class="journal-controls">
@@ -61,39 +61,36 @@
         </div>
 
         <section class="journal-disclaimer">
-          <p><strong>Note on Security:</strong> All stories are vetted by our advocates before appearing here. Your safety is our primary mission.</p>
-          <a href="submit-narrative.html" class="btn-engine">Share Your Story & Inspire Someone Else</a>
-       </section>
+            <p><strong>Note on Security:</strong> Every story is vetted by advocates before appearing here. Your perception is your reality, and your truth is safe with us.</p>
+            <a href="submit-narrative.html" class="btn-engine">Share Your Story & Inspire Someone Else</a>
+        </section>
     </main>
 
     <script src="../js/config.js"></script>
-
     <script src="../js/journal-logic.js"></script>
 
     <script>
         /**
-         * START THE MISSION
-         * Instead of having raw code here, we call the specialist 
-         * we built in journal-logic.js.
+         * INITIALIZE THE ARCHIVE
          */
         document.addEventListener('DOMContentLoaded', () => {
-            // Check if loadStories exists (from journal-logic.js) then run it
+            // Load the stories from the Vault Tower
             if (typeof loadStories === 'function') {
                 loadStories();
             } else {
-                console.error("[CRITICAL] journal-logic.js failed to load.");
+                console.error("[CRITICAL] journal-logic.js failed to initialize.");
                 document.getElementById('story-display').innerHTML = 
-                    `<div class="error-text">System Initialization Error.</div>`;
+                    `<div class="error-text">System Initialization Error. Please check connection.</div>`;
             }
-        });
 
-        // Optional: Wire up those navigation buttons if they aren't in journal-logic.js
-        document.getElementById('prev-btn')?.addEventListener('click', () => {
-            if (typeof prevStory === 'function') prevStory();
-        });
-        
-        document.getElementById('next-btn')?.addEventListener('click', () => {
-            if (typeof nextStory === 'function') nextStory();
+            // Wire up navigation controls
+            document.getElementById('prev-btn')?.addEventListener('click', () => {
+                if (typeof prevStory === 'function') prevStory();
+            });
+            
+            document.getElementById('next-btn')?.addEventListener('click', () => {
+                if (typeof nextStory === 'function') nextStory();
+            });
         });
     </script>
 </body>
