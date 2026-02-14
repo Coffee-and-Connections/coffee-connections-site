@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor Healing | Strong Bonds Resilience</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/(00)base.css">
+    <link rel="stylesheet" href="../css/(00)header-footer.css">
+    <link rel="stylesheet" href="../css/(00)navigation.css">
+    <link rel="stylesheet" href="../css/pillar-pages.css">
+</head>
+
+<body class="dark-theme" style="--pillar-color: #00FF00;"> <header class="main-nav">
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="how-you-can-help.html" class="active">The Mission</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="pillar-hero">
+        <span class="subtitle">Mission Engagement: Pillar 2</span>
+        <h1>Sponsor Healing</h1>
+        <p style="max-width: 650px; margin: 1rem auto; opacity: 0.8;">Directly fund a bridge to professional care. Your sponsorship covers one full hour of clinical, trauma-informed therapy for a survivor in crisis.</p>
+    </section>
+
+    <main class="pillar-content">
+        <div class="vault-form-container">
+            
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div class="section-icon" style="font-size: 3.5rem; display: block; margin-bottom: 1rem;">❤️‍🩹</div>
+                <h3 style="color: var(--pillar-color);">The Clinical Bridge</h3>
+                <p>Many survivors face a "stability gap"—the period between a crisis event and securing long-term insurance or VA benefits. SBR fills this gap by paying licensed clinicians directly for immediate sessions.</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="action-box" style="border-color: #333; text-align: center; cursor: pointer;" onclick="selectTier(100)">
+                    <h4 style="margin-bottom: 0.5rem;">One Session</h4>
+                    <p style="font-size: 1.5rem; color: var(--pillar-color);">$100.00</p>
+                </div>
+                <div class="action-box" style="border-color: var(--pillar-color); text-align: center; cursor: pointer; background: rgba(0, 255, 0, 0.03);" onclick="selectTier(300)">
+                    <span class="tag" style="background: var(--pillar-color); color: #000; margin-bottom: 5px;">Critical Support</span>
+                    <h4 style="margin-bottom: 0.5rem;">Three Sessions</h4>
+                    <p style="font-size: 1.5rem; color: var(--pillar-color);">$300.00</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 12px; border-left: 4px solid var(--pillar-color);">
+                <h4 style="margin-bottom: 10px;">Our Clinical Vetting</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">SBR only partners with licensed mental health professionals who specialize in trauma-informed care, MST (Military Sexual Trauma), and PTSD. 100% of your sponsorship goes to the provider's fee.</p>
+            </div>
+
+            <button type="button" class="btn-pillar-submit" style="margin-top: 2.5rem;">Proceed to Secure Sponsorship</button>
+
+            <div style="text-align: center; margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+                <p><i class="fas fa-lock"></i> Secure Transaction via SBR Finance Tower</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Strong Bonds Resilience. Healing is a collective action.</p>
+    </footer>
+
+    <script>
+        function selectTier(amount) {
+            console.log("Sponsorship Tier Selected: $" + amount);
+            // This will link to the payment gateway in the next phase
+        }
+    </script>
+</body>
+</html>
