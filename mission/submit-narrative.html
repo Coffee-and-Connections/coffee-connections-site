@@ -17,33 +17,43 @@
             <p>Your resilience is a roadmap for someone else. Speak your truth safely.</p>
         </header>
 
-        <div class="content-island journal-book">
-            <form id="vault-form">
-                <div class="form-group">
-                    <label for="alias-input">Identity/Alias</label>
-                    <input type="text" id="alias-input" class="vault-input" placeholder="How should we address you? (e.g., Anonymous Sgt.)">
-                </div>
-
-                <div class="form-group">
-                    <label>Select Your Communities (Identification Tags)</label>
-                    <div class="tag-selector" id="tag-cloud">
-                        <button type="button" class="tag-chip" data-tag="DV">#DomesticViolence</button>
-                        <button type="button" class="tag-chip" data-tag="SA">#SexualAssault/MST</button>
-                        <button type="button" class="tag-chip" data-tag="MH">#PTSD/Trauma</button>
-                        <button type="button" class="tag-chip" data-tag="SUI">#SuicideAwareness</button>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="story-input">Your Narrative</label>
-                    <textarea id="story-input" class="vault-textarea" placeholder="Write your story here..."></textarea>
-                </div>
-                
-                <div id="submission-status" class="status-box"></div>
-                
-                <button type="submit" class="btn btn-mission btn-full">Deposit Narrative in the Vault</button>
-            </form>
+       <div class="content-island journal-book">
+    <form id="vault-form">
+        <div class="form-group">
+            <p class="alias-guidance">
+                Your privacy is important. If you don't want to share your name, you don't have to, 
+                but we would love to be able to thank you!
+            </p>
+            <div class="alias-grid">
+                <input type="text" id="first-name" class="vault-input" placeholder="First Name (e.g. Michael)">
+                <input type="text" id="last-initial" class="vault-input" placeholder="Initial (e.g. B)">
+            </div>
+            <p style="text-align: center; margin: 10px 0; color: #666;">— OR —</p>
+            <input type="text" id="alias-input" class="vault-input" placeholder="Alias (e.g. A Survivor)">
         </div>
+
+        <div class="form-group">
+            <label>Select Your Communities</label>
+            <div class="tag-selector" id="tag-cloud">
+                <button type="button" class="tag-chip" data-tag="DV">#DOMESTICVIOLENCE</button>
+                <button type="button" class="tag-chip" data-tag="SA">#SEXUALASSAULT/MST</button>
+                <button type="button" class="tag-chip" data-tag="MH">#PTSD/TRAUMA</button>
+                <button type="button" class="tag-chip" data-tag="SUI">#SUICIDEAWARENESS</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="story-input">Your Narrative</label>
+            <textarea id="story-input" class="vault-textarea" placeholder="Speak your truth here..."></textarea>
+        </div>
+        
+        <div id="submission-status" class="status-box"></div>
+        
+        <button type="submit" class="btn btn-mission btn-full" style="padding: 18px; font-size: 1.1rem;">
+            Deposit Narrative in the Vault
+        </button>
+    </form>
+</div>
     </main>
 
     <script src="../js/config.js"></script>
