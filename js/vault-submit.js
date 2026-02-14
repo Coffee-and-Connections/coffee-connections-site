@@ -13,22 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 1. Gather Data
             const storyText = document.getElementById('story-input').value;
+            // Check if you have an alias input; if not, it defaults to 'Anonymous'
+            const aliasInput = document.getElementById('alias-input')?.value || "Anonymous";
             
-            // 2. Visual Feedback for "Trauma-Informed" UX
+            // 2. Visual Feedback
             statusMessage.innerHTML = "Encrypting and sending to the Vault...";
             statusMessage.style.color = "var(--coffee-accent)";
 
             try {
-                // Using the door defined in your config.js
+                // 3. The Handshake
                 const response = await fetch(CONFIG.endpoints.submitStory, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        text: storyText,
-                        timestamp: new Date().toISOString(),
-                        status: 'pending' // Every story must be vetted by Tony/Marylou
+                        alias: aliasInput,     // Matches your Model field
+                        message: storyText,    // CHANGED from 'text' to 'message' to match Model
+                        submittedAt: new Date().toISOString() // Matches Model field
                     })
                 });
 
@@ -37,10 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     statusMessage.style.color = "#a370f7";
                     storyForm.reset();
                 } else {
-                    throw new Error('Vault is temporarily locked.');
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Vault is temporarily locked.');
                 }
             } catch (error) {
-                console.error("Vault Error:", error);
+                console.error("Vault Submission Error:", error);
                 statusMessage.innerHTML = "⚠️ Connection error. Please try again or contact us directly.";
                 statusMessage.style.color = "#ffc107";
             }
