@@ -1,8 +1,16 @@
 /* =========================================
    JOURNAL-LOGIC.JS (The Bunkered Version)
+   Mission: Fetch narratives from the Vault and handle navigation.
    ========================================= */
-const VAULT_ENDPOINT = CONFIG.endpoints.getStories;
 
+// 1. Connection & State
+const VAULT_ENDPOINT = CONFIG.endpoints.getStories;
+let currentStoryIndex = 0;
+
+/**
+ * FETCH MISSION
+ * Reaches out to the Vault Tower to pull approved stories.
+ */
 async function loadStories() {
     const storyDisplay = document.getElementById('story-display');
     
@@ -22,6 +30,7 @@ async function loadStories() {
         const storiesData = await response.json();
 
         if (storiesData && storiesData.length > 0) {
+            // Attach data to window so it's accessible across the whole script
             window.stories = storiesData; 
             displayStory(0); 
         } else {
@@ -41,31 +50,21 @@ async function loadStories() {
     }
 }
 
+/**
+ * DISPLAY LOGIC
+ * Renders a specific story based on the index provided.
+ */
 function displayStory(index) {
     const storyDisplay = document.getElementById('story-display');
+    
+    // Safety check: ensure stories exist and index is valid
     if (!window.stories || !window.stories[index]) return;
 
-    const story = window.stories[index];
-    storyDisplay.innerHTML = `
-        <div class="active-story">
-            <p class="story-text">"${story.message}"</p>
-            <span class="story-meta">— ${story.alias || 'Anonymous'}</span>
-        </div>
-    `;
-}
-
-// Tracker for the current story being viewed
-let currentStoryIndex = 0;
-
-function displayStory(index) {
-    const storyDisplay = document.getElementById('story-display');
-    // Safety check: Ensure stories exist and the index is valid
-    if (!window.stories || !window.stories[index]) return;
-
+    // Sync the "Bookmark"
     currentStoryIndex = index;
     const story = window.stories[index];
 
-    // Map the data to the high-contrast UI
+    // Render to the high-contrast UI
     storyDisplay.innerHTML = `
         <div class="active-story">
             <p class="story-text">"${story.message}"</p>
@@ -74,13 +73,15 @@ function displayStory(index) {
     `;
 }
 
-// THE BUTTON LOGIC
+/**
+ * NAVIGATION LOGIC
+ * Moves through the stories and loops back at the ends.
+ */
 function nextStory() {
     if (window.stories && currentStoryIndex < window.stories.length - 1) {
         displayStory(currentStoryIndex + 1);
     } else {
-        // Optional: Loop back to the first story
-        displayStory(0);
+        displayStory(0); // Loop to start
     }
 }
 
@@ -88,7 +89,6 @@ function prevStory() {
     if (window.stories && currentStoryIndex > 0) {
         displayStory(currentStoryIndex - 1);
     } else {
-        // Optional: Loop to the last story
-        displayStory(window.stories.length - 1);
+        displayStory(window.stories.length - 1); // Loop to end
     }
 }
