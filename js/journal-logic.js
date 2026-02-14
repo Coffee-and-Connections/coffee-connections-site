@@ -55,18 +55,20 @@ function displayStory(index) {
     // THE COMMUNITY RIBBON LOGIC
     // Maps shorthand codes to their specific advocacy colors
     const tagHTML = (story.tags || []).map(tag => {
-        let color = "#888"; // Default Grey
-        if(tag === "DV")    color = "#800080"; // Purple
-        if(tag === "SA")    color = "#008080"; // Teal
-        if(tag === "MH")    color = "#00FF00"; // Green
-        if(tag === "SUI")   color = "#0000FF"; // Blue
-        if(tag === "MIL")   color = "#ffd700"; // Gold
-        if(tag === "ACE")   color = "#ff69b4"; // Pink
-        if(tag === "SYS")   color = "#ff8c00"; // Orange
-        if(tag === "LGBTQ") color = "#4B0082"; // Indigo
+    let color = "#888"; 
+    let fullName = tag; 
+    
+    if(tag === "DV") { color = "#800080"; fullName = "Domestic Violence"; }
+    if(tag === "SA") { color = "#008080"; fullName = "Sexual Assault/MST"; }
+    if(tag === "MH") { color = "#00FF00"; fullName = "PTSD/Trauma"; }
+    if(tag === "SUI") { color = "#0000FF"; fullName = "Suicide Awareness"; }
+    if(tag === "MIL") { color = "#ffd700"; fullName = "Combat/Service"; }
+    if(tag === "ACE") { color = "#ff69b4"; fullName = "Childhood Trauma"; }
+    if(tag === "SYS") { color = "#ff8c00"; fullName = "Systemic Betrayal"; }
+    if(tag === "LGBTQ") { color = "#4B0082"; fullName = "Identity/Pride"; }
 
-        return `<span class="ribbon-tag" style="border-color:${color}; color:${color}; margin-right: 8px;">#${tag}</span>`;
-    }).join('');
+    return `<span class="ribbon-tag" style="border-color:${color}; color:${color};">#${fullName}</span>`;
+}).join('');
 
     // Render the Final Page
     storyDisplay.innerHTML = `
