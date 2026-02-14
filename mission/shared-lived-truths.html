@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shared Lived Truths | Coffee & Connections</title>
+    <title>Shared Lived Truths | Strong Bonds Resilience</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../css/(00)base.css">
     <link rel="stylesheet" href="../css/(00)header-footer.css">
     <link rel="stylesheet" href="../css/(00)navigation.css">
@@ -13,13 +17,36 @@
 
 <body class="dark-theme">
     <header class="main-nav">
-        </header>
+        <nav class="nav-container" role="navigation">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li>
+                    <a href="#">The Sanctuary</a>
+                    <ul class="submenu">
+                        <li><a href="../cafe/menu.html">Coffee & Connections</a></li>
+                        <li><a href="../overland/trauma-informed-design.html">Design Philosophy</a></li>
+                        <li><a href="pillars/market.html">Resilience Market</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active">The Mission</a>
+                    <ul class="submenu">
+                        <li><a href="our-mission.html">The Genesis</a></li>
+                        <li><a href="healing-in-motion.html">The Journal</a></li>
+                        <li><a href="pillars/how-you-can-help.html">Support the Cause</a></li>
+                        <li><a href="pillars/request-support.html">Professional TIER</a></li>
+                    </ul>
+                </li>
+                <li><a href="../overland/transitional-housing.html">The Bridge @ Overland</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="visual-narrative">
-        <section class="story-panel intro-panel">
+        <section class="story-panel intro-panel" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
             <span class="tag">The Executive of Lived Experience</span>
             <h1>Survivors in the Lead.</h1>
-            <p class="intro-subtext">We are a task force of lived experience, dedicated to bridging the gap between crisis and community resilience.</p>
+            <p class="intro-subtext">We are not just a board; we are a task force of lived experience, bridging the gap between crisis and community resilience.</p>
         </section>
 
         <section class="advocate-grid">
@@ -27,8 +54,8 @@
             <article class="advocate-card">
                 <div class="content-island">
                     <div class="advocate-header">
-                        <div class="photo-placeholder">
-                            <span>Photo<br>Coming Soon</span>
+                        <div class="photo-placeholder" style="border: 1px solid var(--coffee-accent);">
+                            <img src="../asset/Tony-Avatar.jpg" alt="Tony Sorensen" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
                         </div>
                         <div class="advocate-meta">
                             <h3>Anthony Sorensen</h3>
@@ -46,8 +73,8 @@
             <article class="advocate-card">
                 <div class="content-island">
                     <div class="advocate-header">
-                        <div class="photo-placeholder">
-                            <span>Photo<br>Coming Soon</span>
+                        <div class="photo-placeholder" style="border: 1px solid var(--coffee-accent);">
+                            <img src="../asset/Marylou-Avatar.jpg" alt="Marylou Culpepper" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
                         </div>
                         <div class="advocate-meta">
                             <h3>Marylou Culpepper</h3>
@@ -57,7 +84,7 @@
                     </div>
                     <p class="lived-truth">"I am proof that you can survive the system and build something better."</p>
                     <div class="resume-snippet">
-                        <p>Architect of our 'Survivor-First' culture. Leading our transition protocols and Gen Z active-duty outreach.</p>
+                        <p>Architect of our 'Survivor-First' culture. Leading our transition protocols and active-duty outreach initiatives.</p>
                     </div>
                 </div>
             </article>
@@ -89,18 +116,22 @@
                         </div>
                         <div class="advocate-meta">
                             <h3>Victor Fernandez</h3>
-                            <span class="role">Community Resilience</span>
-                            <div class="service-badge">Peer Recovery Specialist</div>
+                            <span class="role">Chief Technology Officer</span>
+                            <div class="service-badge">Peer Recovery & Dev Ops</div>
                         </div>
                     </div>
                     <p class="lived-truth">"Connection is the only cure for the isolation that trauma leaves behind."</p>
                     <div class="resume-snippet">
-                        <p>Expert in peer-led recovery models and local Borderplex reintegration initiatives.</p>
+                        <p>Expert in peer-led recovery models and securing the digital vault for our survivor narrative architecture.</p>
                     </div>
                 </div>
             </article>
 
         </section>
     </main>
+
+    <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the Lenox Building.</p>
+    </footer>
 </body>
 </html>
