@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Own Your Truth | Strong Bonds</title>
+    <title>Own Your Truth | Strong Bonds Resilience</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/(00)base.css">
     <link rel="stylesheet" href="../css/(00)header-footer.css">
@@ -17,6 +21,7 @@
             <ul class="nav-menu">
                 <li><a href="../index.html">Dashboard</a></li>
                 <li><a href="healing-in-motion.html">Back to Archive</a></li>
+                <li><a href="pillars/how-you-can-help.html">Support the Cause</a></li>
             </ul>
         </nav>
     </header>
@@ -32,51 +37,51 @@
             <form id="vault-form">
                 <div class="form-group">
                     <p class="alias-guidance">
-                         "Perception is reality". Your privacy is our mission. If you don't want to share your full name, 
-                          use your First Name and Last Initial, or a chosen Alias that reflects your truth.
+                         "Perception is reality." Your privacy is our mission. Use your first name and last initial, or a chosen alias that reflects your truth.
                     </p>
                     <div class="alias-grid">
-                        <input type="text" id="first-name" class="vault-input" placeholder="First Name (e.g. Michael)">
-                        <input type="text" id="last-initial" class="vault-input" placeholder="Initial (e.g. B)">
+                        <input type="text" id="first-name" class="vault-input" placeholder="First Name">
+                        <input type="text" id="last-initial" class="vault-input" placeholder="Initial">
                     </div>
                     <p style="text-align: center; margin: 10px 0; color: #666; font-size: 0.8rem;">— OR —</p>
                     <input type="text" id="alias-input" class="vault-input" placeholder="Chosen Alias (e.g. A Survivor)">
                 </div>
 
                 <div class="form-group">
-                    <label style="color: var(--coffee-accent); font-weight: 700;">Select Your Communities</label>
+                    <label style="color: var(--coffee-accent); font-weight: 700; display: block; margin-bottom: 10px;">Select Your Communities</label>
                     <div class="tag-selector" id="tag-cloud">
-                        <button type="button" class="tag-chip" data-tag="DV">#DomesticViolence</button>
-                        <button type="button" class="tag-chip" data-tag="SA">#SexualAssault/MST</button>
-                        <button type="button" class="tag-chip" data-tag="MH">#PTSD/Trauma</button>
-                        <button type="button" class="tag-chip" data-tag="SUI">#SuicideAwareness</button>
-                        <button type="button" class="tag-chip" data-tag="MIL">#Combat/Service</button>
-                        <button type="button" class="tag-chip" data-tag="ACE">#ChildhoodTrauma</button>
-                        <button type="button" class="tag-chip" data-tag="SYS">#Hate/Systemic</button>
-                        <button type="button" class="tag-chip" data-tag="LGBTQ">#Identity/Pride</button>
+                        <button type="button" class="tag-chip" data-tag="MIL" style="--tag-color: #ffd700;">#Combat/Service</button>
+                        <button type="button" class="tag-chip" data-tag="MH" style="--tag-color: #00FF00;">#PTSD/Trauma</button>
+                        <button type="button" class="tag-chip" data-tag="DV" style="--tag-color: #800080;">#DomesticViolence</button>
+                        <button type="button" class="tag-chip" data-tag="SUI" style="--tag-color: #0000ff;">#SuicideAwareness</button>
+                        <button type="button" class="tag-chip" data-tag="SA" style="--tag-color: #008080;">#SexualAssault/MST</button>
+                        <button type="button" class="tag-chip" data-tag="ACE" style="--tag-color: #ff69b4;">#ChildhoodTrauma</button>
+                        <button type="button" class="tag-chip" data-tag="SYS" style="--tag-color: #ff8c00;">#Hate/Systemic</button>
+                        <button type="button" class="tag-chip" data-tag="GEN" style="--tag-color: #4B0082;">#Genesis/Leadership</button>
                     </div>
-                    <p style="color: #666; font-size: 0.8rem; font-style: italic; margin-top: 5px;">
-                        Can't find a tag that fits? Share your story anyway—your truth is enough.
-                    </p>
                 </div>
 
                 <div class="form-group" style="margin-top: 30px;">
-                    <label for="story-input" style="color: var(--coffee-accent); font-weight: 700;">Your Narrative</label>
+                    <label for="story-input" style="color: var(--coffee-accent); font-weight: 700; display: block; margin-bottom: 10px;">Your Narrative</label>
                     <textarea id="story-input" class="vault-textarea" placeholder="Speak your truth here..."></textarea>
                 </div>
                 
                 <div id="submission-status" class="status-box"></div>
                 
-                <button type="submit" class="btn btn-mission btn-full">
+                <button type="submit" class="btn-action" style="width: 100%; padding: 1.2rem; font-size: 1rem; border-radius: 12px;">
                     Deposit Narrative in the Vault
                 </button>
             </form>
         </div>
 
-        <section class="journal-disclaimer" style="margin-top: 40px; opacity: 0.7;">
-            <p><small>Note: All submissions are encrypted and reviewed by our advocacy team before being archived. No personal metadata is stored.</small></p>
+        <section class="journal-disclaimer" style="margin-top: 40px; opacity: 0.7; text-align: center;">
+            <p><small>Note: All submissions are reviewed by the Strong Bonds advocacy team before archiving. No personal metadata is stored.</small></p>
         </section>
     </main>
+
+    <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the Lenox Building.</p>
+    </footer>
 
     <script src="../js/config.js"></script>
     <script src="../js/vault-submit.js"></script>
