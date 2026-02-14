@@ -1,6 +1,36 @@
-<body class="dark-theme" style="--pillar-color: #008080;"> <section class="pillar-hero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Peer Leadership | Strong Bonds Resilience</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/(00)base.css">
+    <link rel="stylesheet" href="../css/(00)header-footer.css">
+    <link rel="stylesheet" href="../css/(00)navigation.css">
+    <link rel="stylesheet" href="../css/pillar-pages.css">
+</head>
+
+<body class="dark-theme" style="--pillar-color: #008080;">
+
+    <header class="main-nav">
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="how-you-can-help.html" class="active">The Mission</a></li>
+                <li><a href="../overland/transitional-housing.html">Overland</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="pillar-hero">
         <span class="subtitle">Mission Engagement: Pillar 3</span>
         <h1>Become a Peer Leader</h1>
+        <p style="max-width: 700px; margin: 1rem auto; opacity: 0.8;">The Genesis Program vetting ensures our leaders are stable, self-aware, and aligned with trauma-informed values.</p>
     </section>
 
     <main class="pillar-content">
@@ -8,7 +38,7 @@
             <form action="#" method="POST" enctype="multipart/form-data">
                 
                 <fieldset>
-                    <legend>Personal Data</legend>
+                    <legend>Identity & Contact</legend>
                     <div class="form-grid">
                         <div class="input-group">
                             <label>Full Legal Name</label>
@@ -33,6 +63,10 @@
                         <label>Email Address</label>
                         <input type="email" class="vault-input" required>
                     </div>
+                    <div class="input-group" style="margin-top: 20px;">
+                        <label>Full Address (Street, City, State, Zip)</label>
+                        <input type="text" class="vault-input" required>
+                    </div>
                 </fieldset>
 
                 <fieldset>
@@ -47,7 +81,7 @@
                             </select>
                         </div>
                         <div class="input-group">
-                            <label>In Active Support?</label>
+                            <label>In Active Therapy/Support?</label>
                             <select class="vault-input">
                                 <option>Yes</option>
                                 <option>No</option>
@@ -56,45 +90,91 @@
                         </div>
                     </div>
                     <div class="input-group">
-                        <label>Lived Experience Narrative (Stability Focus)</label>
-                        <textarea class="vault-textarea" placeholder="Please share why you want to lead a group and what values you bring..."></textarea>
+                        <label>Why do you want to lead? (Emotional Readiness)</label>
+                        <textarea class="vault-textarea" placeholder="Share your values and lived experience. Peer leaders must be stable enough to lead without being retraumatized."></textarea>
                     </div>
                 </fieldset>
 
                 <fieldset>
-                    <legend>Safety & Conflict Disclosure</legend>
+                    <legend>Safety & Legal Disclosure</legend>
                     <div class="input-group">
-                        <label>Disclosure: Have you ever been convicted of a violent or abusive offense?</label>
-                        <select class="vault-input">
-                            <option>No</option>
-                            <option>Yes (Explain below)</option>
+                        <label>Have you ever been convicted of a violent, sexual, or domestic violence offense?</label>
+                        <select class="vault-input" required>
+                            <option value="no">No</option>
+                            <option value="yes">Yes (Please explain below)</option>
                         </select>
                     </div>
-                    <textarea class="vault-textarea" style="margin-top:10px" placeholder="If yes, please explain..."></textarea>
+                    <div class="form-grid" style="margin-top: 15px;">
+                        <div class="input-group">
+                            <label>Active Restraining Orders?</label>
+                            <select class="vault-input"><option>No</option><option>Yes</option></select>
+                        </div>
+                        <div class="input-group">
+                            <label>Prohibited from Vulnerable Groups?</label>
+                            <select class="vault-input"><option>No</option><option>Yes</option></select>
+                        </div>
+                    </div>
+                    <textarea class="vault-textarea" style="margin-top:15px" placeholder="If 'Yes' to any above, please provide a brief explanation for our board and NAMI assessment."></textarea>
                 </fieldset>
 
                 <fieldset>
-                    <legend>Values & Boundaries</legend>
-                    <div class="agreement-block">
-                        <input type="checkbox" required>
-                        <span class="agreement-text"><strong>Connection, Not Care:</strong> I understand I am not a clinician. I agree to follow the Warm Handoff protocol.</span>
+                    <legend>Availability & Emergency Contact</legend>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Can attend NAMI training?</label>
+                            <select class="vault-input"><option>Yes</option><option>No</option></select>
+                        </div>
+                        <div class="input-group">
+                            <label>Commitment (Min 1x/Mo)</label>
+                            <input type="text" class="vault-input" placeholder="e.g. Every 2nd Tuesday">
+                        </div>
                     </div>
-                    <div class="agreement-block">
-                        <input type="checkbox" required>
-                        <span class="agreement-text">I acknowledge the Mandatory Reporting requirements and the SBR Confidentiality Agreement.</span>
+                    <div class="form-grid" style="margin-top: 15px;">
+                        <div class="input-group">
+                            <label>Emergency Contact Name</label>
+                            <input type="text" class="vault-input">
+                        </div>
+                        <div class="input-group">
+                            <label>Emergency Phone</label>
+                            <input type="tel" class="vault-input">
+                        </div>
                     </div>
                 </fieldset>
 
                 <fieldset>
-                    <legend>Final Verification</legend>
-                    <div class="input-group">
-                        <label>Photo ID Upload (Required for Background Check)</label>
-                        <input type="file" class="vault-input">
+                    <legend>Boundaries & Code of Conduct</legend>
+                    <div class="agreement-block">
+                        <input type="checkbox" required>
+                        <span class="agreement-text"><strong>Connection, Not Care:</strong> I understand I am a Peer Leader, not a therapist. I agree to follow the "Warm Handoff" protocol and the SBR field boundaries.</span>
+                    </div>
+                    <div class="agreement-block">
+                        <input type="checkbox" required>
+                        <span class="agreement-text"><strong>Confidentiality:</strong> I agree to maintain absolute confidentiality for all Sanctuary participants and follow mandatory reporting laws as outlined in the field manual.</span>
                     </div>
                 </fieldset>
 
-                <button type="submit" class="btn-pillar-submit">Submit Vetting Application</button>
+                <fieldset>
+                    <legend>Identity Verification</legend>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Photo ID Upload (For Background Check)</label>
+                            <input type="file" class="vault-input">
+                        </div>
+                        <div class="input-group">
+                            <label>Character Reference (Name/Contact)</label>
+                            <input type="text" class="vault-input" placeholder="Someone to vouch for your stability">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-pillar-submit">Submit Genesis Application</button>
             </form>
         </div>
     </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Strong Bonds Resilience. Coffee & Connections is a "Connection, Not Care" environment.</p>
+    </footer>
+
 </body>
+</html>
