@@ -7,62 +7,142 @@
     <link rel="stylesheet" href="../css/(00)base.css">
     <link rel="stylesheet" href="../css/(00)header-footer.css">
     <link rel="stylesheet" href="../css/(00)navigation.css">
-    <link rel="stylesheet" href="../css/(05)healing-in-motion.css"> <style>
+    <link rel="stylesheet" href="../css/(05)healing-in-motion.css"> 
+    <style>
         .menu-discovery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             margin-top: 40px;
         }
         .menu-pillar {
-            background: #1e1e1e; /* Our soft slate */
+            background: #1e1e1e;
             border: 2px solid #333;
             border-radius: 15px;
             padding: 25px;
             transition: all 0.3s ease;
         }
-        .menu-pillar h2 { margin-bottom: 20px; font-size: 1.5rem; }
+        .menu-pillar h2 { margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid; padding-bottom: 10px; }
         .drink-item {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             padding-bottom: 5px;
             border-bottom: 1px dashed #444;
         }
         .drink-name { font-weight: 600; color: #eee; }
-        .drink-price { color: var(--coffee-accent); font-weight: 700; }
-        .mission-name { font-size: 0.8rem; color: #888; font-style: italic; display: block; }
+        .drink-price { color: var(--coffee-accent); font-weight: 700; font-family: 'Montserrat', sans-serif; }
+        .item-desc { font-size: 0.75rem; color: #888; display: block; margin-top: -10px; margin-bottom: 10px; }
     </style>
 </head>
 <body class="dark-theme">
+
+    <header class="main-nav">
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="../mission/pillars/how-you-can-help.html">The Mission</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main class="journal-container">
         <header class="journal-header">
-            <span class="tag">The Live Menu</span>
-            <h1>The Sanctuary Offerings</h1>
-            <p>Every pour supports a path. Choose your fuel, join the mission.</p>
+            <span class="tag">Active Offerings</span>
+            <h1>The Sanctuary Menu</h1>
+            <p>Every pour supports a path. High-octane fuel for the El Paso Borderplex.</p>
         </header>
 
         <div class="menu-discovery-grid">
-            <div id="pillar-coffee" class="menu-pillar" style="border-color: #ffd700;">
+            <div class="menu-pillar" style="border-color: #ffd700;">
                 <h2 style="color: #ffd700;">Classic & Espresso</h2>
-                <div id="coffee-list"></div>
+                <div class="drink-item">
+                    <span class="drink-name">Drip Coffee (The Beanfather)</span>
+                    <span class="drink-price">$3.50</span>
+                </div>
+                <span class="item-desc">Veteran-roasted, ethical single origin.</span>
+
+                <div class="drink-item">
+                    <span class="drink-name">Americano</span>
+                    <span class="drink-price">$4.00</span>
+                </div>
+
+                <div class="drink-item">
+                    <span class="drink-name">Cappuccino</span>
+                    <span class="drink-price">$4.75</span>
+                </div>
+
+                <div class="drink-item">
+                    <span class="drink-name">Double Espresso</span>
+                    <span class="drink-price">$3.00</span>
+                </div>
             </div>
 
-            <div id="pillar-specialty" class="menu-pillar" style="border-color: #008080;">
+            <div class="menu-pillar" style="border-color: #008080;">
                 <h2 style="color: #008080;">Specialty Lattes</h2>
-                <div id="specialty-list"></div>
+                <div class="drink-item">
+                    <span class="drink-name">The Genesis Latte</span>
+                    <span class="drink-price">$6.25</span>
+                </div>
+                <span class="item-desc">Honey, Cinnamon, and Oat Milk.</span>
+
+                <div class="drink-item">
+                    <span class="drink-name">Salted Caramel Resilience</span>
+                    <span class="drink-price">$6.25</span>
+                </div>
+
+                <div class="drink-item">
+                    <span class="drink-name">Mocha Movement</span>
+                    <span class="drink-price">$5.75</span>
+                </div>
             </div>
 
-            <div id="pillar-wellness" class="menu-pillar" style="border-color: #ff69b4;">
-                <h2 style="color: #ff69b4;">Wellness & Cold-Pressed</h2>
-                <div id="wellness-list"></div>
+            <div class="menu-pillar" style="border-color: #ff8c00;">
+                <h2 style="color: #ff8c00;">Resilience Kitchen</h2>
+                <div class="drink-item">
+                    <span class="drink-name">Overland Breakfast Burrito</span>
+                    <span class="drink-price">$8.50</span>
+                </div>
+                <span class="item-desc">Local chorizo, egg, potato, and signature salsa.</span>
+
+                <div class="drink-item">
+                    <span class="drink-name">The Artisan Sandwich</span>
+                    <span class="drink-price">$11.50</span>
+                </div>
+                <span class="item-desc">Turkey, Pesto, and Provolone on Ciabatta.</span>
+
+                <div class="drink-item">
+                    <span class="drink-name">Quinoa Power Salad</span>
+                    <span class="drink-price">$10.00</span>
+                </div>
+            </div>
+
+            <div class="menu-pillar" style="border-color: #ff69b4;">
+                <h2 style="color: #ff69b4;">Daily Bakery</h2>
+                <div class="drink-item">
+                    <span class="drink-name">Jumbo Blueberry Muffin</span>
+                    <span class="drink-price">$4.25</span>
+                </div>
+
+                <div class="drink-item">
+                    <span class="drink-name">The "Beanfather" Cookie</span>
+                    <span class="drink-price">$3.50</span>
+                </div>
+                <span class="item-desc">Dark chocolate chunk with espresso dust.</span>
+
+                <div class="drink-item">
+                    <span class="drink-name">Seasonal Pastry</span>
+                    <span class="drink-price">$4.50</span>
+                </div>
             </div>
         </div>
     </main>
 
-    <script src="../js/config.js"></script>
-    <script src="../js/menu-logic.js"></script>
-</body>
+    <footer class="main-footer" style="margin-top: 40px; opacity: 0.6; text-align: center;">
+        <p>Stewardship of the Historic Lenox Building | Summer 2026</p>
+    </footer>
+
+    </body>
 </html>
 
