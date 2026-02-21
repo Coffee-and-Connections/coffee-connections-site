@@ -1,7 +1,12 @@
-/* --- Global Header Layout --- */
+/* =========================================
+   STRONG BONDS RESILIENCE | GLOBAL HEADER
+   Architecture: Horizontal Brand + Centered Nav
+   ========================================= */
+
+/* 1. HEADER BASE */
 .main-nav {
     background: #0a0a0a;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem; /* Slightly tighter padding for better flow */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     z-index: 1000;
@@ -13,53 +18,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
-/* Logo & Tagline */
-.logo-wrapper {
-    width: 48px; /* ~0.5 inches */
+/* 2. HORIZONTAL BRAND IDENTITY (Logo Left, Text Right) */
+.brand-identity-horizontal {
+    display: flex;
+    align-items: center; /* Vertically centers logo with text */
+    gap: 15px;           /* Space between logo and text group */
+    margin-bottom: 1.5rem;
+}
+
+.logo-wrapper-sm {
+    width: 48px;         /* Target: ~0.5 inches */
     height: 48px;
-    margin: 0 auto 0.8rem;
+    flex-shrink: 0;      /* Prevents logo from squishing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.nav-logo-img { width: 100%; height: auto; }
 
-.nav-logo-text {
+.nav-logo-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.brand-text-group {
+    text-align: left;    /* Aligns text left next to the logo */
+}
+
+.nav-logo-text-sm {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
+    letter-spacing: 1px;
+    color: #ffffff;
+    line-height: 1.1;
 }
 
-.nav-tagline {
+.nav-tagline-inline {
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.4;
-    margin: 0.5rem 0 2rem 0;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
 }
 
-.ampersand {
-    display: block;
+.nav-tagline-inline span {
+    color: var(--coffee-accent, #d4af37);
     font-weight: 800;
     font-style: normal;
-    color: var(--coffee-accent, #d4af37);
+    padding: 0 3px;
 }
 
-/* Navigation Menu Logic */
+/* 3. NAVIGATION MENU LOGIC */
 .nav-menu {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 15px;
+    gap: 10px;           /* Tighter gap for dashboard feel */
 }
 
 .nav-menu > li {
-    position: relative; /* Essential for dropdown positioning */
+    position: relative;  /* Anchor for dropdowns */
 }
 
 .nav-menu li a {
@@ -69,9 +93,9 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 10px 15px;
+    padding: 10px 18px;
     display: block;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .nav-menu li a:hover, 
@@ -81,28 +105,30 @@
     border-radius: 4px;
 }
 
-/* SUBMENU (DROPDOWN) STYLING */
+/* 4. SUBMENU (DROPDOWN) STYLING */
 .submenu {
     position: absolute;
-    top: 100%;
+    top: 100%;           /* Appear directly below parent */
     left: 50%;
     transform: translateX(-50%);
     background: #1a1a1a;
-    border: 1px solid rgba(255,255,255,0.1);
-    min-width: 220px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 230px;
     list-style: none;
     padding: 10px 0;
-    display: none; /* Hidden by default */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none;       /* Hidden by default */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     border-radius: 4px;
+    margin-top: 5px;     /* Small gap between link and menu */
 }
 
 .submenu li a {
     text-align: left;
-    text-transform: none; /* Easier to read for long links */
+    text-transform: none; 
     font-size: 0.8rem;
-    padding: 8px 20px;
+    padding: 10px 20px;
     background: transparent;
+    border-radius: 0;    /* Remove dashboard pill look from dropdown items */
 }
 
 .submenu li a:hover {
@@ -114,8 +140,30 @@
 .nav-menu li:hover .submenu {
     display: block;
 }
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
+
+/* 5. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .brand-identity-horizontal {
+        flex-direction: column; /* Stack logo on mobile for better center */
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .brand-text-group {
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+    
+    .submenu {
+        position: static;      /* Inline dropdowns for mobile */
+        transform: none;
+        width: 100%;
+        background: #111;
+        box-shadow: none;
+    }
 }
