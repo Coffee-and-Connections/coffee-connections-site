@@ -1,4 +1,4 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYGGEQ0D63"></script>
@@ -6,7 +6,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XYGGEQ0D63');
     </script>
 
@@ -93,33 +92,15 @@
         <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the historic Lenox Building.</p>
     </footer>
 
-    <script src="../js/config.js"></script>
-    <script src="../js/vault-submit.js"></script>
-</body>
-</html>
-            <p><small>Note: All submissions are reviewed by the Strong Bonds advocacy team before archiving. No personal metadata is stored.</small></p>
-        </section>
-    </main>
-
-    <footer class="main-footer" style="padding: 4rem 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
-        <p>&copy; 2026 Strong Bonds Resilience. Stewardship of the historic Lenox Building.</p>
-    </footer>
-
-    <script src="../js/config.js"></script>
-    <script src="../js/vault-submit.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const vaultForm = document.getElementById('vault-form');
-            
             if (vaultForm) {
                 vaultForm.addEventListener('submit', function() {
-                    // This fires the event to Google Analytics
                     gtag('event', 'narrative_submission', {
                         'event_category': 'engagement',
-                        'event_label': 'Own Your Truth Form',
-                        'value': 1
+                        'event_label': 'Own Your Truth Form'
                     });
-                    console.log('Narrative submission event tracked.');
                 });
             }
         });
@@ -127,6 +108,5 @@
 
     <script src="../js/config.js"></script>
     <script src="../js/vault-submit.js"></script>
-
 </body>
 </html>
