@@ -1,5 +1,5 @@
 /* =========================================
-   (00) HEADER-FOOTER.CSS - Branding Elements
+   (00) HEADER-FOOTER.CSS - Updated Layout
    ========================================= */
 
 .banner-header {
@@ -8,8 +8,9 @@
   background-image: url('../asset/New-Banner.png');
   background-size: cover;
   background-position: center;
-  padding: 4rem 1rem;
-  text-align: center;
+  padding: 3rem 1.5rem; /* Slightly reduced padding for a tighter fit */
+  display: flex;
+  justify-content: center; /* Centers the whole container in the banner */
 }
 
 .banner-overlay {
@@ -23,11 +24,48 @@
   position: relative;
   z-index: 2;
   color: white;
+  display: flex;         /* Magic starts here */
+  align-items: center;   /* Perfectly centers logo and text vertically */
+  gap: 30px;             /* Space between logo and text */
+  max-width: 1100px;
+  width: 100%;
+  text-align: left;      /* Changes text from center to left-aligned */
 }
 
-footer {
-  background-color: rgba(0,0,0,0.2); /* Slight contrast from body */
-  padding: 4rem 1rem;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
+/* Specific Logo Sizing */
+.banner-logo {
+  width: 140px;          /* Adjusted size to fit "perfectly" */
+  height: auto;
+  flex-shrink: 0;        /* Prevents the logo from getting squashed */
+}
+
+/* Brand Text Formatting */
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-text-block h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;     /* Prominent Name */
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.brand-text-block p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;     /* Tagline sizing */
+  margin-top: 8px;
+  opacity: 0.9;
+  font-style: italic;    /* Gives it that "Compassion" vibe */
+}
+
+/* Mobile Fix: Stacks them back up on small screens */
+@media (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
 }
