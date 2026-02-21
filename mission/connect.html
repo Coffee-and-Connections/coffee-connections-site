@@ -6,7 +6,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XYGGEQ0D63');
     </script>
 
@@ -78,5 +77,23 @@
         <p>A 501(c)(3) Veteran-Led Organization</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all buttons inside the links-container
+            const buttons = document.querySelectorAll('.link-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.innerText;
+                    
+                    // Fire event to GA4
+                    gtag('event', 'hub_click', {
+                        'event_category': 'navigation',
+                        'event_label': buttonText
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
