@@ -1,69 +1,119 @@
-/* =========================================
-   (00) HEADER-FOOTER.CSS - Updated Layout
-   ========================================= */
-
-.banner-header {
-  position: relative;
-  width: 100%;
-  background-image: url('../asset/New-Banner.png');
-  background-size: cover;
-  background-position: center;
-  padding: 3rem 1.5rem; /* Slightly reduced padding for a tighter fit */
-  display: flex;
-  justify-content: center; /* Centers the whole container in the banner */
+/* --- Global Header Layout --- */
+.main-nav {
+    background: #0a0a0a;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1000;
 }
 
-.banner-overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.banner-container {
-  position: relative;
-  z-index: 2;
-  color: white;
-  display: flex;         /* Magic starts here */
-  align-items: center;   /* Perfectly centers logo and text vertically */
-  gap: 30px;             /* Space between logo and text */
-  max-width: 1100px;
-  width: 100%;
-  text-align: left;      /* Changes text from center to left-aligned */
+/* Logo & Tagline */
+.logo-wrapper {
+    width: 48px; /* ~0.5 inches */
+    height: 48px;
+    margin: 0 auto 0.8rem;
+}
+.nav-logo-img { width: 100%; height: auto; }
+
+.nav-logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
 }
 
-/* Specific Logo Sizing */
-.banner-logo {
-  width: 140px;          /* Adjusted size to fit "perfectly" */
-  height: auto;
-  flex-shrink: 0;        /* Prevents the logo from getting squashed */
+.nav-tagline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+    margin: 0.5rem 0 2rem 0;
 }
 
-/* Brand Text Formatting */
-.brand-text-block {
-  display: flex;
-  flex-direction: column;
+.ampersand {
+    display: block;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--coffee-accent, #d4af37);
 }
 
-.brand-text-block h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.2rem;     /* Prominent Name */
-  margin: 0;
-  line-height: 1.1;
-  letter-spacing: 1px;
+/* Navigation Menu Logic */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
 }
 
-.brand-text-block p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;     /* Tagline sizing */
-  margin-top: 8px;
-  opacity: 0.9;
-  font-style: italic;    /* Gives it that "Compassion" vibe */
+.nav-menu > li {
+    position: relative; /* Essential for dropdown positioning */
 }
 
-/* Mobile Fix: Stacks them back up on small screens */
-@media (max-width: 768px) {
-  .banner-container {
+.nav-menu li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover, 
+.nav-menu li a.active {
+    color: #fff;
+    background: #4a2c4a; /* Dashboard Purple */
+    border-radius: 4px;
+}
+
+/* SUBMENU (DROPDOWN) STYLING */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    min-width: 220px;
+    list-style: none;
+    padding: 10px 0;
+    display: none; /* Hidden by default */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+.submenu li a {
+    text-align: left;
+    text-transform: none; /* Easier to read for long links */
+    font-size: 0.8rem;
+    padding: 8px 20px;
+    background: transparent;
+}
+
+.submenu li a:hover {
+    background: #2a2a2a;
+    color: var(--coffee-accent, #d4af37);
+}
+
+/* Show Submenu on Hover */
+.nav-menu li:hover .submenu {
+    display: block;
+}
     flex-direction: column;
     text-align: center;
     gap: 15px;
