@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYGGEQ0D63"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XYGGEQ0D63');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How You Can Help | Strong Bonds Resilience</title>
@@ -45,7 +53,6 @@
         </header>
 
         <div class="action-grid">
-            
             <div class="action-card pillar-gold">
                 <div class="tier-label">Community Ledger</div>
                 <h3>Fuel a Pour</h3>
@@ -102,7 +109,6 @@
                 <p>Strategic alliances for corporate partners and property stakeholders to scale the Sanctuary model.</p>
                 <a href="founding-circle.html" class="btn-action">Join the Circle</a>
             </div>
-
         </div>
     </main>
 
@@ -113,6 +119,19 @@
         </a>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const actionButtons = document.querySelectorAll('.btn-action');
+            actionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    gtag('event', 'support_option_click', {
+                        'event_category': 'solidarity',
+                        'event_label': this.innerText
+                    });
+                });
+            });
+        });
+    </script>
     <script src="../../js/config.js"></script>
 </body>
 </html>
