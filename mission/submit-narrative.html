@@ -107,5 +107,26 @@
 
     <script src="../js/config.js"></script>
     <script src="../js/vault-submit.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const vaultForm = document.getElementById('vault-form');
+            
+            if (vaultForm) {
+                vaultForm.addEventListener('submit', function() {
+                    // This fires the event to Google Analytics
+                    gtag('event', 'narrative_submission', {
+                        'event_category': 'engagement',
+                        'event_label': 'Own Your Truth Form',
+                        'value': 1
+                    });
+                    console.log('Narrative submission event tracked.');
+                });
+            }
+        });
+    </script>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/vault-submit.js"></script>
+
 </body>
 </html>
