@@ -1,176 +1,150 @@
 /* =========================================
    (08) RESILIENCE-MARKET.CSS
-   "The Retail Engine"
+   "The Community Incubator"
    ========================================= */
 
-/* --- HEADER --- */
-.market-header {
-  text-align: center;
-  padding: 4rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.03); 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 4rem;
+/* --- MARKET PAGE BASE --- */
+.resilience-market {
+    padding: 2rem 0 6rem 0;
+    color: #E0E0E0;
 }
 
-.market-header h1 {
-  font-size: 3.5rem;
-  color: var(--bg-cream);
-  margin-bottom: 0.5rem;
+.resilience-market .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.market-header .subtitle {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--coffee-accent); /* Sanctuary Purple */
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
+/* --- THE FEATURE CARD (Side-by-Side Layout) --- */
+.market-card {
+    display: flex;
+    background-color: #1a1a1a; 
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.market-intro {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
+.market-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
 }
 
-/* --- PRODUCT GRID --- */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+/* --- IMAGE AREA --- */
+.card-image {
+    flex: 0 0 45%; /* Takes up 45% of the card width on desktop */
+    position: relative;
+    overflow: hidden;
 }
 
-/* --- PRODUCT CARD --- */
-.product-card {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  overflow: hidden; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* CRITICAL: Prevents Kelsie's photo from stretching */
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--coffee-accent);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+.market-card:hover .card-image img {
+    transform: scale(1.03); /* Subtle premium zoom effect on hover */
 }
 
-/* IMAGE AREA */
-.product-image {
-  position: relative; 
-  width: 100%;
-  aspect-ratio: 1 / 1; 
-  background-color: var(--coffee-dark);
-  overflow: hidden;
+/* --- CONTENT AREA --- */
+.card-content {
+    flex: 1; /* Takes up the remaining 55% */
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+.partner-badge {
+    display: inline-block;
+    background-color: rgba(255, 140, 0, 0.1); /* Translucent Orange Wash */
+    color: #ff8c00;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+    border: 1px solid rgba(255, 140, 0, 0.3);
 }
 
-.product-card:hover .product-image img {
-  transform: scale(1.05); /* Subtle zoom on hover */
+/* --- TYPOGRAPHY (Mapped to Kelsie's Requirements) --- */
+.partner-name {
+    font-size: 2.2rem; /* Maps to her 18pt header request */
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* BADGES */
-.badge {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  padding: 0.4rem 1rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 4px;
-  color: white;
-  z-index: 2;
+.partner-story p {
+    font-size: 1.15rem; /* Maps to her 16pt body request */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #CCCCCC;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.badge.new { background-color: var(--coffee-accent); }
-.badge.digital { background-color: #333; }
-
-/* DETAILS AREA */
-.product-details {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+/* --- CONTACT FOOTER --- */
+.partner-contact {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.product-details h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--bg-cream);
+.contact-header {
+    font-size: 1.5rem; /* Maps to her 18pt header request */
+    color: #ff8c00;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.product-details .price {
-  font-size: 1.2rem;
-  color: var(--coffee-accent);
-  font-weight: 700;
-  margin-bottom: 1rem;
+.contact-links {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
 }
 
-.product-details .desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 2rem;
-  line-height: 1.5;
+.social-link {
+    font-size: 1rem; /* Maps to her 12pt social link request */
 }
 
-/* BUTTON */
-.btn-shop {
-  margin-top: auto; 
-  background-color: var(--coffee-accent);
-  color: white;
-  border: none;
-  padding: 1rem;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.85rem;
+.market-card a {
+    color: #ff8c00;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.btn-shop:hover {
-  background-color: white;
-  color: var(--coffee-accent);
+.market-card a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
 }
 
-/* --- SHIPPING NOTE --- */
-.shipping-note {
-  text-align: center;
-  margin: 6rem auto;
-  padding: 2rem;
-  background-color: rgba(78, 39, 83, 0.1); /* Sanctuary Purple Wash */
-  border: 1px solid var(--coffee-accent);
-  border-radius: 12px;
-  max-width: 700px;
-}
-
-.shipping-note p {
-  color: var(--bg-cream);
-  font-style: italic;
-  font-size: 1.1rem;
-}
-
-@media (max-width: 768px) {
-    .product-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-}
-
-@media (max-width: 500px) {
-    .product-grid { grid-template-columns: 1fr; }
+/* --- MOBILE STACKING LOGIC --- */
+@media (max-width: 900px) {
+    .market-card {
+        flex-direction: column; /* Stacks image on top, text on bottom */
+    }
+    
+    .card-image {
+        height: 400px; /* Gives the image a fixed, visually appealing height on mobile */
+    }
+    
+    .card-content {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .partner-name {
+        font-size: 1.8rem;
+    }
+    
+    .partner-story p {
+        font-size: 1.05rem;
+    }
 }
