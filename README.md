@@ -2,7 +2,7 @@
 **A Vertically Integrated Ecosystem for Survivor Stability & Community Resilience.**
 
 ## 🏙️ Project Vision
-Coffee & Connections is a dual-engine social enterprise designed to bridge the gap between crisis and stability. Located at 216 E Overland, this project integrates a trauma-informed "Sanctuary" Café with transitional safe-haven housing and a digital economic incubator for local survivors and veterans.
+Coffee & Connections is a dual-engine social enterprise designed to bridge the gap between crisis and stability. Located at Overland, this project integrates a trauma-informed "Sanctuary" Café with transitional safe-haven housing and a digital economic incubator for local survivors and veterans.
 
 ## 🏗️ Architectural Structure
 The ecosystem is organized into three strategic pillars to reflect our physical and social infrastructure:
